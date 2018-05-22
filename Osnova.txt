@@ -1,8 +1,67 @@
 ﻿Úvod
  - Obecně k RTS hrám
- 
+ - Component based architecture
+   - composition vs. inheritance
  - 2D vs 3D
 
  - Cíle
 
+Hlavní část
+ - Game engines
+   - RTS game enginy, pokud nějaké jsou
+   - Uvažované enginy, jejich nedostatky
+   - UrhoSharp
+     - Urho3D
+     - Component
+ - Načítání součástí za běhu
+   - formáty dat
+     - AssetImporter
+     - Protocol Buffers
+       - Protobuf-net
+     - Reflection
+   - ukládání a načítání hry
+     (odkaz na protocol buffers sekci)
+   -
+ - Map
+   - vytváření modelu za běhu
+ - Pathfinding
+   - A*
+   - API pro runtime změnu grafu
+   - optimalizace
+ - Projektily
+   - Hit detection
+   - výpočet úhlu
+ - API
+   - celkový návrh
+   - XML
+
+Programátorská dokumentace
+ - shrnutí funkcí jednotlivých namespaců
+ - Logic namespace
+   - ILevelManager a LevelManager
+   - ITile a Tile
+   - IPlayer a Player
+   - IEntity a Entity
+   - IUnit a Unit
+   - IBuilding a Building
+   - IProjectile a Projectile
+
+   - Types ??
+ - WorldMap namespace
+ - Plugins namespace
+   - 
+ - Packaging namespace
+   - PackageManager
+   - GamePack
+   - Types ??
+ - Storage namespace
+   - Protocol buffers
+   - PluginData
+   - PluginDataWrapper
+     - SequentialPluginData
+     - IndexedPluginData
+     - NamedPluginData
+   - GameState
+ -
  
+Uživatelská dokumentace
