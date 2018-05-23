@@ -1,60 +1,73 @@
 ﻿Úvod
  - Obecně k RTS hrám
+   - co je to RTS
+   - suroviny
+   - jednotky
+   - budovy
+   - příklady
  - Component based architecture
    - composition vs. inheritance
- - 2D vs 3D
-
+ - 2D vs 3D hry, především o RTS hrách
  - Cíle
+   - využití C# jako skriptovacího jazyku
+   - editor map
+   - nahrávání obsahu
+   - ovládání
+   - user interface
+   - rozšiřitelnost uživatelem
+   - ukázková implementace hry
 
 Hlavní část
  - Game engines
-   - RTS game enginy, pokud nějaké jsou
-   - Uvažované enginy, jejich nedostatky
+   - RTS game enginy
+     - SpringRTS
+	 - Unity
+	 - MonoGame
    - UrhoSharp
      - Urho3D
-     - Component
+	 - neimplementované části Urho3D
+	 - porovnání s Unity3D a dalšími herními enginy
  - Načítání součástí za běhu
    - formáty dat
      - AssetImporter
      - Protocol Buffers
        - Protobuf-net
      - Reflection
+   - nahrávání logiky pomocí Reflection
    - ukládání a načítání hry
      (odkaz na protocol buffers sekci)
-   -
- - Map
-   - vytváření modelu za běhu
+ - Mapa
+   - Tiles, TileTypes
+   - vytváření a manipulace modelu za běhu
  - Pathfinding
    - A*
    - API pro runtime změnu grafu
-   - optimalizace
+   - optimalizace, heuristika
+   - propojení s typy jednotek, kde si každá může specifikovat ohodnocení a průchodnost hran
  - Projektily
    - Hit detection
-   - výpočet úhlu
- - API
-   - celkový návrh
-   - XML
+   - výpočet úhlu balistických projektilů
+ - návrh API
+   - struktura type/instance
+   - XML definice typů
 
 Programátorská dokumentace
  - shrnutí funkcí jednotlivých namespaců
- - Logic namespace
-   - ILevelManager a LevelManager
-   - ITile a Tile
-   - IPlayer a Player
-   - IEntity a Entity
-   - IUnit a Unit
-   - IBuilding a Building
-   - IProjectile a Projectile
-
-   - Types ??
- - WorldMap namespace
- - Plugins namespace
-   - 
- - Packaging namespace
-   - PackageManager
-   - GamePack
-   - Types ??
- - Storage namespace
+   - Logic, Plugins, Pathfinding, WorldMap, UserInterface etc.
+ - Logika
+   - reprezentace Entity, jednotky, budovy, projektilu
+     - typy
+	 - pluginy
+   - interakce entit s mapou
+ - WorldMap
+   - implementace mapy
+   - implementace MapGraphics
+ - Pathfinding
+   - A*
+   - Path class
+ - Packaging
+   - XML data - schema, validace, načítání pomocí DOM modelu
+ - Storage
    - Protocol buffers
    - PluginData
    - PluginDataWrapper
@@ -62,6 +75,29 @@ Programátorská dokumentace
      - IndexedPluginData
      - NamedPluginData
    - GameState
- -
+ - EditorTools
+   - ovládání editoru a probíhající hry
+   - spolupráce s UserInterface, Input a dalšími součástmi
+   - návrh připraven pro rozšíření na dotykové ovládání
+ - DefaultComponents
+   - komponenty implementující základní chování jednotek, budov a projektilů
+   - WorldWalker pro chození po mapě
+     - spolupráce s Map a IPathFindAlg
+ - StartupManagement 
+   - pro implementaci součástí závislých na platformě
+     - připraven pro rozšíření na další platformy
+ 
+ - ShowcasePackage
+   - ukázková implementace hry
  
 Uživatelská dokumentace
+ - specifikace balíčku pomocí XML
+ - implementace logiky jednotky, budovy, projektilu a hráče
+ - přidávání modelů, textur a animací
+ - použití přidaných modelů, textur a animací
+ - přidání balíčku do hry
+ 
+ - menu
+   - správa balíčků
+ - herní UI
+ - ovládání hry
