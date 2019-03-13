@@ -22,11 +22,15 @@ Hlavní část
    - RTS game enginy
      - SpringRTS
 	 - Unity
+	   - Unity a AOT, JIT etc. https://docs.unity3d.com/Manual/ScriptingRestrictions.html
 	 - MonoGame
    - UrhoSharp
      - Urho3D
 	 - neimplementované části Urho3D
 	 - porovnání s Unity3D a dalšími herními enginy
+ - Platformy a jejich rozdíly
+   - AOT
+   - File systémy
  - Načítání součástí za běhu
    - formáty dat
      - AssetImporter
@@ -39,6 +43,7 @@ Hlavní část
  - Mapa
    - Tiles, TileTypes
    - vytváření a manipulace modelu za běhu
+     - unsafe kod vs. využití wrapperů z UrhoSharp
  - Pathfinding
    - A*
    - API pro runtime změnu grafu
@@ -46,7 +51,9 @@ Hlavní část
    - propojení s typy jednotek, kde si každá může specifikovat ohodnocení a průchodnost hran
  - Projektily
    - Hit detection
+     - Bullet physics library vs. manual detection
    - výpočet úhlu balistických projektilů
+     - constant speed projectiles vs. constant time projectiles
  - návrh API
    - struktura type/instance
    - XML definice typů
@@ -93,6 +100,8 @@ Programátorská dokumentace
 Uživatelská dokumentace
  - specifikace balíčku pomocí XML
  - implementace logiky jednotky, budovy, projektilu a hráče
+   - použití DefaultComponents
+   - změna PathFinding mapy pro budovy
  - přidávání modelů, textur a animací
  - použití přidaných modelů, textur a animací
  - přidání balíčku do hry
