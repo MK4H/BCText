@@ -5,9 +5,6 @@
    - jednotky
    - budovy
    - příklady
- - Component based architecture
-   - composition vs. inheritance
- - 2D vs 3D hry, především o RTS hrách
  - Cíle
    - využití C# jako skriptovacího jazyku
    - editor map
@@ -31,6 +28,8 @@ Hlavní část
  - Platformy a jejich rozdíly
    - AOT
    - File systémy
+ - composition vs. inheritance
+ - 2D vs 3D hry, především o RTS hrách
  - Načítání součástí za běhu
    - formáty dat
      - AssetImporter

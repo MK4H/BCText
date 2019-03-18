@@ -62,9 +62,29 @@ Jednotky mají jako ve většině RTS her určitý počet hit pointů, které s 
 Počet jednotek je omezen na 1000 pro každého hráče, především pro omezení hardwarové náročnosti. 
 
 \subsection{Budovy}
-Budovy slouží mnoha účelům, nejčastěji zajišťují sběr surovin, tvorbu jednotek a často jsou také používány přímo pro boj. Budovy a z nich tvořené základny umožňují hráči v průběhu času zvětšovat svou sílu v podobě nových jednotek, budov a většího množství surovin, a tuto sílu využít k porážce nepřítele. To bývá používáno jako hlavní bod pro odlišení čistě taktických her, kde hráč začíná boj se svou plnou silou, nejčastěji v podobě jednotek, a postupně v boji o tuto sílu přichází bez možnosti jejího doplnění. Mezi taktické hry splňující tuto definici patří například hry ze sérií \cite{Total War}, \cite{X-COM} nebo české série \cite{UFO}.
+Stavba budov představuje jednu z hlavních prezentací hráčovi strategie. Podle postavených budov lze často vcelku přesně odhadnout, jakou strategii hráč zvolil, čímž je umožněno nepřátelům reagovat a adaptovat svou strategii odpovídajícím způsobem. 
 
-Ve hře Stronghold je stavba budov implementována vcelku jednoduše. Hráčovi jsou všechny dostupné budovy nabídnuty v menu bez možnosti odemknout v průběhu hry další budovy. Po zvolení z nabídky lze pohybem kurzoru v herním poli vybrat umístění budovy. Pokud má hráč dostatečný počet surovin a terén budově vyhovuje, objeví se po kliknutí tato budova na vybraném místě. Podobně funguje stavba budov i v dalších RTS hrách, jako \cite{Company of Heroes}, \cite{}
+Budovy jsou často uspořádány do postupně se zlepšujících úrovní, které jsou zpřístupňovány výzkumem nových technologií. \todo{see Výzkum technologií} Každá z úrovní obsahuje řadu rozdílných budov, umožňujících zvolit různé strategie. 
+
+Při této volbě lze ale narazit na problém, kdy je hráč nucen zvolit svou strategii před tím, než nalezne protivníky a tedy před tím, než může vidět jejich strategii. Tento problém je velmi výrazný při tzv.  ``rock-paper-scisors'' strategiích, kde strategie 1 poráží strategii 2, strategie 2 poráží strategii 3 a strategie 3 poráží strategii 1. V tuto chvíli hra degeneruje v loterii, zda hráč náhodně vybere správnou strategii porážející tu vybranou nepřítelem. Pro prevenci tohoto problému mají často  počáteční úrovně strategií pouze malé rozdíly v síle, což umožní hráčům reagovat a změnit svoji strategii před tím, než je rozdíl mezi jejich silami neúnosně velký. \cite{http://www.oxeyegames.com/rts-game-play-part-3-build-options/}
+
+Funkce budov:
+\begin{itemize}
+	\item Produkce jednotek
+	\item Vylepšování jednotek
+	\item Produkce surovin
+	\item Uskladnění surovin
+	\item Obrana
+	\item Stavba budov
+	\item Zkoumání technologií
+\end{itemize}
+
+\todo{rozepsat funkce}
+\todo{restrikce na umístění}
+\todo{zničitelnost}
+\todo{různé druhy poškození}
+
+Ve hře Stronghold jsou všechny budovy dostupné od počátku hry. Budova může mít restrikce na místa, kde je dovoleno ji postavit. Tyto restrikce mohou být na typ terénu, sousedící budovy či vzdálenost od hráčovi tvrze. Pro stavbu většiny budov jsou potřeba suroviny, uskladněné v hráčově skladišti, zbrojírně či sýpce. Až na výjimky lze budovy poškodit a následně zničit, některé všemi druhy jednotek, jiné mají omezení na druh jednotek, který je schopen je poškodit. Například hradby a věže je možné ničit pouze pomocí obléhacích zařízení. 
 
 \subsection{Suroviny}
 Resource management je přítomný ve všech hrách tohoto žánru již od jeho vzniku. Od koření v Dune II, přes zlato a dřevo ve Warcraft 3, po všechny typy surovin ve hře Stronghold, získávání surovin je jednou z hlavních motivací konfliktu v RTS hrách. 
