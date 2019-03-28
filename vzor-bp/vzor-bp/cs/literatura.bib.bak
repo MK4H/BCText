@@ -1,13 +1,13 @@
 % Encoding: UTF-8
 
-@Misc{site:warcraft3,
+@Misc{warcraft3,
   author       = {{Blizzard Entertainment, Inc.}},
   title        = {{Warcraft} 3},
   howpublished = {\url{https://playwarcraft3.com/en-us/}},
   note         = {{Accessed:2019-03-18}},
 }
 
-@Misc{site:stratg01,
+@Misc{stratg01,
   author       = {Mark H. Walker},
   title        = {{Strategy Gaming: Part 1 -- A Primer}},
   howpublished = {\url{https://web.archive.org/web/20041213200037/http://archive.gamespy.com/articles/february02/strategy1/index.shtm}},
@@ -16,7 +16,7 @@
   note         = {[Online; seen 2019-03-18]},
 }
 
-@Misc{site:gamasutra01,
+@Misc{gamasutra01,
   author       = {James Lantz},
   title        = {{Opinion: The Evolution of the Modern RTS}},
   howpublished = {\url{http://www.gamasutra.com/php-bin/news_index.php?story=18326}},
@@ -24,23 +24,12 @@
   year         = {2008},
 }
 
-@Misc{site:oxeye03,
+@Misc{oxeye03,
   author       = {{Oxeye Game Studion}},
   title        = {{RTS Game-play Part 3: Build Options}},
   howpublished = {\url{http://www.oxeyegames.com/rts-game-play-part-3-build-options/}},
   month        = nov,
   year         = {2008},
-}
-
-@book{book:gamefund,
-   title =     {Fundamentals of Game Design},
-   author =    {Ernest Adams},
-   publisher = {New Riders},
-   isbn =      {0-321-64337-2},
-   year =      {2009},
-   series =    {},
-   edition =   {2},
-   volume =    {},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

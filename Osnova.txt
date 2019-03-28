@@ -57,6 +57,22 @@ Hlavní část
    - struktura type/instance
    - XML definice typů
 
+ShowcasePackage
+ - ukázková implementace hry
+ - editor, přidané tooly, kontrola a restrikce terénu logikou
+ - ničitelné budovy, neničitelné budovy
+ - budovy, po kterých lze chodit
+ - projektily deformující terén
+ - projektily využívající nízkou/vysokou trajektorii
+ - nebalistické projektily
+ - manuálně ovládané jednotky, poloautomatické jednotky, automatické jednotky
+ - selectable/neselectable jednotky a budovy
+ - přidané herní UI pro nastavení chování jednotky a budovy
+ - přidané explicitní okno, otevřené při kliknutí na jednotku a zavřené při deselectu
+ - přidaná lišta AI levelu na horní straně UI
+ - přidané buttony na main baru
+
+
 Programátorská dokumentace
  - shrnutí funkcí jednotlivých namespaců
    - Logic, Plugins, Pathfinding, WorldMap, UserInterface etc.
@@ -93,19 +109,34 @@ Programátorská dokumentace
    - pro implementaci součástí závislých na platformě
      - připraven pro rozšíření na další platformy
  
- - ShowcasePackage
-   - ukázková implementace hry
- 
-Uživatelská dokumentace
+Dokumentace pro uživatele moddera
  - specifikace balíčku pomocí XML
- - implementace logiky jednotky, budovy, projektilu a hráče
-   - použití DefaultComponents
-   - změna PathFinding mapy pro budovy
  - přidávání modelů, textur a animací
  - použití přidaných modelů, textur a animací
  - přidání balíčku do hry
- 
- - menu
-   - správa balíčků
- - herní UI
- - ovládání hry
+
+Dokumentace pro uživatele programátora
+ - implementace logiky jednotky, budovy, projektilu, hráče a levelu
+   - použití DefaultComponents
+   - možnost změny/přidání Pathfinding algoritmu
+ - přidání/nahrazení editor toolů
+
+Dokumentace pro uživatele hráče 
+ - instalace
+ - postup přidání balíčku
+   - odkázat na moddera
+ - popsání UI
+   - menu screens
+   - minimapa, main bar
+ - ukládání a načítání hry
+ - práce s editorem
+
+Závěr
+ -zhodnocení vhodnosti UrhoSharp, zkušenosti
+ - zhodnocení splnění cílů
+
+ - future work
+   - přidání dalších DefaultComponent
+   - přidání defaultních toolů
+   - přidání dalších pathfinding algoritmů
+   - podpora Touch UI

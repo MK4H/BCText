@@ -1,0 +1,40 @@
+Cile by mely bejt shrnuti celyho uvodu
+
+Pozadavky 
+
+Uvod RTS her by mel definovat podporovanou podmnozinu her, restrikce, vymezeni podmnoziny,
+ukazani cele sirky strategy her
+
+V pozadavcich proc by sme takovou vec chtely, proc podporovat takovou podmnozinu.
+A co vsechno podporovat.
+
+Z kazdy vlastnosti, kterou popisu, musi bejt nejakej vystup vztahujici se k nasi praci.
+- napr. ze real time strategy hry jsou narocny na vyvoj, tak sme chteli jejich vyvoj ulehcit tvorbou platformy
+
+chci vlastne oznacit problemy, ktery budu resit.
+
+Cilem uvodu je chytnout toho hrace, aby si tu praci docetl do konce
+
+Je dobry pouzivat konkretni priklady
+
+Showcase by mel ukazat vsechno, co umi.
+Vsechny ty requirementy, vsechny ty speciality, ktery popisu.
+
+Uvod popisuje, co sme chtely delat.
+Analyza popisuje, jak jsme to delali.
+Dokumentace a Zaver je popsani toho, jak sme to udelali.
+
+Sou fajn obrazky a schemata
+- obrazek ilustruje text, musim se na nej explicitne odkazat z textu
+- obrazek by nemel nest informaci, ktera neni v textu
+  - text ma mluvit o tom, co je na obrazku, a klidne popsat ten obrazek
+    - klidne zvyraznit, o cem sme mluvily
+  - obrazek vzdycky PO odkazech
+    - odkazy na obrazek musej bejt forward reference
+- udelat obrazky drive nez text
+
+klidne tam zatim dat placeholdery a dokreslit nebo najit az ke konci
+
+Dat odkazy i na stranky prikladu, treba her a tak.
+
+Rozpracovat konce, rozmyslet si showcase, co bude ukazovat.
