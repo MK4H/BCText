@@ -1,0 +1,42 @@
+\chapter{Analýza}
+V první kapitole jsem specifikovaly náš cíl, tedy implementaci platformy nad enginem UrhoSharp umožňující tvorbu RTS her a jejich distribuci. V této kapitole popíšeme problémy při implementaci platformy a jejich možná řešení.
+
+\section{Herní engine}
+Jak jsme psali v Cílech práce (viz \ref{sec:cileprace}), naším cílem je vytvořit platformu za použití herního enginu UrhoSharp. ``UrhoSharp je multiplatformní 3D a 2D engine který může být použit pro tvorbu animovaných 3D a 2D scén za použití modelů, materiálů, světel a kamer''\citep{site:urhosharp}, jak říká úvodní stránka dokumentace enginu. Jak už název napovídá, UrhoSharp je .NET binding pro Urho3D engine \citep{site:urho3D}, což je opensource engine implementován v C++.
+
+\todo{porovnání s dalšími enginy}
+
+\section{Podporované platformy}
+Jak bylo zmíněno v předešlé sekci, je námi používaný herní engine multiplatformní. Bohužel každá z platforem má určitá specifika a restrikce, jak obecně, tak v rámci enginu, které nás nakonec vedli k podpoře pouze platformy Windows. 
+
+\subsection{Mobilní platformy}
+Při implementaci pro mobilní platformy existuje několik problémů.
+
+\subsubsection{Zobrazení a ovládání}
+Na mobilních platformách je mnohem bližší vztah mezi GUI, tedy grafických uživatelským rozhraním, a ovládáním. Oproti platformě PC, ať už Windows či Linux, je zde jediným možným vstupem dotyková obrazovka. GUI musí tedy sloužit jak pro zobrazení informací hráči, tak pro získání vstupu od hráče. 
+
+Druhým problémem je velikost obrazovky, která je u drtivé většiny mobilních zařízení mnohem menší než u PC. 
+
+Oba tyto problémy nás vedou k separátní implementaci uživatelského rozhraní pro mobilní zařízení. Pro tuto implementaci jsme v naší práci připravily základní kostru, upustili jsme ovšem od konečné implementace z důvodu nedostatku času.
+
+\subsubsection{JIT vs. AOT}
+Dalším rozdílem, tentokrát s rozdílným chováním i mezi různými mobilními platformami, je jejich chování ke kódu. Na systémech Windows, Linux či Android je CIL kód přeložen za běhu pomocí JIT kompilátoru do instrukcí procesoru a následně vykonán. Oproti tomu systém \emph{iOS} zakazuje namapování stránek paměti zároveň pro zápis a pro vykonání, čímž znemožňuje jakýkoli JIT překlad. Z tohoto důvodu musí být všechny aplikace pro systém \emph{iOS} překládány tzv. AOT, tedy před tím, než jsou distribuovány k uživateli, přímo do instrukční sady cílového procesoru.\citep{site:aot} Tato skutečnost znemožňuje jednoduché nahrání assembly pomocí reflexe a nutila by nás k složitějšímu řešení. 
+Tvůrce balíčku by musel své kódy přeložit pro všechny možné architektury, a naše platforma by se následně při běhu musela podle platformy, na které běží, rozhodovat, kterou z assembly nahrát. Toto je jeden z důvodů, proč jsme upustily od implementace podpory mobilních zařízení.
+
+\subsubsection{Souborové systémy}
+
+
+
+
+
+\section{Formát balíčků a jejich načítání}
+Důležitou součástí implementace naší platformy je systém balíčků pro distribuci vytvořených her. Tyto balíčky obsahují všechny součásti hry, od modelů a textur, přes logiku a umělou inteligenci, po mapy a úrovně vytvořené tvůrcem hry. Všechny tyto součásti musí naše platforma být schopna načíst za běhu a použít jak pro tvorbu nových map, tak pro hraní již existujících.
+
+\subsection{Základní struktura}
+Pro implementaci načítání balíčků musíme definovat strukturu, kterou budou balíčky splňovat, a podle které bude platforma určovat závislosti a typy souborů. 
+
+První možností je založit strukturu balíčku na adresářové struktuře, kde každý balíček bude tvořen jedním adresářem obsahujícím další pevně specifikované podadresáře. Každý z podadresářů by obsahoval jeden z typů zdrojů, tedy 3D modely, textury, popis jednotek nebo skripty.
+
+Pro popis typů jednotek, budov, projektilů, dlaždic a nepřátel jsme se inspirovali v existujících hrách, ať už Civilisation V nebo Kerbal Space Program, a využili jsme XML soubor pro definici závislostí. Tento XML soubor 
+ 
+Každý balíček je reprezentován jedním XML souborem. Tento soubor má formát daný pevným schématem a tento formát je kontrolován při každém načítání. 

@@ -14,7 +14,7 @@
    - rozšiřitelnost uživatelem
    - ukázková implementace hry
 
-Hlavní část
+Analýza
  - Game engines
    - RTS game enginy
      - SpringRTS

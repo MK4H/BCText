@@ -1,22 +1,21 @@
 % Encoding: UTF-8
 
-@Misc{warcraft3,
+@Misc{site:warcraft3,
   author       = {{Blizzard Entertainment, Inc.}},
   title        = {{Warcraft} 3},
   howpublished = {\url{https://playwarcraft3.com/en-us/}},
   note         = {{Accessed:2019-03-18}},
 }
 
-@Misc{stratg01,
+@Misc{site:stratg01,
   author       = {Mark H. Walker},
-  title        = {{Strategy Gaming: Part 1 -- A Primer}},
+  title        = {{Strategy Gaming: Part I -- A Primer}},
   howpublished = {\url{https://web.archive.org/web/20041213200037/http://archive.gamespy.com/articles/february02/strategy1/index.shtm}},
-  month        = dec,
   year         = {2004},
   note         = {[Online; seen 2019-03-18]},
 }
 
-@Misc{gamasutra01,
+@Misc{site:gamasutra01,
   author       = {James Lantz},
   title        = {{Opinion: The Evolution of the Modern RTS}},
   howpublished = {\url{http://www.gamasutra.com/php-bin/news_index.php?story=18326}},
@@ -24,12 +23,56 @@
   year         = {2008},
 }
 
-@Misc{oxeye03,
+@Misc{site:oxeye03,
   author       = {{Oxeye Game Studion}},
   title        = {{RTS Game-play Part 3: Build Options}},
   howpublished = {\url{http://www.oxeyegames.com/rts-game-play-part-3-build-options/}},
   month        = nov,
   year         = {2008},
+}
+
+@book{book:gamefund,
+   title =     {Fundamentals of Game Design},
+   author =    {Ernest Adams},
+   publisher = {New Riders},
+   isbn =      {0-321-64337-2},
+   year =      {2009},
+   series =    {},
+   edition =   {2},
+   volume =    {},
+}
+
+@Misc{site:stratg05,
+  author       = {Mark H. Walker},
+  title        = {{Strategy Gaming: Part V -- Real-Time vs. Turn-Based}},
+  howpublished = {\url{https://web.archive.org/web/20081201113359/http://archive.gamespy.com/articles/february02/strategygames05/index.shtm}},
+  year         = {2004},
+  note         = {[Online; seen 2019-04-01]},
+}
+
+@Misc{site:stratg02,
+  author       = {Mark H. Walker},
+  title        = {{Strategy Gaming: Part II}},
+  howpublished = {\url{https://web.archive.org/web/20070129065355/http://archive.gamespy.com/articles/february02/strategy02/}},
+  year         = {2004},
+  note         = {[Online; seen 2019-04-01]},
+}
+
+@Misc{site:civ5,
+  author       = {{Firaxis Games, Inc.}},
+  title        = {{Civilisation V}},
+  howpublished = {\url{https://civilization.com/civilization-5/}},
+  month        = sep,
+  year         = {2010},
+}
+
+@Misc{site:aot,
+  author       = {Larry O'Brien and Nick Schonning and Craig Dunn and Brad Umbaugh and Yauheni Pakala},
+  title        = {{iOS App Architecture}},
+  howpublished = {\url{https://docs.microsoft.com/en-us/xamarin/ios/internals/architecture}},
+  month        = mar,
+  year         = {2017},
+  note         = {{Accessed:2019-04-08}},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

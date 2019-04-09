@@ -38,3 +38,58 @@ klidne tam zatim dat placeholdery a dokreslit nebo najit az ke konci
 Dat odkazy i na stranky prikladu, treba her a tak.
 
 Rozpracovat konce, rozmyslet si showcase, co bude ukazovat.
+
+
+2222222222222222222222222222222222222222222222222
+
+\/
+Zmenit reference na [1] a detailnejsi informace vzadu
+
+\/
+Fakt reference, najit odkud sou ty 4 kategorie - myslim ze gamasutra nebo gamespy
+
+\/
+Presunout to, ze budeme delat RTS hry, hned na zacatku, a nasledne popsat ostatni hry
+- ze sou dostatecne odlisny, ze je nechceme expicitne podporovat ale mozna to tam nejak pude
+
+\/
+Z toho uplnyho uvodu jeste udelat zaver
+- co z toho si odnest, jakej to ma vliv na tu platformu
+- asi ze chceme teda podporovat ty RTS hry, a ze doufame, ze pudou nejakym zpusobem
+  v tom udelat i ty tahovky
+
+\/
+rozclenit do neocislovanejch podcasti
+- stranka souvislyho textu je moc
+- rozstrukturovat
+
+udelat shrnuti na konci kazdy kapitoly, opravdu bodove, co presne chceme od dany veci(treba mapy)
+- pak se odkazovat v cilech
+- zaroven v textu rict, ze z toho nam vypliva tohle, a potom to napsat do tech bodu
+
+pridat obrazky k popisum vlastnosti
+- mozna posloupnost obrazku, jak se to jako chova
+
+vic referenci, rock paper scissors
+
+\/
+popisky obrazku pod obrazek
+
+\/
+opravdu mluvit v tom textu o obrazku
+- na obrazku 1.1 vidime tohle atd.
+
+rozdelit ty pozadavky pro pozadavky pro artisty a programatory
+- zase necislovany kapitoly uvnitr tvurcu
+
+vylepsit reference a obrazky
+
+zacit psat analyzu
+- v ty analyze psat jak sem to resil
+- popsat, jak sem se k reseni dostal
+  - vyhody, nevyhody moznejch reseni, proc sem se nakonec rozhodnul pro tu moji
+
+- nemusi to bejt v tom poradi v osnove, podle toho, jak to na sebe bude logicky navazovat
+
+- kdyz tam mam neco spatne, tak napsat, ze sem pouzil jednodusi reseni, kdyby bylo vic casu
+  tak ze bych to udelal lip

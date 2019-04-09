@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.2.13)  28 MAR 2019 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.2.13)  9 APR 2019 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -685,7 +685,7 @@ LaTeX Info: Redefining \nameref on input line 133.
 
  (./titulka.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-cs.pdf, id=71, 506.4591pt x 156.49065pt>
+<../img/logo-cs.pdf, id=107, 506.4591pt x 156.49065pt>
 File: ../img/logo-cs.pdf Graphic file (type pdf)
 <use ../img/logo-cs.pdf>
 Package pdftex.def Info: ../img/logo-cs.pdf  used on input line 10.
@@ -758,201 +758,218 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 8.
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 16.
+(Font)              <10> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 16.
+(Font)              <7> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 16.
-
-
-Package natbib Warning: Citation `site:stratg02' on page 2 undefined on input l
-ine 20.
-
-[2
+(Font)              <5> on input line 17.
+ [2
 
 
 ]
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 25.
 
-Package natbib Warning: Citation `site:civ5' on page 3 undefined on input line 
-22.
-
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 22.
 (c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-LaTeX Warning: Marginpar on page 3 moved.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-LaTeX Warning: Marginpar on page 3 moved.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
 []\T1/lmss/m/n/10.95 To do
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+[]\T1/lmss/m/n/10.95 To do
+ []
 
-LaTeX Warning: Reference `fig:tiletype' on page 4 undefined on input line 60.
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+[]\T1/lmss/m/n/10.95 To do
+ []
 
 
-LaTeX Warning: Reference `fig:tiletype' on page 4 undefined on input line 60.
+LaTeX Warning: Marginpar on page 4 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]\T1/lmss/m/n/10.95 To do
+ []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
+<./img/strongholdtiles.png, id=221, 232.9503pt x 139.2402pt>
+File: ./img/strongholdtiles.png Graphic file (type png)
+<use ./img/strongholdtiles.png>
+Package pdftex.def Info: ./img/strongholdtiles.png  used on input line 76.
+(pdftex.def)             Requested size: 232.94972pt x 139.23985pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+[]\T1/lmss/m/n/10.95 Dal²í
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+\T1/lmss/m/n/10.95 druhy
+ []
+
+[5 <./img/strongholdtiles.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 []\T1/lmss/m/n/10.95 To do
  []
 
 
-Package natbib Warning: Citation `gamasutra01' on page 5 undefined on input lin
-e 74.
+Package natbib Warning: Citation `site:warcraft3nightelfs' on page 6 undefined 
+on input line 105.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
 []\T1/lmss/m/n/10.95 To do
  []
 
-[5] [6]
-
-LaTeX Warning: Reference `fig:unitsonbuildings' on page 7 undefined on input li
-ne 96.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-Package natbib Warning: Citation `oxeye03' on page 7 undefined on input line 10
-4.
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 117--117
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
-[]\T1/lmss/m/n/10.95 To do
+[6] [7]
+Overfull \hbox (9.14966pt too wide) in paragraph at lines 154--154
+[]\T1/lmss/m/n/10.95 Reference|
  []
 
 [8]
-<./img/civ5_tech_tree.jpg, id=203, 301.125pt x 168.63pt>
+
+LaTeX Warning: Reference `fig:unitsonbuildings' on page 9 undefined on input li
+ne 177.
+
+[9]
+Overfull \hbox (21.46797pt too wide) in paragraph at lines 181--181
+[]\T1/lmss/m/n/10.95 zkontrolovat|
+ []
+
+[10] [11]
+
+Package natbib Warning: Citation `site:COH' on page 12 undefined on input line 
+249.
+
+<./img/civ5_tech_tree.jpg, id=295, 301.125pt x 168.63pt>
 File: ./img/civ5_tech_tree.jpg Graphic file (type jpg)
 <use ./img/civ5_tech_tree.jpg>
-Package pdftex.def Info: ./img/civ5_tech_tree.jpg  used on input line 171.
+Package pdftex.def Info: ./img/civ5_tech_tree.jpg  used on input line 257.
 (pdftex.def)             Requested size: 301.12425pt x 168.62958pt.
-<./img/warcraft_tech_tree.png, id=204, 133.6995pt x 158.994pt>
+[12 <./img/civ5_tech_tree.jpg>]
+<./img/warcraft_tech_tree.png, id=305, 133.6995pt x 158.994pt>
 File: ./img/warcraft_tech_tree.png Graphic file (type png)
 <use ./img/warcraft_tech_tree.png>
-Package pdftex.def Info: ./img/warcraft_tech_tree.png  used on input line 179.
+Package pdftex.def Info: ./img/warcraft_tech_tree.png  used on input line 267.
 (pdftex.def)             Requested size: 133.69916pt x 158.9936pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9 <./img/civ5_tech_tree.jpg>] [10 <./img/warcraft_tech_tree.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
+ [13 <./img/warcraft_tech_tree.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 298--298
 []\T1/lmss/m/n/10.95 To do
  []
 
 
-Overfull \hbox (0.77617pt too wide) in paragraph at lines 211--212
-\T1/lmr/m/n/12 by m¥li umoº-nit p°i-nejmen-²ím edi-taci te-rénu mapy (zm¥nu typ
-u te-rénu na v²echny|
- []
+LaTeX Warning: Reference `fig:COHCam' on page 14 undefined on input line 304.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--215
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--220
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--223
-[]\T1/lmss/m/n/10.95 To do
- []
-
-
-LaTeX Warning: Marginpar on page 11 moved.
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 252--252
-[]\T1/lmss/m/n/10.95 To do
- []
-
-) [12]
+[14] [15] [16]) [17]
 \openout2 = `kap01.aux'.
 
- (./kap01.tex)
+ (./kap01.tex
+Kapitola 2.
+
+Package natbib Warning: Citation `site:urhosharp' on page 18 undefined on input
+ line 5.
+
+
+Package natbib Warning: Citation `site:urho3D' on page 18 undefined on input li
+ne 5.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]\T1/lmss/m/n/10.95 To do
+ []
+
+[18
+
+
+
+]) [19]
 \openout2 = `kap02.aux'.
 
- (./kap02.tex)
+ (./kap02.tex
+Kapitola 3.
+) [20
+
+
+
+]
 \openout2 = `kap03.aux'.
 
- (./kap03.tex)
+ (./kap03.tex
+Kapitola 4.
+) [21
+
+
+
+]
 \openout2 = `kap04.aux'.
 
- (./kap04.tex)
+ (./kap04.tex
+Kapitola 5.
+) [22
+
+
+
+]
 \openout2 = `zaver.aux'.
 
- (./zaver.tex)
-[13
-
-
-
-
-
-
-
-
+ (./zaver.tex) [23
 
 
 
 ]
 \openout2 = `literatura.aux'.
 
- (./literatura.tex (./prace.bbl)) [14
+ (./literatura.tex (./prace.bbl
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 17.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 4454) in paragraph at lines 45--50
+[]\T1/lmr/m/sc/12 Walker, M. H. \T1/lmr/m/n/12 (2004).  Stra-tegy Ga-ming: Part
+ II.  []$\T1/lmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--50
+\T1/lmtt/m/n/12 / / web . archive . org / web / 20070129065355 / http : / / arc
+hive . gamespy .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
+\T1/lmr/m/n/12 Turn-Based.  []$\T1/lmtt/m/n/12 https : / / web . archive . org 
+/ web / 20081201113359 / http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
+\T1/lmtt/m/n/12 / / archive . gamespy . com / articles / february02 / strategyg
+ames05 /
+ []
+
+)) [24
 
 
 
 ]
 P\v {r}\'{\i }loha A.
-[15
+[25
 
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 178.
- [16
+
+Overfull \hbox (1.50484pt too wide) in paragraph at lines 178--178
+[]\T1/lmr/m/n/14.4 (p. []10[]): \T1/lmss/m/n/10.95 zkon-t-ro-lo-vat \T1/lmr/m/n
+/14.4 zkon-t-ro-lo-vat, ze opravdu Stron-ghold Crusa-|
+ []
+
+[26
 
 ]
 
@@ -965,7 +982,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
 Package rerunfilecheck Info: File `prace.out' has not changed.
-(rerunfilecheck)             Checksum: A173DB712E553C4A51CF8CE2A4AECC84;1776.
+(rerunfilecheck)             Checksum: A1123152E43AF27DCAFC5BAE9FFA80CB;3179.
 
 
 LaTeX Warning: There were undefined references.
@@ -973,13 +990,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 15778 strings out of 492616
- 216435 string characters out of 6132768
- 291073 words of memory out of 5000000
- 19236 multiletter control sequences out of 15000+600000
- 117246 words of font info for 93 fonts, out of 8000000 for 9000
+ 15924 strings out of 492616
+ 218429 string characters out of 6132768
+ 291663 words of memory out of 5000000
+ 19307 multiletter control sequences out of 15000+600000
+ 117564 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,37p,1170b,2327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,37p,1310b,2327s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2018/tex
 mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2018/texmf-dist/fonts/type1/p
 ublic/lm/lmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmcsc10.p
@@ -989,12 +1006,12 @@ ype1/public/lm/lmr17.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7
 .pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/201
 8/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2018/texmf-dist/fonts
 /type1/public/lm/lmri12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/l
-mss10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
-0.pfb>
-Output written on prace.pdf (20 pages, 694988 bytes).
+mss10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on prace.pdf (30 pages, 1304243 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 326 compressed objects within 4 object streams
- 107 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 571 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

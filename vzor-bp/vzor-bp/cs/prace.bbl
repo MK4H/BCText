@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,5 +10,49 @@
 \newblock \emph{Fundamentals of Game Design}.
 \newblock New Riders, 2 edition.
 \newblock ISBN 0-321-64337-2.
+
+\bibitem[{Blizzard Entertainment, Inc.}()]{site:warcraft3}
+{\sc {Blizzard Entertainment, Inc.}}
+\newblock {Warcraft} 3.
+\newblock \url{https://playwarcraft3.com/en-us/}.
+\newblock {Accessed:2019-03-18}.
+
+\bibitem[{Firaxis Games, Inc.}(2010)]{site:civ5}
+{\sc {Firaxis Games, Inc.}} (2010).
+\newblock {Civilisation V}.
+\newblock \url{https://civilization.com/civilization-5/}.
+
+\bibitem[Lantz(2008)]{site:gamasutra01}
+{\sc Lantz, J.} (2008).
+\newblock {Opinion: The Evolution of the Modern RTS}.
+\newblock \url{http://www.gamasutra.com/php-bin/news_index.php?story=18326}.
+
+\bibitem[O'Brien a~kol.(2017)O'Brien, Schonning, Dunn, Umbaugh a
+  Pakala]{site:aot}
+{\sc O'Brien, L., Schonning, N., Dunn, C., Umbaugh, B. {\rm a} Pakala, Y.}
+  (2017).
+\newblock {iOS App Architecture}.
+\newblock
+  \url{https://docs.microsoft.com/en-us/xamarin/ios/internals/architecture}.
+\newblock {Accessed:2019-04-08}.
+
+\bibitem[{Oxeye Game Studion}(2008)]{site:oxeye03}
+{\sc {Oxeye Game Studion}} (2008).
+\newblock {RTS Game-play Part 3: Build Options}.
+\newblock \url{http://www.oxeyegames.com/rts-game-play-part-3-build-options/}.
+
+\bibitem[Walker(2004{\natexlab{a}})]{site:stratg02}
+{\sc Walker, M.~H.} (2004{\natexlab{a}}).
+\newblock {Strategy Gaming: Part II}.
+\newblock
+  \url{https://web.archive.org/web/20070129065355/http://archive.gamespy.com/articles/february02/strategy02/}.
+\newblock [Online; seen 2019-04-01].
+
+\bibitem[Walker(2004{\natexlab{b}})]{site:stratg05}
+{\sc Walker, M.~H.} (2004{\natexlab{b}}).
+\newblock {Strategy Gaming: Part V -- Real-Time vs. Turn-Based}.
+\newblock
+  \url{https://web.archive.org/web/20081201113359/http://archive.gamespy.com/articles/february02/strategygames05/index.shtm}.
+\newblock [Online; seen 2019-04-01].
 
 \end{thebibliography}
