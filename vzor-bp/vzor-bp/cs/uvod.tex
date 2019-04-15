@@ -69,7 +69,7 @@ Tato funkce může zahrnovat neprostupné části mapy, několik různých druh�
 Při stavbě budov je pak často omezen typ terénu, na kterém je hráč schopen danou budovu postavit. 
 Vzhledem k uzavřenosti většiny RTS her je složité zjistit, jak je v každé z nich herní svět reprezentován, z pozorovatelného vnějšího chování lze ale odvodit několik základních druhů reprezentací. 
 
-Nejstarší a nejjednodušší reprezentací je rozdělení mapy na stejně velké dlaždice. Tyto dlaždice mohou být různých tvarů, nejčastěji jsou však čtvercové či hexagonální. Příkladem takovéto reprezentace je právě hra Stronghold Crusader, podle které chceme naši platformu modelovat. Jak je vidět na \ref{fig:tiletype}, herní mapa je viditelně rozdělena na stejně velké čtvercové dlaždice. Každá dlaždice má určen typ, který určuje její vzhled, což můžeme vidět části zvýrazněné červenou barvou. Vidíme zde řady pěti dlaždic stejného typu, oddělené vždy jednou dlaždicí pouštního typu. Můžeme si všimnout, že i dlaždice stejného typu mohou mít několik různých vzhledů. Typ dlaždice je dále využíván jako omezení při stavbě budov, kde například kamenolom lze postavit pouze na dostatečném počtu dlaždic typu kámen. Toto můžeme vidět v části označené modrou barvou, kde se hráč pokouší umístit budovu, která ovšem nemůže být postavena na dlaždicích typu mokřadu. Dlaždice tohoto typu jsou proto zvýrazněny červenou barvou v rámci půdorysu budovy. Dále můžeme na ukázce vidět dlaždice s rozdílnou výškou, tvořící nedostupnou oblast mapy.
+Nejstarší a nejjednodušší reprezentací je rozdělení mapy na stejně velké dlaždice. Tyto dlaždice mohou být různých tvarů, nejčastěji jsou však čtvercové či hexagonální. Příkladem takovéto reprezentace je právě hra Stronghold Crusader, podle které chceme naši platformu modelovat. Jak je vidět na obrázku  \ref{fig:tiletype}, herní mapa je viditelně rozdělena na stejně velké čtvercové dlaždice. Dále můžeme vidět, že je kamera orientována diagonálně vůči dlaždicím. Účelem této orientace je skrytí toho, že je mapa složena z dlaždic. Každá dlaždice je nějakého typu, který určuje její vzhled, což můžeme vidět v části zvýrazněné červenou barvou. Vidíme zde řady pěti dlaždic stejného typu, oddělené vždy jednou dlaždicí pouštního typu. Můžeme si všimnout, že i dlaždice stejného typu mohou mít několik různých vzhledů. Typ dlaždice je dále využíván jako omezení při stavbě budov, kde například kamenolom lze postavit pouze na dostatečném počtu dlaždic typu kámen. Toto můžeme vidět v části označené modrou barvou, kde se hráč pokouší umístit budovu, která ovšem nemůže být postavena na dlaždicích typu mokřadu. Dlaždice tohoto typu jsou proto zvýrazněny červenou barvou v rámci půdorysu budovy. Dále můžeme v horní části ukázky vidět dlaždice s rozdílnou výškou od okolního terénu, tvořící nedostupnou oblast mapy. Dále můžeme vidět pro jednotky neprostupný typ dlaždic obsahujících vodu. Uprostřed obrázku poté vidíme velkou oblast kamení a železa, kde oblast kamení ukazuje texturu kvalitně skrývající složení mapy z dlaždic, naopak na oblasti železa jasně vidíme hranice jednotlivých dlaždic, především ve směru z levého dolního rohu do pravého horního rohu.
 
 \begin{figure}[h]
 	\centering
@@ -102,7 +102,7 @@ Hlavním odlišujícím prvkem jednotek od budov je jejich schopnost pohybu. Poh
 Pohyb jednotek je nejčastěji řízen hráčem, ať už na úrovni příkazů jednotlivým jednotkám, tak na úrovni slučování jednotek do skupin a ovládání těchto skupin. Naše platforma bude umožňovat jak ovládání jednotlivých jednotek, tak celých skupin. Dále umožníme vývojáři přidat složitější ovládání, například slučování do permanentních formací a následné ovládání těchto formací. 
 
 \todo{obrazek}
-V některých hrách existují také jednotky, které se mohou své schopnosti pohybu vzdát a stát se budovu, buď dočasně, nebo trvale. Příkladem takovéto jednotky/budovy mohou být budovy Nočních elfů ze hry Warcraft 3 \citep{site:warcraft3nightelfs}. Tyto entity jsou stavěny jako budovy, tedy jsou umístěny do světa a postaveny jednotkou, stejně jako u všech ostatních ras. Následně je ale hráči umožněno, pomocí speciální ability těchto budov, změnit je dočasně na jednotky a pohybovat s nimi či je dokonce použít pro boj. V tomto módu ale ztrácí všechny funkce budov, tedy není možné je použít pro sběr surovin či produkci jednotek. Následně je možné znovu je zakořenit, čímž získávají zpět své funkce budovy.  Naše platforma by měla takovéto jednotky/budovy také podporovat. 
+V některých hrách existují také jednotky, které se mohou své schopnosti pohybu vzdát a stát se budovu, buď dočasně, nebo trvale. Příkladem takovéto jednotky/budovy mohou být budovy Nočních elfů ze hry Warcraft 3 \citep{site:warcraft3}. Tyto entity jsou stavěny jako budovy, tedy jsou umístěny do světa a postaveny jednotkou, stejně jako u všech ostatních ras. Následně je ale hráči umožněno, pomocí speciální ability těchto budov, změnit je dočasně na jednotky a pohybovat s nimi či je dokonce použít pro boj. V tomto módu ale ztrácí všechny funkce budov, tedy není možné je použít pro sběr surovin či produkci jednotek. Následně je možné znovu je zakořenit, čímž získávají zpět své funkce budovy.  Naše platforma by měla takovéto jednotky/budovy také podporovat. 
 
 \subsubsection{Umělá inteligence}
 
@@ -111,8 +111,15 @@ Ve velké části RTS her jsou jednotky schopny do určité míry autonomního r
 Jako příklad jednoduché umělé inteligence jednotek můžeme vzít hry Starcraft a Warcraft od společnosti Blizzard. Zde se jednotky chovají velice předvídatelně, splňují přesně hráčovi rozkazy a nedělají nic navíc, což umožnilo hře Starcraft II vytvořit jednu z prvních masivních e-sport scén na světě. \citep{site:gamasutra01}
 
 
-\todo{obrazek s chovanim}
-Dobrým příkladem jednotek s vysokou autonomií je série Company of Heroes, kde jednotky automaticky vyhledávají krytí, rozutečou se, pokud jsou pod palbou dělostřelectva, a v případě příliš velkých ztrát utečou z boje. Tato autonomie má ale svou cenu, a to v nepředvídatelnosti chování jednotek. Při jednoduché umělé inteligenci jednotek je hráč schopen předvídat jejich chování a využít ho pro svůj prospěch. Naopak při složité umělé inteligenci, jako právě v případě Company of Heroes, je hráč často nucen provést více pokusů při vydávání rozkazu, protože není schopen jednoduše odhadnout chování jednotky. Tato skutečnost činí hry často realističtější, protože simuluje chování reálných vojáků, kteří rozkaz interpretují a implementují podle svého, není ale vhodná pro souboje více hráčů, a už vůbec né více hráčů na profesionální úrovni.
+
+Dobrým příkladem jednotek s vysokou autonomií je série Company of Heroes, kde jednotky automaticky vyhledávají krytí, rozutečou se, pokud jsou pod palbou dělostřelectva, a v případě příliš velkých ztrát utečou z boje. Příklad tohoto chování můžeme vidět na obrázku \ref{fig:cohai}. V levé části vidíme skupinu jednotek, útočících na nepřátelskou jednotku mimo obraz ve směru červené šipky. Na prostřední části můžeme vidět, že po zničení nepřátel se jednotka začala přesouvat ve směru modré šipky, nejspíše pro získání lepšího krytí a lepší palebné pozice vůči zbývajícím nepřátelským jednotkám. Tento přesun je vykonán bez zásahu hráče, jak můžeme vidět díky modré ikoně nad jednotkou, která značí, že jednotka není zvolena hráčem a není jím tedy ovládána. Oproti tomu v pravé části můžeme vidět, že jednotka hráčem označena je díky bílé barvě ikony nad jednotkou. Vidíme, že hráč vydal rozkaz pro přesun zpět, zvýrazněný zeleně. Tato reakce byla vynucena umělou inteligencí jednotky, která se sama od sebe rozeběhla ve směru nepřátelských linií a donutila hráče reagovat. Jak vidíme, autonomie má svou cenu, a to v nepředvídatelnosti chování jednotek. Při jednoduché umělé inteligenci jednotek je hráč schopen předvídat jejich chování a využít ho pro svůj prospěch. Naopak při složité umělé inteligenci, jako právě v případě Company of Heroes, je hráč často nucen provést více pokusů při vydávání rozkazu, či vydávat rozkazy pro negaci automatického chování jednotky, protože není schopen toto chování jednoduše odhadnout. Tato skutečnost činí hry často realističtější, protože simuluje chování reálných vojáků, kteří rozkaz interpretují a implementují podle svého, není ale vhodná pro souboje více hráčů, a už vůbec né více hráčů na profesionální úrovni.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[scale=0.35]{cohai}
+	\caption{Ukázka autonomního chování jednotek ve hře Company of Heroes}
+	\label{fig:cohai}
+\end{figure}
 
 Platforma bude umožňovat vykonat libovolný kód v rámci každého výpočtu stavu každé jednotky, bude tedy pouze na vývojáři, zda se budou jednotky chovat jednoduše a předvídatelně, nebo zda budou vykonávat složité, avšak nepředvídatelné úkony bez hráčova vědomí. Pro ulehčení vývoje bude platforma poskytovat předpřipravené komponenty, umožňující základní úkony jako střelbu na cíl, pohyb po mapě a útok na blízko.
 
@@ -174,9 +181,16 @@ Jak již bylo řečeno v sekci o jednotkách \ref{sec:jednotky}, naše platforma
 
 Obrana bude podporována v podobě komponent, které umožní budovám jak útok na blízko, jako v případě pastí ve hře Stronghold Crusader, tak na dálku, jako například obranné věže ve hře Warcraft 3. 
 
-Dále v rámci funkce obrany umožňují v některých hrách budovy jednotkám pohybovat se po nich. Jak můžeme vidět na obrázku \ref{fig:unitsonbuildings} ze hry Stronghold Crusader, jednotky mohou být umístěny na hradbách, věžích, bránách či na tvrzi. Jak bylo řečeno v části o jednotkách, naše platforma bude umožňovat neomezený pohyb jednotkami, tedy i ve vzduchu, na budovách či skrz budovy. Protože se pohyb po budovách vyskytuje ve velkém množství RTS her, poskytne platforma možnost rozšíření terénu o plochu budov a komponentu umožňující chůzi po těchto plochách.
+Dále v rámci funkce obrany umožňují v některých hrách budovy jednotkám pohybovat se po nich. Jak můžeme vidět na obrázku \ref{fig:unitsonbuildings} ze hry Stronghold Crusader, jednotky mohou být umístěny na hradbách, věžích, bránách či na tvrzi. Na obrázku můžeme vidět různé typy jednotek, umístěné po obvodu hradu pro jeho obranu. Jak bylo řečeno v části o jednotkách, naše platforma bude umožňovat neomezený pohyb jednotkami, tedy i ve vzduchu, na budovách či skrz budovy. Protože se pohyb po budovách vyskytuje ve velkém množství RTS her, poskytne platforma možnost rozšíření terénu o plochu budov a komponentu umožňující chůzi po těchto plochách.
 
 Umístění na budovách poskytuje jednotkám ochranu před nepřátelskými jednotkami útočícími na blízko, které se musí nejdříve dostat do blízkosti cíle, než zaútočí. 
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics{unitsonbuildings}
+	\caption{Jednotky umístěné na budovách ve hře Stronghold Crusader}
+	\label{fig:unitsonbuildings}
+\end{figure}
 
 V některých hrách, \todo[zkontrolovat]{zkontrolovat, ze opravdu Stronghold Crusader neni jednou z nich}kde bohužel Stronghold Crusader není jednou z nich, poskytuje vyvýšení nad terén jednotkám větší dostřel. Tento efekt nemusí být omezen pouze na vyvýšení pomocí budov, ale lze ho dosáhnout už při rozdílných výškách terénu, na kterém je umístěn střelec a jeho cíl, obecněji na rozdílu výšky pozice střelce a cíle, pokud se střelec nemusí pohybovat přímo po terénu. Naše platforma bude podporovat realistické chování projektilů splňující tuto vlastnost. 
 
@@ -301,7 +315,21 @@ Naším hlavním cílem je umožnit tvůrcům umělé inteligence a programátor
 
 Protože implementace vykreslování a grafického rozhraní by byla nad rámec jedné bakalářské práce, využije naše platforma pro tyto účely existující herní engine UrhoSharp. Pro programátory následně  poskytneme přístup k relevantním částem UrhoSharp enginu.
 
-Platforma bude poskytovat ovládání kamery v několika módech. Tato funkcionalita bude potřebná již pro implementaci editoru, poskytneme ji tedy i tvůrcům her. Prvním módem bude klasická RTS top-down kamera, jakou můžete vidět na ukázce ze hry Company of Heroes \ref{fig:COHCam}. V této hře je oproti jiným starším RTS hrám jako Warcraft 3 nebo Age of Empires 3 s kamerou možné rotovat a přibližovat, což nám přijde jako velice atraktivní. Toto bychom rádi podporovali i v naší platformě. Druhým módem kamery bude tzv. ``free-float'', kdy kamera volně ``létá'' nad terénem. Třetím módem bude sledování jednotky, kdy se kamera bude chovat jako v prvním módu, její pohyb bude ale řízen pohybem jednotky.
+Platforma bude poskytovat ovládání kamery v několika módech. Tato funkcionalita bude potřebná již pro implementaci editoru, poskytneme ji tedy i tvůrcům her. Prvním módem bude klasická RTS top-down kamera, jakou můžete vidět na ukázce ze hry Company of Heroes \ref{fig:cohcamrts}. Kamera je umístěna v dostatečné vzdálenosti pro zobrazení celých skupin jednotek, skloněna zhruba 45 stupňů od horizontální polohy.  Ve hře Company of Heroes je ovšem oproti jiným starším RTS hrám jako Warcraft 3 nebo Age of Empires 3 s kamerou možné rotovat a přibližovat, což nám přijde jako velice atraktivní. Příklad tohoto pohybu kamery můžete vidět na obrázku \ref{fig:cohcamcin}, kde můžeme vidět pohled z Německé strany na vylodění na pláži Omaha. Toto bychom rádi podporovali i v naší platformě. Druhým módem kamery bude tzv. ``free-float'', kdy kamera volně ``létá'' nad terénem. Třetím módem bude sledování jednotky, kdy se kamera bude chovat jako v prvním módu, její pohyb bude ale řízen pohybem jednotky.
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[scale=0.2]{cohcamrts}
+	\caption{Klasický RTS pohled kamery ve hře Company of Heroes}
+	\label{fig:cohcamrts}
+\end{figure}
+
+\begin{figure}[h]	
+	\centering
+	\includegraphics[scale=0.2]{cohcamcin}
+	\caption{Co lze vidět s pouhým přibližováním a otáčením kamery hře Company of Heroes}
+	\label{fig:cohcamcin}
+\end{figure}
 
 \subsubsection{Moddeři}
 

@@ -11,32 +11,93 @@ Jak bylo zmíněno v předešlé sekci, je námi používaný herní engine mult
 
 \subsection{Mobilní platformy}
 Při implementaci pro mobilní platformy existuje několik problémů.
+Herní engine sice mnohé rozdíly platforem odstraňuje, existují ovšem oblasti, které i při využití prostředků enginu vyžadují pro každou platformu různý design.
 
 \subsubsection{Zobrazení a ovládání}
-Na mobilních platformách je mnohem bližší vztah mezi GUI, tedy grafických uživatelským rozhraním, a ovládáním. Oproti platformě PC, ať už Windows či Linux, je zde jediným možným vstupem dotyková obrazovka. GUI musí tedy sloužit jak pro zobrazení informací hráči, tak pro získání vstupu od hráče. 
-
-Druhým problémem je velikost obrazovky, která je u drtivé většiny mobilních zařízení mnohem menší než u PC. 
+Na mobilních platformách je mnohem bližší vztah mezi GUI, tedy grafických uživatelským rozhraním, a ovládání. Oproti platformě PC je zde jediným možným vstupem dotyková obrazovka. GUI musí tedy sloužit jak pro zobrazení informací hráči, tak pro získání vstupu od hráče. Dalším rozdílem je velikost obrazovky, která je obecně mnohem menší než u jiných platforem. I přes to, že herní engine umožňuje tvorbu grafického rozhraní použitelného na všech platformách, tyto dva rozdíly nutí nás i tvůrce her k výrazně odlišnému návrhu rozhraní pro mobilní platformy. Engine Urho3D poskytuje separátní vývojové prostředí, které je možné použít pro definici uživatelského rozhraní a export této definice do XML souboru, který je poté možné načíst za běhu pro zobrazení specifikovaného uživatelského rozhraní. 
 
 Oba tyto problémy nás vedou k separátní implementaci uživatelského rozhraní pro mobilní zařízení. Pro tuto implementaci jsme v naší práci připravily základní kostru, upustili jsme ovšem od konečné implementace z důvodu nedostatku času.
 
 \subsubsection{JIT vs. AOT}
-Dalším rozdílem, tentokrát s rozdílným chováním i mezi různými mobilními platformami, je jejich chování ke kódu. Na systémech Windows, Linux či Android je CIL kód přeložen za běhu pomocí JIT kompilátoru do instrukcí procesoru a následně vykonán. Oproti tomu systém \emph{iOS} zakazuje namapování stránek paměti zároveň pro zápis a pro vykonání, čímž znemožňuje jakýkoli JIT překlad. Z tohoto důvodu musí být všechny aplikace pro systém \emph{iOS} překládány tzv. AOT, tedy před tím, než jsou distribuovány k uživateli, přímo do instrukční sady cílového procesoru.\citep{site:aot} Tato skutečnost znemožňuje jednoduché nahrání assembly pomocí reflexe a nutila by nás k složitějšímu řešení. 
-Tvůrce balíčku by musel své kódy přeložit pro všechny možné architektury, a naše platforma by se následně při běhu musela podle platformy, na které běží, rozhodovat, kterou z assembly nahrát. Toto je jeden z důvodů, proč jsme upustily od implementace podpory mobilních zařízení.
+Dalším rozdílem, tentokrát s rozdílným chováním i mezi různými mobilními platformami, je jejich chování ke kódu aplikací. Jak víme, assembly pro platformu .NET či .NET Core obsahuje CIL kód, který je za běhu překládán do instrukční sady běžícího procesoru a následně vykonán. Tento systém se označuje jako ``\emph{Just in time}'' kompilace, zkráceně \emph{JIT}. Na systémech Windows, Linux, macOS či Android jsou .NET assembly spouštěny právě tímto způsobem. Oproti tomu systém \emph{iOS} zakazuje namapování stránek paměti zároveň pro zápis a pro vykonání, čímž znemožňuje jakoukoli JIT kompilaci. Z tohoto důvodu musí být všechny aplikace pro systém \emph{iOS} překládány tzv. ``\emph{Ahead of time}'',  zkráceně \emph{AOT}, tedy před tím, než jsou distribuovány k uživateli, přímo do instrukční sady cílového procesoru.\citep{site:aot} Tato skutečnost znemožňuje jednoduché nahrání assembly pomocí reflexe a nutila by nás k složitějšímu řešení. 
+Tvůrce balíčku by musel své kódy přeložit pro všechny možné architektury, a naše platforma by se následně při běhu musela podle platformy, na které běží, rozhodovat, kterou z assembly nahrát. Toto je další důvod, proč jsme upustily od podpory systému iOS.
 
 \subsubsection{Souborové systémy}
+Přístup k souborům distribuovaným spolu s aplikací, v našem případě s naší platformou, se odlišuje několika způsoby. Prvním je jejich otevření, či vůbec nalezení. Na platformě Android je každá aplikace distribuována jako .apk soubor. Apk je zip archiv, obsahující všechny soubory naší aplikace, od kódu, přes assety, po preference. Tento archiv je přímo namapován do stromu souborového systému viditelného z naší aplikace. Bohužel .NET filesystem API nedokáže s tímto mapováním pracovat, tedy není možné ho využít pro čtení těchto souborů. Řešením je využití Xamarin.Android zabalujícího Android Java API, které s tímto archivem dokáže pracovat.
+
+Toto nás nutí pro vyčlenění komponenty pro práci se soubory do zvláštní implementace pro každou platformu. 
+
+Dalším problémem je, že oproti PC nelze do těchto souborů zapisovat, ani za použití jiného API. Toto není sice dobrý design aplikace ani na PC platformách, kde by data specifická pro daného uživatele měla být umístěna do adresáře jako MyDocuments/\$app na Windows nebo /home/\$USER/\$app, protože adresář, v kterém je aplikace nainstalovaná, může být pro většinu uživatelů namapován pouze pro čtení, ale při tvorbě jednodušších aplikací je vcelku obvyklé vytvářet soubory v currentDir a zapisovat do nich.
 
 
+\subsubsection{Shrnutí}
+Velká část problému popsaných v této části je řešitelná a tato řešení jsme u každého problému nastínili. Naše platforma bude obsahovat kostru těchto řešení, nebude je ovšem implementovat úplně, především kvůli nedostatku času. 
+
+Některé problémy, jako například zákaz JIT kompilace na platformě iOS, jsou ovšem fatální pro myšlenku naší práce a byli jsme nuceni vyřadit tuto platformu i z možnosti budoucí podpory.
 
 
+\subsection{Platformy stolních počítačů}
+Naším hlavním cílem byla implementace naší platformy na operační systém Windows, především kvůli nejrozsáhlejší podpoře frameworku .NET, dále kvůli zřejmým výhodám uspořádání ovládání v podobě klávesnice a myši, a v neposlední řadě kvůli naší zkušenosti s tímto systémem.
 
-\section{Formát balíčků a jejich načítání}
+Díky využití multiplatformního herního enginu a frameworku .NET by nemělo být složité v budoucnu rozšířit podporu na distribuce Linuxu a macOS. Kvůli rozsáhlosti práce ovšem nebude tato podpora v námi odevzdané implementaci.
+
+\section{Formát a načítání dat}
 Důležitou součástí implementace naší platformy je systém balíčků pro distribuci vytvořených her. Tyto balíčky obsahují všechny součásti hry, od modelů a textur, přes logiku a umělou inteligenci, po mapy a úrovně vytvořené tvůrcem hry. Všechny tyto součásti musí naše platforma být schopna načíst za běhu a použít jak pro tvorbu nových map, tak pro hraní již existujících.
 
-\subsection{Základní struktura}
-Pro implementaci načítání balíčků musíme definovat strukturu, kterou budou balíčky splňovat, a podle které bude platforma určovat závislosti a typy souborů. 
+\subsection{Základní struktura balíčku}
+\todo[Rozdelit do subsekci]{Rozdelit do subsekci}
+Pro implementaci načítání balíčků musíme definovat strukturu, kterou budou balíčky splňovat, a podle které bude platforma určovat typy souborů a jejich závislosti. 
 
 První možností je založit strukturu balíčku na adresářové struktuře, kde každý balíček bude tvořen jedním adresářem obsahujícím další pevně specifikované podadresáře. Každý z podadresářů by obsahoval jeden z typů zdrojů, tedy 3D modely, textury, popis jednotek nebo skripty.
 
-Pro popis typů jednotek, budov, projektilů, dlaždic a nepřátel jsme se inspirovali v existujících hrách, ať už Civilisation V nebo Kerbal Space Program, a využili jsme XML soubor pro definici závislostí. Tento XML soubor 
- 
-Každý balíček je reprezentován jedním XML souborem. Tento soubor má formát daný pevným schématem a tento formát je kontrolován při každém načítání. 
+Pro popis typů jednotek, budov, projektilů, dlaždic a nepřátel jsme se inspirovali v existujících hrách, ať už Civilisation V nebo Kerbal Space Program, a využili jsme XML soubor pro definici závislostí. Dalšími možnostmi bylo využít formát JSON nebo dokonce definovat vlastní formát. Možnou výhodou formátu JSON je jeho expresivita, umožňující minimalizovat velikost souborů. Vzhledem k velikosti grafických dat jsme ovšem usoudily, že tato výhoda není dostačující pro volbu tohoto formátu. Pro formát XML jsme se rozhodli především kvůli vestavěné podpoře v platformě .NET a možnosti validace vůči schématu, která nám ulehčí od implementace vlastní validace. 
+
+Toto rozdělení ovšem vedlo ke dvěma problémům. Prvním bylo velké množství malých XML souborů, jejichž správa by ...
+Druhým problémem bylo přidávání balíčku do běžící hry. Hráč by mohl sice specifikovat adresář reprezentující balíček, následné ověření, zda je tento balíček korektní a lze ho nahrát nás nutí k procházení adresářové struktury, načítání mnoha souborů a k pokusům o jejich načtení a validaci.
+
+Řešením bylo vytvořit centrální XML soubor, definující celý balíček. Všechny typy jednotek, budov, projektilů, nepřátel, logik úrovní, všechny úrovně obsažené v balíčku a další jsou popsány v tomto souboru. Následně všechny assety, tedy modely, textury či assembly mohou být specifikovány relativní cestou vůči adresáři obsahujícímu tento soubor. Tímto způsobem lze replikovat předchozí uspořádání, kde je každý typ assetů rozdělen do vlastního adresáře, ale navíc tento způsob umožňuje tvůrci balíčku specifikovat vlastní rozdělení a umístění assetů. Zároveň toto uspořádání ulehčuje přidání balíčku a ověření jeho korektnosti, kde stačí, aby uživatel zadal cestu k tomuto souboru, a pouhou validací XML souboru podle schématu lze ověřit správnost.
+
+Tedy v konečném řešení je každý balíček reprezentován jedním XML souborem, který dále obsahuje relativní cesty, odkazující na zbylý obsah balíčku. Tento soubor má formát daný pevným schématem a tento formát je kontrolován při každém načítání. 
+
+\subsection{Formáty assetů}
+\subsubsection{3D assety}
+Podporované formáty 3D assetů jsou limitovány námi používaným herním enginem. Urho3D, a tedy i UrhoSharp, používá Open Asset Import Library (Assimp) \citep{site:assimp}, open source knihovnu podporující uniformní načítání assetů z různých formátů do jednoho standardního formátu, definovaného touto knihovnou.
+\subsubsection{Assembly}
+Náš systém balíčků poskytuje tvůrcům možnost vytvořit vlastní kód, který následně naše platforma za běhu načítá a spouští. Tento proces nás vedl k použití reflection, a k metodám Assembly.LoadFile a Assembly.LoadFrom. Rozdíl mezi těmito metodami vychází z různých contextů, do kterých jsou assembly nahrávány. 
+
+Existují tři/čtyři kontexty, do kterých jsou assembly nahrávány. Těmito kontexty jsou\citep{site:assemblyload}:
+\begin{itemize}
+	\item Default Load Context
+	\item Load-From Context
+	\item Reflection-only Context
+	\item No Context
+\end{itemize}
+
+Reflection-only context slouží pro zkoumání assembly pomocí reflection a znemožňuje vykonání kódu nahraného do tohoto kontextu, proto je pro nás nezajímavý a dále ho nebudeme rozebírat.
+
+Default Load Context je kontext, ve kterém je nahrána assembly naší aplikace a všechny její závislosti. Do tohoto kontextu lze manuálně nahrávat další assembly, pokud se tyto assembly nachází v GAC, applicationBase a PrivateBinPath. Assembly se zde identifikují jménem, které následně runtime hledá na všech zmíněných místech. Závislosti nahrávaných assembly jsou automaticky vyhledávány na těch samých místech.
+
+Load-From Context je kontext, do kterého nahrává assembly metoda Assembly.LoadFrom. Do tohoto kontextu lze nahrát assembly specifikováním cesty, lze tedy nahrávat mimo GAC, applicationBase a PrivateBinPath. Závislosti jsou hledány v Default Contextu, případně v adresáři, ze kterého byla assembly nahrána a nakonec na zmíněných cestách pro nahrávání do Default Contextu.
+
+No Context je využíván načítá  assemblies vygenerovaných pomocí reflection emit a Assembly.LoadFile. Navíc je to jediný způsob, jak načíst dvě verze té samé assembly. Pod pokličkou je vytvořen každé nahrané assembly zvláštní privátní kontext. Problémem tohoto kontextu je, že nejsou automaticky nahrávány závislosti. Tedy nezbývá nám nic jiného než závislosti nahrát manuálně před načtením assembly nebo odchytit AssemblyResolve event.
+
+V naší platformě používáme Assembly.LoadFrom, které řeší všechny naše problémy. Díky načítání závislostí ze zdrojového adresáře assembly mohou tvůrci her přibalit jimi používané knihovny do balíčku a ty budou následně při použití automaticky načteny.
+
+\todo{odnačítání assemblies}
+Problém může nastat, pokud dva nezávislé balíčky budou používat dvě různé verze té samé knihovny, které budou načteny z jejich adresáře. Pro vyřešení tohoto problému by bylo nutné naimplementovat zahazování načtených assembly.
+
+\subsection{Formát uložených úrovní}
+Ukládáním úrovně rozumíme serializaci aktuálního stavu hry a uložení takto serializovaných dat do souboru.
+
+Pro serializaci jsme měli několik požadavků. Hlavním z nich byla otevřenost schématu serializovaných dat. Účelem tohoto požadavku je umožnit tvorbu nezávislých editorů úrovní, importujících a exportujících náš formát dat. Dalším požadavkem byla minimalizace velikosti serializovaných dat, pro umožnění tvorby velkého množství úrovní a úložek hry. Spolu s předešlým požadavkem jde potom rychlost serializace a deserializace dat.
+
+První požadavek splňují serializace do XML, specifikovaného pomocí XSD schématu, a binární serializace popsaná pomocí interface description language. Příkladem takové binární serializace je formát Protocol-buffers od společnosti Google. 
+
+Druhý a třetí požadavek nás vedli k binární serializaci, která minimalizuje velikost dat a má nejrychlejší zpracování. Tímto jsme vybrali formát protocol buffers, který lze v jazyce C\# použít buď separátní specifikací message a následnou manuální serializací, nebo využitím knihovny Protobuf-net, která z anotací ve zdrojovém kódu generuje specifikaci message a  metody pro serializaci a deserializaci dat.
+
+Bohužel náš graf scény byl natolik složitý, že serializace pomocí Protobuf-net začínala být příliš složitá. Vzhledem k tomu, že samy Protocol buffers nepodporují reference, nemá ani Protobuf-net velkou podporu referencí. Přesto že by nejspíš naše data šli serializovat pomocí Protobuf-net, rozhodli jsme se použít manuální specifikaci a serializaci, která nám dává větší kontrolu nad postupem serializace a konečným formátem dat. To nám navíc umožnilo rozdělit specifikace do separátních souborů podle logických závislostí, okomentovat tyto specifikace a případně distribuovat separátně. 
+
+
+\section{Mapa}
+
+\section{Pathfinding}

@@ -11,49 +11,50 @@ A level-1 auxiliary file: zaver.aux
 A level-1 auxiliary file: literatura.aux
 The style file: czplainnat.bst
 Database file #1: literatura.bib
-Warning--I didn't find a database entry for "site:COH"
-Warning--I didn't find a database entry for "site:urhosharp"
-Warning--I didn't find a database entry for "site:urho3D"
+Warning--I didn't find a database entry for "site:urho3Ddesigner"
+Warning--to sort, need author or key in site:assimp
+Warning--empty year in site:assimp
 Warning--empty year in site:warcraft3
-You've used 8 entries,
+Warning--empty year in site:urho3D
+You've used 13 entries,
             2828 wiz_defined-function locations,
-            659 strings with 6204 characters,
-and the built_in function-call counts, 2677 in all, are:
-= -- 238
-> -- 118
-< -- 7
-+ -- 45
-- -- 36
-* -- 168
-:= -- 434
-add.period$ -- 29
-call.type$ -- 8
-change.case$ -- 36
-chr.to.int$ -- 7
-cite$ -- 17
-duplicate$ -- 118
-empty$ -- 250
-format.name$ -- 44
-if$ -- 562
+            678 strings with 6800 characters,
+and the built_in function-call counts, 4461 in all, are:
+= -- 394
+> -- 223
+< -- 10
++ -- 83
+- -- 69
+* -- 292
+:= -- 703
+add.period$ -- 43
+call.type$ -- 13
+change.case$ -- 62
+chr.to.int$ -- 12
+cite$ -- 31
+duplicate$ -- 188
+empty$ -- 408
+format.name$ -- 81
+if$ -- 944
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 2
-newline$ -- 53
-num.names$ -- 32
-pop$ -- 103
+newline$ -- 77
+num.names$ -- 48
+pop$ -- 177
 preamble$ -- 1
-purify$ -- 28
+purify$ -- 49
 quote$ -- 0
-skip$ -- 83
+skip$ -- 147
 stack$ -- 0
-substring$ -- 16
-swap$ -- 18
+substring$ -- 27
+swap$ -- 27
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 83
-warning$ -- 1
-while$ -- 24
+type$ -- 138
+warning$ -- 4
+while$ -- 36
 width$ -- 0
-write$ -- 113
-(There were 4 warnings)
+write$ -- 169
+(There were 5 warnings)
