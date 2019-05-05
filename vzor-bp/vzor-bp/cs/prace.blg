@@ -11,50 +11,60 @@ A level-1 auxiliary file: zaver.aux
 A level-1 auxiliary file: literatura.aux
 The style file: czplainnat.bst
 Database file #1: literatura.bib
-Warning--I didn't find a database entry for "site:urho3Ddesigner"
+Warning--I didn't find a database entry for "site:westwood"
+Warning--I didn't find a database entry for "site:cmdcnq"
+Warning--I didn't find a database entry for "site:blitzkrieg"
+Warning--I didn't find a database entry for "site:XCOM"
+Warning--I didn't find a database entry for "site:totalwar"
+Warning--I didn't find a database entry for "site:starcraft"
+Warning--I didn't find a database entry for "site:blizz"
+Warning--I didn't find a database entry for "site:hearthstone"
+Warning--I didn't find a database entry for "site:protobuf"
+Warning--to sort, need author or key in site:dune2
 Warning--to sort, need author or key in site:assimp
 Warning--empty year in site:assimp
+Warning--empty year in site:dune2
 Warning--empty year in site:warcraft3
 Warning--empty year in site:urho3D
-You've used 13 entries,
+You've used 18 entries,
             2828 wiz_defined-function locations,
-            678 strings with 6800 characters,
-and the built_in function-call counts, 4461 in all, are:
-= -- 394
-> -- 223
-< -- 10
-+ -- 83
-- -- 69
-* -- 292
-:= -- 703
-add.period$ -- 43
-call.type$ -- 13
-change.case$ -- 62
-chr.to.int$ -- 12
-cite$ -- 31
-duplicate$ -- 188
-empty$ -- 408
-format.name$ -- 81
-if$ -- 944
-int.to.chr$ -- 2
+            707 strings with 7732 characters,
+and the built_in function-call counts, 5876 in all, are:
+= -- 525
+> -- 263
+< -- 14
++ -- 101
+- -- 81
+* -- 373
+:= -- 907
+add.period$ -- 56
+call.type$ -- 18
+change.case$ -- 80
+chr.to.int$ -- 16
+cite$ -- 44
+duplicate$ -- 257
+empty$ -- 565
+format.name$ -- 97
+if$ -- 1257
+int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 2
-newline$ -- 77
-num.names$ -- 48
-pop$ -- 177
+newline$ -- 100
+num.names$ -- 64
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 63
 quote$ -- 0
-skip$ -- 147
+skip$ -- 203
 stack$ -- 0
-substring$ -- 27
-swap$ -- 27
+substring$ -- 38
+swap$ -- 38
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
-warning$ -- 4
-while$ -- 36
+type$ -- 193
+warning$ -- 6
+while$ -- 48
 width$ -- 0
-write$ -- 169
-(There were 5 warnings)
+write$ -- 224
+(There were 15 warnings)

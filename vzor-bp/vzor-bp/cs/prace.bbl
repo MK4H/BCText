@@ -1,13 +1,16 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[sit()]{site:assimp}
+\bibitem[sit({\natexlab{a}})]{site:assimp}
 Open-asset-importer-lib.
 \newblock \url{http://www.assimp.org/index.php}.
+
+\bibitem[sit({\natexlab{b}})]{site:dune2}
+\url{https://en.wikipedia.org/wiki/Dune_II}.
 
 \bibitem[Adams(2009)]{book:gamefund}
 {\sc Adams, E.} (2009).
@@ -26,10 +29,34 @@ Open-asset-importer-lib.
 \newblock {Civilisation V}.
 \newblock \url{https://civilization.com/civilization-5/}.
 
+\bibitem[{Firefly Studios}(2002)]{site:strongholdcrus}
+{\sc {Firefly Studios}} (2002).
+\newblock {Stronghold Crusader}.
+\newblock \url{https://fireflyworlds.com/games/strongholdcrusader/}.
+
+\bibitem[Google(2018)]{site:protobufdevguide}
+{\sc Google} (2018).
+\newblock {Developer Guide}.
+\newblock \url{https://developers.google.com/protocol-buffers/docs/overview}.
+
 \bibitem[Lantz(2008)]{site:gamasutra01}
 {\sc Lantz, J.} (2008).
 \newblock {Opinion: The Evolution of the Modern RTS}.
 \newblock \url{http://www.gamasutra.com/php-bin/news_index.php?story=18326}.
+
+\bibitem[Microsoft(2006)]{site:windowsappfiles}
+{\sc Microsoft} (2006).
+\newblock {Chapter 4: Data and Settings Management}.
+\newblock
+  \url{https://docs.microsoft.com/en-us/previous-versions/ms995853(v=msdn.10)}.
+
+\bibitem[Novak(2014)]{site:serializationspeed}
+{\sc Novak, M.} (2014).
+\newblock {Serialization Performance comparison (C\#/.NET) – Formats \&
+  Frameworks (XML–DataContractSerializer \& XmlSerializer, BinaryFormatter,
+  JSON– Newtonsoft \& ServiceStack.Text, Protobuf, MsgPack)}.
+\newblock
+  \url{https://maxondev.com/serialization-performance-comparison-c-net-formats-frameworks-xmldatacontractserializer-xmlserializer-binaryformatter-json-newtonsoft-servicestack-text/}.
 
 \bibitem[O'Brien a~kol.(2017)O'Brien, Schonning, Dunn, Umbaugh a
   Pakala]{site:aot}

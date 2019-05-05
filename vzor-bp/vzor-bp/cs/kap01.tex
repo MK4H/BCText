@@ -1,71 +1,106 @@
 \chapter{Analýza}
-V první kapitole jsem specifikovaly náš cíl, tedy implementaci platformy nad enginem UrhoSharp umožňující tvorbu RTS her a jejich distribuci. V této kapitole popíšeme problémy při implementaci platformy a jejich možná řešení.
+V první kapitole jsme specifikovali cíl naší práce, tedy implementaci platformy založené na herním enginu UrhoSharp umožňující tvorbu RTS her a jejich distribuci. V této kapitole popíšeme problémy při implementaci této platformy, námi zvolená řešení a jejich alternativy.
 
 \section{Herní engine}
-Jak jsme psali v Cílech práce (viz \ref{sec:cileprace}), naším cílem je vytvořit platformu za použití herního enginu UrhoSharp. ``UrhoSharp je multiplatformní 3D a 2D engine který může být použit pro tvorbu animovaných 3D a 2D scén za použití modelů, materiálů, světel a kamer''\citep{site:urhosharp}, jak říká úvodní stránka dokumentace enginu. Jak už název napovídá, UrhoSharp je .NET binding pro Urho3D engine \citep{site:urho3D}, což je opensource engine implementován v C++.
+Jak jsme napsali v sekci \ref{sec:cileprace} Cíle práce, naším cílem je vytvořit platformu za použití herního enginu UrhoSharp. \textit{``UrhoSharp je multiplatformní 3D a 2D engine který může být použit pro tvorbu animovaných 3D a 2D scén za použití modelů, materiálů, světel a kamer''}\citep{site:urhosharp}, jak říká úvodní stránka dokumentace enginu. Jak už název napovídá, UrhoSharp je .NET binding pro Urho3D engine\citep{site:urho3D}, což je opensource herní engine implementovaný v C++.
 
 \todo{porovnání s dalšími enginy}
 
-\section{Podporované platformy}
-Jak bylo zmíněno v předešlé sekci, je námi používaný herní engine multiplatformní. Bohužel každá z platforem má určitá specifika a restrikce, jak obecně, tak v rámci enginu, které nás nakonec vedli k podpoře pouze platformy Windows. 
+\section{Rozdíly systémů}
+Naším hlavním cílem byla implementace pro systém Windows především kvůli nejrozsáhlejší podpoře frameworku .NET, dále kvůli zřejmým výhodám uspořádání ovládání v podobě klávesnice a myši, a v neposlední řadě kvůli naší zkušenosti s tímto systémem. Návrh platformy by měl zároveň umožňovat co nejjednodušší rozšíření na další systémy. Herní engine a platforma .NET sice mnohé rozdíly systémů abstrahují a umožňují multiplatformní řešení, existují ovšem oblasti, které i při využití těchto abstrakcí vyžadují pro každý systém specifické řešení. Při implementaci koster řešení pro jiné systémy než systém Windows jsme narazili na rozdíly, specifika a omezení, které v této sekci přiblížíme. 
 
-\subsection{Mobilní platformy}
-Při implementaci pro mobilní platformy existuje několik problémů.
-Herní engine sice mnohé rozdíly platforem odstraňuje, existují ovšem oblasti, které i při využití prostředků enginu vyžadují pro každou platformu různý design.
+Při implementaci pro mobilní systémy existuje oproti PC systémům několik problémů, vycházejících především z rozdílných operačních systémů, velikostí obrazovek a způsobu přijímání vstupu od uživatele. Rozdíly mezi PC systémy (Windows, různé distribuce Linuxu, macOS) nejsou tak rozsáhlé, přesto se mohou vyskytnout problémy především kvůli různým implementacím platformy .NET používaných mimo systém Windows.
 
-\subsubsection{Zobrazení a ovládání}
-Na mobilních platformách je mnohem bližší vztah mezi GUI, tedy grafických uživatelským rozhraním, a ovládání. Oproti platformě PC je zde jediným možným vstupem dotyková obrazovka. GUI musí tedy sloužit jak pro zobrazení informací hráči, tak pro získání vstupu od hráče. Dalším rozdílem je velikost obrazovky, která je obecně mnohem menší než u jiných platforem. I přes to, že herní engine umožňuje tvorbu grafického rozhraní použitelného na všech platformách, tyto dva rozdíly nutí nás i tvůrce her k výrazně odlišnému návrhu rozhraní pro mobilní platformy. Engine Urho3D poskytuje separátní vývojové prostředí, které je možné použít pro definici uživatelského rozhraní a export této definice do XML souboru, který je poté možné načíst za běhu pro zobrazení specifikovaného uživatelského rozhraní. 
+\subsection{Zobrazení a ovládání}
+Na mobilních systémech je mnohem bližší vztah mezi GUI, tedy grafických uživatelským rozhraním, a ovládání. Oproti PC systémům je zde jediným možným vstupem dotyková obrazovka. GUI musí tedy sloužit jak pro zobrazení informací hráči, tak pro získání drtivé většiny vstupu od hráče. 
 
-Oba tyto problémy nás vedou k separátní implementaci uživatelského rozhraní pro mobilní zařízení. Pro tuto implementaci jsme v naší práci připravily základní kostru, upustili jsme ovšem od konečné implementace z důvodu nedostatku času.
+Dalším rozdílem je velikost obrazovky, která je obecně mnohem menší než u jiných systémů. I přes to, že herní engine umožňuje tvorbu grafického rozhraní použitelného na všech systémech, tyto dva rozdíly nutí nás i potencionální tvůrce her na naší platformě k výrazně odlišnému návrhu rozhraní pro mobilní systémy. Engine Urho3D poskytuje separátní vývojové prostředí, které je možné použít pro definici uživatelského rozhraní a export této definice do XML souboru, který je poté možné načíst za běhu hry pro zobrazení specifikovaného uživatelského rozhraní. Tento systém lze použít k definici uživatelských rozhraní specifického pro cílový systém dané verze aplikace. Stejně tak tvůrci balíčků budou nuceni vytvořit dvě různé definice uživatelského rozhraní, a následně distribuovat dvě separátní verze balíčku, nebo za běhu rozhodovat, kterou z verzí načíst a zobrazit.
 
-\subsubsection{JIT vs. AOT}
-Dalším rozdílem, tentokrát s rozdílným chováním i mezi různými mobilními platformami, je jejich chování ke kódu aplikací. Jak víme, assembly pro platformu .NET či .NET Core obsahuje CIL kód, který je za běhu překládán do instrukční sady běžícího procesoru a následně vykonán. Tento systém se označuje jako ``\emph{Just in time}'' kompilace, zkráceně \emph{JIT}. Na systémech Windows, Linux, macOS či Android jsou .NET assembly spouštěny právě tímto způsobem. Oproti tomu systém \emph{iOS} zakazuje namapování stránek paměti zároveň pro zápis a pro vykonání, čímž znemožňuje jakoukoli JIT kompilaci. Z tohoto důvodu musí být všechny aplikace pro systém \emph{iOS} překládány tzv. ``\emph{Ahead of time}'',  zkráceně \emph{AOT}, tedy před tím, než jsou distribuovány k uživateli, přímo do instrukční sady cílového procesoru.\citep{site:aot} Tato skutečnost znemožňuje jednoduché nahrání assembly pomocí reflexe a nutila by nás k složitějšímu řešení. 
-Tvůrce balíčku by musel své kódy přeložit pro všechny možné architektury, a naše platforma by se následně při běhu musela podle platformy, na které běží, rozhodovat, kterou z assembly nahrát. Toto je další důvod, proč jsme upustily od podpory systému iOS.
+Příklad těchto problémů a jedno z možných řešení můžeme vidět na obrázcích ze hry Hearthstone\citep{site:hearthstone}, kde  \ref{fig:hearthstonemobilegui} ukazuje mobilní verzi hry a \ref{fig:hearthstonepcgui} ukazuje PC verzi hry. Jak je na první pohled zřejmé, vlastní herní plocha sdílí v obou verzích stejný design. Jedním z rozdílů je pozice kamery, která je v mobilní verzi umístěna mnohem blíže herní ploše a ukazuje její menší výřez. Toto je jedno z možných řešení menší velikosti obrazovek mobilních zařízení, díky kterému budou herní prvky na těchto obrazovkách větší. Další součástí řešení problému velikosti obrazovek je velikost fontu, která je v mobilní verzi mnohem větší než u PC verze. K této změně musí být následně provedena odpovídající změna designu karet a oblastí, kde se písmo a číslice vyskytují. Pro řešení problému vstupu pomocí dotykové obrazovky můžeme vidět na \ref{fig:hearthstonemobilegui} dva různé stavy hry, kdy v prvním jsou hráčovy karty zmenšené a schované v pravém dolním rohu obrazovky, odkud jsou následně po ``kliknutí'' hráče přemístěny do centrální pozice a zvětšeny, čímž zakrývají velkou část herní plochy. Tento systém vytahovaní, přemisťování a zvětšování ovládacích prvků aplikace je obecným trendem v mobilních zařízeních, umožňujícím větší velikost ovládacích prvků za cenu většího počtu interakcí uživatele se zařízením pro dosažení stejného cíle než by bylo potřeba v PC verzích aplikací. 
 
-\subsubsection{Souborové systémy}
-Přístup k souborům distribuovaným spolu s aplikací, v našem případě s naší platformou, se odlišuje několika způsoby. Prvním je jejich otevření, či vůbec nalezení. Na platformě Android je každá aplikace distribuována jako .apk soubor. Apk je zip archiv, obsahující všechny soubory naší aplikace, od kódu, přes assety, po preference. Tento archiv je přímo namapován do stromu souborového systému viditelného z naší aplikace. Bohužel .NET filesystem API nedokáže s tímto mapováním pracovat, tedy není možné ho využít pro čtení těchto souborů. Řešením je využití Xamarin.Android zabalujícího Android Java API, které s tímto archivem dokáže pracovat.
+Jak můžeme vidět na příkladu ze hry Hearthstone\citep{site:hearthstone}, vedou nás problémy s velikostí obrazovek a dotykovým ovládáním k separátnímu designu a implementaci uživatelského rozhraní a některých částí her. Pro tuto separátní implementaci jsme v naší práci připravili základní kostru, upustili jsme ovšem od konečné implementace z důvodu nedostatku času.
 
-Toto nás nutí pro vyčlenění komponenty pro práci se soubory do zvláštní implementace pro každou platformu. 
+\subsection{JIT vs. AOT}
+Dalším rozdílem, tentokrát s rozdílným chováním i mezi jednotlivými mobilními systémy, je jejich chování k executable souborům aplikací. Jak píší Joseph a Ben Albahari\citep{book:cs7nutshell}, C\# a další jazyky cílené na platformu .NET se překládají do ``Common Intermediate Language'' (CIL), z kterého jsou obvykle až za běhu kompilovány do instrukční sady stroje, na kterém právě běží. Tento způsob se označuje jako ``Just-In-Time'' (JIT) kompilace, a je standardním způsobem spouštění .NET aplikací. V některých případech je ale použit jiný způsob, a to tzv.~``Ahead-of-time'' (AOT) kompilace, kdy je CIL kód ještě před distribucí zákazníkovy zkompilován do instrukční sady cílového stroje a následně je distribuována tato již zkompilovaná verze. Tento způsob je používán pro zrychlení odezvy při větších velikostech assembly, kde se předchází zpoždění v důsledku kompilace CIL kódu. Další využití, zde již ne pouze optimalizační, ale vynucené systémem samotným, je při distribuci na systém \emph{iOS}\citep{site:aot}. \todo{Popsat iOS restrikce na JIT}
 
-Dalším problémem je, že oproti PC nelze do těchto souborů zapisovat, ani za použití jiného API. Toto není sice dobrý design aplikace ani na PC platformách, kde by data specifická pro daného uživatele měla být umístěna do adresáře jako MyDocuments/\$app na Windows nebo /home/\$USER/\$app, protože adresář, v kterém je aplikace nainstalovaná, může být pro většinu uživatelů namapován pouze pro čtení, ale při tvorbě jednodušších aplikací je vcelku obvyklé vytvářet soubory v currentDir a zapisovat do nich.
+Tato skutečnost znemožňuje naší platformě jednoduché nahrání assembly pomocí reflexe a nutila by nás k složitějšímu řešení, které by se podle aktuálního systému muselo rozhodovat, kterou verzi assembly nahrát. Navíc by tento způsob nutil tvůrce balíčků přeložit svůj kód pro všechny možné architektury. Toto je důvod, proč jsme upustili od podpory systému iOS.
+
+\subsection{Souborové systémy}
+\label{sec:platmobfile}
+Každá aplikace má několik odlišných druhů souborů. Tyto druhy můžeme odvodit z pro ně navržených adresářů ve Windows API\citep{site:knownfolders}, či z tohoto API odvozené implementace v platformě .NET \citep{site:specialfolders}. Těmito druhy souborů jsou:
+\begin{itemize}
+	\item Roaming user data
+	\item Local user data
+	\item Private app data
+	\item Public app data
+	\item Static app data
+\end{itemize} 
+
+Některé z těchto druhů jsou na různých systémech sloučeny. Systém Android například nepodporuje multi user systémy, navíc tento systém neumožňuje sdílení souborů pomocí filesystému, které nahrazuje ``FileProvider'' API. Nemá zde tedy smysl mluvit o user data nebo public app data.  Všechna data aplikace jsou privátní a mohou být uložena na jednom ze dvou míst, internal nebo external storage. Pro specifická data jako nastavení poskytuje pak systém Android tzv.~Shared preferences a dále přístup k databázy. 
 
 
-\subsubsection{Shrnutí}
+Přístup k souborům, jak distribuovaným spolu s aplikací, tak vytvářených či přidávaných po instalaci aplikace, se mezi systémy odlišuje v několika ohledech.
+
+
+Přístup k souborům distribuovaným spolu s aplikací, v našem případě s naší platformou, se mezi systémy odlišuje několika způsoby. Prvním je jejich otevření, či vůbec nalezení. Na systému Android je každá aplikace distribuována jako \texttt{.apk} soubor. Formát Apk je zip archiv, obsahující všechny soubory naší aplikace, od kódu, přes assety, po preference. Tento archiv je v duchu Linuxového VFS přímo namapován do stromu souborového systému viditelného z naší aplikace. Bohužel .NET filesystem API nedokáže s tímto mapováním pracovat, tedy není možné ho využít pro čtení těchto souborů. Řešením je využití Xamarin.Android zabalujícího Android Java API, které s tímto archivem pracovat dokáže.
+
+Toto nás nutí pro vyčlenění komponenty pro práci se soubory do zvláštní implementace pro každý systém. 
+
+Dalším problémem je, že oproti PC systémům nelze do těchto souborů zapisovat, ani za použití jiného API. Toto není sice dobrý design aplikace ani na PC systémech, kde by data specifická pro daného uživatele měla být umístěna do adresáře jako \texttt{MyDocuments/\$app} na Windows nebo \texttt{/home/\$USER/\$app} na systému Linux, protože adresář, v kterém je aplikace nainstalovaná, může být pro většinu uživatelů namapován pouze pro čtení, ale při tvorbě jednodušších aplikací je vcelku obvyklé vytvářet soubory v aktuálním adresáři aplikace a zapisovat do nich.
+
+
+\subsection{Shrnutí}
 Velká část problému popsaných v této části je řešitelná a tato řešení jsme u každého problému nastínili. Naše platforma bude obsahovat kostru těchto řešení, nebude je ovšem implementovat úplně, především kvůli nedostatku času. 
 
-Některé problémy, jako například zákaz JIT kompilace na platformě iOS, jsou ovšem fatální pro myšlenku naší práce a byli jsme nuceni vyřadit tuto platformu i z možnosti budoucí podpory.
-
-
-\subsection{Platformy stolních počítačů}
-Naším hlavním cílem byla implementace naší platformy na operační systém Windows, především kvůli nejrozsáhlejší podpoře frameworku .NET, dále kvůli zřejmým výhodám uspořádání ovládání v podobě klávesnice a myši, a v neposlední řadě kvůli naší zkušenosti s tímto systémem.
-
-Díky využití multiplatformního herního enginu a frameworku .NET by nemělo být složité v budoucnu rozšířit podporu na distribuce Linuxu a macOS. Kvůli rozsáhlosti práce ovšem nebude tato podpora v námi odevzdané implementaci.
+Některé problémy, jako například zákaz JIT kompilace na systému iOS, jsou ovšem fatální pro myšlenku naší práce a byli jsme nuceni vyřadit tento systém i z možnosti budoucí podpory.
 
 \section{Formát a načítání dat}
 Důležitou součástí implementace naší platformy je systém balíčků pro distribuci vytvořených her. Tyto balíčky obsahují všechny součásti hry, od modelů a textur, přes logiku a umělou inteligenci, po mapy a úrovně vytvořené tvůrcem hry. Všechny tyto součásti musí naše platforma být schopna načíst za běhu a použít jak pro tvorbu nových map, tak pro hraní již existujících.
 
-\subsection{Základní struktura balíčku}
-\todo[Rozdelit do subsekci]{Rozdelit do subsekci}
-Pro implementaci načítání balíčků musíme definovat strukturu, kterou budou balíčky splňovat, a podle které bude platforma určovat typy souborů a jejich závislosti. 
+\subsection{Struktura balíčku}
+Pro implementaci načítání balíčků musíme definovat strukturu, kterou budou balíčky splňovat, a podle které bude platforma určovat typy souborů a jejich závislosti.
 
-První možností je založit strukturu balíčku na adresářové struktuře, kde každý balíček bude tvořen jedním adresářem obsahujícím další pevně specifikované podadresáře. Každý z podadresářů by obsahoval jeden z typů zdrojů, tedy 3D modely, textury, popis jednotek nebo skripty.
+První možností je založit strukturu balíčku na pevné adresářové struktuře, kde každý balíček bude tvořen jedním adresářem obsahujícím další pevně specifikovanou podadresářovou strukturu. Jednotlivé typy zdrojů, tedy 3D modely, textury, popis jednotek nebo skripty, by následně byly rozděleny a identifikovány touto adresářovou strukturou. Pro popis typů jednotek, budov, projektilů, dlaždic a nepřátel jsme se inspirovali v existujících hrách, ať už Civilisation V nebo Kerbal Space Program, a využili jsme XML soubor pro definici závislostí. Dalšími možnostmi bylo využít formát JSON nebo dokonce definovat vlastní formát. Možnou výhodou formátu JSON je jeho expresivita, umožňující minimalizovat velikost souborů. Vzhledem k velikosti grafických dat jsme ovšem usoudili, že tato výhoda není dostačující pro volbu tohoto formátu. Pro formát XML jsme se rozhodli především kvůli vestavěné podpoře v platformě .NET a možnosti validace vůči schématu, která nám ulehčí od implementace vlastní validace. 
 
-Pro popis typů jednotek, budov, projektilů, dlaždic a nepřátel jsme se inspirovali v existujících hrách, ať už Civilisation V nebo Kerbal Space Program, a využili jsme XML soubor pro definici závislostí. Dalšími možnostmi bylo využít formát JSON nebo dokonce definovat vlastní formát. Možnou výhodou formátu JSON je jeho expresivita, umožňující minimalizovat velikost souborů. Vzhledem k velikosti grafických dat jsme ovšem usoudily, že tato výhoda není dostačující pro volbu tohoto formátu. Pro formát XML jsme se rozhodli především kvůli vestavěné podpoře v platformě .NET a možnosti validace vůči schématu, která nám ulehčí od implementace vlastní validace. 
+Toto rozdělení ovšem vedlo ke dvěma problémům. Prvním bylo velké množství malých XML souborů, jejichž správa by mohla vést k častým omylům a následným chybně pojmenovaným souborům, špatným odkazům a chybějícím souborům. Druhým problémem bylo přidávání balíčku do běžící hry. Hráč by mohl sice specifikovat adresář reprezentující balíček, následné ověření, zda je tento balíček korektní a lze ho nahrát nás nutí k procházení adresářové struktury, načítání mnoha souborů a k pokusům o jejich načtení a validaci.
 
-Toto rozdělení ovšem vedlo ke dvěma problémům. Prvním bylo velké množství malých XML souborů, jejichž správa by ...
-Druhým problémem bylo přidávání balíčku do běžící hry. Hráč by mohl sice specifikovat adresář reprezentující balíček, následné ověření, zda je tento balíček korektní a lze ho nahrát nás nutí k procházení adresářové struktury, načítání mnoha souborů a k pokusům o jejich načtení a validaci.
-
-Řešením bylo vytvořit centrální XML soubor, definující celý balíček. Všechny typy jednotek, budov, projektilů, nepřátel, logik úrovní, všechny úrovně obsažené v balíčku a další jsou popsány v tomto souboru. Následně všechny assety, tedy modely, textury či assembly mohou být specifikovány relativní cestou vůči adresáři obsahujícímu tento soubor. Tímto způsobem lze replikovat předchozí uspořádání, kde je každý typ assetů rozdělen do vlastního adresáře, ale navíc tento způsob umožňuje tvůrci balíčku specifikovat vlastní rozdělení a umístění assetů. Zároveň toto uspořádání ulehčuje přidání balíčku a ověření jeho korektnosti, kde stačí, aby uživatel zadal cestu k tomuto souboru, a pouhou validací XML souboru podle schématu lze ověřit správnost.
+Řešením bylo vytvořit centrální XML soubor, definující celý balíček. Všechny typy jednotek, budov, projektilů, nepřátel, logik úrovní, všechny úrovně obsažené v balíčku a další jsou popsány v tomto souboru. Následně všechny assety, tedy modely, textury či assembly mohou být specifikovány relativní cestou vůči adresáři obsahujícímu tento soubor. Tímto způsobem lze replikovat předchozí uspořádání, kde je každý typ assetů rozdělen do vlastního adresáře, ale navíc tento způsob umožňuje tvůrci balíčku specifikovat vlastní rozdělení a umístění assetů. Zároveň toto uspořádání ulehčuje přidání balíčku a ověření jeho korektnosti, kde stačí, aby uživatel zadal cestu k tomuto souboru, a pouhou validací XML souboru podle schématu lze ověřit jeho správnost.
 
 Tedy v konečném řešení je každý balíček reprezentován jedním XML souborem, který dále obsahuje relativní cesty, odkazující na zbylý obsah balíčku. Tento soubor má formát daný pevným schématem a tento formát je kontrolován při každém načítání. 
 
-\subsection{Formáty assetů}
-\subsubsection{3D assety}
-Podporované formáty 3D assetů jsou limitovány námi používaným herním enginem. Urho3D, a tedy i UrhoSharp, používá Open Asset Import Library (Assimp) \citep{site:assimp}, open source knihovnu podporující uniformní načítání assetů z různých formátů do jednoho standardního formátu, definovaného touto knihovnou.
-\subsubsection{Assembly}
-Náš systém balíčků poskytuje tvůrcům možnost vytvořit vlastní kód, který následně naše platforma za běhu načítá a spouští. Tento proces nás vedl k použití reflection, a k metodám Assembly.LoadFile a Assembly.LoadFrom. Rozdíl mezi těmito metodami vychází z různých contextů, do kterých jsou assembly nahrávány. 
+\subsection{Data entit}
+Nyní již víme, jak data rozdělit a odkazovat se na ně. Následně musíme určit, jaká data budeme u jednotlivých typů entit požadovat a jaká data umožníme tvůrcům her si zde uložit. Naším cílem je umožnit tvůrcům specifikovat typy entit a k nim náležející data, definující vlastnosti těchto typů entit. Naše platforma bude vynucovat specifikaci nezbytných dat, jako jsou 3D model, textury, reference na assembly obsahující logiku, barva na minimapě a ikona pro zobrazení na liště jednotek. Protože jsou tyto vlastnosti společné většině entit v námi podporovaných typech her, nahrává naše platforma automaticky zde specifikované vlastnosti při vytvoření entity v herním světě a následně jsou tato data používána součástmi naší platformy. 
 
-Existují tři/čtyři kontexty, do kterých jsou assembly nahrávány. Těmito kontexty jsou\citep{site:assemblyload}:
+Dále umožníme přidat libovolná další data do XML elementu reprezentujícího typ entity pro použití tvůrcem hry v jeho implementaci logiky. Tato data nebude naše platforma nijak validovat, pouze je při vytvoření entity v herním světě předá při načítání její logiky. Bude pouze na tvůrci této logiky, aby získaná data validoval a následně z nich inicializoval logiku či použil systém výjimek k oznámení chyby v datech. Tento způsob implementace umožní tvůrcům vytvářet universálnější logiku, kterou budou schopni odlišit právě načítanými daty ze souboru. Alternativou k tomuto řešení by bylo všechna data, která zde tvůrci uloží do souboru, zahrnout do kódu logiky.\todo[Quote proč je to špatně]{Quote proč je to špatně}
+
+\subsection{Formáty assetů}
+V předešlé části jsme popsali, jak náš systém balíčků umožňuje zaznamenat umístění dat potřebných pro spuštění úrovně. V této části dále upřesníme, jakých formátů můžou tato data být a jaká jsou omezení při použití určitých formátů dat. Slovíčkem \textit{``asset''} označujeme jakákoli data, které může tvůrce hry poskytnout naší platformě a použít je při tvorbě hry. Tato data lze rozdělit do několika kategorií:
+\begin{itemize}
+	\item Grafická data
+	\item Logika a pluginy
+	\item Další
+\end{itemize}
+
+V následujících částech popíšeme jednotlivé kategorie dat, jejich formáty a využití.
+
+\subsubsection{Grafická data}
+Mezi grafická data patří především 3D modely a k nim náležící textury a animace. Podporované formáty těchto dat jsou omezeny námi používaným herním enginem Urho3D. Tento engine interně používá knihovnu Open Asset Import Library (Assimp)\citep{site:assimp}, která umožňuje načítání mnoha formátů 3D modelů do uniformní reprezentace, která je následně používána vlastním enginem.
+
+Mezi další grafická data používaná naší platformou jsou textury dlaždic. Jak blíže popíšeme v sekci o implementaci mapy\ref{sec:mapimpl}, je právě tato implementace jednou z hlavních služeb poskytovaných naší platformou tvůrcům her. Tato implementace také zahrnuje zobrazení mapy a dlaždic, ze kterých je složena. Každá dlaždice má svůj typ a z tohoto typu odvozen svůj vzhled. Každý z těchto typů dlaždic je, jak jsme popsali v sekci o struktuře balíčků \ref{sec:packagestructure}, definován XML elementem, obsahujícím právě cestu k textuře dlaždice a část této textury odpovídající tomuto typu dlaždice. Tuto část textury následně naše platforma zkopíruje do nové textury, obsahující textury všech typů dlaždic v aktivním balíčku. Proč takovouto akci děláme je blíže popsáno v sekci o implementaci mapy\ref{sec:mapimpl}. Pro tuto akci musí být textura manipulovatelná z našeho C\# kódu implementace platformy. Bohužel UrhoSharp wrapper v aktuální verzi neposkytuje přístup k Urho3D dekompresi textur, není tedy možné pro tento typ grafických dat použít komprimované formáty textur. 
+
+V neposlední řadě požaduje naše platforma pro každý druh entit texturu obsahující jejich ikony a pro každý typ entity specifikaci části textury odpovídající ikoně tohoto typu. Tyto data jsou požadovány pro základní implementace nástrojů editoru úrovní, které umožňují vytváření jednotek a budov v herním světě. Tyto nástroje vytvářejí tlačítka, kterými uživatel volí aktuálně umisťovanou jednotku či budovu. Vzhled těchto tlačítek je určen právě touto texturou.
+
+Tvůrci je umožněno využít celou sílu enginu UrhoSharp, může tedy do svého balíčku přibalit jakákoli grafická data podporovaná tímto enginem a následně je využít.
+
+\subsubsection{Logika a pluginy}
+Jedním z hlavních cílů naší práce bylo umožnit využití jazyka C\# jako skriptovacího jazyka a tím i jeho použití při tvorbě logiky hry a umělé inteligence nepřátel. Pro splnění tohoto požadavku musíme v našem programu zahrnout Common Language Runtime (CLR), tedy virtuální stroj platformy .NET, který přeloží CIL kód obsažený v assembly a umožní nám ho spustit. Nejjednodušším a nejlogičtějším řešením je využít C\# a .NET pro tvorbu vlastní platformy. V takovém případě budeme mít v našem procesu zaručeně obsaženou CLR a volání pluginů bude možné uskutečnit pomocí mechanismu Reflection. Tato myšlenka nás následně vedla k použití UrhoSharp jako herního enginu. 
+
+Alternativním řešením by bylo využití jiného jazyka pro tvorbu platformy, například C++, a následné využití C++/CLI pro vytvoření ``mostu'' mezi unmanaged kódem tvořícím platformu a managed kódem, umožňujícím nahrávání pluginů za běhu a jejich využití z unmanaged kódu. Tuto alternativu jsme zavrhli především kvůli složitosti implementace. Při použití herního enginu připraveného pro .NET, jako je právě UrhoSharp, můžeme tvůrcům pluginů poskytnout plnou sílu tohoto enginu a umožnit jim využít všechny jeho schopnosti bez našeho zásahu. V případě využití enginu v jiném jazyce by musel náš ``most'' explicitně implementovat všechny schopnosti enginu, které by jsme chtěli poskytnout tvůrcům pluginů a přeposílat každý požadavek na jeho implementaci v enginu.
+
+Obě předešlá řešení využívají systém ``Reflection'' pro načítání tvůrcem dodaných assembly, nalezení tříd odpovídajících jednotlivým jednotkám, vytvoření instancí těchto tříd a jejich následné použití. Pojmem ``Reflection'' označujeme sadu tříd umožňující introspekci .NET assembly, poskytující informace o třídách obsažených v těchto assemblies, jako například implementovaná rozhraní, poskytované metody či obsažené atributy. Dále ``Reflection'' umožňuje načítání existujících assembly za běhu programu, či dokonce generování nových assembly. 
+
+Assembly jsou identifikovány jménem, verzí, \textit{culture} a veřejným klíčem. 
+Při načítání je assembly nahrána do tzv.~kontextu. Existují čtyři kontexty, do kterých jsou assembly nahrávány. Těmito kontexty jsou\citep{site:assemblyload}:
 \begin{itemize}
 	\item Default Load Context
 	\item Load-From Context
@@ -73,31 +108,65 @@ Existují tři/čtyři kontexty, do kterých jsou assembly nahrávány. Těmito 
 	\item No Context
 \end{itemize}
 
-Reflection-only context slouží pro zkoumání assembly pomocí reflection a znemožňuje vykonání kódu nahraného do tohoto kontextu, proto je pro nás nezajímavý a dále ho nebudeme rozebírat.
+\textbf{Reflection-only} context slouží pro zkoumání assembly pomocí reflection a znemožňuje vykonání kódu nahraného do tohoto kontextu, proto je pro nás nezajímavý a dále ho nebudeme rozebírat.
 
-Default Load Context je kontext, ve kterém je nahrána assembly naší aplikace a všechny její závislosti. Do tohoto kontextu lze manuálně nahrávat další assembly, pokud se tyto assembly nachází v GAC, applicationBase a PrivateBinPath. Assembly se zde identifikují jménem, které následně runtime hledá na všech zmíněných místech. Závislosti nahrávaných assembly jsou automaticky vyhledávány na těch samých místech.
+\textbf{Default Load Context} je kontext, ve kterém je nahrána assembly naší aplikace a všechny její závislosti. Do tohoto kontextu lze manuálně nahrávat další assembly, pokud se tyto assembly nachází v \emph{GAC}, \emph{applicationBase} nebo \emph{PrivateBinPath}. Pokud je identická assembly již nahrána, nenahrává se znovu ale vrací se reference na již nahranou assembly. Závislosti nahrávaných assembly jsou automaticky vyhledávány na těch samých místech.
 
-Load-From Context je kontext, do kterého nahrává assembly metoda Assembly.LoadFrom. Do tohoto kontextu lze nahrát assembly specifikováním cesty, lze tedy nahrávat mimo GAC, applicationBase a PrivateBinPath. Závislosti jsou hledány v Default Contextu, případně v adresáři, ze kterého byla assembly nahrána a nakonec na zmíněných cestách pro nahrávání do Default Contextu.
+\textbf{Load-From Context} je kontext, do kterého nahrává assembly metoda Assembly.LoadFrom. Do tohoto kontextu lze nahrát assembly specifikováním cesty navíc ke čtyřem výše zmíněným vlastnostem, a tato cesta je přidána jako pátá identifikační vlastnost assembly. Tímto způsobem lze nahrávat assembly ležící mimo GAC, applicationBase a PrivateBinPath. Závislosti jsou hledány v Default Contextu, případně v adresáři, ze kterého byla assembly nahrána a nakonec na zmíněných cestách pro nahrávání do Default Contextu.
 
-No Context je využíván načítá  assemblies vygenerovaných pomocí reflection emit a Assembly.LoadFile. Navíc je to jediný způsob, jak načíst dvě verze té samé assembly. Pod pokličkou je vytvořen každé nahrané assembly zvláštní privátní kontext. Problémem tohoto kontextu je, že nejsou automaticky nahrávány závislosti. Tedy nezbývá nám nic jiného než závislosti nahrát manuálně před načtením assembly nebo odchytit AssemblyResolve event.
+\textbf{No Context} je využíván při načítání  assemblies vygenerovaných pomocí reflection emit a Assembly.LoadFile. Navíc je to jediný způsob, jak načíst dvě verze té samé assembly. Pod pokličkou je vytvořen každé nahrané assembly zvláštní privátní kontext. Problémem tohoto kontextu je, že nejsou automaticky nahrávány závislosti. Tedy nezbývá nic jiného než závislosti nahrát manuálně před načtením assembly nebo odchytit AssemblyResolve event.
 
-V naší platformě používáme Assembly.LoadFrom, které řeší všechny naše problémy. Díky načítání závislostí ze zdrojového adresáře assembly mohou tvůrci her přibalit jimi používané knihovny do balíčku a ty budou následně při použití automaticky načteny.
+V naší platformě používáme Assembly.LoadFrom. Tento způsob nám umožňuje nahrávat assembly z libovolných podadresářů uvnitř tvůrci tvořených balíčků, bez omezení na jejich adresářovou strukturu. Díky načítání závislostí ze zdrojového adresáře assembly mohou tvůrci her přibalit jimi používané knihovny do balíčku a ty budou následně při použití automaticky načteny.
+
+Druhou možností by bylo vynutit tvůrce balíčků specifikovat cesty, ve kterých se mohou vyskytovat assembly, a tyto cesty následně přidat do PrivateBinPath. Tento přístup by ovšem omezil místa, kde může naše platforma mít umístěné balíčky, na podstrom adresáře, ve kterém je umístěna naše platforma. Jak jsme psali v části o platformách a souborových systémech\ref{sec:platmobfile}, není možné na všech platformách umístit balíčky do adresářového podstromu aplikace. Na platformách, na kterých to možné je, to poté není dobrý design umísťovat zapisovatelná a proměnlivá data do podstromu adresáře aplikace, protože uživatel nemusí mít práva do tohoto adresáře a jeho podstromu zapisovat, jak říká tento, i když již trochu zastaralý, návod pro umisťování souborů v systému Windows\citep{site:windowsappfiles}.
 
 \todo{odnačítání assemblies}
-Problém může nastat, pokud dva nezávislé balíčky budou používat dvě různé verze té samé knihovny, které budou načteny z jejich adresáře. Pro vyřešení tohoto problému by bylo nutné naimplementovat zahazování načtených assembly.
+Naše aktuální implementace nijak neřeší zahazování assemblies ve chvíli, kdy hra končí a hráč načítá jiný balíček. Vzhledem k velikosti assembly v paměti by ale toto neměl být při běžných počtech používaných balíčků problém. V budoucnu by bylo možné využít systému AppDomain, čímž by jsme oddělili balíčky od sebe a umožnili jejich zahazování nepoužívaných assemblies. Toto řešení by ale mohlo narazit na problém při rozšiřování na další platformy a implementace platformy .NET, které nemusí systém AppDomain podporovat. 
 
 \subsection{Formát uložených úrovní}
 Ukládáním úrovně rozumíme serializaci aktuálního stavu hry a uložení takto serializovaných dat do souboru.
 
-Pro serializaci jsme měli několik požadavků. Hlavním z nich byla otevřenost schématu serializovaných dat. Účelem tohoto požadavku je umožnit tvorbu nezávislých editorů úrovní, importujících a exportujících náš formát dat. Dalším požadavkem byla minimalizace velikosti serializovaných dat, pro umožnění tvorby velkého množství úrovní a úložek hry. Spolu s předešlým požadavkem jde potom rychlost serializace a deserializace dat.
+Pro serializaci jsme měli několik požadavků. 
+\begin{enumerate}
+	\item Otevřenost schématu serializovaných dat
+	\item Minimalizace velikosti serializovaných dat
+	\item Rychlost serializace a deserializace
+\end{enumerate}
 
-První požadavek splňují serializace do XML, specifikovaného pomocí XSD schématu, a binární serializace popsaná pomocí interface description language. Příkladem takové binární serializace je formát Protocol-buffers od společnosti Google. 
+Účelem prvního požadavku je umožnit tvorbu nezávislých editorů úrovní, importujících a exportujících náš formát dat. Tento požadavek splňují serializace do XML, specifikovaného pomocí XSD schématu, a binární serializace popsaná pomocí interface description language. Příkladem takové binární serializace je formát Protocol buffers\citep{site:protobuf} od společnosti Google. Z binárních serializačních frameworků je pro jazyk C\# nejlépe podporován právě formát Protocol buffers, ať už použit sám o~sobě či za podpory knihovny protobuf-net, umožňující automatickou generaci IDL souborů z anotací ve zdrojovém kódu. 
 
-Druhý a třetí požadavek nás vedli k binární serializaci, která minimalizuje velikost dat a má nejrychlejší zpracování. Tímto jsme vybrali formát protocol buffers, který lze v jazyce C\# použít buď separátní specifikací message a následnou manuální serializací, nebo využitím knihovny Protobuf-net, která z anotací ve zdrojovém kódu generuje specifikaci message a  metody pro serializaci a deserializaci dat.
+Druhý a třetí požadavek nás vedl k binární serializaci, která minimalizuje velikost dat a má nejrychlejší zpracování. Tuto skutečnost sděluje jak dokumentace Protocol buffers\citep{site:protobufdevguide}, tak ji můžeme vidět experimentálně podloženou v~benchmarku Maxima Novaka\citep{site:serializationspeed}. Tímto jsme vybrali formát Protocol buffers, který lze v jazyce C\# použít buď separátní specifikací message a následnou manuální serializací, nebo využitím knihovny Protobuf-net, která z anotací ve zdrojovém kódu generuje specifikaci message a  metody pro serializaci a deserializaci dat.
 
 Bohužel náš graf scény byl natolik složitý, že serializace pomocí Protobuf-net začínala být příliš složitá. Vzhledem k tomu, že samy Protocol buffers nepodporují reference, nemá ani Protobuf-net velkou podporu referencí. Přesto že by nejspíš naše data šli serializovat pomocí Protobuf-net, rozhodli jsme se použít manuální specifikaci a serializaci, která nám dává větší kontrolu nad postupem serializace a konečným formátem dat. To nám navíc umožnilo rozdělit specifikace do separátních souborů podle logických závislostí, okomentovat tyto specifikace a případně distribuovat separátně. 
 
 
-\section{Mapa}
+\section{Reprezentace stavu hry}
+V předchozí části jsme popsali, jak je stav hry serializován a následně uložen. V této části popíšeme, jak je stav hry reprezentován za běhu, jaké rozhraní poskytujeme tvůrcům hry pro zjištění aktuálního stavu a jak je aktuální stav zobrazován hráči.
 
-\section{Pathfinding}
+\subsection{Mapa}
+\label{sec:mapimpl}
+Jednou z hlavních funkcionalit poskytovaných naší platformou tvůrcům logiky her je reprezentace mapy a možnost dotazovat se na její stav. 
+
+\subsubsection{Logické rozdělení}
+Existuje několik způsobů, jakými lze rozdělit mapu.
+
+\subsubsection{Grafická reprezentace} 
+Jak jsme popsali v předešlé části, mapa je obdélníkového tvaru, rozdělena na čtvercové dlaždice o velikosti 1x1. Existují dva základní druhy možných implementaceí grafického zobrazení takovéto mapy.
+
+První možností je vytvoření textury o velikost k*n a k*m, kde n a m jsou rozměry mapy a k je velikost čtvercové textury typu dlaždice. V takovéto textuře mají dlaždice disjunktní části textury, lze tedy vytvořit různé přechody mezi typy dlaždic a provést další úpravy na celkovém vzhledu herní mapy. Nevýhodou je především velikost takovéto textury, která v závislosti na velikostech textur typů dlaždic může dosáhnout stovek MiB až jednotek GiB. Takováto velikost textury by byla neúnosná i pro slabší počítače, nemluvě o mobilních zařízeních. 
+
+Druhou možností, úspornější na paměť, je vytvořit jednu texturu, ve které bude textura každého typu dlaždic právě jednou. Velikost takovéto textury závisí pouze na počtu typů dlaždic, ne na velikosti mapy. I když typů dlaždic může být neomezeně, nepředpokládáme, že by tento počet přesáhl malé stovky. Při takovéto implementaci je poté každá dlaždice určitého typu namapována na to samé místo, tedy všechny dlaždice stejného typu mají z principu identický vzhled. Vzhledem k výrazné úspoře paměti jsme zvolili právě tuto možnost pro naši implementaci.
+
+V závislosti na zvolené strategii tvorby textury musíme zvolit, jak reprezentovat jednotlivé dlaždice z pohledu grafických ``vertexů'', neboli vrcholů. Nejjednodušším řešením je reprezentovat každou dlaždici jako separátní čtveřici vrcholů. Takováto reprezentace nám umožňuje vrcholy reprezentující každou dlaždici separátně namapovat na část textury odpovídající danému typu. 
+
+
+\section{Poskytované služby}
+Naší platformou podporovaný druh her často požaduje služby. Platforma je proto implementuje a poskytuje tvůrcům her.
+
+\subsection{Pathfinding}
+
+\subsection{Projektily}
+Simulace projektilů je častým problémem v RTS hrách, tedy v typu her, který naše platforma chce podporovat. Rozhodli jsme se proto implementovat tuto službu, umožňující výpočet počátečního směru projektilu při střelbě na pohyblivý cíl, simulaci letu se stálou gravitací a detekci zásahů.
+
+\subsubsection{Typy projektilů}
+Existuje několik typů simulací projektilů. \citep{site:projectilecalc}

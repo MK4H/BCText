@@ -110,4 +110,44 @@
   howpublished = {\url{http://www.assimp.org/index.php}},
 }
 
+@Misc{site:protobufdevguide,
+  author       = {Google},
+  title        = {{Developer Guide}},
+  howpublished = {\url{https://developers.google.com/protocol-buffers/docs/overview}},
+  month        = aug,
+  year         = {2018},
+}
+
+@Misc{site:serializationspeed,
+  author       = {Maxim Novak},
+  title        = {{Serialization Performance comparison (C#/.NET) – Formats \& Frameworks (XML–DataContractSerializer \& XmlSerializer, BinaryFormatter, JSON– Newtonsoft \& ServiceStack.Text, Protobuf, MsgPack)}},
+  howpublished = {\url{https://maxondev.com/serialization-performance-comparison-c-net-formats-frameworks-xmldatacontractserializer-xmlserializer-binaryformatter-json-newtonsoft-servicestack-text/}},
+  month        = apr,
+  year         = {2014},
+}
+
+@Misc{site:strongholdcrus,
+  author       = {{Firefly Studios}},
+  title        = {{Stronghold Crusader}},
+  howpublished = {\url{https://fireflyworlds.com/games/strongholdcrusader/}},
+  month        = sep,
+  year         = {2002},
+}
+
+@Misc{,
+  author       = {{Blizzard Entertainment, Inc.}},
+  title        = {Starcraft 2},
+  howpublished = {\url{https://starcraft2.com/en-us/}},
+  month        = jul,
+  year         = {2010},
+}
+
+@Misc{site:windowsappfiles,
+  author       = {Microsoft},
+  title        = {{Chapter 4: Data and Settings Management}},
+  howpublished = {\url{https://docs.microsoft.com/en-us/previous-versions/ms995853(v=msdn.10)}},
+  month        = jun,
+  year         = {2006},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
