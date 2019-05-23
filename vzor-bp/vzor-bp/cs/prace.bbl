@@ -1,16 +1,14 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[sit({\natexlab{a}})]{site:assimp}
-Open-asset-importer-lib.
+\bibitem[sit()]{site:assimp}
+{Open-Asset-Importer-Lib}.
 \newblock \url{http://www.assimp.org/index.php}.
-
-\bibitem[sit({\natexlab{b}})]{site:dune2}
-\url{https://en.wikipedia.org/wiki/Dune_II}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[Adams(2009)]{book:gamefund}
 {\sc Adams, E.} (2009).
@@ -18,37 +16,107 @@ Open-asset-importer-lib.
 \newblock New Riders, 2 edition.
 \newblock ISBN 0-321-64337-2.
 
-\bibitem[{Blizzard Entertainment, Inc.}()]{site:warcraft3}
-{\sc {Blizzard Entertainment, Inc.}}
+\bibitem[Albahari(2017)]{book:cs7nutshell}
+{\sc Albahari, J.} (2017).
+\newblock \emph{C\# 7.0 in a Nutshell}.
+\newblock O'Reilly UK Ltd.
+\newblock ISBN 978-1-491-98765-0.
+\newblock URL
+  \url{https://www.ebook.de/de/product/29084295/joseph_albahari_c_7_0_in_a_nutshell.html}.
+
+\bibitem[Alsedà()]{site:astarpseudoalseda}
+{\sc Alsedà, L.}
+\newblock {A* Algorithm pseudocode}.
+\newblock \url{http://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Apple Inc.}(2019)]{book:iossecurityguide}
+{\sc {Apple Inc.}} (2019).
+\newblock {iOS Security}.
+\newblock
+  \url{https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Blizzard Entertainment, Inc.}(2002)]{site:warcraft3}
+{\sc {Blizzard Entertainment, Inc.}} (2002).
 \newblock {Warcraft} 3.
 \newblock \url{https://playwarcraft3.com/en-us/}.
-\newblock {Accessed:2019-03-18}.
+\newblock [Online; accessed 2019-03-18].
+
+\bibitem[{Blizzard Entertainment, Inc.}(2010)]{site:starcraft}
+{\sc {Blizzard Entertainment, Inc.}} (2010).
+\newblock Starcraft 2.
+\newblock \url{https://starcraft2.com/en-us/}.
+\newblock [Online; accessed 2019-03-18].
+
+\bibitem[{Blizzard Entertainment, Inc.}(2014)]{site:hearthstone}
+{\sc {Blizzard Entertainment, Inc.}} (2014).
+\newblock Hearthstone.
+\newblock \url{https://playhearthstone.com/en-us/}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[{Firaxis Games, Inc.}(2010)]{site:civ5}
 {\sc {Firaxis Games, Inc.}} (2010).
 \newblock {Civilisation V}.
 \newblock \url{https://civilization.com/civilization-5/}.
+\newblock [Online; accessed 2019-03-18].
 
 \bibitem[{Firefly Studios}(2002)]{site:strongholdcrus}
 {\sc {Firefly Studios}} (2002).
 \newblock {Stronghold Crusader}.
 \newblock \url{https://fireflyworlds.com/games/strongholdcrusader/}.
+\newblock [Online; accessed 2019-03-18].
 
 \bibitem[Google(2018)]{site:protobufdevguide}
 {\sc Google} (2018).
 \newblock {Developer Guide}.
 \newblock \url{https://developers.google.com/protocol-buffers/docs/overview}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[Google(2019{\natexlab{a}})]{site:androiddata}
+{\sc Google} (2019{\natexlab{a}}).
+\newblock {Data and file storage overview}.
+\newblock \url{https://developer.android.com/guide/topics/data/data-storagel}.
+\newblock [Online; accessed 2019-05-18].
+
+\bibitem[Google(2019{\natexlab{b}})]{site:protobuf}
+{\sc Google} (2019{\natexlab{b}}).
+\newblock {Protocol Buffers}.
+\newblock \url{https://developers.google.com/protocol-buffers/}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[Lantz(2008)]{site:gamasutra01}
 {\sc Lantz, J.} (2008).
 \newblock {Opinion: The Evolution of the Modern RTS}.
 \newblock \url{http://www.gamasutra.com/php-bin/news_index.php?story=18326}.
+\newblock [Online; accessed 2019-04-01].
+
+\bibitem[Microsoft({\natexlab{a}})]{site:knownfolders}
+{\sc Microsoft}.
+\newblock {KNOWNFOLDERID}.
+\newblock
+  \url{https://docs.microsoft.com/en-us/windows/desktop/shell/knownfolderid}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[Microsoft({\natexlab{b}})]{site:specialfolders}
+{\sc Microsoft}.
+\newblock {Environment.SpecialFolder Enum}.
+\newblock
+  \url{https://docs.microsoft.com/en-us/dotnet/api/system.environment.specialfolder?view=netframework-4.8}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[Microsoft(2006)]{site:windowsappfiles}
 {\sc Microsoft} (2006).
 \newblock {Chapter 4: Data and Settings Management}.
 \newblock
   \url{https://docs.microsoft.com/en-us/previous-versions/ms995853(v=msdn.10)}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Monkey Squad, S.A. de C.V.}(2015)]{site:ksp}
+{\sc {Monkey Squad, S.A. de C.V.}} (2015).
+\newblock {Kerbal Space Program}.
+\newblock \url{https://www.kerbalspaceprogram.com/}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[Novak(2014)]{site:serializationspeed}
 {\sc Novak, M.} (2014).
@@ -57,6 +125,7 @@ Open-asset-importer-lib.
   JSON– Newtonsoft \& ServiceStack.Text, Protobuf, MsgPack)}.
 \newblock
   \url{https://maxondev.com/serialization-performance-comparison-c-net-formats-frameworks-xmldatacontractserializer-xmlserializer-binaryformatter-json-newtonsoft-servicestack-text/}.
+\newblock [Online; accessed 2019-05-15].
 
 \bibitem[O'Brien a~kol.(2017)O'Brien, Schonning, Dunn, Umbaugh a
   Pakala]{site:aot}
@@ -65,36 +134,66 @@ Open-asset-importer-lib.
 \newblock {iOS App Architecture}.
 \newblock
   \url{https://docs.microsoft.com/en-us/xamarin/ios/internals/architecture}.
-\newblock {Accessed:2019-04-08}.
+\newblock [Online; accessed 2019-04-08].
 
 \bibitem[{Oxeye Game Studion}(2008)]{site:oxeye03}
 {\sc {Oxeye Game Studion}} (2008).
 \newblock {RTS Game-play Part 3: Build Options}.
 \newblock \url{http://www.oxeyegames.com/rts-game-play-part-3-build-options/}.
+\newblock [Online; accessed 2019-04-01].
+
+\bibitem[Patel(2009)]{site:introastar}
+{\sc Patel, A.} (2009).
+\newblock {Introduction to A*}.
+\newblock \url{Introduction to A*}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[Peterson(2015)]{site:il2cpp}
+{\sc Peterson, J.} (2015).
+\newblock {An introduction to IL2CPP internals}.
+\newblock
+  \url{https://blogs.unity3d.com/2015/05/06/an-introduction-to-ilcpp-internals/}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[{Relic Entertainment}(2006)]{site:COH}
 {\sc {Relic Entertainment}} (2006).
 \newblock {Company of Heroes}.
 \newblock \url{http://www.companyofheroes.com/}.
+\newblock [Online; accessed 2019-03-18].
 
-\bibitem[Urho3D()]{site:urho3D}
-{\sc Urho3D}.
+\bibitem[Smith(2016)]{site:projectilecalc}
+{\sc Smith, F.} (2016).
+\newblock {Solving Ballistic Trajectories}.
+\newblock
+  \url{https://www.forrestthewoods.com/blog/solving_ballistic_trajectories/}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[urho3d({\natexlab{a}})]{site:urho3D}
+{\sc urho3d}.
 \newblock Urho3d.
 \newblock \url{https://urho3d.github.io/}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[urho3d({\natexlab{b}})]{site:urho3DPOD}
+{\sc urho3d}.
+\newblock {PODVector Documentation}.
+\newblock
+  \url{https://urho3d.github.io/documentation/1.4/class_urho3_d_1_1_p_o_d_vector.html#details}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[Walker(2004{\natexlab{a}})]{site:stratg02}
 {\sc Walker, M.~H.} (2004{\natexlab{a}}).
 \newblock {Strategy Gaming: Part II}.
 \newblock
   \url{https://web.archive.org/web/20070129065355/http://archive.gamespy.com/articles/february02/strategy02/}.
-\newblock [Online; seen 2019-04-01].
+\newblock [Online; accessed 2019-04-01].
 
 \bibitem[Walker(2004{\natexlab{b}})]{site:stratg05}
 {\sc Walker, M.~H.} (2004{\natexlab{b}}).
 \newblock {Strategy Gaming: Part V -- Real-Time vs. Turn-Based}.
 \newblock
   \url{https://web.archive.org/web/20081201113359/http://archive.gamespy.com/articles/february02/strategygames05/index.shtm}.
-\newblock [Online; seen 2019-04-01].
+\newblock [Online; accessed 2019-04-01].
 
 \bibitem[Wenzel a~kol.(2017)Wenzel, yishengjin, Lathan, Pratt, Petrusha,
   Hoffman, Jones a Dev]{site:assemblyload}
@@ -103,11 +202,62 @@ Open-asset-importer-lib.
 \newblock {Best Practices for Assembly Loading}.
 \newblock
   \url{https://docs.microsoft.com/en-us/dotnet/framework/deployment/best-practices-for-assembly-loading}.
+\newblock [Online; accessed 2019-04-08].
+
+\bibitem[{Westwood Studios}(1992)]{site:dune2}
+{\sc {Westwood Studios}} (1992).
+\newblock {Dune II}.
+\newblock \url{https://en.wikipedia.org/wiki/Dune_II}.
+\newblock [Online; accessed 2019-03-18].
+
+\bibitem[{Wikipedia contributors}(2019{\natexlab{a}})]{site:XCOM}
+{\sc {Wikipedia contributors}} (2019{\natexlab{a}}).
+\newblock {X-COM}.
+\newblock \url{https://en.wikipedia.org/wiki/X-COM}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Wikipedia contributors}(2019{\natexlab{b}})]{site:astarpseudowiki}
+{\sc {Wikipedia contributors}} (2019{\natexlab{b}}).
+\newblock {A* search algorithm}.
+\newblock \url{https://en.wikipedia.org/wiki/A*_search_algorithm}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Wikipedia contributors}(2019{\natexlab{c}})]{site:blitzkrieg}
+{\sc {Wikipedia contributors}} (2019{\natexlab{c}}).
+\newblock Blitzkrieg (video game series).
+\newblock \url{https://en.wikipedia.org/wiki/Blitzkrieg_(video_game_series)}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Wikipedia contributors}(2019{\natexlab{d}})]{site:blizz}
+{\sc {Wikipedia contributors}} (2019{\natexlab{d}}).
+\newblock {Blizzard Entertainment}.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=Blizzard_Entertainment&oldid=892549860}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Wikipedia contributors}(2019{\natexlab{e}})]{site:cmdcnq}
+{\sc {Wikipedia contributors}} (2019{\natexlab{e}}).
+\newblock {Command \& Conquer}.
+\newblock \url{https://en.wikipedia.org/wiki/Command_%26_Conquer}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Wikipedia contributors}(2019{\natexlab{f}})]{site:totalwar}
+{\sc {Wikipedia contributors}} (2019{\natexlab{f}}).
+\newblock {Total War (series)}.
+\newblock \url{https://en.wikipedia.org/wiki/Total_War_(series)}.
+\newblock [Online; accessed 2019-05-17].
+
+\bibitem[{Wikipedia contributors}(2019{\natexlab{g}})]{site:westwood}
+{\sc {Wikipedia contributors}} (2019{\natexlab{g}}).
+\newblock {Westwood Studios}.
+\newblock \url{https://en.wikipedia.org/wiki/Westwood_Studios}.
+\newblock [Online; accessed 2019-05-17].
 
 \bibitem[Xamarin(2015)]{site:urhosharp}
 {\sc Xamarin} (2015).
 \newblock {UrhoSharp}.
 \newblock
   \url{https://docs.microsoft.com/en-us/xamarin/graphics-games/urhosharp/}.
+\newblock [Online; accessed 2019-05-15].
 
 \end{thebibliography}

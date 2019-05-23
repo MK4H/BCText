@@ -1,5 +1,6 @@
 \chapter{Úvod}
 %\addcontentsline{toc}{chapter}{Úvod}
+\label{sec:uvod}
 
 Strategické hry jsou žánrem, ve kterém hráči využívají svých mentálních schopností, především taktického a~strategického myšlení, pro porážku jednoho či více nepřátel. Ve většině případů se strategické hry zabývají tématem války. Takto popisuje strategické Ernest Adams ve své knize \textit{Fundamentals of Game Design}\citep[str.~419]{book:gamefund}
 
@@ -88,9 +89,9 @@ Naše platforma bude podporovat mapu s~těmito vlastnostmi:
 \begin{itemize}
 	\item[M1:] Terén rozdělený na čtvercové dlaždice.
 	\item[M2:] Dlaždice s~různou výškou.
-	\item[M2:] Dlaždice různých typů.
-	\item[M3:] Možnost dotazovat se na jednotky nacházející se na dlaždici.
-	\item[M4:] Možnost dotazovat se na budovy postavené na dlaždici.
+	\item[M3:] Dlaždice různých typů.
+	\item[M4:] Možnost dotazovat se na jednotky nacházející se na dlaždici.
+	\item[M5:] Možnost dotazovat se na budovy postavené na dlaždici.
 \end{itemize}
 \subsection{Jednotky}
 \label{sec:jednotky}
@@ -284,6 +285,7 @@ Explicitní strom technologií, viditelný na \ref{fig:civ5techtree}, se v~RTS h
 Jak bylo řečeno v~sekci o~budovách \ref{sec:budovy}, naše platforma bude umožňovat tvůrci postupné odemykání budov a~jednotek, což umožní tvůrci her implementovat výzkum nových technologií. Pro technologie měnící vlastnosti typů jednotek bude pouze na tvůrci, aby změnil logiku hry a~chování umělé inteligence v~závislosti na vyzkoumaných technologiích.
 
 \subsubsection{Shrnutí požadavků}
+\label{sec:requirements}
 
 Naše platforma bude podporovat tyto vlastnosti:
 \begin{itemize}
@@ -367,7 +369,7 @@ Ukázková hra bude obsahovat několik jednotek, demonstrujících tyto vlastnos
 
 Demonstrovanými vlastnostmi budov budou:
 \begin{enumerate}
-	\item Restrikce na místo stavby
+	\item Restrikce na umístění stavby
 	\item Neprostupnost budov pro některé jednotky
 	\item Produkce surovin budovami
 	\item Přidání plochy nebo části plochy budovy jako přístupný terén pro určité typy jednotek
@@ -403,7 +405,7 @@ Požadované vlastnosti platformy:
 			\item Ovládání jednotek (J3, J4)
 			\item Umělá inteligence, definice chování (J5)
 			\item Produkce jednotek (J6)
-			\item Přidávání jednotek jako součást mapy (J7, J8)
+			\item Přidávání jednotek jako součást úrovně (J7, J8)
 			\item Podpora systému hit-pointů (J9)
 			\item Útoky na blízko i na dálku (J10, J11)
 		\end{enumerate}
@@ -424,6 +426,13 @@ Požadované vlastnosti platformy:
 		\begin{enumerate}
 			\item Umožnit postupné odemykání dostupných jednotek a~budov, umožnit změny chování jednotek za běhu (T1, T2)
 		\end{enumerate}
+	\item Podporované vlastnosti mapy
+		\begin{enumerate}
+			\item Rozdělení mapy na dlaždice (M1)
+			\item Tvorbu terénu pomocí různých výšek dlaždic. (M2)
+			\item Různé typy dlaždic. (M3)
+			\item Rozhraní pro získání aktuálního stavu mapy (jednotek a budov na dlaždici, typu dlaždice ...) (M4, M5)
+		\end{enumerate}
 	\item Vlastnosti pro tvůrce balíčků:
 		\begin{enumerate}
 			\item Platforma musí umožňovat přidávání balíčků za běhu, obsahujících nové typy jednotek, budov,  dlaždic, projektilů a~hráčů spolu s~jejich modely, texturami a~AI.
@@ -433,8 +442,8 @@ Požadované vlastnosti platformy:
 		\end{enumerate}
 	\item Vlastnosti pro koncového hráče:
 		\begin{enumerate}
-			\item User interface pro stolní počítače, umožňující vybírání balíčků, map a~oponentů, dále načítání a~ukládání her, a~nastavování zobrazení hry.
-			\item Herní user interface musí obsahovat minimapu, poskytující hráči přehled o~větší části mapy než kterou vidí vlastní kamerou.
+			\item Uživatelské rozhraní pro stolní počítače, umožňující vybírání balíčků, map a~oponentů, dále načítání a~ukládání her, a~nastavování zobrazení hry.
+			\item Herní uživatelské rozhraní musí obsahovat minimapu, poskytující hráči přehled o~větší části mapy než kterou vidí vlastní kamerou.
 			\item Ovládání kamery umožňující klasický top-down pohled, volné poletování kamery po mapě a~následování jednotky.
 			\item Ukládání a~načítání hry.
 		\end{enumerate}

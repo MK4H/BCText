@@ -11,60 +11,52 @@ A level-1 auxiliary file: zaver.aux
 A level-1 auxiliary file: literatura.aux
 The style file: czplainnat.bst
 Database file #1: literatura.bib
-Warning--I didn't find a database entry for "site:westwood"
-Warning--I didn't find a database entry for "site:cmdcnq"
-Warning--I didn't find a database entry for "site:blitzkrieg"
-Warning--I didn't find a database entry for "site:XCOM"
-Warning--I didn't find a database entry for "site:totalwar"
-Warning--I didn't find a database entry for "site:starcraft"
-Warning--I didn't find a database entry for "site:blizz"
-Warning--I didn't find a database entry for "site:hearthstone"
-Warning--I didn't find a database entry for "site:protobuf"
-Warning--to sort, need author or key in site:dune2
 Warning--to sort, need author or key in site:assimp
 Warning--empty year in site:assimp
-Warning--empty year in site:dune2
-Warning--empty year in site:warcraft3
+Warning--empty year in site:astarpseudoalseda
+Warning--empty year in site:knownfolders
+Warning--empty year in site:specialfolders
 Warning--empty year in site:urho3D
-You've used 18 entries,
+Warning--empty year in site:urho3DPOD
+You've used 39 entries,
             2828 wiz_defined-function locations,
-            707 strings with 7732 characters,
-and the built_in function-call counts, 5876 in all, are:
-= -- 525
-> -- 263
-< -- 14
-+ -- 101
-- -- 81
-* -- 373
-:= -- 907
-add.period$ -- 56
-call.type$ -- 18
-change.case$ -- 80
-chr.to.int$ -- 16
-cite$ -- 44
-duplicate$ -- 257
-empty$ -- 565
-format.name$ -- 97
-if$ -- 1257
-int.to.chr$ -- 3
+            781 strings with 10013 characters,
+and the built_in function-call counts, 12521 in all, are:
+= -- 1163
+> -- 483
+< -- 36
++ -- 196
+- -- 147
+* -- 733
+:= -- 1990
+add.period$ -- 156
+call.type$ -- 39
+change.case$ -- 165
+chr.to.int$ -- 29
+cite$ -- 86
+duplicate$ -- 557
+empty$ -- 1214
+format.name$ -- 185
+if$ -- 2676
+int.to.chr$ -- 11
 int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 100
-num.names$ -- 64
-pop$ -- 238
+missing$ -- 4
+newline$ -- 242
+num.names$ -- 152
+pop$ -- 497
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 127
 quote$ -- 0
-skip$ -- 203
+skip$ -- 372
 stack$ -- 0
-substring$ -- 38
-swap$ -- 38
+substring$ -- 79
+swap$ -- 92
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 193
-warning$ -- 6
-while$ -- 48
+type$ -- 419
+warning$ -- 7
+while$ -- 114
 width$ -- 0
-write$ -- 224
-(There were 15 warnings)
+write$ -- 548
+(There were 7 warnings)
