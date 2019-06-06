@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -23,12 +23,6 @@
 \newblock ISBN 978-1-491-98765-0.
 \newblock URL
   \url{https://www.ebook.de/de/product/29084295/joseph_albahari_c_7_0_in_a_nutshell.html}.
-
-\bibitem[Alsedà()]{site:astarpseudoalseda}
-{\sc Alsedà, L.}
-\newblock {A* Algorithm pseudocode}.
-\newblock \url{http://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf}.
-\newblock [Online; accessed 2019-05-17].
 
 \bibitem[{Apple Inc.}(2019)]{book:iossecurityguide}
 {\sc {Apple Inc.}} (2019).
@@ -79,11 +73,29 @@
 \newblock \url{https://developer.android.com/guide/topics/data/data-storagel}.
 \newblock [Online; accessed 2019-05-18].
 
-\bibitem[Google(2019{\natexlab{b}})]{site:protobuf}
+\bibitem[Google(2019{\natexlab{b}})]{site:materialdesign}
 {\sc Google} (2019{\natexlab{b}}).
+\newblock Device metrics.
+\newblock \url{https://material.io/tools/devices/}.
+\newblock [Online; accessed 2019-06-06].
+
+\bibitem[Google(2019{\natexlab{c}})]{site:protobuf}
+{\sc Google} (2019{\natexlab{c}}).
 \newblock {Protocol Buffers}.
 \newblock \url{https://developers.google.com/protocol-buffers/}.
 \newblock [Online; accessed 2019-05-17].
+
+\bibitem[Gravell()]{site:protobufnet}
+{\sc Gravell, M.}
+\newblock protobuf-net.
+\newblock \url{https://github.com/mgravell/protobuf-net}.
+\newblock [Online; accessed 2019-06-06].
+
+\bibitem[Lander(2019)]{site:dotnet5}
+{\sc Lander, R.} (2019).
+\newblock {Introducing .NET 5}.
+\newblock \url{https://devblogs.microsoft.com/dotnet/introducing-net-5/}.
+\newblock [Online; accessed 2019-06-03].
 
 \bibitem[Lantz(2008)]{site:gamasutra01}
 {\sc Lantz, J.} (2008).
@@ -111,6 +123,13 @@
 \newblock
   \url{https://docs.microsoft.com/en-us/previous-versions/ms995853(v=msdn.10)}.
 \newblock [Online; accessed 2019-05-17].
+
+\bibitem[Microsoft(2019)]{site:assloadcontext}
+{\sc Microsoft} (2019).
+\newblock {AssemblyLoadContext Class}.
+\newblock
+  \url{https://docs.microsoft.com/en-us/dotnet/api/system.runtime.loader.assemblyloadcontext?view=netcore-2.2}.
+\newblock [Online; accessed 2019-06-03].
 
 \bibitem[{Monkey Squad, S.A. de C.V.}(2015)]{site:ksp}
 {\sc {Monkey Squad, S.A. de C.V.}} (2015).
@@ -146,13 +165,6 @@
 {\sc Patel, A.} (2009).
 \newblock {Introduction to A*}.
 \newblock \url{Introduction to A*}.
-\newblock [Online; accessed 2019-05-17].
-
-\bibitem[Peterson(2015)]{site:il2cpp}
-{\sc Peterson, J.} (2015).
-\newblock {An introduction to IL2CPP internals}.
-\newblock
-  \url{https://blogs.unity3d.com/2015/05/06/an-introduction-to-ilcpp-internals/}.
 \newblock [Online; accessed 2019-05-17].
 
 \bibitem[{Relic Entertainment}(2006)]{site:COH}
@@ -216,39 +228,33 @@
 \newblock \url{https://en.wikipedia.org/wiki/X-COM}.
 \newblock [Online; accessed 2019-05-17].
 
-\bibitem[{Wikipedia contributors}(2019{\natexlab{b}})]{site:astarpseudowiki}
+\bibitem[{Wikipedia contributors}(2019{\natexlab{b}})]{site:blitzkrieg}
 {\sc {Wikipedia contributors}} (2019{\natexlab{b}}).
-\newblock {A* search algorithm}.
-\newblock \url{https://en.wikipedia.org/wiki/A*_search_algorithm}.
-\newblock [Online; accessed 2019-05-17].
-
-\bibitem[{Wikipedia contributors}(2019{\natexlab{c}})]{site:blitzkrieg}
-{\sc {Wikipedia contributors}} (2019{\natexlab{c}}).
 \newblock Blitzkrieg (video game series).
 \newblock \url{https://en.wikipedia.org/wiki/Blitzkrieg_(video_game_series)}.
 \newblock [Online; accessed 2019-05-17].
 
-\bibitem[{Wikipedia contributors}(2019{\natexlab{d}})]{site:blizz}
-{\sc {Wikipedia contributors}} (2019{\natexlab{d}}).
+\bibitem[{Wikipedia contributors}(2019{\natexlab{c}})]{site:blizz}
+{\sc {Wikipedia contributors}} (2019{\natexlab{c}}).
 \newblock {Blizzard Entertainment}.
 \newblock
   \url{https://en.wikipedia.org/w/index.php?title=Blizzard_Entertainment&oldid=892549860}.
 \newblock [Online; accessed 2019-05-17].
 
-\bibitem[{Wikipedia contributors}(2019{\natexlab{e}})]{site:cmdcnq}
-{\sc {Wikipedia contributors}} (2019{\natexlab{e}}).
+\bibitem[{Wikipedia contributors}(2019{\natexlab{d}})]{site:cmdcnq}
+{\sc {Wikipedia contributors}} (2019{\natexlab{d}}).
 \newblock {Command \& Conquer}.
 \newblock \url{https://en.wikipedia.org/wiki/Command_%26_Conquer}.
 \newblock [Online; accessed 2019-05-17].
 
-\bibitem[{Wikipedia contributors}(2019{\natexlab{f}})]{site:totalwar}
-{\sc {Wikipedia contributors}} (2019{\natexlab{f}}).
+\bibitem[{Wikipedia contributors}(2019{\natexlab{e}})]{site:totalwar}
+{\sc {Wikipedia contributors}} (2019{\natexlab{e}}).
 \newblock {Total War (series)}.
 \newblock \url{https://en.wikipedia.org/wiki/Total_War_(series)}.
 \newblock [Online; accessed 2019-05-17].
 
-\bibitem[{Wikipedia contributors}(2019{\natexlab{g}})]{site:westwood}
-{\sc {Wikipedia contributors}} (2019{\natexlab{g}}).
+\bibitem[{Wikipedia contributors}(2019{\natexlab{f}})]{site:westwood}
+{\sc {Wikipedia contributors}} (2019{\natexlab{f}}).
 \newblock {Westwood Studios}.
 \newblock \url{https://en.wikipedia.org/wiki/Westwood_Studios}.
 \newblock [Online; accessed 2019-05-17].

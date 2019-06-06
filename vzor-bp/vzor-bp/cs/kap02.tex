@@ -1,1 +1,56 @@
-\chapter{Ukázková hra}
+\chapter{Programátorská dokumentace}
+V této kapitole popíšeme naší implementaci platformy MHUrho a ukázkové hry. K implementaci platformy bylo použito Visual Studio 2017 Education a .NET Framework 4.7.2, který je zároveň cílovým frameworkem naší platformy. Celá implementace je obsažena v jediném \uv{solution}, MHUrho. Toto solution se skládá z několika projektů, představujících implementaci vlastní platformy, instalátoru platformy a ukázkové hry.
+
+\section{Skupina projektů MHUrho}
+Implementace platformy je tvořena třemi projekty. Hlavním z těchto projektů je projekt \textit{MHUrho}, jehož výstupem je \uv{knihovna} MHUrho, implementující jádro funkcionality našeho projektu. Tato knihovna je poskytována tvůrcům her pro tvorbu pluginů. Dále tato knihovna obsahuje přenositelné části implementací požadované funkcionality 
+
+Zbylé dva projekty vytvářejí aplikaci cílenou na jediný systém. Výstupem \textit{MHUrho.Desktop} je implementace platformy pro desktopové systémy, pro nás zatím pouze systém Windows. Výstupem \textit{MHUrho.Android} je verze platformy pro mobilní systém Android. Tato verze obsahuje pouze kostry řešení a slouží zde pouze jako bod budoucí rozšiřitelnosti platformy. Obě tyto aplikace využívají knihovnu MHUrho, která, jak bylo zmíněno výše, implementuje přenositelnou část funkcionality. Dále knihovna definuje rozhraní a třídy, které nelze implementovat přenositelně a je tedy nutné pro každý z cílových systému vytvořit zvláštní implementaci, která je následně při startu aplikace poskytnuta knihovně.
+
+Drtivou většinu funkcionality jsme byli schopni implementovat přenositelně, tato sekce se tedy bude zabývat především implementací knihovny MHUrho a až na závěr zmíníme funkcionalitu, kterou jsme byli nuceni vysunout do projektů pro jednotlivé systémy.
+
+Knihovna MHUrho je rozdělena do několika \textit{namespace}, tedy jmenných prostorů, které spojují třídy zaobírající se společným aspektem funkcionality. Těmito jmennými prostory jsou:
+\begin{enumerate}
+	\item \texttt{Logic},
+	\item \texttt{WorldMap},
+	\item \texttt{Packaging},
+	\item \texttt{Plugins},
+	\item \texttt{UserInterface},
+	\item \texttt{Input},
+	\item \texttt{Pathfinding},
+	\item \texttt{DefaultComponents},
+	\item \texttt{CameraMovement},
+	\item \texttt{Helpers},
+	\item \texttt{EditorTools},
+	\item \texttt{Storage},
+	\item ostatní méně důležité.
+\end{enumerate}
+
+V následujících sekcích postupně projdeme jednotlivé jmenné prostory, popíšeme obsažené třídy, jejich účel a interakci s třídami z jiných jmenných prostorů.
+
+\section{Logika hry}
+Logika hry, obsažená ve jmenném prostoru \texttt{Logic}, je tvořena skupinou tříd reprezentujících herní svět z pohledu umělé inteligence hráčů, jednotek a budov. 
+Z pohledu herního enginu je každá úroveň reprezentována scénou, tedy instancí třídy \texttt{Scene}. Tato scéna tvoří kořen grafu, ve kterém se nacházejí všechny \texttt{Node} reprezentující herní mapu, kameru a entity přítomné ve hře. Struktura tohoto grafu je vždy probrána v odpovídající části dokumentace. Na každou z těchto \texttt{Node} lze přidat instance potomků třídy \texttt{Component}, které následně implementují chování objektu reprezentovaného danou \texttt{Node}.
+
+\subsection{LevelManager}
+Hlavním třídou, reprezentující aktuálně spuštěnou úroveň, je třída \texttt{LevelManager}. Jak můžeme vidět na grafu referencí \ref{fig:levelmanagergraph}, slouží tato třída jako centrální přístupový bod ke službám platformy, jak pro pluginy, tak pro samotné části platformy a dále slouží jako repozitář všech entit, přítomných ve hře. Každá součást aktuální úrovně dostává referenci na instanci třídy LevelManager a pomocí ní přistupuje ke zbytku platformy.
+
+Tato třída je potomkem třídy \texttt{Component}, která umožňuje přidat ji do grafu scény a obsluhovat události odehrávající se ve scéně. I když by logicky tato komponenta, řídící chování celé úrovně, měla být přiřazena přímo instanci Scény, vytvořili jsme separátní \texttt{Node}, reprezentující logiku úrovně, na které je přidána právě komponenta LevelManager. Účelem této změny bylo umožnění selektivního vypínání logiky úrovně bez vypnutí vykreslování, které je jako jakékoli jiné chování reprezentováno komponentou a při vypnutí scény přestane fungovat.
+
+Jako centrální přístupový bod umožňuje LevelManager vytváření nových Entit, získávání referencí na existující a jejich případné odstraňování. 
+
+Dále slouží jako centrální bod pro spuštění načítání úrovně, které bude přiblíženo v části \ref{sec:loading}.
+\subsection{Entity}
+\texttt{Entity} je abstraktní třída, sloužící jako předek všech jednotek, budov a projektilů ve hře. Tato třída deklaruje či přímo implementuje funkce a \uv{properties} společné všem entitám. Mezi tyto property patří hráč vlastnící entitu, reference na LevelManager aktuální úrovně, pozice v herním světě a v neposlední řadě reference na plugin ovládající entitu.
+
+Třída Entity je sama potomkem třídy \texttt{Component}, která je poskytována enginem UrhoSharp. Tento vztah nám umožňuje připojit třídu Entity a všechny její potomky k instanci \texttt{Node} odpovídající entitě v grafu scény.
+
+\section{Mapa}
+
+\subsection{Načítání hry}
+Načítání velké části tříd je implementováno za použití \texttt{Builder} design patternu. Třídy jako Map, Tile, Player, Unit, Building, Projectile a DefaultComponent obsahují implementaci rozhraní \texttt{ILoader}, které slouží pro načítání objektů. 
+\section{Pluginy}
+
+\section{Manipulace s balíčky}
+
+
+

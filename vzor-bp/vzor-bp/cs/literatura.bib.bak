@@ -331,12 +331,43 @@
   note         = {[Online; accessed 2019-05-17]},
 }
 
-@Misc{,
+@Misc{site:androiddata,
   author       = {Google},
   title        = {{Data and file storage overview}},
   howpublished = {\url{https://developer.android.com/guide/topics/data/data-storagel}},
   year         = {2019},
   note         = {[Online; accessed 2019-05-18]},
+}
+
+@Misc{site:dotnet5,
+  author       = {Richard Lander},
+  title        = {{Introducing .NET 5}},
+  howpublished = {\url{https://devblogs.microsoft.com/dotnet/introducing-net-5/}},
+  month        = may,
+  year         = {2019},
+  note         = {[Online; accessed 2019-06-03]},
+}
+
+@Misc{site:assloadcontext,
+  author       = {Microsoft},
+  title        = {{AssemblyLoadContext Class}},
+  howpublished = {\url{https://docs.microsoft.com/en-us/dotnet/api/system.runtime.loader.assemblyloadcontext?view=netcore-2.2}},
+  year         = {2019},
+  note         = {[Online; accessed 2019-06-03]},
+}
+
+@Misc{site:materialdesign,
+  author       = {Google},
+  title        = {Device metrics},
+  howpublished = {\url{https://material.io/tools/devices/}},
+  note         = {[Online; accessed 2019-06-06]},
+}
+
+@Misc{site:protobufnet,
+  author       = {Marc Gravell},
+  title        = {protobuf-net},
+  howpublished = {\url{https://github.com/mgravell/protobuf-net}},
+  note         = {[Online; accessed 2019-06-06]},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

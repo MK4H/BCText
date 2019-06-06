@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.2.13)  23 MAY 2019 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.2.13)  6 JUN 2019 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,15 +584,59 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 \@todotoks=\toks32
 \c@todo=\count123
 )
-Package hyperref Info: Option `unicode' set `true' on input line 126.
-Package hyperref Info: Option `breaklinks' set `true' on input line 127.
+(c:/texlive/2018/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen134
+\captionmargin@=\dimen135
+\captionwidth=\dimen136
+\caption@tempdima=\dimen137
+\caption@indent=\dimen138
+\caption@parindent=\dimen139
+\caption@hangindent=\dimen140
+)
+\c@caption@flags=\count124
+\c@ContinuedFloat=\count125
+Package caption Info: hyperref package is loaded.
+)
+\c@KVtest=\count126
+\sf@farskip=\skip58
+\sf@captopadj=\dimen141
+\sf@capskip=\skip59
+\sf@nearskip=\skip60
+\c@subfigure=\count127
+\c@subfigure@save=\count128
+\c@lofdepth=\count129
+\c@subtable=\count130
+\c@subtable@save=\count131
+\c@lotdepth=\count132
+\sf@top=\skip61
+\sf@bottom=\skip62
+)
+(c:/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/02/04 v3.8 Customized lists
+\labelindent=\skip63
+\enit@outerparindent=\dimen142
+\enit@toks=\toks33
+\enit@inbox=\box32
+\enit@count@id=\count133
+\enitdp@description=\count134
+)
+Package hyperref Info: Option `unicode' set `true' on input line 133.
+Package hyperref Info: Option `breaklinks' set `true' on input line 134.
 
 \@input{makra.aux}
 \openout2 = `makra.aux'.
 
 (./makra.tex
-\c@veta=\count124
-\c@definice=\count125
+\c@veta=\count135
+\c@definice=\count136
 )
 
 LaTeX Warning: Unused global option(s):
@@ -602,31 +646,31 @@ LaTeX Warning: Unused global option(s):
 (./kap03.aux) (./kap04.aux) (./zaver.aux) (./literatura.aux))
 \openout1 = `prace.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 140.
 
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 133.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 140.
 
 (c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -634,17 +678,17 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ABD: EveryShipout initializing macros
 (c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen134
-\scratchbox=\box32
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen135
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count137
+\scratchdimen=\dimen143
+\scratchbox=\box33
+\nofMPsegments=\count138
+\nofMParguments=\count139
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen144
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
+\everyMPtoPDFconversion=\toks35
 ) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -662,8 +706,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 133.
+\AtBeginShipoutBox=\box34
+Package hyperref Info: Link coloring OFF on input line 140.
 
 (c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -671,21 +715,24 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count132
+\c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 133.
-LaTeX Info: Redefining \pageref on input line 133.
-LaTeX Info: Redefining \nameref on input line 133.
+LaTeX Info: Redefining \ref on input line 140.
+LaTeX Info: Redefining \pageref on input line 140.
+LaTeX Info: Redefining \nameref on input line 140.
 
 (./prace.out) (./prace.out)
 \@outlinefile=\write5
 \openout5 = `prace.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 \openout2 = `titulka.aux'.
 
  (./titulka.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-cs.pdf, id=155, 506.4591pt x 156.49065pt>
+<../img/logo-cs.pdf, id=175, 506.4591pt x 156.49065pt>
 File: ../img/logo-cs.pdf Graphic file (type pdf)
 <use ../img/logo-cs.pdf>
 Package pdftex.def Info: ../img/logo-cs.pdf  used on input line 10.
@@ -740,15 +787,15 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 
 ] [3
 
-]) (./prace.toc)
+]) (./prace.toc [1
+
+
+
+])
 \tf@toc=\write6
 \openout6 = `prace.toc'.
 
- [1
-
-
-
-]
+ [2]
 \openout2 = `uvod.aux'.
 
  (./uvod.tex
@@ -763,233 +810,342 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 15.
- [2
+ [3
 
 
-] [3]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 56.
+] [4]
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 57.
 
 (c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 56--56
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
 []\T1/lmss/m/n/10.95 To do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--56
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
 []\T1/lmss/m/n/10.95 To do
  []
 
 
-LaTeX Warning: Marginpar on page 4 moved.
+LaTeX Warning: Marginpar on page 5 moved.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 []\T1/lmss/m/n/10.95 To do
  []
 
-[4]
-<./img/strongholdtiles.png, id=291, 232.9503pt x 139.2402pt>
+[5]
+<./img/strongholdtiles.png, id=320, 232.9503pt x 139.2402pt>
 File: ./img/strongholdtiles.png Graphic file (type png)
 <use ./img/strongholdtiles.png>
-Package pdftex.def Info: ./img/strongholdtiles.png  used on input line 77.
+Package pdftex.def Info: ./img/strongholdtiles.png  used on input line 78.
 (pdftex.def)             Requested size: 232.94972pt x 139.23985pt.
- [5 <./img/strongholdtiles.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+ [6 <./img/strongholdtiles.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []\T1/lmss/m/n/10.95 Dal²í
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 \T1/lmss/m/n/10.95 druhy
  []
 
-[6]
-Overfull \hbox (9.61687pt too wide) in paragraph at lines 111--112
-[]\T1/lmr/m/n/12 Jako p°í-klad jed-no-du-ché um¥lé in-te-li-gence jed-no-tek m·
--ºeme vzít hry Starcraft[[]]|
- []
-
-
-Overfull \hbox (11.83357pt too wide) in paragraph at lines 115--116
-[]\T1/lmr/m/n/12 Dobrým p°í-kla-dem jed-no-tek s vy-so-kou au-to-no-mií je sé-r
-ie Com-pany of Heroes[[]],|
- []
-
-<./img/cohai.png, id=316, 1038.88126pt x 481.8pt>
+[7]
+<./img/cohai.png, id=346, 1038.88126pt x 481.8pt>
 File: ./img/cohai.png Graphic file (type png)
 <use ./img/cohai.png>
-Package pdftex.def Info: ./img/cohai.png  used on input line 119.
+Package pdftex.def Info: ./img/cohai.png  used on input line 120.
 (pdftex.def)             Requested size: 363.61389pt x 168.63252pt.
-
-Underfull \hbox (badness 1454) in paragraph at lines 120--120
-[]\T1/lmr/m/n/12 Obrázek 1.2: []Ukázka au-to-nomního cho-vání jed-no-tek ve h°e
- Com-pany of
- []
-
-[7 <./img/cohai.png>] [8] [9] [10]
-<./img/unitsonbuildings.png, id=360, 308.352pt x 205.4877pt>
+ [8 <./img/cohai.png>] [9] [10] [11]
+<./img/unitsonbuildings.png, id=389, 308.352pt x 205.4877pt>
 File: ./img/unitsonbuildings.png Graphic file (type png)
 <use ./img/unitsonbuildings.png>
-Package pdftex.def Info: ./img/unitsonbuildings.png  used on input line 189.
+Package pdftex.def Info: ./img/unitsonbuildings.png  used on input line 190.
 (pdftex.def)             Requested size: 308.35124pt x 205.48718pt.
- [11 <./img/unitsonbuildings.png>] [12]
-<./img/civ5_tech_tree.jpg, id=387, 301.125pt x 168.63pt>
+ [12 <./img/unitsonbuildings.png>]
+[13]
+<./img/civ5_tech_tree.jpg, id=416, 301.125pt x 168.63pt>
 File: ./img/civ5_tech_tree.jpg Graphic file (type jpg)
 <use ./img/civ5_tech_tree.jpg>
-Package pdftex.def Info: ./img/civ5_tech_tree.jpg  used on input line 270.
+Package pdftex.def Info: ./img/civ5_tech_tree.jpg  used on input line 267.
 (pdftex.def)             Requested size: 301.12425pt x 168.62958pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13]
-<./img/warcraft_tech_tree.png, id=398, 133.6995pt x 158.994pt>
+[14]
+<./img/warcraft_tech_tree.png, id=429, 133.6995pt x 158.994pt>
 File: ./img/warcraft_tech_tree.png Graphic file (type png)
 <use ./img/warcraft_tech_tree.png>
-Package pdftex.def Info: ./img/warcraft_tech_tree.png  used on input line 280.
+Package pdftex.def Info: ./img/warcraft_tech_tree.png  used on input line 277.
 (pdftex.def)             Requested size: 133.69916pt x 158.9936pt.
- [14 <./img/civ5_tech_tree.jpg> <./img/warcraft_tech_tree.png>] [15]
-<./img/cohcamrts.png, id=424, 1927.2pt x 1084.05pt>
+ [15 <./img/civ5_tech_tree.jpg> <./img/warcraft_tech_tree.png>] [16]
+<./img/cohcamrts.png, id=454, 1927.2pt x 1084.05pt>
 File: ./img/cohcamrts.png Graphic file (type png)
 <use ./img/cohcamrts.png>
-Package pdftex.def Info: ./img/cohcamrts.png  used on input line 322.
+Package pdftex.def Info: ./img/cohcamrts.png  used on input line 319.
 (pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
-<./img/cohcamcin.png, id=425, 1927.2pt x 1084.05pt>
+<./img/cohcamcin.png, id=455, 1927.2pt x 1084.05pt>
 File: ./img/cohcamcin.png Graphic file (type png)
 <use ./img/cohcamcin.png>
-Package pdftex.def Info: ./img/cohcamcin.png  used on input line 329.
+Package pdftex.def Info: ./img/cohcamcin.png  used on input line 326.
 (pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
 
-[16 <./img/cohcamrts.png> <./img/cohcamcin.png>] [17] [18] [19]) [20]
+[17 <./img/cohcamrts.png> <./img/cohcamcin.png>] [18] [19] [20]) [21]
 \openout2 = `kap01.aux'.
 
 
 (./kap01.tex
 Kapitola 2.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
-(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
+[22
+
+
+
+]
+<./img/hearthstone_mobile_closed.png, id=557, 462.528pt x 260.172pt>
+File: ./img/hearthstone_mobile_closed.png Graphic file (type png)
+<use ./img/hearthstone_mobile_closed.png>
+Package pdftex.def Info: ./img/hearthstone_mobile_closed.png  used on input lin
+e 26.
+(pdftex.def)             Requested size: 193.90602pt x 109.07298pt.
+<./img/hearthstone_mobile_open.png, id=558, 462.528pt x 260.172pt>
+File: ./img/hearthstone_mobile_open.png Graphic file (type png)
+<use ./img/hearthstone_mobile_open.png>
+Package pdftex.def Info: ./img/hearthstone_mobile_open.png  used on input line 
+28.
+(pdftex.def)             Requested size: 193.90602pt x 109.07298pt.
+<./img/hearthstone_PC_closed.png, id=559, 462.528pt x 260.172pt>
+File: ./img/hearthstone_PC_closed.png Graphic file (type png)
+<use ./img/hearthstone_PC_closed.png>
+Package pdftex.def Info: ./img/hearthstone_PC_closed.png  used on input line 35
+.
+(pdftex.def)             Requested size: 193.90602pt x 109.07298pt.
+<./img/hearthstone_PC_open.png, id=560, 462.528pt x 260.172pt>
+File: ./img/hearthstone_PC_open.png Graphic file (type png)
+<use ./img/hearthstone_PC_open.png>
+Package pdftex.def Info: ./img/hearthstone_PC_open.png  used on input line 37.
+(pdftex.def)             Requested size: 193.90602pt x 109.07298pt.
+ [23]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 45.
+ (c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Overfull \hbox (3.7437pt too wide) in paragraph at lines 9--10
-[]\T1/lmr/m/n/12 Druhým uva-ºo-va-ným en-gi-nem byl en-gine Unity. Tento en-gin
-e oproti Ur-hoSharp|
- []
-
-<./img/il2cpp.png, id=511, 888.31876pt x 384.43625pt>
-File: ./img/il2cpp.png Graphic file (type png)
-<use ./img/il2cpp.png>
-Package pdftex.def Info: ./img/il2cpp.png  used on input line 13.
-(pdftex.def)             Requested size: 355.32121pt x 153.77177pt.
-[21
-
-
-
- <./img/il2cpp.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\T1/lmss/m/n/10.95 To do
- []
-
-[22]
-<./img/hearthstone_mobile_side_by_side.png, id=536, 925.056pt x 260.172pt>
-File: ./img/hearthstone_mobile_side_by_side.png Graphic file (type png)
-<use ./img/hearthstone_mobile_side_by_side.png>
-Package pdftex.def Info: ./img/hearthstone_mobile_side_by_side.png  used on inp
-ut line 38.
-(pdftex.def)             Requested size: 370.01584pt x 104.06694pt.
-<./img/hearthstone_pc_side_by_side.png, id=537, 925.056pt x 260.172pt>
-File: ./img/hearthstone_pc_side_by_side.png Graphic file (type png)
-<use ./img/hearthstone_pc_side_by_side.png>
-Package pdftex.def Info: ./img/hearthstone_pc_side_by_side.png  used on input l
-ine 45.
-(pdftex.def)             Requested size: 370.01584pt x 104.06694pt.
- [23 <./img/hearthstone_mobile_side_by_side.png> <./img/hearthstone_pc_side_by_
-side.png>] [24] [25] [26] [27]
-Overfull \hbox (0.84026pt too wide) in paragraph at lines 146--147
+) [24 <./img/hearthstone_mobile_closed.png (PNG copy)> <./img/hearthstone_mobil
+e_open.png (PNG copy)> <./img/hearthstone_PC_closed.png (PNG copy)> <./img/hear
+thstone_PC_open.png (PNG copy)>] [25] [26] [27]
+Overfull \hbox (0.84026pt too wide) in paragraph at lines 138--139
 []\T1/lmr/m/n/12 Mezi dal²í gra-fická data po-u-ºí-vaná na²í plat-for-mou jsou 
 tex-tury dlaº-dic. Kaºdý|
  []
 
 [28] [29] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Overfull \hbox (12.59279pt too wide) in paragraph at lines 189--190
+[]\T1/lmr/m/n/12 Separovat re-pre-zen-taci en-tit do dvou t°íd, první, která d¥
+dí od t°ídy \T1/lmtt/m/n/12 Component|
+ []
+
+[32] (./img/BigTextureMap.pdf_tex
+<./img/BigTextureMap.pdf, id=672, page=1, 263.96716pt x 301.18712pt>
+File: ./img/BigTextureMap.pdf Graphic file (type pdf)
+<use ./img/BigTextureMap.pdf, page 1>
+Package pdftex.def Info: ./img/BigTextureMap.pdf , page1 used on input line 56.
+
+(pdftex.def)             Requested size: 263.96716pt x 301.21855pt.
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[33] (./img/SmallTextureMap.pdf_tex
+<./img/SmallTextureMap.pdf, id=686, page=1, 188.61217pt x 181.40321pt>
+File: ./img/SmallTextureMap.pdf Graphic file (type pdf)
+<use ./img/SmallTextureMap.pdf, page 1>
+Package pdftex.def Info: ./img/SmallTextureMap.pdf , page1 used on input line 5
+6.
+(pdftex.def)             Requested size: 188.61217pt x 181.40276pt.
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
 []\T1/lmss/m/n/10.95 Kde
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 237--237
+Underfull \hbox (badness 1178) in paragraph at lines 234--234
 \T1/lmss/m/n/10.95 sem to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
 \T1/lmss/m/n/10.95 na-sel?
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 246--246
+[34 <./img/BigTextureMap.pdf>] [35 <./img/SmallTextureMap.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
 []\T1/lmss/m/n/10.95 To do
  []
 
 
-Overfull \hbox (0.26527pt too wide) in paragraph at lines 250--251
+Overfull \hbox (0.26527pt too wide) in paragraph at lines 247--248
 []\T1/lmr/m/n/12 Druhým ná-stro-jem jsou t°ídy \T1/lmtt/m/n/12 VertexBuffer \T1
 /lmr/m/n/12 a \T1/lmtt/m/n/12 IndexBuffer\T1/lmr/m/n/12 . Tyto t°ídy umoº-|
  []
 
-[33]
-Overfull \hbox (1.19824pt too wide) in paragraph at lines 270--271
+[36]
+Overfull \hbox (1.19824pt too wide) in paragraph at lines 259--260
 []\T1/lmr/m/n/12 Dynamické ge-ne-ro-vání grafu umoº-¬uje re-pre-zen-to-vat ak-t
 u-ální stav mapy, který|
  []
 
-[34] [35] [36]
+<./img/dijkstra-trap.png, id=765, 527.9725pt x 377.41pt>
+File: ./img/dijkstra-trap.png Graphic file (type png)
+<use ./img/dijkstra-trap.png>
+Package pdftex.def Info: ./img/dijkstra-trap.png  used on input line 270.
+(pdftex.def)             Requested size: 193.90602pt x 138.60867pt.
+<./img/a-star-trap.png, id=766, 527.9725pt x 377.41pt>
+File: ./img/a-star-trap.png Graphic file (type png)
+<use ./img/a-star-trap.png>
+Package pdftex.def Info: ./img/a-star-trap.png  used on input line 272.
+(pdftex.def)             Requested size: 193.90602pt x 138.60867pt.
 
-LaTeX Warning: Command \' invalid in math mode on input line 376.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Command \v invalid in math mode on input line 376.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 376.
-
-
-Overfull \hbox (6.05463pt too wide) in paragraph at lines 376--377
-[]\T1/lmr/bx/n/12 Projektily s kon-stantní po-£á-te£ní ho-ri-zon-tální rych-los
-tí \T1/lmr/m/n/12 umoº-¬ují tv·rci|
+[37]
+Overfull \hbox (0.18896pt too wide) in paragraph at lines 294--295
+[]\T1/lmr/m/n/12 s kon-stantní ho-ri-zon-tální rych-lostí (pro-m¥n-livá gra-vi-
+tace, ºádný od-por vzdu-|
  []
 
-) [37]
+[38 <./img/dijkstra-trap.png (PNG copy)> <./img/a-star-trap.png>]
+(./img/horizontal.pdf_tex
+<./img/horizontal.pdf, id=783, page=1, 483.5874pt x 100.35806pt>
+File: ./img/horizontal.pdf Graphic file (type pdf)
+<use ./img/horizontal.pdf, page 1>
+Package pdftex.def Info: ./img/horizontal.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 288.7942pt x 59.93506pt.
+<./img/horizontal.pdf, id=784, page=2, 483.5874pt x 100.35806pt>
+File: ./img/horizontal.pdf Graphic file (type pdf)
+<use ./img/horizontal.pdf, page 2>
+Package pdftex.def Info: ./img/horizontal.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 288.7942pt x 59.93506pt.
+<./img/horizontal.pdf, id=785, page=3, 483.5874pt x 100.35806pt>
+File: ./img/horizontal.pdf Graphic file (type pdf)
+<use ./img/horizontal.pdf, page 3>
+Package pdftex.def Info: ./img/horizontal.pdf , page3 used on input line 61.
+(pdftex.def)             Requested size: 288.7942pt x 59.93506pt.
+<./img/horizontal.pdf, id=786, page=4, 483.5874pt x 100.35806pt>
+File: ./img/horizontal.pdf Graphic file (type pdf)
+<use ./img/horizontal.pdf, page 4>
+Package pdftex.def Info: ./img/horizontal.pdf , page4 used on input line 63.
+(pdftex.def)             Requested size: 288.7942pt x 59.93506pt.
+) (./img/forward.pdf_tex
+<./img/forward.pdf, id=789, page=1, 483.5874pt x 225.70403pt>
+File: ./img/forward.pdf Graphic file (type pdf)
+<use ./img/forward.pdf, page 1>
+Package pdftex.def Info: ./img/forward.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 288.7942pt x 134.7932pt.
+<./img/forward.pdf, id=790, page=2, 483.5874pt x 225.70403pt>
+File: ./img/forward.pdf Graphic file (type pdf)
+<use ./img/forward.pdf, page 2>
+Package pdftex.def Info: ./img/forward.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 288.7942pt x 134.7932pt.
+<./img/forward.pdf, id=791, page=3, 483.5874pt x 225.70403pt>
+File: ./img/forward.pdf Graphic file (type pdf)
+<use ./img/forward.pdf, page 3>
+Package pdftex.def Info: ./img/forward.pdf , page3 used on input line 61.
+(pdftex.def)             Requested size: 288.7942pt x 134.7932pt.
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39 <./img/horizontal.pdf> <./img/horizontal.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/horizontal.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+> <./img/horizontal.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/horizontal.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+> <./img/horizontal.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/horizontal.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>] (./img/withdrag.pdf_tex
+<./img/withdrag.pdf, id=804, page=1, 483.5874pt x 224.31113pt>
+File: ./img/withdrag.pdf Graphic file (type pdf)
+<use ./img/withdrag.pdf, page 1>
+Package pdftex.def Info: ./img/withdrag.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 288.7942pt x 133.96135pt.
+<./img/withdrag.pdf, id=805, page=2, 483.5874pt x 224.31113pt>
+File: ./img/withdrag.pdf Graphic file (type pdf)
+<use ./img/withdrag.pdf, page 2>
+Package pdftex.def Info: ./img/withdrag.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 288.7942pt x 133.96135pt.
+<./img/withdrag.pdf, id=806, page=3, 483.5874pt x 224.31113pt>
+File: ./img/withdrag.pdf Graphic file (type pdf)
+<use ./img/withdrag.pdf, page 3>
+Package pdftex.def Info: ./img/withdrag.pdf , page3 used on input line 61.
+(pdftex.def)             Requested size: 288.7942pt x 133.96135pt.
+)) [40 <./img/forward.pdf> <./img/forward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/forward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./img/forward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/forward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./img/withdrag.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/withdrag.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+> <./img/withdrag.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/withdrag.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+> <./img/withdrag.pdf
+
+pdfTeX warning: pdflatex.exe (file ./img/withdrag.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>]
 \openout2 = `kap02.aux'.
 
  (./kap02.tex
 Kapitola 3.
-) [38
+[41
 
 
 
 ]
+
+LaTeX Warning: Reference `fig:levelmanagergraph' on page 42 undefined on input 
+line 35.
+
+
+Overfull \hbox (16.92203pt too wide) in paragraph at lines 35--36
+[]\T1/lmr/m/n/12 Hlavním t°í-dou, re-pre-zen-tu-jící ak-tu-áln¥ spu²-t¥-nou úro
+-ve¬, je t°ída \T1/lmtt/m/n/12 LevelManager\T1/lmr/m/n/12 .|
+ []
+
+) [42] [43]
 \openout2 = `kap03.aux'.
 
  (./kap03.tex
 Kapitola 4.
-) [39
+) [44
 
 
 
 ]
 \openout2 = `kap04.aux'.
 
- (./kap04.tex
-Kapitola 5.
-) [40
-
-
-
-]
+ (./kap04.tex)
 \openout2 = `zaver.aux'.
 
- (./zaver.tex) [41
+ (./zaver.tex) [45
+
+
 
 
 
@@ -997,189 +1153,193 @@ Kapitola 5.
 \openout2 = `literatura.aux'.
 
  (./literatura.tex (./prace.bbl
-Underfull \hbox (badness 1603) in paragraph at lines 41--45
+Underfull \hbox (badness 1603) in paragraph at lines 35--39
 []\T1/lmr/m/sc/12 Blizzard En-ter-ta-in-ment, Inc. \T1/lmr/m/n/12 (2002).  War-
 craft 3.  []$\T1/lmtt/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 47--51
+Underfull \hbox (badness 1603) in paragraph at lines 41--45
 []\T1/lmr/m/sc/12 Blizzard En-ter-ta-in-ment, Inc. \T1/lmr/m/n/12 (2010).  Star
 -craft 2.  []$\T1/lmtt/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 53--57
+Underfull \hbox (badness 1365) in paragraph at lines 47--51
 []\T1/lmr/m/sc/12 Blizzard En-ter-ta-in-ment, Inc. \T1/lmr/m/n/12 (2014).  Hear
 ths-tone.  []$\T1/lmtt/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 95--100
+Underfull \hbox (badness 10000) in paragraph at lines 89--93
+[]\T1/lmr/m/sc/12 Gravell, M.  \T1/lmr/m/n/12 protobuf-net.  []$\T1/lmtt/m/n/12
+ https : / / github . com / mgravell /
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 107--112
 []\T1/lmr/m/sc/12 Microsoft\T1/lmr/m/n/12 .  KNOWN-FOL-DE-RID.  []$\T1/lmtt/m/n
 /12 https : / / docs . microsoft . com /
  []
 
+[46
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 114--119
 []\T1/lmr/m/sc/12 Microsoft\T1/lmr/m/n/12 .  En-vi-ron-ment.SpecialFolder Enum.
   []$\T1/lmtt/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
+Underfull \hbox (badness 10000) in paragraph at lines 114--119
 \T1/lmtt/m/n/12 docs . microsoft . com / en-[]us / dotnet / api / system . envi
 ronment .
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 102--107
+Underfull \hbox (badness 2717) in paragraph at lines 114--119
 \T1/lmtt/m/n/12 specialfolder ? view = netframework-[]4 . 8$[]\T1/lmr/m/n/12 . 
  [On-line; ac-ces-sed 2019-05-
  []
 
-[42
 
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 109--114
+Underfull \hbox (badness 10000) in paragraph at lines 121--126
 \T1/lmtt/m/n/12 docs . microsoft . com / en-[]us / previous-[]versions / ms9958
 53(v = msdn . 10)$[]\T1/lmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--129
+Underfull \hbox (badness 10000) in paragraph at lines 128--133
+[]\T1/lmr/m/sc/12 Microsoft \T1/lmr/m/n/12 (2019).  As-sem-bly-Lo-ad-Con-text C
+lass.  []$\T1/lmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--133
+\T1/lmtt/m/n/12 / / docs . microsoft . com / en-[]us / dotnet / api / system . 
+runtime . loader .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--148
 []\T1/lmr/m/sc/12 Novak, M. \T1/lmr/m/n/12 (2014).  Se-ri-a-li-zation Per-for-m
 ance com-pa-ri-son
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 122--129
+Underfull \hbox (badness 3954) in paragraph at lines 141--148
 \T1/lmr/m/n/12 (C#/.NET) ^^U For-mats & Fra-meworks (XML^^UDataContractSerializ
 er
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--129
+Underfull \hbox (badness 10000) in paragraph at lines 141--148
 \T1/lmr/m/n/12 & Xml-Se-ri-a-li-zer, Bi-na-ry-For-mat-ter, JSON^^U New-ton-soft
  & Ser-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--129
+Underfull \hbox (badness 10000) in paragraph at lines 141--148
 \T1/lmr/m/n/12 vi-ceStack.Text, Pro-to-buf, Msg-Pack).  []$\T1/lmtt/m/n/12 http
 s : / / maxondev . com /
  []
 
 
-Overfull \hbox (559.9524pt too wide) in paragraph at lines 122--129
+Overfull \hbox (559.9524pt too wide) in paragraph at lines 141--148
 \T1/lmtt/m/n/12 serialization-[]performance-[]comparison-[]c-[]net-[]formats-[]
 frameworks-[]xmldatacontractserializer-[]xmlserializer-[]binaryformatter-[]json
 -[]newtonsoft-[]servicestack-[]text/$[]\T1/lmr/m/n/12 .|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--144
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 []$\T1/lmtt/m/n/12 http : / / www . oxeyegames . com / rts-[]game-[]play-[]part
 -[]3-[]build-[]options/$[]\T1/lmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--157
-[]\T1/lmr/m/sc/12 Peterson, J. \T1/lmr/m/n/12 (2015).  An in-tro-duction to IL2
-CPP
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--157
-\T1/lmr/m/n/12 in-ter-nals.  []$\T1/lmtt/m/n/12 https : / / blogs . unity3d . c
-om / 2015 / 05 / 06 /
- []
-
-
-Underfull \hbox (badness 2326) in paragraph at lines 152--157
-\T1/lmtt/m/n/12 an-[]introduction-[]to-[]ilcpp-[]internals/$[]\T1/lmr/m/n/12 . 
- [On-line; ac-ces-sed 2019-05-
- []
-
-
-Underfull \hbox (badness 2591) in paragraph at lines 165--170
+Underfull \hbox (badness 2591) in paragraph at lines 177--182
 []\T1/lmr/m/sc/12 Smith, F. \T1/lmr/m/n/12 (2016).  Sol-ving Bal-lis-tic Tra-je
 c-to-ries.  []$\T1/lmtt/m/n/12 https : / / www .
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 178--183
+Underfull \hbox (badness 1242) in paragraph at lines 190--195
 []\T1/lmr/m/sc/12 urho3d\T1/lmr/m/n/12 .  POD-Vec-tor Do-cu-men-tation.  []$\T1
 /lmtt/m/n/12 https : / / urho3d . github . io /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--183
+Underfull \hbox (badness 10000) in paragraph at lines 190--195
 \T1/lmtt/m/n/12 documentation / 1 . 4 / class _ urho3 _ d _ 1 _ 1 _ p _ o _ d _
  vector . html # details$[]\T1/lmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 3590) in paragraph at lines 185--190
+Underfull \hbox (badness 3590) in paragraph at lines 197--202
 []\T1/lmr/m/sc/12 Walker, M. H. \T1/lmr/m/n/12 (2004).  Stra-tegy Ga-ming: Part
  II.  []$\T1/lmtt/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--190
+Underfull \hbox (badness 10000) in paragraph at lines 197--202
 \T1/lmtt/m/n/12 / / web . archive . org / web / 20070129065355 / http : / / arc
 hive . gamespy .
  []
 
-
-Underfull \hbox (badness 6876) in paragraph at lines 192--197
+[47]
+Underfull \hbox (badness 6876) in paragraph at lines 204--209
 \T1/lmr/m/n/12 Turn-Based.  []$\T1/lmtt/m/n/12 https : / / web . archive . org 
 / web / 20081201113359 / http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--197
+Underfull \hbox (badness 10000) in paragraph at lines 204--209
 \T1/lmtt/m/n/12 / / archive . gamespy . com / articles / february02 / strategyg
 ames05 /
  []
 
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 232--237
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--243
 \T1/lmtt/m/n/12 / / en . wikipedia . org / w / index . php ? title = Blizzard _
  Entertainment &
  []
 
-)) [44]
+)) [48]
 P\v {r}\'{\i }loha A.
-[45
+[49
 
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 178.
- [46
+(Font)              <14.4> on input line 185.
+ [50
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
  (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux) (./kap02.aux) (./kap03
 .aux) (./kap04.aux) (./zaver.aux) (./literatura.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
 Package rerunfilecheck Info: File `prace.out' has not changed.
-(rerunfilecheck)             Checksum: 891288C04BA46F595486D8DB0B3A163B;4780.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
+(rerunfilecheck)             Checksum: FC4D8E7489F85C1620551866820B8E10;5300.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
  ) 
 Here is how much of TeX's memory you used:
- 16161 strings out of 492616
- 223054 string characters out of 6132768
- 295515 words of memory out of 5000000
- 19445 multiletter control sequences out of 15000+600000
- 120873 words of font info for 96 fonts, out of 8000000 for 9000
+ 17829 strings out of 492616
+ 253393 string characters out of 6132768
+ 331244 words of memory out of 5000000
+ 21049 multiletter control sequences out of 15000+600000
+ 120552 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,37p,2219b,2327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,14n,51p,2761b,2327s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2018/tex
 mf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvip
 s/lm/lm-mathit.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
@@ -1193,13 +1353,12 @@ mr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/
 2018/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2018/texmf-dist/fo
 nts/type1/public/lm/lmri12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/l
 m/lmss10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/t
-exlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2018/texmf-
-dist/fonts/type1/public/lm/lmtt12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msam10.pfb>
-Output written on prace.pdf (50 pages, 21570502 bytes).
+exlive/2018/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on prace.pdf (54 pages, 18970386 bytes).
 PDF statistics:
- 952 PDF objects out of 1000 (max. 8388607)
- 831 compressed objects within 9 object streams
- 268 named destinations out of 1000 (max. 500000)
- 364 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1102 PDF objects out of 1200 (max. 8388607)
+ 962 compressed objects within 10 object streams
+ 298 named destinations out of 1000 (max. 500000)
+ 479 words of extra memory for PDF output out of 10000 (max. 10000000)
 

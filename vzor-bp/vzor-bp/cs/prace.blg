@@ -13,50 +13,50 @@ The style file: czplainnat.bst
 Database file #1: literatura.bib
 Warning--to sort, need author or key in site:assimp
 Warning--empty year in site:assimp
-Warning--empty year in site:astarpseudoalseda
+Warning--empty year in site:protobufnet
 Warning--empty year in site:knownfolders
 Warning--empty year in site:specialfolders
 Warning--empty year in site:urho3D
 Warning--empty year in site:urho3DPOD
-You've used 39 entries,
+You've used 40 entries,
             2828 wiz_defined-function locations,
-            781 strings with 10013 characters,
-and the built_in function-call counts, 12521 in all, are:
-= -- 1163
-> -- 483
-< -- 36
-+ -- 196
-- -- 147
-* -- 733
-:= -- 1990
-add.period$ -- 156
-call.type$ -- 39
-change.case$ -- 165
-chr.to.int$ -- 29
-cite$ -- 86
-duplicate$ -- 557
-empty$ -- 1214
-format.name$ -- 185
-if$ -- 2676
+            786 strings with 10134 characters,
+and the built_in function-call counts, 12827 in all, are:
+= -- 1192
+> -- 493
+< -- 37
++ -- 200
+- -- 150
+* -- 749
+:= -- 2039
+add.period$ -- 160
+call.type$ -- 40
+change.case$ -- 169
+chr.to.int$ -- 30
+cite$ -- 88
+duplicate$ -- 571
+empty$ -- 1245
+format.name$ -- 189
+if$ -- 2742
 int.to.chr$ -- 11
 int.to.str$ -- 1
 missing$ -- 4
-newline$ -- 242
-num.names$ -- 152
-pop$ -- 497
+newline$ -- 248
+num.names$ -- 156
+pop$ -- 509
 preamble$ -- 1
-purify$ -- 127
+purify$ -- 130
 quote$ -- 0
-skip$ -- 372
+skip$ -- 382
 stack$ -- 0
-substring$ -- 79
-swap$ -- 92
+substring$ -- 81
+swap$ -- 94
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 419
+type$ -- 430
 warning$ -- 7
-while$ -- 114
+while$ -- 117
 width$ -- 0
-write$ -- 548
+write$ -- 562
 (There were 7 warnings)
