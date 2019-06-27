@@ -54,9 +54,9 @@ Hlavní inspirací pro tvorbu platformy, a~tím i pro typ her, které bude platf
 \done
 \todo[Možná vynechat]{Možná vynechat}
 \subsubsection*{Strategie vs. taktika}
-Jedním z~hlavních problémů RTS her je pečlivé vyvážení kombinace strategie/macromanagementu a~taktiky/micromanagementu. Tyto pojmy bývají často špatně chápány a~někdy zaměňovány, pokusíme se je proto konkrétně definovat. Strategií míníme \todo{citace} rozhodnutí týkající se globálního průběhu hry. Taktika \todo{citace} naopak zahrnuje konkrétní pozice konkrétních jednotek, jejich pohyb po mapě a~spolupráci v~jedné bitvě. 
+Jedním z~hlavních problémů RTS her je pečlivé vyvážení kombinace strategie/macromanagementu a~taktiky/micromanagementu. Tyto pojmy bývají často špatně chápány a~někdy zaměňovány, pokusíme se je proto konkrétně definovat. Strategií míníme rozhodnutí týkající se globálního průběhu hry. Taktika naopak zahrnuje konkrétní pozice konkrétních jednotek, jejich pohyb po mapě a~spolupráci v~jedné bitvě. 
 
-Mezi strategická rozhodnutí v~RTS hrách patří kupříkladu které budovy hráč postaví, v~jakém pořadí dané budovy postaví, které suroviny bude produkovat, které suroviny vynechá, které jednotky bude rekrutovat a~které vynechá. \todo{mozna graf nasledujiciho, jak se ovlivnujou} Tato 3 rozhodnutí jsou úzce propojena, protože výběr surovin určuje budovy, které bude hráč schopen postavit a~typy jednotek, které bude moci zrekrutovat. Stejně tak výběr budov určuje suroviny, které hráč může produkovat a~typy jednotek, které může zrekrutovat. 
+Mezi strategická rozhodnutí v~RTS hrách patří kupříkladu které budovy hráč postaví, v~jakém pořadí dané budovy postaví, které suroviny bude produkovat, které suroviny vynechá, které jednotky bude rekrutovat a~které vynechá. Tato 3 rozhodnutí jsou úzce propojena, protože výběr surovin určuje budovy, které bude hráč schopen postavit a~typy jednotek, které bude moci zrekrutovat. Stejně tak výběr budov určuje suroviny, které hráč může produkovat a~typy jednotek, které může zrekrutovat. 
 
 Taktika/micromanagement je v~RTS hrách reprezentován ovládáním jednotek, jejich přesné pozice, pohybu, směru útoku, používání schopností atd. Micromanagement lze ale vidět i v~ekonomické stránce hry, kdy hráč 
 
@@ -83,8 +83,6 @@ Nejstarší a~nejjednodušší reprezentací je rozdělení mapy na stejně velk
 Na každé dlaždici může být postavena až na výjimky nejvýše jedna budova a~stát nejvýše jedna jednotka. Při pohybu jednotek není tato vlastnost dodržována, lze tedy jednotky přesouvat přes dlaždice na kterých již jiná jednotka stojí. 
 
 Naše platforma bude podporovat rozšířenější verzi tohoto druhu mapy, ve které nebudeme vynucovat limity na počty jednotek a~budov na jedné dlaždici. Tato omezení budou přenechána pro implementaci tvůrcem her využívajících naší platformu a~bude vytvořeno rozhraní pro co nejjednodušší implementaci těchto limitů. 
-
-\todo[Další druhy]{popsat další druhy implementací}
 
 \noindent{Naše platforma bude podporovat mapu s~těmito vlastnostmi:}
 \begin{itemize}
@@ -355,7 +353,7 @@ Pro ukázku bude vytvořen balíček s~jednoduchou hrou demonstrující možnost
 	\item jednoduchou a~složitější umělou inteligenci;
 	\item plně automatické jednotky, neovladatelné hráčem;
 	\item jednotky útočící na dálku;
-	\item Jednotky útočící na blízko;
+	\item jednotky útočící na blízko;
 	\item aktivní získávání surovin;
 	\item pohyb po terénu;
 	\item pohyb nad terénem (létání);

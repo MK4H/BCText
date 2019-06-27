@@ -1,0 +1,95 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'ScreenStructure.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{567bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.50132275)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{ScreenStructure.pdf}}%
+    \put(0.08862434,0.4537037){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Main menu\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{ScreenStructure.pdf}}%
+    \put(0.3531746,0.4537037){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Package picking\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{ScreenStructure.pdf}}%
+    \put(0.61772487,0.4537037){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Level creation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{ScreenStructure.pdf}}%
+    \put(0.3531746,0.32142857){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Load game\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{ScreenStructure.pdf}}%
+    \put(0.3531746,0.18915344){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Options\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{ScreenStructure.pdf}}%
+    \put(0.3531746,0.05687831){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}About\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{ScreenStructure.pdf}}%
+    \put(0.61772487,0.32142857){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Level settings\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{ScreenStructure.pdf}}%
+    \put(0.61772487,0.18915344){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Hraní hry\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{ScreenStructure.pdf}}%
+    \put(0.88227513,0.4537037){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Editace úrovně\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{ScreenStructure.pdf}}%
+    \put(0.88227513,0.32142857){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Pause Menu\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{ScreenStructure.pdf}}%
+    \put(0.88227513,0.05687831){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}SaveAs\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{ScreenStructure.pdf}}%
+    \put(0.62433862,0.05687831){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Load\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{ScreenStructure.pdf}}%
+    \put(0.88227513,0.18915344){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Save\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{ScreenStructure.pdf}}%
+    \put(0.08994709,0.34920635){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Obrazovka\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{ScreenStructure.pdf}}%
+    \put(0.08730159,0.2962963){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Běžící hra\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{ScreenStructure.pdf}}%
+    \put(0.13492063,0.24338624){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}S přidáním na zásobník\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{ScreenStructure.pdf}}%
+    \put(0.12301587,0.19047619){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Zahození zásobníku\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{ScreenStructure.pdf}}%
+    \put(0.11111111,0.13756614){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Ukončení úrovně\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{ScreenStructure.pdf}}%
+    \put(0.09391534,0.08465608){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Bez návratu\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

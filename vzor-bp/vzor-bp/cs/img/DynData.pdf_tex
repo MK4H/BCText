@@ -1,0 +1,81 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'DynData.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{390.75bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.6353167)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{DynData.pdf}}%
+    \put(0.11516315,0.56621881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}DynDataDir\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{DynData.pdf}}%
+    \put(0.49904031,0.56621881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Packages\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{DynData.pdf}}%
+    \put(0.49904031,0.39347409){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}SavedGames\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{DynData.pdf}}%
+    \put(0.49904031,0.22072937){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}config.xml\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{DynData.pdf}}%
+    \put(0.49904031,0.04798464){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Log.txt\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{DynData.pdf}}%
+    \put(0.88291747,0.56621881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Packages.xml\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{DynData.pdf}}%
+    \put(0.88291747,0.39347409){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Package1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{DynData.pdf}}%
+    \put(0.88291747,0.22072937){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Package2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{DynData.pdf}}%
+    \put(0.10172745,0.41266795){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Adresář\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{DynData.pdf}}%
+    \put(0.09980806,0.33589251){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Soubor\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{DynData.pdf}}%
+    \put(0.19001919,0.25911708){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Vytvořený platformou\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{DynData.pdf}}%
+    \put(0.17850288,0.18234165){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Přidaný uživatelem\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

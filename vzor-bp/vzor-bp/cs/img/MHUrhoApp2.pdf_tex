@@ -1,0 +1,101 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'MHUrhoApp2.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{748.5bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.83166333)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{MHUrhoApp2.pdf}}%
+    \put(0.07214429,0.49398798){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MHUrhoApp\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.30861723){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Instance\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.43787575){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Files\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.37274549){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}StartupOptions\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.24348697){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Config\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.17935872){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MenuController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{MHUrhoApp2.pdf}}%
+    \put(0.59819639,0.78456914){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Program\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{MHUrhoApp2.pdf}}%
+    \put(0.26553106,0.55210421){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Extends\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{MHUrhoApp2.pdf}}%
+    \put(0.82264529,0.56012024){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída MHUrho.Desktop\end{tabular}}}}%
+    \put(0.82665331,0.47294589){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída enginu UrhoSharp\end{tabular}}}}%
+    \put(0.78256513,0.51503006){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída MHUrho\end{tabular}}}}%
+    \put(0.80260521,0.40480962){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Statická proměnná\end{tabular}}}}%
+    \put(0.81462926,0.36072144){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Nestatická proměnná\end{tabular}}}}%
+    \put(0.79158317,0.25751503){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Statická metoda\end{tabular}}}}%
+    \put(0.79258517,0.20941884){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Virtuální metoda\end{tabular}}}}%
+    \put(0.75250501,0.30360721){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Metoda\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{MHUrhoApp2.pdf}}%
+    \put(0.81262525,0.15230461){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Nastavení proměnné\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{MHUrhoApp2.pdf}}%
+    \put(0.78256513,0.11222445){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Volání metody\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{MHUrhoApp2.pdf}}%
+    \put(0.79358717,0.07214429){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Návrat z metody\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.05711423){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Start\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{MHUrhoApp2.pdf}}%
+    \put(0.06613226,0.78456914){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Application\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.73346693){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Run\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.64829659){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Start\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{MHUrhoApp2.pdf}}%
+    \put(0.77655311,0.73146293){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Main\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{MHUrhoApp2.pdf}}%
+    \put(0.26452906,0.11823647){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MenuController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{MHUrhoApp2.pdf}}%
+  \end{picture}%
+\endgroup%
