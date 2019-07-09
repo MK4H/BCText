@@ -1,0 +1,88 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'LevelRepStates.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{540.75bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.6407767)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{LevelRepStates.pdf}}%
+    \put(0.36061026,0.59223301){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}NewlyCreated\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{LevelRepStates.pdf}}%
+    \put(0.63800277,0.59223301){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Editing\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{LevelRepStates.pdf}}%
+    \put(0.63800277,0.41192788){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Prototype\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{LevelRepStates.pdf}}%
+    \put(0.63661581,0.21775312){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ClonedPrototype\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{LevelRepStates.pdf}}%
+    \put(0.91539528,0.59223301){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ClonedEditing\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{LevelRepStates.pdf}}%
+    \put(0.3592233,0.41192788){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Playing\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{LevelRepStates.pdf}}%
+    \put(0.08183079,0.41192788){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}LoadedSaved\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{LevelRepStates.pdf}}%
+    \put(0.3592233,0.21081831){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}SaveFile\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{LevelRepStates.pdf}}%
+    \put(0.19140083,0.09153953){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Dočasný stav\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{LevelRepStates.pdf}}%
+    \put(0.2149792,0.04993065){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Stav s běžící úrovní\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{LevelRepStates.pdf}}%
+    \put(0.23162275,0.00832178){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Stav uložený v balíčku\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{LevelRepStates.pdf}}%
+    \put(0.49237171,0.09153953){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Přechod mezi stavy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{LevelRepStates.pdf}}%
+    \put(0.52565881,0.05270458){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Přechod mimo běh platformy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{LevelRepStates.pdf}}%
+    \put(0.7961165,0.08460472){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Načtení ze souboru\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{LevelRepStates.pdf}}%
+    \put(0.7961165,0.01803051){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Uložení do souboru\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{LevelRepStates.pdf}}%
+  \end{picture}%
+\endgroup%

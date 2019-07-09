@@ -1,0 +1,103 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'TypePluginCreation.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{537bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.42039106)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{TypePluginCreation.pdf}}%
+    \put(0.60614525,0.29469274){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Assembly\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{TypePluginCreation.pdf}}%
+    \put(0.12709497,0.37849162){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Package XML\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{TypePluginCreation.pdf}}%
+    \put(0.12569832,0.31564246){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BuildingTypes\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{TypePluginCreation.pdf}}%
+    \put(0.12709497,0.27374302){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BuildingType\end{tabular}}}}%
+    \put(0.1047486,0.23743017){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Name: Gate\end{tabular}}}}%
+    \put(0.07681564,0.20949721){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ID: 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{TypePluginCreation.pdf}}%
+    \put(0.12430168,0.18156425){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}AssemblyPath: ...\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{TypePluginCreation.pdf}}%
+    \put(0.40502793,0.22346369){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}GamePack\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{TypePluginCreation.pdf}}%
+    \put(0.40642458,0.14106145){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BuildingType\end{tabular}}}}%
+    \put(0.38687151,0.07681564){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Name:"Gate"\end{tabular}}}}%
+    \put(0.35335196,0.1047486){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ID:1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{TypePluginCreation.pdf}}%
+    \put(0.66340782,0.2527933){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}GateTypePlugin\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{TypePluginCreation.pdf}}%
+    \put(0.87290503,0.2527933){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}WallTypePlugin\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{TypePluginCreation.pdf}}%
+    \put(0.85195531,0.18854749){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Name:"Wall"\end{tabular}}}}%
+    \put(0.82122905,0.21648045){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ID:2\end{tabular}}}}%
+    \put(0.6452514,0.18854749){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Name:"Gate"\end{tabular}}}}%
+    \put(0.61173184,0.21648045){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ID:1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{TypePluginCreation.pdf}}%
+    \put(0.65642458,0.37011173){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BuildingTypePlugin\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{TypePluginCreation.pdf}}%
+    \put(0.0698324,0.00698324){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Soubor\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{TypePluginCreation.pdf}}%
+    \put(0.21648045,0.00698324){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Instance třídy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{TypePluginCreation.pdf}}%
+    \put(0.38407821,0.00698324){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}XML element\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{TypePluginCreation.pdf}}%
+    \put(0.50977654,0.00698324){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{TypePluginCreation.pdf}}%
+    \put(0.63826816,0.00698324){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Reference\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{TypePluginCreation.pdf}}%
+    \put(0.78910615,0.00698324){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Dědičnost\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{TypePluginCreation.pdf}}%
+    \put(0.93435754,0.00698324){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Zdroj dat\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{TypePluginCreation.pdf}}%
+    \put(0.66759777,0.06284916){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Součást platformy\end{tabular}}}}%
+    \put(0.85893855,0.06284916){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Součást enginu\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

@@ -1,0 +1,100 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'InputHier.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{593.25bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.67256637)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{InputHier.pdf}}%
+    \put(0.21997472,0.62831858){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}IGameController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{InputHier.pdf}}%
+    \put(0.07585335,0.46396966){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}GameController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{InputHier.pdf}}%
+    \put(0.40328698,0.62831858){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}IMenuController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{InputHier.pdf}}%
+    \put(0.84576485,0.62831858){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ICameraController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{InputHier.pdf}}%
+    \put(0.23893805,0.46396966){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MenuController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{InputHier.pdf}}%
+    \put(0.4045512,0.46396966){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}GameController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{InputHier.pdf}}%
+    \put(0.5676359,0.46396966){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MenuController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{InputHier.pdf}}%
+    \put(0.15044248,0.32490518){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Controller\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{InputHier.pdf}}%
+    \put(0.49178255,0.32490518){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Controller\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{InputHier.pdf}}%
+    \put(0.75726928,0.46396966){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CameraController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{InputHier.pdf}}%
+    \put(0.9216182,0.46396966){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CameraController\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{InputHier.pdf}}%
+    \put(0.7193426,0.16055626){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}TouchFactory\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{InputHier.pdf}}%
+    \put(0.30214918,0.16055626){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MandKFactory\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{InputHier.pdf}}%
+    \put(0.14538559,0.08343869){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Namespace Input.MandK\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{InputHier.pdf}}%
+    \put(0.14538559,0.04551201){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Namespace Input.Touch\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{InputHier.pdf}}%
+    \put(0.1125158,0.00632111){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Namespace Input\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{InputHier.pdf}}%
+    \put(0.35903919,0.08343869){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{InputHier.pdf}}%
+    \put(0.37294564,0.04551201){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Rozhraní\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{InputHier.pdf}}%
+    \put(0.60809102,0.08343869){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Implementuje/dědí\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{InputHier.pdf}}%
+    \put(0.60809102,0.04551201){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Vytváří instance\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{InputHier.pdf}}%
+    \put(0.51074589,0.16055626){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}IControllerFactory\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{InputHier.pdf}}%
+  \end{picture}%
+\endgroup%

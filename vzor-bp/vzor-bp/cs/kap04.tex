@@ -1,1 +1,687 @@
+\chapter{Tvorba pluginů}
+Pluginy rozumíme .NET assembly nahrávané platformou MHUrho a implementující chování úrovní, hráčů, jednotek, budov a projektilů. Pluginy jsou v balíčku uloženy jako \texttt{.dll} knihovny, cílené pro .NET Framework 4.7.2. 
+
+V této části dokumentace popíšeme postup vytvoření takovéto knihovny. Její následné připojení do balíčku je popsáno v předchozí části \ref{sec:packagemaking}.
+
+Platforma nijak neomezuje rozdělení pluginů pro různé herní prvky do různých knihoven. Lze tedy všechny pluginy shromáždit v jedné, jak je to provedeno v ukázkové hře, nebo je možné vytvořit více různých knihoven s libovolným rozdělením pluginů.
+
+Stejně jako v předchozí části i zde je velká část tvorby shodná pro různé druhy prvků. Celý proces proto popíšeme pouze v části tvorby pluginu jednotky a v následujících částech uvedeme pouze rozdíly oproti této části.
+
+
+\section{Vytvoření pluginu jednotky}
+\label{sec:unittypeplugin}
+V této části popíšeme tvorbu typu jednotky. Tato jednotka bude mít tyto vlastnosti:
+
+\begin{itemize}
+	\item 3D model s animacemi,
+	\item pohyb po terénu přes omezenou množinu typů dlaždic,
+	\item střelba na dálku za použití ypu projektilu specifikovaného v XML.
+\end{itemize}
+
+Jako první vytvoříme definici jednotky v XML. Tento krok je popsán v předchozí části \ref{sec:packagemaking}, nebudeme ho zde proto opakovat. Výsledné XML typu jednotky tedy bude takovéto:
+\begin{lstlisting}
+<unitType name="Chicken" ID="3">
+<assets type="xmlprefab">
+<path>Assets/Units/Chicken/prefab.xml</path>
+</assets>
+<assemblyPath>ShowcasePackage.dll</assemblyPath>
+<extension>
+<cost>
+<Wood>0.2</Wood>
+<Gold>0.5</Gold>
+</cost>
+<canPass>
+<Sand/>
+<Xamarin/>
+<Grass/>
+<Water/>
+</canPass>
+</extension>
+<iconTextureRectangle left="0" top="200" right="100" bottom="300"/>
+</unitType>
+\end{lstlisting}
+
+Hotovou jednotku můžete vidět v ukázkové hře pod názvem \texttt{Chicken}.
+
+\section{Plugin typu}
+Prvním krokem je vytvoření dvou veřejných tříd, jedné reprezentující plugin typu a druhé reprezentující plugin instance. 
+
+Jako první vytvoříme třídu reprezentující plugin. Tato třída musí být veřejná a dědit od třídy \texttt{UnitTypePlugin}, definované platformou. Takováto třída poté bude nalezena pomocí \texttt{Reflection} a za běhu platformy načtena jako plugin daného typu.  
+
+\begin{lstlisting}
+public class ChickenType : UnitTypePlugin {
+
+}
+\end{lstlisting}
+
+Následuje implementace požadovaných vlastností a metod třídy. Jako první přidáme vlastnosti \texttt{Name} a \texttt{ID}.
+\begin{lstlisting}
+public override string Name => "Chicken";
+public override int ID => 3;
+\end{lstlisting}
+
+Tyto vlastnosti jsou používány pro nalezení pluginu pro daný typ. Hodnoty \texttt{Name} a \texttt{ID} se tedy musí shodovat s hodnotami uvedenými v atributech \texttt{name} a \texttt{ID} v XML definici typu.
+
+Dále platforma po všech typových pluginech požaduje implementaci tří hlavních metod:
+
+\begin{enumerate}
+	\item \texttt{Initialize},
+	\item \texttt{GetInstanceForLoading},
+	\item \texttt{CreateNewInstance}.
+\end{enumerate}
+
+
+První metodou společnou všem pluginům typů je metoda \texttt{Initialize}. Tato metoda je poskytnuta z důvodu použití \texttt{Reflection} pro vytváření instancí typových pluginů, což vynucuje použití konstruktoru bez parametrů. Metoda \texttt{Initialize} tedy do jisté míry nahrazuje konstruktor. Tato metoda je volána pouze jednou, při načtení balíčku do hry. Typická implementace načte data z \texttt{extension} elementu v XML definici typu. Tato data často budou odkazovat na jiné typy herních prvků, metoda \texttt{Initialize} tedy dostává referenci na balíček, kterou může použít pro získání referencí na ostatní typy z balíčku. Implementace pro naši jednotku bude vypadat takto: 
+
+\begin{lstlisting}
+protected override void Initialize(XElement extensionElement, GamePack package) {
+XElement costElem = extensionElement.Element(package.PackageManager.GetQualifiedXName(CostElement));
+cost = Cost.FromXml(costElem, package);
+
+XElement canPass =
+extensionElement.Element(package.PackageManager.GetQualifiedXName(PassableTileTypesElement));
+PassableTileTypes = ViableTileTypes.FromXml(canPass, package);
+
+myType = package.GetUnitType(ID);
+ProjectileType = package.GetProjectileType("EggProjectile");
+}
+\end{lstlisting}
+
+\texttt{Cost} a \texttt{ViableTileTypes} jsou pomocné třídy, které zpracují části XML a podle načtených dat získají reference na typy. Ukázku manuálního získání typu můžeme vidět při inicializaci \texttt{ProjectileType}, kde používáme balíček pro získání typu projektilu.
+
+
+Druhou metodou je metoda \texttt{CreateNewInstance}, která je volána při vytvoření nové instance jednotky tohoto typu. Jejím účelem je získání pluginu pro nově vytvářenou instanci jednotky. Tvorba pluginu instance bude popsána v následující část \ref{sec:instanceplugincreation}, zde pouze uveďme že plugin instance bude představován třídou \texttt{Chicken}.
+\begin{lstlisting}
+public override UnitInstancePlugin CreateNewInstance(ILevelManager level, IUnit unit){
+return Chicken.CreateNew(level, unit, this);
+}
+\end{lstlisting}
+Metoda získává jako první argument instanci \texttt{ILevelManager}, který reprezentuje aktuální úroveň a slouží jako přístupový bod ke všem službám platformy. Druhým argumentem je potom \texttt{IUnit}, která je instancí reprezentující nově vytvářenou jednotku v platformě. Právě pro tuto jednotku vytváříme instanční plugin.
+
+
+Poslední požadovanou metodou je metoda \texttt{GetInstanceForLoading}. Tato metoda má podobný účel jako předchozí metoda \texttt{CreateNewInstance}, a to získání instančního pluginu jednotky. Rozdíl je ale v tom, že tato jednotka není nově vytvářená v průběhu hry úrovně, ale právě dochází k načtení úrovně z úložky a tedy počáteční stav jednotky i pluginu bude načten z uloženého souboru. Z tohoto důvodu musí být instanční plugin inicializován takovým způsobem, aby mohl následně načíst uložený stav. Implementace této metody bude tedy vypadat takto:
+
+\begin{lstlisting}
+public override UnitInstancePlugin GetInstanceForLoading(ILevelManager level, IUnit unit) {
+return Chicken.CreateForLoading(level, unit, this);
+}
+\end{lstlisting}
+
+Typy jednotek mají jedinou metodu odlišnou od ostatních pluginů typů, a to:
+
+\begin{lstlisting}
+public override bool CanSpawnAt(ITile tile);
+\end{lstlisting}
+
+Tato metoda je volána před vytvořením nové instance jednotky a jejím účelem je zjistit, zda lze jednotku vytvořit na dlaždici \texttt{tile}. Typická implementace ověří, zda se na dané dlaždici vyskytuje budova, zda je dlaždice správného typu a případně zda se na dané dlaždici vyskytují další jednotky. Naše implementace využije pomocnou třídu \texttt{ViableTileTypes}, která slouží právě jako seznam správných typů dlaždic.
+
+\begin{lstlisting}
+public override bool CanSpawnAt(ITile tile) {
+return PassableTileTypes.IsViable(tile) && 
+(tile.Building == null);
+}
+\end{lstlisting}
+
+Tímto jsme vytvořili funkční plugin typu, který nám umožní vytvářet nové instance jednotek tohoto typu, kontrolovat místa v mapě, na kterých jsou vytvářeny a načítat uložené instance jednotky do hry.
+
+\section{Plugin instance}
+
+Každá instance jednotky má přiřazenu jednu instanci instančního pluginu. Tato instance pluginu je získávána voláním jedné z funkcí \texttt{CreateNewInstance} a \texttt{GetInstanceForLoading}, popsaných v předchozí části \ref{sec:unittypeplugin}. Metoda \texttt{CreateNewInstance} je volána při tvorbě nové instance jednotky v běžící úrovni, metoda \texttt{GetInstanceForLoading} je pak volána při načítání jednotky v průběhu načítání uložené úrovně.
+
+Plugin instance je tvořen třídou, která je potomkem \texttt{UnitInstancePlugin}. Pro naší jednotku tedy vytvoříme takovouto třídu:
+
+\begin{lstlisting}
+class Chicken : UnitInstancePlugin {
+
+}
+\end{lstlisting}
+
+Tuto definici budeme ještě v průběhu tvorby upravovat, ale pro začátek takováto definice stačí.
+
+
+\subsection{Vytvoření instance}
+
+Pro implementaci metod \texttt{CreateNewInstance} a \texttt{GetInstanceForLoading} musíme poskytnout dva různé způsoby inicializace třídy. Toho lze docílit několika způsoby, my jsme si zvolili vytvoření dvou statických metod, které provedou inicializaci třídy.
+
+Pro vytvoření nové nové instance v běžící úrovni vytvoříme metodu \texttt{CreateNew}. Volání této metody jsme mohli vidět v části \ref{sec:unittypeplugin} při implementaci \texttt{CreateNewInstance}. Pro získání instance při načítání pak vytvoříme metodu \texttt{CreateForLoading}, která je použita pro implementaci \texttt{GetInstanceForLoading}:
+
+\begin{lstlisting}
+public static Chicken CreateNew(ILevelManager level, IUnit unit, ChickenType type);
+
+public static Chicken CreateForLoading(ILevelManager level, IUnit unit, ChickenType type);
+\end{lstlisting}
+
+
+\subsubsection{Pro načítání uloženého stavu}
+
+Metoda \texttt{CreateForLoading} bude pouze jednoduché volání konstruktoru, tedy celá implementace bude vypadat následovně:
+
+\begin{lstlisting}
+public static Chicken CreateForLoading(ILevelManager level, IUnit unit, ChickenType type) {
+return new Chicken(level, unit, type);
+}
+\end{lstlisting}
+
+Konstruktor bude také jednoduchý, protože drtivou většinu dat budeme v tomto případě načítat z uloženého stavu. Implementace konstruktoru tedy bude takováto:
+
+\begin{lstlisting}
+public Chicken(ILevelManager level, 
+			   IUnit unit, 
+			   ChickenType type) 
+:base(level,unit)
+{
+	this.myType = type;
+	this.distCalc = new ChickenDistCalc(this);	
+	unit.AlwaysVertical = true;
+}
+\end{lstlisting}
+
+Položka \texttt{myType} ukládá referenci na \texttt{ChickenType}, který obsahuje data o schůdných typech dlaždic, používaném typu projektilu a další data načtená z XML, společná všem jednotkám tohoto typu.
+
+Pro implementaci pohybu po mapě bude naše jednotka využívat algoritmus pro hledání cesty, který bude požadovat instanci kalkulátoru ohodnocující hrany grafu. Touto instancí je právě instance \texttt{ChickenDistCalc}, popsaná v následujících částech.
+
+\texttt{AlwaysVertical} položka instance jednotky určuje, zda se jednotka při pohybu otočí čelem přímo do směru pohybu, nebo zda se otočí pouze okolo osy \texttt{Y} a tedy její hlava bude stále kolmo nad terénem.
+
+\subsubsection{Vytvoření v běžící hře}
+\label{sec:instantiation}
+
+Implementace metody \texttt{CreateNew} specifikujeme, které součásti platformy budeme využívat. Tyto součásti, které platforma nazývá \texttt{DefaultComponent}, jsou schopny samostatného ukládání a načítání, stačí je tedy přidat na nově vytvářenou či existující jednotku. Vlastní implementace \texttt{CreateNew} bude začínat následovně: 
+
+\begin{lstlisting}
+public static Chicken CreateNew(
+	ILevelManager level, 
+	IUnit unit, 
+	ChickenType type)
+{
+	Chicken newChicken = 
+		new Chicken(level, unit, type);
+	newChicken.health = 100;
+/*...*/
+\end{lstlisting}
+
+Jak můžeme vidět, jako první vytvoříme instanci pluginu. Důvodem jsou \texttt{DefaultComponenty}, které ve při svém vytváření potřebují referenci na instanční plugin. Navíc na tento plugin mají další požadavky, které uvedeme později. Dále inicializujeme počet životů jednotky na 100. Při načítání jednotky je počet životů načten z uloženého stavu, není proto inicializován v předchozí metodě \texttt{CreateForLoading}.
+
+Následuje vytvoření a nastavení \texttt{DefaultComponentů} spolu s uložením referencí na tyto komponenty pro budoucí ovládání:
+
+\begin{lstlisting}
+newChicken.Walker = WorldWalker.CreateNew(newChicken, level);
+newChicken.Shooter = Shooter.CreateNew(newChicken, level,
+type.ProjectileType, new Vector3(0, 0.7f, -0.7f), 20);
+newChicken.Shooter.SearchForTarget = true;
+newChicken.Shooter.TargetSearchDelay = 2;
+
+MovingRangeTarget.CreateNew(newChicken, level, new Vector3(0, 0.5f, 0));
+
+var selector = UnitSelector.CreateNew(newChicken, level);
+\end{lstlisting}
+
+Jak jsme specifikovali na počátku tohoto tutoriálu, naším cílem je jednotka, která je schopna pohybovat se po terénu, střílet po nepřátelských jednotkách, sama může být cílem nepřátelských jednotek a může být označena a ovládána hráčem. Tyto vlastnosti jsou popořadě implementovány komponentami \texttt{WorldWalker}, \texttt{Shooter}, \texttt{MovingRangeTarget} a \texttt{UnitSelector}. Jak můžeme vidět, instance komponent \texttt{WorldWalker} a \texttt{Shooter} si ukládáme pro budoucí ovládání v dalších metodách. Oproti tomu \texttt{MovingRangeTarget} neplánujeme měnit, proto pouze vytváříme jeho instanci na naší jednotce. Instanci \texttt{UnitSelctor} pak pouze nastavíme v této metodě a poté ji již nebudeme měnit.
+
+
+Poslední požadovanou vlastností byl 3D animovaný model. Model samotný je k jednotce přidán platformou automaticky podle popisu v XML. Jedinou funkcí pluginu je následně spouštět a zastavovat animace modelu. K tomuto účelu poskytuje engine UrhoSharp komponentu \texttt{AnimationController}, kterou připojíme k naší jednotce. Také si uložíme referenci na tuto komponentu pro ovládání modelu v dále definovaných metodách.
+\begin{lstlisting}
+newChicken.animationController = 
+unit.CreateComponent<AnimationController>();
+\end{lstlisting}
+
+Posledním krokem je registrace obsluh událostí. Platformou definované \texttt{DefaultComponenty} poskytují \texttt{eventy}, ke kterým si může plugin zaregistrovat obsluhu. V našem případě provedeme následující registraci:
+
+\begin{lstlisting}
+walker.MovementStarted += OnMovementStarted;
+walker.MovementFinished += OnMovementFinished;
+walker.MovementFailed += OnMovementFailed;
+walker.MovementCanceled += OnMovementCanceled;
+
+shooter.BeforeShotFired += BeforeShotFired;
+shooter.TargetAutoAcquired += OnTargetAutoAcquired;
+shooter.TargetDestroyed += OnTargetDestroyed;
+
+selector.UnitSelected += OnUnitSelected;
+\end{lstlisting}
+
+Události komponenty \texttt{WorldWalker} nastávají v těchto situacích:
+\begin{enumerate}
+	\item \texttt{MovementStarted} event nastává při začátku pohybu;
+	\item \texttt{MovementFailed} event nastává při úspěšném dokončení pohybu do cíle;
+	\item \texttt{MovementFailed} event nastává při neúspěšném ukončení pohybu, například při zablokování cesty;
+	\item \texttt{MovementCanceled} event nastává při explicitním přerušení pohybu.
+\end{enumerate}
+
+Události komponenty \texttt{Shooter} nastávají v těchto situacích:
+
+\begin{enumerate}
+	\item \texttt{BeforeShotFired} event nastává těsně před vystřelením projektilu;
+	\item \texttt{TargetAutoAcquired} event nastává při nalezení cíle;
+	\item \texttt{TargetDestroyed} event nastává při zničení cíle.
+\end{enumerate}
+
+Poslední událost \texttt{UnitSelected} nastává ve chvíli, kdy je jednotka označena hráčem.
+
+
+Tímto je inicializace hotova. Nyní nám zbývá implementovat metody požadované předkem \texttt{UnitInstancePlugin}, požadované \texttt{DefaultComponenty} a obsluhující události.
+
+\subsection{Metody pluginu}
+
+Třída \texttt{UnitInstancePlugin} požaduje po svých potomcích implementaci sedmi metod. Těmito metodami jsou:
+\begin{lstlisting}
+public abstract void SaveState(PluginDataWrapper pluginData);
+public abstract void LoadState(PluginDataWrapper pluginData);
+
+public abstract void Dispose();
+
+public abstract void TileHeightChanged(ITile tile);
+public abstract void BuildingBuilt(IBuilding building, ITile tile);
+public abstract void BuildingDestroyed(IBuilding building, ITile tile);
+public abstract void OnHit(IEntity other, object userData);
+\end{lstlisting}
+
+
+\subsubsection{Ukládání a načítání}
+
+Dvojice metod \texttt{SaveState} a \texttt{LoadState} umožňuje pluginu uložit aktuální stav v metodě \texttt{SaveState} a následně tento stav při načítání úrovně zpět načíst v metodě \texttt{LoadState}.
+
+V naší jednotce je jedinou informací počet životů, které jednotce zbývají. Uložení této informace provedeme takto:
+\begin{lstlisting}
+public override void SaveState(
+PluginDataWrapper pluginDataStorage)
+{
+var writer = 
+pluginDataStorage.GetWriterForWrappedSequentialData();
+
+writer.StoreNext(health);
+}
+\end{lstlisting}
+
+
+Zpětné načtení jednotky bude potom vypadat následovně:
+
+\begin{lstlisting}
+public override void LoadState(PluginDataWrapper pluginData) {
+Unit.AlwaysVertical = true;
+
+Walker = Unit.GetDefaultComponent<WorldWalker>();
+Shooter = Unit.GetDefaultComponent<Shooter>();
+var selector = Unit.GetDefaultComponent<UnitSelector>();
+
+RegisterEvents(Walker, Shooter, selector);
+
+animationController =
+Unit.CreateComponent<AnimationController>();
+
+var reader = pluginData.GetReaderForWrappedSequentialData();
+reader.GetNext(out health);
+}
+\end{lstlisting}
+
+Jak můžeme vidět, při načítání jednotky je potřeba vykonat více práce než při jejím ukládání. První znovu nastavíme držení vertikální pozice jednotky. Tato vlastnost se během hry nemění, proto ji nepotřebujeme ukládat a pouze ji nastavíme při vytváření a načítání jednotky. 
+
+Následuje získání referencí na \texttt{DefaultComponenty}. Jak bylo řečeno u vytváření nové instance, dokáží se tyto komponenty samy ukládat a načítat. Z tohoto důvodu nám zde stačí získat reference na již načtené komponenty. 
+
+Dále zaregistrujeme obsluhy událostí stejně jako při načítání. Následuje vytvoření komponentu \texttt{AnimationController}. Jak bylo zmíněno v části o vytváření instance, není tato komponenta poskytována platformou MHUrho ale samotným enginem UrhoSharp, není tedy schopna sama se uložit. Plugin tedy musí jak při vytváření nové jednotky tak při načítání existující tuto komponentu vytvořit znovu. Jako poslední načteme uložený počet životů.
+
+\subsubsection{Uvolnění zdrojů}
+
+Uvolnění dat je prováděn pomocí metody \texttt{Dispose}. V naší implementaci pluginu nevytváříme žádné zdroje, které by bylo nutné uvolňovat pomocí \texttt{Dispose}, implementace této metody tedy bude prázdná.
+
+
+\subsubsection{Události platformy}
+
+Poslední čtyři metody požadované třídou \texttt{UnitInstancePlugin} jsou volány v těchto situacích:
+\begin{itemize}
+	\item \texttt{TileHeightChanged} při změně výšky dlaždice, na které se jednotka právě nachází,
+	\item \texttt{BuildingBuilt} při stavbě budovy na dlaždici, na které se jednotka právě nachází
+	\item \texttt{BuildingDestroyed} při zničení budovy na dlaždici, na které se jednotka právě nachází,
+	\item \texttt{OnHit} pokud je jednotka zasažena projektilem či útokem jiné jednotky či budovy.
+\end{itemize}
+
+
+Pro implementaci \texttt{TileHeightChanged} je důležité vědět, že platforma sama udržuje všechny součásti nad úrovní terénu. Metoda tedy bude zavolána, ale při tomto volání bude vždy jednotka nad úrovní terénu. Naopak pokud je výška terénu snížena, platforma s jednotkou neprovádí žádné akce. Naše implementace \texttt{TileHeightChanged} tedy při změně výšky dlaždice přesune jednotku v ose \textit{Y}, tedy ve vertikální ose, na výšku terénu v daném bodě.
+
+
+\begin{lstlisting}
+public override void TileHeightChanged(ITile tile)
+{
+var newPosition = Unit.Position;
+newPosition.Y = Level.Map
+.GetHeightAt(newPosition.X,
+newPosition.Z);
+Unit.MoveTo(newPosition);
+}
+\end{lstlisting}
+
+Property \texttt{Unit} a \texttt{Level} jsou poskytována předkem \texttt{UnitInstancePlugin}, kterému jsou předávány v konstruktoru, jak můžeme vidět v naší implementaci.
+
+
+Metoda \texttt{BuildingBuilt} by neměla v naší ukázce nikdy být zavolána, protože vytvořené budovy nebudou dovolovat stavbu na dlaždicích obsahujících jednotky. Pro oznámení chyby při zavolání tedy bude metoda vyhazovat výjimku. Implementace tedy bude vypadat takto:
+
+\begin{lstlisting}
+public override void BuildingBuilt(IBuilding building, ITile tile)
+{
+throw new InvalidOperationException("Building building on top of units is not supported.");
+}
+\end{lstlisting}
+
+Metoda \texttt{BuildingDestroyed} bude oproti předchozí metodě naší implementací využívána. Naše jednotka bude schopná chůze po budovách, při zničení budov bude tedy nutné jednotku přemístit zpět na úroveň terénu. Tuto funkcionalitu jsme již implementovali v metodě \texttt{TileHeightChanged}, implementace této metody bude tedy obdobná. Navíc při zničení budovy zastavíme pohyb jednotky. Implementace tedy bude vypadat takto:
+
+\begin{lstlisting}
+public override void BuildingDestroyed(IBuilding building, 
+ITile tile)
+{
+var newPosition = Unit.Position;
+newPosition.Y = Level.Map
+.GetHeightAt(newPosition.X,
+newPosition.Z);
+Unit.MoveTo(newPosition);
+Walker.Stop();
+}
+\end{lstlisting}
+
+Poslední požadovaná metoda \texttt{OnHit} informuje jednotku o tom, že byla zasažena. Argumenty metody je \texttt{IEntity}, která nás zasáhla, tedy jednotka, budova či projektil, a \texttt{object}, který tato entita předala metodě \texttt{HitBy}, kterou zavolala na naší \texttt{Unit}. Tento \texttt{object} v naší hře představuje udělené poškození. Dále v naší hře nedovolujeme poškození přátelských jednotek. Implementace \texttt{OnHit} bude tedy následující:
+
+\begin{lstlisting}
+public override void OnHit(IEntity other, 
+						   object userData)
+{
+	if (Unit.Player.IsFriend(other.Player)) {
+		return;
+	}
+
+	int damage = (int)userData;
+	health -= damage;
+
+	if (health < 0) {
+		animationController.PlayExclusive("Assets/Units/Chicken/Models/Dying.ani", 0, false);
+		dying = true;
+		Shooter.Enabled = false;
+		Walker.Enabled = false;
+	}
+}
+\end{lstlisting}
+
+Pokud je udílející jednotka přátelská, k žádnému udělení poškození nedojde. Poté získáme udělené poškození z argumentu \texttt{userData} a odečteme ho od aktuálního počtu životů jednotky. Pokud počet životů klesne pod nulu, pak spustíme animaci umírání a zastavíme komponenty \texttt{Walker} a \texttt{Shooter}, čímž se jednotka přestane pohybovat a přestane střílet. Proměnná \texttt{dying} je použita v následující metodě pro změnu chování během sekvence umírání.
+
+\subsubsection{OnUpdate}
+Předek \texttt{UnitInstancePlugin} poskytuje k přetížení ještě jednu metodu, kterou je \texttt{OnUpdate}. Tato metoda je volána při každém výpočtu stavu hry a umožňuje periodicky kontrolovat aktuální stav a podle tohoto stavu provádět úkony.
+
+Naše jednotka bude v této metodě provádět několik úkonu. Těmito úkony budou:
+\begin{enumerate}
+	\item odstranění jednotky z úrovně ve chvíli, kdy je dokončena animace umírání;
+	\item střelbu na cíl explicitně zvolený hráčem;
+	\item otočení proti aktuálnímu cíli střelby.
+\end{enumerate}
+
+Pro kontrolu, zda byla dokončena animace umírání, použijeme komponentu \texttt{AnimationController}, kterou jsme vytvořili při vytvoření či načtení pluginu a uložili si na ni referenci v proměnné \texttt{animationController}. Zároveň využijeme proměnnou \texttt{dying}, kterou jsme nastavili v metodě \texttt{OnHit}, pospané v předešlé části. Kód bude tedy vypadat následovně:
+
+\begin{lstlisting}
+if (dying && 
+	animationController.IsAtEnd(
+		"Assets/Units/Chicken/Models/Dying.ani")) 
+{
+	Unit.RemoveFromLevel();
+	return;
+}
+\end{lstlisting}
+
+Pro střelbu na cíl, který byl zvolený hráčem, potřebujeme mít uložen tento cíl. K tomuto účelu slouží proměnná třídy \texttt{explicitTarget}, nastavovaná v obsluze události popsané v části \ref{sec:eventhandlers}. V tuto chvíli pouze zkontrolujeme, zda máme nastaven cíl, tedy že daná proměnná nemá hodnotu \texttt{null}, a poté se pokusíme zaútočit.
+
+Z důvodů šetření výpočetním výkonem není velká část kontrol a výpočtů prováděna při každém výpočtu stavu hry, tedy každém volání \texttt{OnUpdate}, ale mají přiřazený časovač, který s každým tímto voláním posouvají a ve chvíli, kdy časovač vyprší, provedou výpočet a časovač resetují.
+
+Mezi tyto výpočty patří i střelba na cíl explicitně zvolený hráčem. Při této střelbě používáme komponenty \texttt{Shooter} a \texttt{WorldWalker}, kde první je používána pro kontrolu dostřelu a střelbu samotnou a druhá pro případ, kdy je cíl mimo dostřel a jednotka musí provést pohyb směrem k cíli.
+
+Výsledná část kódu vypadá takto:
+\begin{lstlisting}
+if (explicitTarget != null) {
+	shootTestTimer -= timeStep;
+	if (shootTestTimer < 0) {
+		shootTestTimer = timeBetweenTests;
+
+		if (Shooter.CanShootAt(explicitTarget)) {
+			Walker.Stop();
+			Shooter.ShootAt(explicitTarget);
+		}
+		else {			
+			Walker.GoTo(Level.Map
+							 .PathFinding
+							 .GetClosestNode(explicitTarget.CurrentPosition));
+		}
+	}
+}
+\end{lstlisting}
+
+První řádek kontroluje, zda je nastaven explicitní cíl. Následující tři řádky implementují časovač. Poté se zeptáme komponenty \texttt{Shooter}, zda je cíl v dostřelu. Pokud cíl v dostřelu je, zastavíme pohyb jednotky a začneme střílet. Pokud ale není v dostřelu, pak se pokusíme o pohyb na pozici nejbližší cíli.
+
+Poslední část zajišťuje při střelbě otočení jednotky směrem, kterým vypouští projektily. Je využita funkce jednotky \texttt{Unit.FaceTowards}, která otočí jednotku tak, aby mířila čelem k danému bodu v herním světě. Výsledný kód bude tedy vypadat následovně:
+
+\begin{lstlisting}
+if (Shooter.Target != null && 
+	Walker.State != WorldWalkerState.Started) 
+{
+	var targetPos = Shooter.Target.CurrentPosition;
+	Unit.FaceTowards(targetPos);
+}
+\end{lstlisting}
+
+Kontroly před otočením jednotky zkoumají, zda aktuálně střílíme na cíl a nepohybujeme se po mapě.
+
+\subsubsection{Metody požadované potomky DefaultComponent}
+Při vytvoření instance \texttt{DefaultComponent} je požadováno předání instančního pluginu. Za využití generických metod jazyka C\# je navíc u některých komponent požadována implementace rozhraní \texttt{IUser} dané komponenty. Jak jsme zmínili na počátku tvorby instančního pluginu, definice třídy \texttt{Chicken} bude ještě změněna. Tato změna nastane právě zde. Pro použití komponentů \texttt{WorldWalker}, \texttt{MovingRangeTarget} a \texttt{UnitSelector} musí naše třída implementovat rozhraní \texttt{WorldWalker.IUser}, \texttt{MovingRangeTarget.IUser} a \texttt{UnitSelector.IUser}. Jak můžeme vidět, komponent \texttt{Shooter} nepožaduje implementaci žádného rozhraní, místo toho všechny metody poskytuje jako události. Konečná definice třídy bude tedy vypadat následovně:
+
+\begin{lstlisting}
+public class Chicken : UnitInstancePlugin, 
+					   WorldWalker.IUser, 
+					   MovingRangeTarget.IUser,
+					   UnitSelector.IUser
+\end{lstlisting}
+
+Tato rozhraní vyžadují implementaci následujících metod:
+\begin{lstlisting}
+INodeDistCalculator GetNodeDistCalculator();
+
+IEnumerable<Waypoint> GetFutureWaypoints(MovingRangeTarget target);
+
+bool ExecuteOrder(Order order);
+\end{lstlisting}
+
+Metoda \texttt{GetNodeDistCalculator} vrací instanci třídy implementující rozhraní \texttt{INodeDistCalculator}. Toto rozhraní požaduje implementaci jediné metody, a tou je \texttt{GetTime}.
+
+\begin{lstlisting}
+bool GetTime(INode source, INode target, MovementType movementType, out float time);
+\end{lstlisting}
+
+Tato metoda dostává dva vrcholy z grafu algoritmu pro hledání nejkratší cesty v podobě \texttt{source}, tedy zdroje a \texttt{target}, tedy cíle. Tato dvojice představuje hranu v tomto grafu. Cílem metody je rozhodnout, zda tato hrana je průchozí pro danou jednotku, a v případě že ano, nastavit výstupní argument \texttt{time} na čas potřebný k průchodu touto hranou. Platforma definuje dva typy hran. Těmito typy jsou:
+\begin{enumerate}
+	\item \texttt{Linear}, tedy hrany přes které je pohyb spojitý,
+	\item \texttt{Teleport}, tedy hrany, u kterých je jednotka teleportována ze zdroje na cíl po čase rovném hodnotě \texttt{time}.
+\end{enumerate}
+
+Podle návratových hodnot této funkce pak algoritmus provádí výpočet nejkratší cesty. 
+
+Naše implementace využije naší volby používaného algoritmu, a využije třídu \texttt{NodeDistCalculator}, která tuto jednu metodu pomocí návrhového vzoru \textit{Visitor} rozděluje na více metod, kde každá dostává pouze určitý typ vrcholů. Příkladem takovýchto metod můžou být tyto metody:
+
+\begin{lstlisting}
+bool GetTime(ITileNode source, ITileNode target, MovementType movementType, out float time);
+bool GetTime(ITileNode source, IBuildingNode target, MovementType movementType, out float time);
+\*...*\
+bool GetTime(IBuildingNode source, ITileNode target, MovementType movementType, out float time);
+\end{lstlisting}
+
+Celkem tedy \texttt{ChickenDistCalc}, který je potomkem \texttt{NodeDistCalculator}, bude implementovat 9 metod specifikujících možné přechody mezi všemi kombinacemi všech tří druhů vrcholů. Rozhodovat se bude podle načtených prostupných typů dlaždic pro \texttt{ITileNode} či podle typů budov pro \texttt{IBuildingNode}. Příkladem může být implementace výpočtu hrany mezi dvěma vrcholy \texttt{ITileNode}, tedy mezi dvěma dlaždicemi:
+
+\begin{lstlisting}
+bool GetTime(/*...*/) {
+	if (chicken.typePlugin
+		       .PassableTileTypes
+		       .Contains(target.Tile.Type) &&
+		target.Tile.Building == null) {
+		time = Vector3.Distance(source.Position, target.Position) / speed;
+		return true;
+	}
+	time = -1;
+	return false;
+}
+\end{lstlisting}
+
+Tato implementace ověří, zda má cílová dlaždice typ, kterým dokáže jednotka procházet, a že se na cílové dlaždici nevyskytuje žádná budova. Pokud jsou tyto podmínky splněny, vypočítá čas jako poměr vzdálenosti zdroje a cíle a vrátí \texttt{true} pro indikaci, že je hrana průchodná. Pokud nejsou podmínky splněny, vrací tato implementace \texttt{false} pro oznámení neprůchodnosti hrany.
+
+
+Implementace zbývajících metod \texttt{GetFutureWaypoints} a \texttt{ExecuteOrder} je mnohem jednodušší. Metoda \texttt{GetFutureWaypoints} využije komponentu \texttt{WorldWalker}, která poskytuje právě tuto službu. Implementace tedy bude vypadat následovně:
+
+\begin{lstlisting}
+public IEnumerable<Waypoint> GetFutureWaypoints(MovingRangeTarget movingRangeTarget)
+{
+	return Walker.GetRestOfThePath(new Vector3(0, 0.5f, 0));
+}
+\end{lstlisting}
+
+Protože cesty jsou vypočítávány v úrovni terénu, musíme specifikovat, jak vysoko nad danou pozicí má jednotka svůj střed, nebo jiný cíl, na který mají střelci mířit. Toto je specifikováno předávaným vektorem, kde v tomto případě říkáme, že mají střelci mířit půl jednotky rozměrů nad úroveň terénu.
+
+Metoda \texttt{ExecuteOrder} podle přijatého rozkazu nastaví komponenty \texttt{Shooter} a \texttt{WorldWalker}. Potomek třídy \texttt{Order}, reprezentující odkaz, je předán této metodě jako argument. Podle typu rozkazu potom jednotka vykoná určitou akci. Dále \texttt{Order} obsahuje proměnnou \texttt{Executed}, která určuje, zda byl rozkaz vykonán, a je používána pro řízení šíření rozkazů a jako návratová hodnota metod vydávajících rozkazy. 
+
+Naše implementace bude reagovat na rozkazy pro pohyb, reprezentované typem \texttt{MoveOrder}, a na rozkazy na útok, reprezentované typem \texttt{AttackOrder}. Pří rozkazu na pohyb je zastavena střelba, přerušeno vyhledávání cílů a spuštěn komponent \texttt{WorldWalker}. Příkaz pohybu bude zpracováván tímto způsobem:
+\begin{lstlisting}
+Shooter.StopShooting();
+Shooter.SearchForTarget = false;
+explicitTarget = null;
+order.Executed = Walker.GoTo(moveOrder.Target);
+\end{lstlisting}
+
+Při zpracování rozkazu útoku je jako první zastaven útok na aktuální cíl. Dále ověříme, zda nový cíl je opravdu nepřátelská entita a že na tento cíl lze střílet. Pokud jsou tyto podmínky splněny, pokusíme se na tento cíl začít střílet. Pokud toto není možné, znamená to, že je cíl z dostřelu. V tuto chvíli tedy spustíme pohyb k pozici cíle. Implementace takto popsané akce bude zapsána takto:
+\begin{lstlisting}
+Shooter.StopShooting();
+
+if (Unit.Player.IsEnemy(attackOrder.Target.Player) && 
+	(SetExplicitTarget(attackOrder.Target) != null))
+{
+	if (Shooter.ShootAt(explicitTarget)) {
+		order.Executed = true;
+	}
+	else {
+		var targetNode = \*get target node*\ 
+		order.Executed = Walker.GoTo(targetNode);
+	} 
+}
+
+if (order.Executed)
+{
+	Shooter.SearchForTarget = false;
+}
+\end{lstlisting}
+
+\subsubsection{Implementace obsluh událostí}
+\label{sec:eventhandlers}
+
+Jak jsme popsali v části o vytváření nové instance \ref{sec:instantiation}, provádí se při každé inicializaci instančního pluginu registrace obsluh událostí. V části \ref{sec:instantiation} byly také popsány situace, při kterých jsou tyto obsluhy volány. V této části popíšeme implementace těchto obsluh. Pro připomenutí zde uvádíme kód registrace obsluh událostí:
+\begin{lstlisting}
+walker.MovementStarted += OnMovementStarted;
+walker.MovementFinished += OnMovementFinished;
+walker.MovementFailed += OnMovementFailed;
+walker.MovementCanceled += OnMovementCanceled;
+
+shooter.BeforeShotFired += BeforeShotFired;
+shooter.TargetAutoAcquired += OnTargetAutoAcquired;
+shooter.TargetDestroyed += OnTargetDestroyed;
+
+selector.UnitSelected += OnUnitSelected;
+\end{lstlisting}
+
+Jak můžeme vidět, jsou tyto události rozděleny do skupin podle komponenty, na které nastávají. První komponentou je \texttt{WorldWalker}. Implementace obsluh událostí této komponenty bude manipulovat s animacemi modelu a spouštět či zastavovat střelbu na cíl.
+
+Implementace \texttt{OnMovementStarted} spustí animaci chůze a nastaví její rychlosti. Dále zastaví jakoukoli střelbu a vypne hledání cíle. Odpovídající kód je potom:
+\begin{lstlisting}
+void OnMovementStarted(WorldWalker walker)
+{
+	animationController.PlayExclusive("Assets/Units/Chicken/Models/Walk.ani", 0, true);
+	animationController.SetSpeed("Assets/Units/Chicken/Models/Walk.ani", 2);
+
+	Shooter.StopShooting();
+	Shooter.SearchForTarget = false;
+}
+\end{lstlisting}
+
+Implementace \texttt{OnMovementFinished}, \texttt{OnMovementFailed} a \texttt{OnMovementCanceled} bude pro všechny tři tyto metody identická. Tyto události zastaví přehrávání animace a spustí vyhledávání cíle pro střelbu.
+\begin{lstlisting}
+void OnMovementXXX(WorldWalker walker)
+{
+	animationController.Stop("Assets/Units/Chicken/Models/Walk.ani");
+	Shooter.SearchForTarget = true;
+}
+\end{lstlisting}
+
+Obsluhy událostí komponenty \texttt{Shooter} budou mít následující implementace. \texttt{BeforeShotFired} otočí jednotku tak, aby byla postavena čelem k cíli. Tento kód jsme viděli již při implementaci \texttt{OnUpdate} metody. Z určitého pohledu se tato duplikace může zdát přebytečná, ale ze sémantiky události dává toto otočení smysl. Výsledný kód bude:
+\begin{lstlisting}
+void BeforeShotFired(Shooter shooter) {
+	var targetPos = shooter.Target.CurrentPosition;
+	Unit.FaceTowards(targetPos);
+}
+\end{lstlisting}
+
+Obsluha metody \texttt{OnTargetAutoAcquired} zastaví pohyb jednotky a také otočí jednotku čelem k cíli. Výsledný kód bude tedy:
+\begin{lstlisting}
+void OnTargetAutoAcquired(Shooter shooter) {
+	Walker.Stop();
+	/* turn towards target*/
+}
+\end{lstlisting}
+
+Obsluha poslední metody \texttt{OnTargetDestroyed} vynuluje případný explicitní cíl nastavený rozkazem hráče. Kód tedy bude:
+\begin{lstlisting}
+void OnTargetDestroyed(Shooter shooter, IRangeTarget target)
+{
+	explicitTarget = null;	
+}
+\end{lstlisting}
+
+\section{Tvorba pluginů ostatních druhů}
+Jak jsme napsali na začátku této kapitoly, popíšeme v této části pouze odlišnosti oproti tvorbě pluginu jednotky. Tyto odlišnosti budou především v požadovaných metodách a poskytovaných komponentách.  
+
+\subsection{Pluginy budov}
+Typové pluginy budov sdílí s typovými pluginy jednotek metody \texttt{Initialize}, \texttt{CreateNewInstance} a \texttt{GetInstanceForLoading}. Oproti typovým pluginům jednotek vracejí metody pro tvorbu instančních pluginů potomky typu \texttt{BuildingInstancePlugin}. Obdobou metody \texttt{CanSpawnAt} pluginů typů jednotek je zde metoda \texttt{CanBuild}, která má mírně odlišnou signaturu:
+
+\begin{lstlisting}
+public abstract bool CanBuild(IntVector2 topLeftTileIndex, IPlayer owner, ILevelManager level);
+\end{lstlisting}
+
+Tato metoda, stejně jako metoda \texttt{CanSpawnAt} pro jednotky, je používána pro zjištění, zda je možné budovu vytvořit budovu na určené pozici v herním světě. Na rozdíl od jednotek ovšem budovy mohou zabírat více než jednu dlaždici, proto je zde udáván pouze levý horní roh, tedy roh s nejmenší souřadnicí X a Z, ze kterého lze pak podle velikosti budovy získat množinu dlaždic zabraných budovou na této pozici. 
+
+
+Z pohledu pluginů instancí jsou odlišnosti viditelnější. Platforma omezuje počet budov na dlaždici na nejvýše jednu budovu, neexistuje tedy obdoba metod pluginu instancí jednotek \texttt{BuildingBuilt} a \texttt{BuildingDestroyed} oznamujících vytvoření a zničení budovy. Metody \texttt{TeleHeightChanged} a \texttt{OnHit} zůstávají beze změny. Instanční plugin budov naopak přidává metody \texttt{CanChangeTileHeight}, \texttt{GetHeightAt} a \texttt{GetFormationController} s těmito signaturami:
+
+\begin{lstlisting}
+public abstract bool CanChangeTileHeight(int x, int y);
+
+public virtual float? GetHeightAt(float x, float y)
+{
+	return null;
+}
+
+public virtual IFormationController GetFormationController(Vector3 centerPosition)
+{
+	return null;
+}
+\end{lstlisting}
+
+Metoda \texttt{CanChangeTileHeight} je volána při pokusu o změnu výšky dlaždice, na které stojí daná budova. Podle návratové hodnoty je pak změna vykonána nebo zamítnuta. Metoda \texttt{GetHeightAt} slouží pro získání výšky pro chůzi jednotek po budově. Tato metoda je volána v rámci \texttt{Map.GetHeightAt}. Při návratu hodnoty \texttt{null} je pak brána výška terénu. Metoda \texttt{GetFormationController} určuje rozmístění jednotek po budově při rozkazu na přesun jednotek na tuto budovu. Jednotky by měli být rozmístěny okolo bodu v parametru. Při návratu hodnoty \texttt{null} je budova brána jako neschůdná.
+
+
+Dále jsou některé \texttt{DefaultComponent} omezeny na použití pouze pro jednotky či projektily. Na budovách lze tedy použít pouze tyto komponenty:
+\begin{enumerate}
+	\item \texttt{StaticRangeTarget},
+	\item \texttt{StaticMeeleAttacker},
+	\item \texttt{Shooter},
+	\item \texttt{Clicker}.
+\end{enumerate}
+
+\subsection{Pluginy projektilů}
+Typové pluginy projektilů sdílí, stejně jako typové pluginy budov, s typovými pluginy jednotek metody \texttt{Initialize}, \texttt{CreateNewInstance} a \texttt{GetInstanceForLoading} s odpovídající změnou návratového typu. Oproti budovám a jednotkám lze projektily vytvářet kdekoli v herním světě, neexistuje tedy obdoba metody \texttt{CanSpawnAt}. Oproti tomu definuje typový plugin projektilů metodu \texttt{IsInRange} s následující signaturou:
+
+\begin{lstlisting}
+public abstract bool IsInRange(Vector3 source, IRangeTarget target);
+\end{lstlisting}
+
+Návratová hodnota této metody značí, zda při výstřelu projektilu z pozice \texttt{source} v herním světě lze zasáhnout cíl \texttt{target}.
+
+
+
+
+Umělá inteligence úrovně je určena pro kontrolu globálního stavu hry, jako například omezení na možnosti reliéfu mapy, omezení stavby budov v určitých částech mapy či změny vlastností některých jednotek. Rozdělení umělé inteligence mezi úroveň, hráče a entity je možné mnoha způsoby. Platforma žádný z těchto způsobů explicitně nepodporuje ani nezakazuje.
 

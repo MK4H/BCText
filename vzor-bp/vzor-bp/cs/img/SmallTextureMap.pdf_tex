@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{187.9075178bp}%
+    \setlength{\unitlength}{274.5bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,9 +50,28 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.96177896)%
+  \begin{picture}(1,0.84153005)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{SmallTextureMap.pdf}}%
+    \put(0.46448087,0.65846995){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{SmallTextureMap.pdf}}%
+    \put(0.57377049,0.43989071){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{SmallTextureMap.pdf}}%
+    \put(0.79234973,0.33060109){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0.17759563,0.19672131){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Textura\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{SmallTextureMap.pdf}}%
+    \put(0.1557377,0.78415301){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Mapa\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{SmallTextureMap.pdf}}%
+    \put(0.37978142,0.01092896){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Dlaždice\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{SmallTextureMap.pdf}}%
+    \put(0.72677596,0.01092896){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}UV mapování\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{SmallTextureMap.pdf}}%
+    \put(0.46448087,0.78961749){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}m\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{SmallTextureMap.pdf}}%
+    \put(0.94535519,0.48907104){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}n\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{SmallTextureMap.pdf}}%
+    \put(0.0273224,0.11202186){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}k\end{tabular}}}}%
+    \put(0.12295082,0.01912568){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}k\end{tabular}}}}%
   \end{picture}%
 \endgroup%

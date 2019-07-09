@@ -69,28 +69,39 @@
 
 %%nastaveni C# syntax highlight
 
+\usepackage{color}
 \definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{classgreen}{rgb}{0.17,0.57,0.68}
 \definecolor{greencomments}{rgb}{0,0.5,0}
 \definecolor{redstrings}{rgb}{0.64,0.08,0.08}
-\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
-\definecolor{types}{rgb}{0.17,0.57,0.68}
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{blueattributes}{rgb}{0.2,0.2,1}
 
-\lstset{language=[Sharp]C,
+\lstdefinelanguage{XML}
+{
+	morestring=[b]",
+	morestring=[s]{>}{<},
+	morecomment=[s]{<?}{?>},
+%	morecomment=[s]{<!--}{-->}
+	stringstyle=\color{black},
+	identifierstyle=\color{bluekeywords},
+	keywordstyle=\color{blueattributes},
+	morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\lstset{	
 	captionpos=b,
 	%numbers=left,
 	%numberstyle=\tiny,
-	frame=lines, 
+	columns=flexible,
+	frame=single, 
 	showspaces=false,
 	showtabs=false,
 	breaklines=true,
 	showstringspaces=false,
 	breakatwhitespace=true,
 	escapeinside={(*@}{@*)},
-	commentstyle=\color{greencomments},
-	morekeywords={partial, var, value, get, set, await},
-	keywordstyle=\color{bluekeywords},
-	stringstyle=\color{redstrings},
-	basicstyle=\ttfamily\small,
+	basicstyle=\ttfamily,
 }
 
 %% Nastavení cesty k adresáři s obrázky pro balíček graphicx
@@ -180,6 +191,7 @@ Abstract.
 \include{kap02}
 \include{kap03}
 \include{kap04}
+\include{kap05}
 
 \include{zaver}
 

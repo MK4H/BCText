@@ -1,0 +1,86 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'DefaultComponent.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{569.25bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.31752306)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{DefaultComponent.pdf}}%
+    \put(0.08959157,0.27009223){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Node\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{DefaultComponent.pdf}}%
+    \put(0.08959157,0.085639){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Unit\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{DefaultComponent.pdf}}%
+    \put(0.36627141,0.085639){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Plugin instance\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{DefaultComponent.pdf}}%
+    \put(0.36627141,0.27009223){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}WorldWalker\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{DefaultComponent.pdf}}%
+    \put(0.62318841,0.27009223){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}IUser\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{DefaultComponent.pdf}}%
+    \put(0.86429513,0.11198946){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Implementuje\end{tabular}}}}%
+    \put(0.87088274,0.29644269){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída platformy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{DefaultComponent.pdf}}%
+    \put(0.86166008,0.256917){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída enginu\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{DefaultComponent.pdf}}%
+    \put(0.8629776,0.2173913){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída pluginu\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{DefaultComponent.pdf}}%
+    \put(0.88405797,0.17786561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Rozhraní platformy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{DefaultComponent.pdf}}%
+    \put(0.11067194,0.00658762){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Vytváří\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{DefaultComponent.pdf}}%
+    \put(0.31225296,0.00658762){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Definuje\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{DefaultComponent.pdf}}%
+    \put(0.56653491,0.00658762){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Node obsahuje komponentu\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{DefaultComponent.pdf}}%
+    \put(0.85375494,0.00658762){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Reference\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{DefaultComponent.pdf}}%
+    \put(0.90250329,0.05928854){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Reference přes rozhraní\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

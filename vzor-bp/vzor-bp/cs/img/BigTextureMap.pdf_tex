@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{262.98099067bp}%
+    \setlength{\unitlength}{274.5bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,9 +50,27 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.14100217)%
+  \begin{picture}(1,1.09289617)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{BigTextureMap.pdf}}%
+    \put(0.57650273,0.90983607){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{BigTextureMap.pdf}}%
+    \put(0.24863388,0.80054645){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{BigTextureMap.pdf}}%
+    \put(0.17759563,0.44808743){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Textura\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{BigTextureMap.pdf}}%
+    \put(0.1557377,1.03551913){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Mapa\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{BigTextureMap.pdf}}%
+    \put(0.2431694,0.00819672){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Dlaždice\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{BigTextureMap.pdf}}%
+    \put(0.57650273,0.00819672){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}UV mapování\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{BigTextureMap.pdf}}%
+    \put(0.46448087,1.04098361){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}m\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{BigTextureMap.pdf}}%
+    \put(0.94535519,0.74043716){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}n\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{BigTextureMap.pdf}}%
+    \put(0.0273224,0.11748634){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}k\end{tabular}}}}%
+    \put(0.12295082,0.20765027){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}k\end{tabular}}}}%
   \end{picture}%
 \endgroup%

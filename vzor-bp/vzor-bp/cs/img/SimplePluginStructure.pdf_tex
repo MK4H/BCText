@@ -1,0 +1,87 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'SimplePluginStructure.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{473.25bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.56893819)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{SimplePluginStructure.pdf}}%
+    \put(0.09508716,0.5118859){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}GamePack\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{SimplePluginStructure.pdf}}%
+    \put(0.09508716,0.35340729){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Typ\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{SimplePluginStructure.pdf}}%
+    \put(0.09508716,0.19492868){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Instance\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{SimplePluginStructure.pdf}}%
+    \put(0.42789223,0.35340729){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Plugin typu\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{SimplePluginStructure.pdf}}%
+    \put(0.42789223,0.19492868){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Plugin instance\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{SimplePluginStructure.pdf}}%
+    \put(0.83201268,0.35340729){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Předek pluginů typů\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{SimplePluginStructure.pdf}}%
+    \put(0.83359746,0.19492868){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Předek pluginů instancí\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{SimplePluginStructure.pdf}}%
+    \put(0.11568938,0.08399366){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Instance třídy\end{tabular}}}}%
+    \put(0.36450079,0.08399366){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Součást platformy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{SimplePluginStructure.pdf}}%
+    \put(0.07290016,0.02060222){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Třída\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{SimplePluginStructure.pdf}}%
+    \put(0.340729,0.022187){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Součást balíčku\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{SimplePluginStructure.pdf}}%
+    \put(0.59429477,0.08399366){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Reference\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{SimplePluginStructure.pdf}}%
+    \put(0.59270998,0.02060222){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Dědičnost\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{SimplePluginStructure.pdf}}%
+    \put(0.83359746,0.08399366){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Vytváří\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{SimplePluginStructure.pdf}}%
+    \put(0.83835182,0.02060222){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Seznam\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{SimplePluginStructure.pdf}}%
+  \end{picture}%
+\endgroup%
