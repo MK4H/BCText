@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -180,18 +180,31 @@
   \url{https://www.forrestthewoods.com/blog/solving_ballistic_trajectories/}.
 \newblock [Online; accessed 2019-05-17].
 
-\bibitem[urho3d({\natexlab{a}})]{site:urho3D}
-{\sc urho3d}.
+\bibitem[Urho3D({\natexlab{a}})]{site:urho3D}
+{\sc Urho3D}.
 \newblock Urho3d.
 \newblock \url{https://urho3d.github.io/}.
 \newblock [Online; accessed 2019-05-17].
 
-\bibitem[urho3d({\natexlab{b}})]{site:urho3DPOD}
-{\sc urho3d}.
+\bibitem[Urho3D({\natexlab{b}})]{site:urho3DPOD}
+{\sc Urho3D}.
 \newblock {PODVector Documentation}.
 \newblock
   \url{https://urho3d.github.io/documentation/1.4/class_urho3_d_1_1_p_o_d_vector.html#details}.
 \newblock [Online; accessed 2019-05-17].
+
+\bibitem[Urho3D({\natexlab{c}})]{site:urho3deditor}
+{\sc Urho3D}.
+\newblock Editor instructions.
+\newblock
+  \url{https://urho3d.github.io/documentation/1.7/_editor_instructions.html}.
+\newblock [Online; accessed 2019-07-11].
+
+\bibitem[urho3D(2016)]{site:blendertourho3D}
+{\sc urho3D} (2016).
+\newblock {Blender to Urho3D Guide}.
+\newblock \url{https://urho3d.fandom.com/wiki/Blender_to_Urho3D_Guide}.
+\newblock [Online; accessed 2019-07-11].
 
 \bibitem[Walker(2004{\natexlab{a}})]{site:stratg02}
 {\sc Walker, M.~H.} (2004{\natexlab{a}}).

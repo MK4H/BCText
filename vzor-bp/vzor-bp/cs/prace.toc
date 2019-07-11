@@ -1,123 +1,152 @@
 \babel@toc {czech}{}
-\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{3}{chapter.1}% 
-\contentsline {subsubsection}{Real-time strategy}{3}{section*.2}% 
-\contentsline {subsubsection}{Real-time tactics}{4}{section*.3}% 
-\contentsline {subsubsection}{Turn-based strategy}{4}{section*.4}% 
-\contentsline {subsubsection}{Turn-based tactics}{4}{section*.5}% 
-\contentsline {subsubsection}{Shrnut\IeC {\'\i }}{4}{section*.6}% 
-\contentsline {section}{\numberline {1.1}RTS hry bl\IeC {\'\i }\IeC {\v z}e}{4}{section.1.1}% 
-\contentsline {subsection}{\numberline {1.1.1}Mapy}{6}{subsection.1.1.1}% 
-\contentsline {subsection}{\numberline {1.1.2}Jednotky}{7}{subsection.1.1.2}% 
-\contentsline {subsubsection}{Pohyb}{7}{section*.9}% 
-\contentsline {subsubsection}{Um\IeC {\v e}l\IeC {\'a} inteligence}{8}{section*.10}% 
-\contentsline {subsubsection}{Produkce}{9}{section*.12}% 
-\contentsline {subsubsection}{Boj}{9}{section*.13}% 
-\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{10}{section*.14}% 
-\contentsline {subsection}{\numberline {1.1.3}Budovy}{10}{subsection.1.1.3}% 
-\contentsline {subsubsection}{Obrana}{11}{section*.15}% 
-\contentsline {subsubsection}{Stavba budov}{12}{section*.17}% 
-\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{13}{section*.18}% 
-\contentsline {subsection}{\numberline {1.1.4}Suroviny}{13}{subsection.1.1.4}% 
-\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{14}{section*.19}% 
-\contentsline {subsection}{\numberline {1.1.5}V\IeC {\'y}voj technologi\IeC {\'\i }}{14}{subsection.1.1.5}% 
-\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{15}{section*.22}% 
-\contentsline {section}{\numberline {1.2}U\IeC {\v z}ivatel\IeC {\'e}}{16}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Tv\IeC {\r u}rci her}{16}{subsection.1.2.1}% 
-\contentsline {subsubsection}{Program\IeC {\'a}tor}{16}{section*.23}% 
-\contentsline {subsubsection}{Modde\IeC {\v r}i}{18}{section*.26}% 
-\contentsline {subsection}{\numberline {1.2.2}Hr\IeC {\'a}\IeC {\v c}i her}{18}{subsection.1.2.2}% 
-\contentsline {section}{\numberline {1.3}Uk\IeC {\'a}zkov\IeC {\'a} hra}{18}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}C\IeC {\'\i }le pr\IeC {\'a}ce}{19}{section.1.4}% 
-\contentsline {chapter}{\numberline {2}Anal\IeC {\'y}za}{22}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Hern\IeC {\'\i } engine}{22}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Rozd\IeC {\'\i }ly syst\IeC {\'e}m\IeC {\r u}}{22}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Zobrazen\IeC {\'\i } a ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{22}{subsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.2.2}Kompilace}{24}{subsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.2.3}Souborov\IeC {\'e} syst\IeC {\'e}my}{25}{subsection.2.2.3}% 
-\contentsline {subsection}{\numberline {2.2.4}Shrnut\IeC {\'\i }}{26}{subsection.2.2.4}% 
-\contentsline {section}{\numberline {2.3}Form\IeC {\'a}t a na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } dat}{26}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}Struktura bal\IeC {\'\i }\IeC {\v c}ku}{26}{subsection.2.3.1}% 
-\contentsline {subsection}{\numberline {2.3.2}Data entit}{27}{subsection.2.3.2}% 
-\contentsline {subsection}{\numberline {2.3.3}Form\IeC {\'a}ty asset\IeC {\r u}}{28}{subsection.2.3.3}% 
-\contentsline {subsubsection}{Grafick\IeC {\'a} data}{28}{section*.29}% 
-\contentsline {subsubsection}{Logika a pluginy}{29}{section*.30}% 
-\contentsline {subsection}{\numberline {2.3.4}Form\IeC {\'a}t ulo\IeC {\v z}en\IeC {\'y}ch \IeC {\'u}rovn\IeC {\'\i }}{31}{subsection.2.3.4}% 
-\contentsline {section}{\numberline {2.4}Poskytovan\IeC {\'a} funkcionalita}{32}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Mapa}{32}{subsection.2.4.1}% 
-\contentsline {subsubsection}{Logick\IeC {\'e} rozd\IeC {\v e}len\IeC {\'\i }}{32}{section*.31}% 
-\contentsline {subsubsection}{Grafick\IeC {\'a} reprezentace}{33}{section*.32}% 
-\contentsline {subsubsection}{Deformace ter\IeC {\'e}nu}{35}{section*.35}% 
-\contentsline {subsection}{\numberline {2.4.2}Hled\IeC {\'a}n\IeC {\'\i } cesty}{36}{subsection.2.4.2}% 
-\contentsline {subsubsection}{P\IeC {\v r}evod mapy}{37}{section*.36}% 
-\contentsline {subsubsection}{V na\IeC {\v s}\IeC {\'\i } platform\IeC {\v e}}{37}{section*.37}% 
-\contentsline {subsection}{\numberline {2.4.3}Projektily}{39}{subsection.2.4.3}% 
-\contentsline {subsubsection}{Typy projektil\IeC {\r u}}{39}{section*.39}% 
-\contentsline {chapter}{\numberline {3}Program\IeC {\'a}torsk\IeC {\'a} dokumentace}{42}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Struktura solution}{42}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{43}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}Syst\IeC {\'e}mov\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{43}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}P\IeC {\v r}enositeln\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{44}{subsection.3.2.2}% 
-\contentsline {section}{\numberline {3.3}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{45}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Definice vzhledu}{46}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}P\IeC {\v r}ep\IeC {\'\i }n\IeC {\'a}n\IeC {\'\i } obrazovek}{46}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Automatizace u\IeC {\v z}ivatelsk\IeC {\'e}ho rozhran\IeC {\'\i }}{47}{subsection.3.3.3}% 
-\contentsline {section}{\numberline {3.4}Syst\IeC {\'e}m bal\IeC {\'\i }\IeC {\v c}k\IeC {\r u}}{48}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Adres\IeC {\'a}\IeC {\v r} bal\IeC {\'\i }\IeC {\v c}k\IeC {\r u}}{48}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}PackageManager}{49}{subsection.3.4.2}% 
-\contentsline {subsection}{\numberline {3.4.3}GamePack}{50}{subsection.3.4.3}% 
-\contentsline {subsection}{\numberline {3.4.4}Assety}{51}{subsection.3.4.4}% 
-\contentsline {subsection}{\numberline {3.4.5}Na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } bal\IeC {\'\i }\IeC {\v c}ku}{52}{subsection.3.4.5}% 
-\contentsline {section}{\numberline {3.5}Logika hry}{53}{section.3.5}% 
-\contentsline {subsection}{\numberline {3.5.1}Hern\IeC {\'\i } engine}{53}{subsection.3.5.1}% 
-\contentsline {subsection}{\numberline {3.5.2}Pohled platformy}{55}{subsection.3.5.2}% 
-\contentsline {subsection}{\numberline {3.5.3}Typy}{57}{subsection.3.5.3}% 
-\contentsline {subsection}{\numberline {3.5.4}Pluginy}{57}{subsection.3.5.4}% 
-\contentsline {subsubsection}{Pluginy typ\IeC {\r u}}{58}{section*.55}% 
-\contentsline {subsubsection}{Pluginy instanc\IeC {\'\i }}{59}{section*.57}% 
-\contentsline {section}{\numberline {3.6}Mapa}{60}{section.3.6}% 
-\contentsline {subsection}{\numberline {3.6.1}Dla\IeC {\v z}dice}{61}{subsection.3.6.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Zobrazen\IeC {\'\i }}{63}{subsection.3.6.2}% 
-\contentsline {section}{\numberline {3.7}Hled\IeC {\'a}n\IeC {\'\i } cesty}{64}{section.3.7}% 
-\contentsline {subsection}{\numberline {3.7.1}Reprezentace vrchol\IeC {\r u} a hran}{64}{subsection.3.7.1}% 
-\contentsline {subsection}{\numberline {3.7.2}Dynamick\IeC {\'a} \IeC {\v c}\IeC {\'a}st generov\IeC {\'a}n\IeC {\'\i }}{65}{subsection.3.7.2}% 
-\contentsline {subsection}{\numberline {3.7.3}Reprezentace cesty}{65}{subsection.3.7.3}% 
-\contentsline {subsection}{\numberline {3.7.4}V\IeC {\'y}b\IeC {\v e}r algoritmu}{66}{subsection.3.7.4}% 
-\contentsline {subsection}{\numberline {3.7.5}Implementace v platform\IeC {\v e}}{66}{subsection.3.7.5}% 
-\contentsline {section}{\numberline {3.8}Kamera}{66}{section.3.8}% 
-\contentsline {subsection}{\numberline {3.8.1}Typick\IeC {\'a} RTS kamera}{66}{subsection.3.8.1}% 
-\contentsline {subsection}{\numberline {3.8.2}Kamera sleduj\IeC {\'\i }c\IeC {\'\i } jednotku}{67}{subsection.3.8.2}% 
-\contentsline {subsection}{\numberline {3.8.3}Voln\IeC {\v e} l\IeC {\'e}taj\IeC {\'\i }c\IeC {\'\i } kamera}{68}{subsection.3.8.3}% 
-\contentsline {section}{\numberline {3.9}Vstup}{68}{section.3.9}% 
-\contentsline {section}{\numberline {3.10}Editace mapy a ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } hry}{69}{section.3.10}% 
-\contentsline {section}{\numberline {3.11}Z\IeC {\'a}kladn\IeC {\'\i } komponenty}{70}{section.3.11}% 
-\contentsline {section}{\numberline {3.12}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } a na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } \IeC {\'u}rovn\IeC {\'\i }}{72}{section.3.12}% 
-\contentsline {subsection}{\numberline {3.12.1}Stav \IeC {\'u}rovn\IeC {\v e}}{72}{subsection.3.12.1}% 
-\contentsline {subsection}{\numberline {3.12.2}Pluginy}{73}{subsection.3.12.2}% 
-\contentsline {chapter}{\numberline {4}Tvorba bal\IeC {\'\i }\IeC {\v c}ku}{75}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Struktura XML}{75}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } jednotek}{77}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } budov}{79}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } projektil\IeC {\r u}}{79}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } dla\IeC {\v z}dic}{79}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } surovin}{80}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } AI hr\IeC {\'a}\IeC {\v c}e}{81}{section.4.7}% 
-\contentsline {section}{\numberline {4.8}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } AI \IeC {\'u}rovn\IeC {\v e}}{81}{section.4.8}% 
-\contentsline {chapter}{\numberline {5}Tvorba plugin\IeC {\r u}}{82}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Vytvo\IeC {\v r}en\IeC {\'\i } pluginu jednotky}{82}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Plugin typu}{83}{section.5.2}% 
-\contentsline {subsubsection}{Plugin instance}{85}{section*.68}% 
-\contentsline {subsection}{\numberline {5.2.1}Vytvo\IeC {\v r}en\IeC {\'\i } instance}{85}{subsection.5.2.1}% 
-\contentsline {subsubsection}{Pro na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } ulo\IeC {\v z}en\IeC {\'e}ho stavu}{86}{section*.69}% 
-\contentsline {subsubsection}{Vytvo\IeC {\v r}en\IeC {\'\i } v b\IeC {\v e}\IeC {\v z}\IeC {\'\i }c\IeC {\'\i } h\IeC {\v r}e}{86}{section*.70}% 
-\contentsline {subsection}{\numberline {5.2.2}Metody pluginu}{88}{subsection.5.2.2}% 
-\contentsline {subsubsection}{Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } a na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i }}{89}{section*.71}% 
-\contentsline {subsubsection}{Uvoln\IeC {\v e}n\IeC {\'\i } zdroj\IeC {\r u}}{90}{section*.72}% 
-\contentsline {subsubsection}{Ud\IeC {\'a}losti platformy}{90}{section*.73}% 
-\contentsline {subsubsection}{OnUpdate}{92}{section*.74}% 
-\contentsline {subsubsection}{Metody po\IeC {\v z}adovan\IeC {\'e} potomky DefaultComponent}{92}{section*.75}% 
-\contentsline {subsubsection}{Implementace obsluh ud\IeC {\'a}lost\IeC {\'\i }}{92}{section*.76}% 
-\contentsline {chapter}{\numberline {6}Uk\IeC {\'a}zkov\IeC {\'a} hra}{93}{chapter.6}% 
-\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{94}{chapter*.77}% 
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{95}{chapter*.78}% 
-\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{98}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{98}{section.A.1}% 
+\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{4}{chapter.1}% 
+\contentsline {subsubsection}{Real-time strategy}{4}{section*.2}% 
+\contentsline {subsubsection}{Real-time tactics}{5}{section*.3}% 
+\contentsline {subsubsection}{Turn-based strategy}{5}{section*.4}% 
+\contentsline {subsubsection}{Turn-based tactics}{5}{section*.5}% 
+\contentsline {subsubsection}{Shrnut\IeC {\'\i }}{5}{section*.6}% 
+\contentsline {section}{\numberline {1.1}RTS hry bl\IeC {\'\i }\IeC {\v z}e}{5}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Mapy}{7}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}Jednotky}{8}{subsection.1.1.2}% 
+\contentsline {subsubsection}{Pohyb}{8}{section*.9}% 
+\contentsline {subsubsection}{Um\IeC {\v e}l\IeC {\'a} inteligence}{9}{section*.10}% 
+\contentsline {subsubsection}{Produkce}{10}{section*.12}% 
+\contentsline {subsubsection}{Boj}{10}{section*.13}% 
+\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{11}{section*.14}% 
+\contentsline {subsection}{\numberline {1.1.3}Budovy}{11}{subsection.1.1.3}% 
+\contentsline {subsubsection}{Obrana}{12}{section*.15}% 
+\contentsline {subsubsection}{Stavba budov}{13}{section*.17}% 
+\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{14}{section*.18}% 
+\contentsline {subsection}{\numberline {1.1.4}Suroviny}{14}{subsection.1.1.4}% 
+\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{15}{section*.19}% 
+\contentsline {subsection}{\numberline {1.1.5}V\IeC {\'y}voj technologi\IeC {\'\i }}{15}{subsection.1.1.5}% 
+\contentsline {subsubsection}{Shrnut\IeC {\'\i } po\IeC {\v z}adavk\IeC {\r u}}{16}{section*.22}% 
+\contentsline {section}{\numberline {1.2}U\IeC {\v z}ivatel\IeC {\'e}}{17}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Tv\IeC {\r u}rci her}{17}{subsection.1.2.1}% 
+\contentsline {subsubsection}{Program\IeC {\'a}tor}{17}{section*.23}% 
+\contentsline {subsubsection}{Modde\IeC {\v r}i}{19}{section*.26}% 
+\contentsline {subsection}{\numberline {1.2.2}Hr\IeC {\'a}\IeC {\v c}i her}{19}{subsection.1.2.2}% 
+\contentsline {section}{\numberline {1.3}Uk\IeC {\'a}zkov\IeC {\'a} hra}{19}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}C\IeC {\'\i }le pr\IeC {\'a}ce}{20}{section.1.4}% 
+\contentsline {chapter}{\numberline {2}Anal\IeC {\'y}za}{23}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Hern\IeC {\'\i } engine}{23}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Rozd\IeC {\'\i }ly syst\IeC {\'e}m\IeC {\r u}}{23}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Zobrazen\IeC {\'\i } a ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{23}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Kompilace}{25}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Souborov\IeC {\'e} syst\IeC {\'e}my}{26}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Shrnut\IeC {\'\i }}{27}{subsection.2.2.4}% 
+\contentsline {section}{\numberline {2.3}Form\IeC {\'a}t a na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } dat}{27}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Struktura bal\IeC {\'\i }\IeC {\v c}ku}{27}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Data entit}{28}{subsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.3.3}Form\IeC {\'a}ty asset\IeC {\r u}}{29}{subsection.2.3.3}% 
+\contentsline {subsubsection}{Grafick\IeC {\'a} data}{29}{section*.29}% 
+\contentsline {subsubsection}{Logika a pluginy}{30}{section*.30}% 
+\contentsline {subsection}{\numberline {2.3.4}Form\IeC {\'a}t ulo\IeC {\v z}en\IeC {\'y}ch \IeC {\'u}rovn\IeC {\'\i }}{32}{subsection.2.3.4}% 
+\contentsline {section}{\numberline {2.4}Poskytovan\IeC {\'a} funkcionalita}{33}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Mapa}{33}{subsection.2.4.1}% 
+\contentsline {subsubsection}{Logick\IeC {\'e} rozd\IeC {\v e}len\IeC {\'\i }}{33}{section*.31}% 
+\contentsline {subsubsection}{Grafick\IeC {\'a} reprezentace}{34}{section*.32}% 
+\contentsline {subsubsection}{Deformace ter\IeC {\'e}nu}{36}{section*.35}% 
+\contentsline {subsection}{\numberline {2.4.2}Hled\IeC {\'a}n\IeC {\'\i } cesty}{37}{subsection.2.4.2}% 
+\contentsline {subsubsection}{P\IeC {\v r}evod mapy}{38}{section*.36}% 
+\contentsline {subsubsection}{V na\IeC {\v s}\IeC {\'\i } platform\IeC {\v e}}{38}{section*.37}% 
+\contentsline {subsection}{\numberline {2.4.3}Projektily}{40}{subsection.2.4.3}% 
+\contentsline {subsubsection}{Typy projektil\IeC {\r u}}{40}{section*.39}% 
+\contentsline {chapter}{\numberline {3}Program\IeC {\'a}torsk\IeC {\'a} dokumentace}{43}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Struktura solution}{43}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{44}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Syst\IeC {\'e}mov\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{44}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}P\IeC {\v r}enositeln\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{45}{subsection.3.2.2}% 
+\contentsline {section}{\numberline {3.3}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{46}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Definice vzhledu}{47}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}P\IeC {\v r}ep\IeC {\'\i }n\IeC {\'a}n\IeC {\'\i } obrazovek}{47}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Automatizace u\IeC {\v z}ivatelsk\IeC {\'e}ho rozhran\IeC {\'\i }}{48}{subsection.3.3.3}% 
+\contentsline {section}{\numberline {3.4}Syst\IeC {\'e}m bal\IeC {\'\i }\IeC {\v c}k\IeC {\r u}}{49}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Adres\IeC {\'a}\IeC {\v r} bal\IeC {\'\i }\IeC {\v c}k\IeC {\r u}}{49}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}PackageManager}{50}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}GamePack}{51}{subsection.3.4.3}% 
+\contentsline {subsection}{\numberline {3.4.4}Assety}{52}{subsection.3.4.4}% 
+\contentsline {subsection}{\numberline {3.4.5}Na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } bal\IeC {\'\i }\IeC {\v c}ku}{53}{subsection.3.4.5}% 
+\contentsline {section}{\numberline {3.5}Logika hry}{54}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Hern\IeC {\'\i } engine}{54}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}Pohled platformy}{56}{subsection.3.5.2}% 
+\contentsline {subsection}{\numberline {3.5.3}Typy}{58}{subsection.3.5.3}% 
+\contentsline {subsection}{\numberline {3.5.4}Pluginy}{58}{subsection.3.5.4}% 
+\contentsline {subsubsection}{Pluginy typ\IeC {\r u}}{59}{section*.55}% 
+\contentsline {subsubsection}{Pluginy instanc\IeC {\'\i }}{60}{section*.57}% 
+\contentsline {section}{\numberline {3.6}Mapa}{61}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}Dla\IeC {\v z}dice}{62}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Zobrazen\IeC {\'\i }}{64}{subsection.3.6.2}% 
+\contentsline {section}{\numberline {3.7}Hled\IeC {\'a}n\IeC {\'\i } cesty}{65}{section.3.7}% 
+\contentsline {subsection}{\numberline {3.7.1}Reprezentace vrchol\IeC {\r u} a hran}{65}{subsection.3.7.1}% 
+\contentsline {subsection}{\numberline {3.7.2}Dynamick\IeC {\'a} \IeC {\v c}\IeC {\'a}st generov\IeC {\'a}n\IeC {\'\i }}{66}{subsection.3.7.2}% 
+\contentsline {subsection}{\numberline {3.7.3}Reprezentace cesty}{66}{subsection.3.7.3}% 
+\contentsline {subsection}{\numberline {3.7.4}V\IeC {\'y}b\IeC {\v e}r algoritmu}{67}{subsection.3.7.4}% 
+\contentsline {subsection}{\numberline {3.7.5}Implementace v platform\IeC {\v e}}{67}{subsection.3.7.5}% 
+\contentsline {section}{\numberline {3.8}Kamera}{67}{section.3.8}% 
+\contentsline {subsection}{\numberline {3.8.1}Top-down kamera}{68}{subsection.3.8.1}% 
+\contentsline {subsection}{\numberline {3.8.2}Kamera sleduj\IeC {\'\i }c\IeC {\'\i } jednotku}{68}{subsection.3.8.2}% 
+\contentsline {subsection}{\numberline {3.8.3}Voln\IeC {\v e} l\IeC {\'e}taj\IeC {\'\i }c\IeC {\'\i } kamera}{69}{subsection.3.8.3}% 
+\contentsline {section}{\numberline {3.9}Vstup}{69}{section.3.9}% 
+\contentsline {section}{\numberline {3.10}Editace mapy a ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } hry}{70}{section.3.10}% 
+\contentsline {section}{\numberline {3.11}Z\IeC {\'a}kladn\IeC {\'\i } komponenty}{71}{section.3.11}% 
+\contentsline {section}{\numberline {3.12}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } a na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } \IeC {\'u}rovn\IeC {\'\i }}{73}{section.3.12}% 
+\contentsline {subsection}{\numberline {3.12.1}Stav \IeC {\'u}rovn\IeC {\v e}}{74}{subsection.3.12.1}% 
+\contentsline {subsection}{\numberline {3.12.2}Pluginy}{75}{subsection.3.12.2}% 
+\contentsline {chapter}{\numberline {4}Tvorba bal\IeC {\'\i }\IeC {\v c}ku}{76}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Struktura XML}{76}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } jednotek}{78}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } budov}{80}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } projektil\IeC {\r u}}{80}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } dla\IeC {\v z}dic}{80}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } surovin}{81}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } AI hr\IeC {\'a}\IeC {\v c}e}{82}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } AI \IeC {\'u}rovn\IeC {\v e}}{82}{section.4.8}% 
+\contentsline {chapter}{\numberline {5}Tvorba plugin\IeC {\r u}}{83}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Vytvo\IeC {\v r}en\IeC {\'\i } pluginu jednotky}{83}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Plugin typu}{84}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Plugin instance}{86}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Vytvo\IeC {\v r}en\IeC {\'\i } instance}{86}{subsection.5.3.1}% 
+\contentsline {subsubsection}{Pro na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i } ulo\IeC {\v z}en\IeC {\'e}ho stavu}{87}{section*.68}% 
+\contentsline {subsubsection}{Vytvo\IeC {\v r}en\IeC {\'\i } v b\IeC {\v e}\IeC {\v z}\IeC {\'\i }c\IeC {\'\i } h\IeC {\v r}e}{87}{section*.69}% 
+\contentsline {subsection}{\numberline {5.3.2}Metody pluginu}{89}{subsection.5.3.2}% 
+\contentsline {subsubsection}{Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } a na\IeC {\v c}\IeC {\'\i }t\IeC {\'a}n\IeC {\'\i }}{90}{section*.70}% 
+\contentsline {subsubsection}{Uvoln\IeC {\v e}n\IeC {\'\i } zdroj\IeC {\r u}}{91}{section*.71}% 
+\contentsline {subsubsection}{Ud\IeC {\'a}losti platformy}{91}{section*.72}% 
+\contentsline {subsubsection}{OnUpdate}{93}{section*.73}% 
+\contentsline {subsubsection}{Metody po\IeC {\v z}adovan\IeC {\'e} potomky DefaultComponent}{94}{section*.74}% 
+\contentsline {subsubsection}{Implementace obsluh ud\IeC {\'a}lost\IeC {\'\i }}{97}{section*.75}% 
+\contentsline {section}{\numberline {5.4}Tvorba plugin\IeC {\r u} ostatn\IeC {\'\i }ch druh\IeC {\r u}}{99}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Pluginy budov}{99}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}Pluginy projektil\IeC {\r u}}{100}{subsection.5.4.2}% 
+\contentsline {subsection}{\numberline {5.4.3}Pluginy hr\IeC {\'a}\IeC {\v c}\IeC {\r u}}{101}{subsection.5.4.3}% 
+\contentsline {subsection}{\numberline {5.4.4}Pluginy \IeC {\'u}rovn\IeC {\'\i }}{101}{subsection.5.4.4}% 
+\contentsline {chapter}{\numberline {6}Aplikace a uk\IeC {\'a}zkov\IeC {\'a} hra}{103}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Instalace}{103}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Grafick\IeC {\'e} rozhran\IeC {\'\i }}{103}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}V\IeC {\'y}b\IeC {\v e}r bal\IeC {\'\i }\IeC {\v c}k\IeC {\r u}}{103}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.2}V\IeC {\'y}b\IeC {\v e}r \IeC {\'u}rovn\IeC {\v e}}{104}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.3}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } \IeC {\'u}rovn\IeC {\v e}}{105}{subsection.6.2.3}% 
+\contentsline {subsection}{\numberline {6.2.4}Nastaven\IeC {\'\i } \IeC {\'u}rovn\IeC {\v e}}{106}{subsection.6.2.4}% 
+\contentsline {subsection}{\numberline {6.2.5}P\IeC {\v r}eru\IeC {\v s}en\IeC {\'\i } hry}{106}{subsection.6.2.5}% 
+\contentsline {subsection}{\numberline {6.2.6}V\IeC {\'y}b\IeC {\v e}r souboru}{106}{subsection.6.2.6}% 
+\contentsline {section}{\numberline {6.3}Uk\IeC {\'a}zkov\IeC {\'a} hra}{107}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Okno aplikace p\IeC {\v r}i h\IeC {\v r}e}{108}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}Editor}{108}{subsection.6.3.2}% 
+\contentsline {subsubsection}{Editace ter\IeC {\'e}nu}{109}{section*.84}% 
+\contentsline {subsubsection}{Stavba budov}{109}{section*.85}% 
+\contentsline {subsubsection}{Tvorba jednotek}{109}{section*.86}% 
+\contentsline {subsubsection}{Ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } jednotek}{109}{section*.87}% 
+\contentsline {subsection}{\numberline {6.3.3}Ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } kamery}{109}{subsection.6.3.3}% 
+\contentsline {subsection}{\numberline {6.3.4}Budovy}{110}{subsection.6.3.4}% 
+\contentsline {subsubsection}{Obrann\IeC {\'e} budovy}{110}{section*.89}% 
+\contentsline {subsubsection}{Ostatn\IeC {\'\i } budovy}{110}{section*.90}% 
+\contentsline {subsection}{\numberline {6.3.5}Jednotky}{111}{subsection.6.3.5}% 
+\contentsline {subsection}{\numberline {6.3.6}Projektily}{111}{subsection.6.3.6}% 
+\contentsline {subsection}{\numberline {6.3.7}Um\IeC {\v e}l\IeC {\'e} inteligence hr\IeC {\'a}\IeC {\v c}\IeC {\r u}}{112}{subsection.6.3.7}% 
+\contentsline {subsection}{\numberline {6.3.8}Um\IeC {\v e}l\IeC {\'e} inteligence \IeC {\'u}rovn\IeC {\'\i }}{112}{subsection.6.3.8}% 
+\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{113}{chapter*.92}% 
+\contentsline {section}{\numberline {6.4}Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{114}{section.6.4}% 
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{115}{chapter*.93}% 
+\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{118}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{118}{section.A.1}% 

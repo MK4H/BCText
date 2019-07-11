@@ -7,6 +7,7 @@ A level-1 auxiliary file: kap01.aux
 A level-1 auxiliary file: kap02.aux
 A level-1 auxiliary file: kap03.aux
 A level-1 auxiliary file: kap04.aux
+A level-1 auxiliary file: kap05.aux
 A level-1 auxiliary file: zaver.aux
 A level-1 auxiliary file: literatura.aux
 The style file: czplainnat.bst
@@ -18,45 +19,46 @@ Warning--empty year in site:knownfolders
 Warning--empty year in site:specialfolders
 Warning--empty year in site:urho3D
 Warning--empty year in site:urho3DPOD
-You've used 40 entries,
+Warning--empty year in site:urho3deditor
+You've used 42 entries,
             2828 wiz_defined-function locations,
-            786 strings with 10134 characters,
-and the built_in function-call counts, 12827 in all, are:
-= -- 1192
-> -- 493
-< -- 37
-+ -- 200
-- -- 150
-* -- 749
-:= -- 2039
-add.period$ -- 160
-call.type$ -- 40
-change.case$ -- 169
-chr.to.int$ -- 30
-cite$ -- 88
-duplicate$ -- 571
-empty$ -- 1245
-format.name$ -- 189
-if$ -- 2742
-int.to.chr$ -- 11
+            795 strings with 10407 characters,
+and the built_in function-call counts, 13439 in all, are:
+= -- 1250
+> -- 513
+< -- 39
++ -- 209
+- -- 156
+* -- 781
+:= -- 2135
+add.period$ -- 168
+call.type$ -- 42
+change.case$ -- 177
+chr.to.int$ -- 31
+cite$ -- 93
+duplicate$ -- 599
+empty$ -- 1307
+format.name$ -- 197
+if$ -- 2874
+int.to.chr$ -- 12
 int.to.str$ -- 1
 missing$ -- 4
-newline$ -- 248
-num.names$ -- 156
-pop$ -- 509
+newline$ -- 260
+num.names$ -- 164
+pop$ -- 535
 preamble$ -- 1
-purify$ -- 130
+purify$ -- 136
 quote$ -- 0
-skip$ -- 382
+skip$ -- 399
 stack$ -- 0
-substring$ -- 81
-swap$ -- 94
+substring$ -- 85
+swap$ -- 99
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 430
-warning$ -- 7
-while$ -- 117
+type$ -- 452
+warning$ -- 8
+while$ -- 123
 width$ -- 0
-write$ -- 562
-(There were 7 warnings)
+write$ -- 589
+(There were 8 warnings)

@@ -84,6 +84,7 @@ Dalšími kroky inicializace jsou:
 Tímto je inicializace kompletní. Volání metody \texttt{Start} se vrací do metody \texttt{Run}, ve které engine předchází do smyčky obsluhující události uživatelského vstupu.
 
 \section{Uživatelské rozhraní}
+\label{sec:ui}
 
 \begin{figure}[h]
 	\centering
@@ -468,7 +469,7 @@ Třída z balíčku sloužící jako plugin instance některé z předcházejíc
 
 Tyto třídy mají definovány virtuální metody, které jsou volány při určitých událostech v herním světě, které se týkají daného herního prvku. Implementací těchto metod mohou tvůrci balíčků reagovat na tyto události a tím implementovat chování těchto herních prvků.
 
-Jednou z hlavních metod pro implementaci logiky v pluginech je metoda \texttt{OnUpdate}. Jak můžeme vidět na diagramu \ref{fig:onupdate}, je tato metoda volána z metod \texttt{OnUpdate} výše vyjmenovaných potomků třídy \texttt{Component}. Třída \texttt{Component} a její metoda \texttt{OnUpdate} jsou blíže popsány v části \ref{sec:engineview}. Metoda \texttt{OnUpdate} u pluginů má stejnou sémantiku, je tedy volána při každém výpočtu stavu hry, kde jako parametr dostává čas uběhlý od předcházejícího výpočtu stavu.
+Jednou z hlavních metod pro implementaci logiky v pluginech je metoda \texttt{OnUpdate}. Tato metoda je volána z metod \texttt{OnUpdate} výše vyjmenovaných potomků třídy \texttt{Component}. Třída \texttt{Component} a její metoda \texttt{OnUpdate} jsou blíže popsány v části \ref{sec:engineview}. Metoda \texttt{OnUpdate} u pluginů má stejnou sémantiku, je tedy volána při každém výpočtu stavu hry, kde jako parametr dostává čas uběhlý od předcházejícího výpočtu stavu.
 
 Množina metod je různá pro různé typy herních prvků, příkladem ale může být událost přidání jednotky hráči, odstranění jednotky hráči či změna objemu surovin vlastněných hráčem.
 
@@ -530,15 +531,15 @@ Jednotlivé dlaždice mapy jsou reprezentovány instancí třídy \texttt{Tile}.
 	\item výšku každého ze svých rohů.
 \end{enumerate}
 
-Jak můžeme vidět na obrázku \ref{fig:mapreprelogic}, jsou všechny dlaždice čtvercového tvaru s velikostí hrany 1. Pro indexaci do pole obsahujícím instance třídy \texttt{Tile} používáme souřadnice levého horního rohu dlaždice. Protože je tento výběr rohu v podstatě náhodný, poskytuje třída \texttt{Tile} položku \texttt{MapLocation}, odstiňující nás od výběru rohu reprezentujícího dlaždice.
+Jak můžeme vidět na obrázku \ref{fig:mapreprelogic}, jsou všechny dlaždice čtvercového tvaru s velikostí hrany 1. Pro identifikaci instancí třídy \texttt{Tile} používáme souřadnice levého horního rohu dlaždice. Protože je tento výběr rohu v podstatě náhodný, poskytuje třída \texttt{Tile} položku \texttt{MapLocation}, odstiňující nás od výběru rohu reprezentujícího dlaždice.
 
 Dále nám umístění rohů dlaždic na celočíselné souřadnice a jejich jednotková velikost umožňují jednoduché zjištění dlaždice obsahující libovolný bod v herním světě. Použitím operace dolní celé části na souřadnice \textit{X} a \textit{Z} daného bodu získáme horní levý roh dlaždice, která tento bod obsahuje.
 
-Pro redukci duplikace informací obsahuje každá dlaždice informaci pouze o výšce svého levého horního rohu. Ostatní rohy jsou získávány od sousedních souřadnic, jejichž levé rohy se nachází ve stejné pozici jako zkoumaný roh dané dlaždice. Tímto způsobem máme zajištěnu celistvost terénu a předcházíme tak možným programátorským chybám. Nevýhodou této implementace je nutnost speciálních dlaždic na okraji mapy, které můžeme vidět na obrázku \ref{fig:mapreprelogic} označené šedou barvou. V naší implementaci jsou tyto dlaždice reprezentovány instancemi třídy \texttt{BorderTile}. Tyto dlaždice nejsou viditelné z pohledu hráče či pluginů, jejich jedinou funkcí je udržování informace o výšce všech svých rohů a tím rohů sousedních herních dlaždic. 
+Pro redukci duplikace informací obsahuje každá dlaždice informaci pouze o výšce svého levého horního rohu. Výšky ostatních rohů jsou získávány od sousedních dlaždic, jejichž levé rohy se nachází ve stejné pozici jako zkoumaný roh dané dlaždice. Tímto způsobem máme zajištěnu celistvost terénu a předcházíme tak možným programátorským chybám. Nevýhodou této implementace je nutnost speciálního druhu dlaždic na okraji mapy, které můžeme vidět na obrázku \ref{fig:mapreprelogic} označené šedou barvou. V naší implementaci jsou tyto dlaždice reprezentovány instancemi třídy \texttt{BorderTile}. Tyto dlaždice nejsou viditelné z pohledu hráče či pluginů, jejich jedinou funkcí je udržování informace o výšce všech svých rohů a tím i rohů sousedních herních dlaždic. 
 
 
 \subsection{Zobrazení}
-Zobrazení mapy je implementováno třídou \texttt{MapGraphics}, která je vnitřní privátní třídou třídy \texttt{Map}. Tento vztah je použit pro přístup k privátním položkám a zjištění celkového stavu \texttt{Map} pro jeho zobrazení. Obrázek \ref{fig:mapdisplay} ilustruje systém zobrazení mapy. Jak můžeme vidět, mapa je rozdělena na určitý počet částí stejné velikosti. Tyto části označujeme jako \textit{Chunk} a v kódu jsou reprezentovány instancemi třídy \texttt{MapChunk}. Důvod rozdělení mapy a omezení z toho plynoucí jsou rozebrána v části \ref{sec:mapimpl}. 
+Zobrazení mapy je implementováno třídou \texttt{MapGraphics}, která je vnitřní privátní třídou třídy \texttt{Map}. Tento vztah je použit pro přístup k privátním položkám třídy \texttt{Map} a zjištění celkového stavu mapy. Obrázek \ref{fig:mapdisplay} ilustruje systém zobrazení mapy. Jak můžeme vidět, mapa je rozdělena na určitý počet částí stejné velikosti. Tyto části označujeme jako \textit{Chunk} a v kódu jsou reprezentovány instancemi třídy \texttt{MapChunk}. Důvod rozdělení mapy a omezení z toho plynoucí jsou rozebrána v části \ref{sec:mapimpl}. 
 
 Rozdělení na chunky je pouze grafickou záležitostí, proto se netýká okrajových dlaždic mapy, jak můžeme vidět na diagramu \ref{fig:mapdisplay}. Díky tomu se omezení velikosti mapy, popsané v části \ref{sec:mapimpl} týká rozměrů samotné hrací plochy.
 
@@ -552,10 +553,9 @@ Rozdělení na chunky je pouze grafickou záležitostí, proto se netýká okraj
 \end{figure}
 
 Každý z chunků odpovídá jedné instanci \texttt{Node}, která je potomkem \texttt{Node} mapy. Toto rozdělení můžeme vidět na obrázku \ref{fig:scenegraph}. Každá z těchto \texttt{Node} obsahuje právě jeden \texttt{StaticModel}, použitý pro zobrazení odpovídajícího chunku. Tento model je vytvořen v průběhu volání konstruktoru třídy \texttt{MapChunk}, za využití dynamické generace vertex a index bufferů. Jak bylo popsáno v části \ref{sec:mapimpl}, používá naše implementace pro vygenerování a úpravy grafické reprezentace mapy přímý \textit{unsafe} přístup k vertex a index bufferům, v kódu reprezentovaných instancemi tříd \texttt{VertexBuffer} a \texttt{IndexBuffer}.
-Při generování či načítání mapy jsou tyto buffery vytvořeny ve velikosti odpovídající potřebnému počtu vrcholů potřebných pro zobrazení všech dlaždic chunku.
 
 
-Ukázku chunků ve hře můžeme vidět na obrázku \ref{fig:chunks}, kde se v uživatelem nastavené vzdálenosti od kamery přestávají vykreslovat, čímž šetří zdroje při vykreslování.
+Ukázku chunků ve hře můžeme vidět na obrázku \ref{fig:chunks}, kde se v uživatelem nastavené vzdálenosti od kamery přestávají chunky vykreslovat, čímž snižují výpočetní výkon vykreslování.
 
 \begin{figure}[h]
 	\centering
@@ -572,9 +572,9 @@ Chunky dále umožňují zamknout jejich vertex a index buffer do paměti, pro u
 \label{sec:pathfindingdocu}
 Systém hledání cesty je v naší platformě implementován s důrazem na rozšiřitelnost tvůrci balíčků, jak bylo popsáno v části \ref{sec:pathfinding}. Základem této implementace je rozhraní \texttt{IPathFindAlg}, které musí být implementováno kterýmkoli algoritmem, který chce tvůrce balíčku použít jako algoritmus pro hledání cesty ve svém balíčku.
 
-Rozhraní \texttt{IPathFindAlg} je navrženo pro podporu mnoha algoritmů pro hledání nejkratší cesty. Z tohoto důvodu je k rozhraní \texttt{IPathFindAlg} vytvořeno rozhraní pro reprezentaci grafu, které bude implementováno každým z možných algoritmů. V rámci jednoho běhu úrovně je podporován pouze jediný algoritmus, což umožňuje implementaci algoritmu využít znalosti opravdových typů objektů, které získává jako reference na rozhraní. Následně je možné využít přetypování pro přístup ke konkrétním typům objektů specifických pro daný algoritmus.
+Rozhraní \texttt{IPathFindAlg} je navrženo pro podporu mnoha algoritmů pro hledání nejkratší cesty. Z tohoto důvodu je spolu s rozhraním \texttt{IPathFindAlg} vytvořeno rozhraní pro reprezentaci grafu. V rámci jednoho běhu úrovně je podporován pouze jediný algoritmus, což umožňuje implementaci algoritmu využít znalosti opravdových typů objektů, které získává jako reference na rozhraní. Díky tomu je možné využít přetypování pro přístup ke konkrétním typům objektů specifických pro daný algoritmus.
 
-Jak bylo popsáno v části \ref{sec:pathfinding}, reprezentaci grafu je možné generovat z logické reprezentace mapy dvěma způsoby, a to staticky či dynamicky. Návrh rozhraní v naší platformě je cílen spíše pro dynamické generování grafu, předpokládáme ovšem, že by bylo možné jeho využití i pro statické generování. Rozhraní pro reprezentaci grafu se skládá ze tří částí. Těmito částmi jsou:
+Jak bylo popsáno v části \ref{sec:pathfinding}, reprezentaci grafu je možné generovat z logické reprezentace mapy dvěma způsoby, a to staticky či dynamicky. Návrh rozhraní v naší platformě je cílen spíše pro kombinaci dynamické a statického generování grafu, předpokládáme ovšem, že by bylo možné jeho využití i pro čistě statické či pro čistě dynamické generování. Rozhraní pro reprezentaci grafu se skládá ze tří částí. Těmito částmi jsou:
 
 \begin{enumerate}
 	\item reprezentace vrcholů a hran,
@@ -583,60 +583,65 @@ Jak bylo popsáno v části \ref{sec:pathfinding}, reprezentaci grafu je možné
 \end{enumerate}
 
 \subsection{Reprezentace vrcholů a hran}
-Reprezentace vrcholů a hran tvoří statickou část generování grafu. Vrcholy grafu jsou dvou typů. Prvním je \texttt{ITileNode}, reprezentující dlaždice mapy a druhým je \texttt{IBuildingNode}, reprezentující dostupné části budov. Vzhledem k tomu, že velikost mapy, a tedy počet dlaždic není možné měnit, předpokládáme, že tyto vrcholy bude každý algoritmus generovat jednou, při své konstrukci. Existence vrcholů typu \texttt{IBuildingNode} závisí na životnosti jimi reprezentovaných budov. Předpokládáme tedy, že budou vytvářeny při stavbě budov a mazány při zničení těchto budov. 
+Reprezentace vrcholů a hran tvoří statickou část generování grafu. Vrcholy grafu jsou tří typů. Prvním je \texttt{ITileNode}, reprezentující dlaždice mapy a druhým je \texttt{IBuildingNode}, reprezentující dostupné části budov.
+
+Vzhledem k tomu, že velikost mapy, a tedy počet dlaždic není možné měnit, předpokládáme, že vrcholy typu \texttt{ITileNode} bude každý algoritmus generovat jednou, při své konstrukci. 
+
+Existence vrcholů typu \texttt{IBuildingNode} závisí na existenci budov, které tyto vrcholy vytvořily. Předpokládáme tedy, že budou vytvářeny při stavbě budov a mazány při zničení těchto budov. 
 
 Posledním typem vrcholu je \texttt{ITempNode}, využívaná pro přesnější reprezentaci hrany v herním světě. Konkrétní sémantika a životnost vrcholů je ale v rukou tvůrce konkrétního algoritmu. Naše platforma nijak tyto vlastnosti nekontroluje. 
 
-Každá hrana mezi dvěma vrcholy má přiřazen způsob pohybu. V aktuální implementaci podporujeme explicitně pouze dva typy pohybu, a to pohyb lineární a teleportaci. Význam těchto typů pohybu není daný algoritmem vyhledávání cesty, ale koncovou implementací pohybu jednotek. Platforma poskytuje jednu možnou implementaci pohybu jednotek pomocí komponenty \texttt{WorldWalker}, popsané v části \ref{sec:defaultcomponents}.
+Každá hrana mezi dvěma vrcholy má přiřazen způsob pohybu. V aktuální implementaci podporujeme explicitně pouze dva typy pohybu, a to lineární pohyb a teleportaci. Význam těchto typů pohybu není daný algoritmem vyhledávání cesty, ale koncovou implementací pohybu jednotek. Platforma poskytuje jednu možnou implementaci pohybu jednotek pomocí komponenty \texttt{WorldWalker}, popsané v části \ref{sec:defaultcomponents}.
 
-Pro přidávání akcí nad hranami grafu, tedy dvojicemi vrcholů, je definováno rozhraní podle návrhového vzoru \textit{Visitor}. Dále je podpora tohoto návrhového vzoru požadována rozhraním jednotlivých \texttt{INode}. Jedním z možných využití rozhraní \texttt{Visitor} je tzv.~\textit{double dispatch}, který umožňuje jednoduší implementaci \texttt{INodeDistCalculator}.
+Pro přidávání akcí nad hranami grafu, tedy dvojicemi vrcholů, je definováno rozhraní podle návrhového vzoru \textit{Visitor}. Dále je podpora tohoto návrhového vzoru požadována rozhraním jednotlivých \texttt{INode}, které je předkem rozhraní všech tří druhů vrcholů. Jedním z možných využití rozhraní \texttt{Visitor} je tzv.~\textit{double dispatch}, který umožňuje jednoduší implementaci \texttt{INodeDistCalculator}. Této implementace využívá třída \texttt{NodeDistCalculator}, která je součástí implementace algoritmu A* poskytované naší platformou.
 
 \subsection{Dynamická část generování}
-Dynamická část generování grafu je tvořena rozhraním \texttt{INodeDistCalculator}. Instance třídy implementující toto rozhraní je vyžadována pro každé spuštění výpočtu cesty. Konkrétní využití a vlastnosti třídy implementující \texttt{INodeDistCalculator} závisí především na vlastním algoritmu. 
+Dynamická část generování grafu je tvořena rozhraním \texttt{INodeDistCalculator}. Instance třídy implementující toto rozhraní je vyžadována pro každé spuštění výpočtu cesty. Konkrétní využití a vlastnosti třídy implementující \texttt{INodeDistCalculator} závisí především na algoritmu. 
 
 Protože naše platforma požaduje právě jeden 
-\texttt{IPathFindAlg} v průběhu úrovně, může tento algoritmus využít přetypování na svůj konkrétní typ implementující \texttt{INodeDistCalculator} a využít jeho plného rozhraní. 
+\texttt{IPathFindAlg} v průběhu úrovně, může algoritmus využít přetypování na svůj konkrétní typ implementující \texttt{INodeDistCalculator} a následně použít plných schopností třídy implementující \texttt{INodeDistCalculator}. 
 
 
-Jedinou požadovanou metodou v rozhraní \texttt{INodeDistCalculator} je metoda \texttt{GetTime}, která je využívána pro zjištění existence hrany mezi dvěma vrcholy a v případě existence pak hodnotu této hrany, v rozhraní označovanou jako \texttt{time}, tedy čas potřebný pro přesun z prvního vrcholu na druhý. Tato metoda je využívána ve třetí části, popsané dále.
+Jedinou požadovanou metodou v rámci rozhraní \texttt{INodeDistCalculator} je metoda \texttt{GetTime}, která je využívána pro zjištění existence hrany mezi dvěma vrcholy a v případě existence pak hodnoty této hrany. Hodnota hrany je v rozhraní označována jako \texttt{time}, tedy čas potřebný pro přesun z prvního vrcholu na druhý. Tato metoda je využívána ve třetí části \ref{sec:path}, popsané dále.
 
 \subsection{Reprezentace cesty}
 \label{sec:path}
-Třetí části reprezentace grafu je reprezentace cest. Tuto reprezentaci tvoří dvě třídy, \texttt{Waypoint}, tedy bod v cestě, a z nich složená \texttt{Path}, tedy cesta. Při použití v platformě jsou instance \texttt{Waypoint} chápány jako body, mezi kterými se jednotka pohybuje konstantní rychlostí po jejich spojnici. Cesta je potom posloupností těchto úseček. Každý z \texttt{Waypoint} bodů by měl odpovídat jedné instanci \texttt{INode}, tedy vrcholu z reprezentace grafu. V platformě je tato reprezentace použita pro implementaci komponent \texttt{WorldWalker}, poskytující pohyb jednotek po mapě, a \texttt{MovingRangeTarget}, umožňující střelbu na pohyblivý cíl. V případě, že tvůrce balíčku nepoužívá tyto dvě komponenty, může se jeho interpretace cesty vracené jeho algoritmem lišit.
+Třetí částí reprezentace grafu je reprezentace cest. Cesty jsou reprezentovány pomocí dvou tříd, \texttt{Waypoint}, tedy bodu v cestě, a z nich složené \texttt{Path}, tedy cesty. Při použití v platformě jsou instance \texttt{Waypoint} chápány jako body, mezi kterými se jednotka pohybuje po úsečce spojující tyto body konstantní rychlostí. Cesta je potom posloupností těchto úseček. Každý z \texttt{Waypoint} bodů by měl odpovídat jedné instanci \texttt{INode}, tedy vrcholu z reprezentace grafu. V platformě je tato reprezentace použita pro implementaci komponent \texttt{WorldWalker}, poskytující pohyb jednotek po mapě, a \texttt{MovingRangeTarget}, umožňující střelbu na pohyblivý cíl. V případě, že tvůrce balíčku nepoužívá tyto dvě komponenty, může se interpretace cesty vracené jeho algoritmem lišit.
 
 
 \subsection{Výběr algoritmu}
-Používaná instance algoritmu je přístupná pomocí property \texttt{Pathfinding} na instanci mapy aktuální úrovně. Získávání instance třídy implementující \texttt{IPathFindAlg} při načítání úrovně je implementováno podle návrhového vzoru \texttt{Abstract Factory}. Instance \textit{IPathFindAlgFactory} je získána od pluginu logiky aktuální úrovně. Tato \textit{factory} je následně předána mapě, která jako poslední krok své inicializace vytvoří instanci algoritmu. Tento způsob jsme vybrali pro umožnění přístupu k načtené mapě v konstruktoru algoritmu.
+\label{sec:pathfindselection}
+Používaná instance algoritmu je přístupná pomocí property \texttt{Pathfinding} na instanci mapy aktuální úrovně. Získávání instance třídy implementující \texttt{IPathFindAlg} při načítání úrovně je implementováno podle návrhového vzoru \texttt{Abstract Factory}. Instance \textit{IPathFindAlgFactory} je získávána od pluginu logiky aktuální úrovně. Tato \textit{factory} je následně předána mapě, která jako poslední krok své inicializace vytvoří instanci algoritmu. Tento způsob jsme vybrali pro umožnění přístupu k načtené mapě v konstruktoru algoritmu.
 
 \subsection{Implementace v platformě}
 Platforma poskytuje základní použitelnou implementaci rozhraní \texttt{IPathFindAlg} pomocí algoritmu A*, popsaného v části \ref{sec:astar}. 
 
-Graf vytvářený tímto algoritmem obsahuje všechny možné hrany mez sousedními dlaždicemi. Dále při připojení vrcholů budov předpokládá vytvoření všech hran, které by mohla kterákoli z jednotek použít. Následně jsou tyto hrany filtrovány a ohodnocovány v průběhu výpočtu nejkratší cesty za použití potomka třídy \texttt{NodeDistCalculator}, definovaného v balíčku. 
+Graf vytvářený tímto algoritmem obsahuje všechny možné hrany mezi sousedními dlaždicemi. Dále při připojení vrcholů budov předpokládá vytvoření všech hran, které by mohla kterákoli z jednotek použít. Následně jsou tyto hrany filtrovány a ohodnocovány v průběhu výpočtu nejkratší cesty za použití potomka třídy \texttt{NodeDistCalculator}, definovaného v balíčku. 
 
-Tato třída dále vyžaduje implementaci metody pro výpočet heuristiky. Hodnoty heuristiky závisí pouze na tvůrci balíčku, není tedy nijak kontrolována podmínka přípustnosti a monotonie.
+Třída \texttt{NodeDistCalculator} oproti obecnému rozhraní \texttt{INodeDistCalculator} navíc vyžaduje implementaci metody pro výpočet heuristiky. Hodnoty heuristiky závisí pouze na tvůrci balíčku, není tedy nijak kontrolována podmínka přípustnosti a monotonie.
 
 \section{Kamera}
 \label{sec:camera}
-Kamera je v enginu UrhoSharp reprezentována komponentou \texttt{Camera}. V naší platformě je pro tuto komponentu vytvořena separátní \texttt{Node}, která je následně přesouvána po herním světě. Tento pohyb kamery implementuje platforma pomocí vlastní komponenty \texttt{CameraMover}, která je přidána na stejnou \texttt{Node} jako \texttt{Camera}.
+Kamera je v enginu UrhoSharp reprezentována komponentou \texttt{Camera}. V naší platformě je pro tuto komponentu vytvořena separátní \texttt{Node}, která je následně přesouvána po herním světě. Ovládání pohybu této \texttt{Node} po herním světě implementuje platforma pomocí vlastní komponenty \texttt{CameraMover}, která je přidána na stejnou \texttt{Node} jako \texttt{Camera}.
 
 Kamerou lze pohybovat třemi způsoby. Tyto způsoby jsou implementovány pomocí návrhového vzoru \texttt{State} a jsou jimi:
 \begin{enumerate}
-	\item typická RTS kamera (state \texttt{FixedCamera}),
+	\item Top-down kamera (state \texttt{FixedCamera}),
 	\item kamera sledující jednotku (state \texttt{EntityFollowingCamera}),
 	\item volně létající kamera (state \texttt{FreeFloatCamera}).
 
 \end{enumerate}
 
-V této části popisujeme pouze API poskytované zbytku platformy a tvůrcům baličku pro pohyb kamerou. Vlastní řízení pohybu kamery hráčem je popsáno v části \ref{sec:inpu}.
+Třída \texttt{CameraMover}, popisovaná v této části, pouze poskytuje rozhraní pro pohyb kamerou zbytku platformy a tvůrcům baličku. Vlastní řízení pohybu kamery na základě uživatelského vstupu implementováno ve jmenném prostoru \texttt{Input} a je popsáno v části \ref{sec:input}. 
 
-\subsection{Typická RTS kamera}
-Pohyb typické RTS kamery je implementován třídou \texttt{FixedCamera}. Typická RTS kamera je namířena na pevný bod v herním světě, od kterého je v konstantní vzdálenosti. Toto je implementováno pomocí hierarchie instancí \texttt{Node}, do které mezi vlastní \texttt{Node} obsahující kameru a \texttt{Node} reprezentující celou úroveň přidáváme třetí \texttt{Node}, kterou nazýváme \texttt{CameraHolder}, tedy úchyt kamery. 
+\subsection{Top-down kamera}
+Pohyb Top-down kamery je implementován třídou \texttt{FixedCamera}. Tento druh kamery sleduje bod v herním světě v pevné vzdálenosti od pozice kamery. Toto je implementováno pomocí hierarchie instancí \texttt{Node}, do které mezi vlastní \texttt{Node} obsahující kameru a \texttt{Node} reprezentující celou úroveň přidáváme třetí \texttt{Node}, kterou nazýváme \texttt{CameraHolder}, tedy úchyt kamery. 
 
-Kamera je umístěna v základní pozici vůči úchytu a pro pohyb kamery po herním světě není pohybováno přímo kamerou, ale pouze úchytem.
+Kamera je při přepnutí do top-down módu umístěna v základní pozici vůči úchytu. Pro pohyb kamery po herním světě pak není pohybováno přímo kamerou, ale pouze úchytem.
 
-V naší implementaci úchyt při pohybu kopíruje terén mapy, což zjednodušuje hráči pohyb kamery po mapě, kdy se nemusí starat o oddalování a přibližování kamery se změnami výšky terénu. 
+V naší implementaci úchyt při pohybu kopíruje terén mapy, což zjednodušuje hráči pohyb kamerou po mapě, kdy se nemusí starat o oddalování a přibližování kamery se změnami výšky terénu. 
 
-Při rotaci je naopak měněna pozice kamery vůči úchytu, tedy je měněn atribut \texttt{Position} na instanci \texttt{Node} obsahující kameru. Rotace jsou ilustrovány na obrázku \ref{fig:rotation}. Při horizontálním otáčení se kamera otáčí okolo osy Y v rodičovském prostoru. Protože rodičem kamery je úchyt, otáčí se kamera okolo vertikální osy procházející úchytem. Při vertikálním otáčení je kamera také otáčena okolo úchytu, ale tentokrát okolo osy mířící vpravo z pohledu kamery. Po každém otočení je směr pohledu upraven tak, aby znovu mířil na úchyt.
+Při rotaci je naopak měněna pozice kamery vůči úchytu, tedy je měněn atribut \texttt{Position} na instanci \texttt{Node} obsahující kameru. Rotace jsou ilustrovány na obrázku \ref{fig:rotation}. Při horizontálním otáčení se kamera otáčí okolo osy Y, tedy vertikální osy, procházející úchytem.  Při vertikálním otáčení je kamera také otáčena okolo úchytu, ale tentokrát okolo osy mířící vpravo z pohledu kamery. Po každém otočení je směr pohledu upraven tak, aby znovu mířil na úchyt.
 
 \begin{figure}[h]
 	\centering
@@ -647,31 +652,31 @@ Při rotaci je naopak měněna pozice kamery vůči úchytu, tedy je měněn atr
 	\label{fig:rotation}
 \end{figure}
 
-Dále lze kameru přibližovat a oddalovat od úchytu ve směru pohledu. Tato akce je pouhou změnou velikosti atributu \texttt{Position} kamery. Tedy pro přiblížení vynásobíme velikost tohoto vektoru číslem menším než jedna, pro oddálení větším než jedna. Kamera má limit na nejbližší možné přiblížení pro zamezení pohledu skrz terén.
+Dále lze kameru přibližovat a oddalovat od úchytu ve směru pohledu. Tato akce je pouhou změnou velikosti vektoru \texttt{Position} kamery. Pro přiblížení kamery tedy vynásobíme velikost tohoto vektoru číslem menším než jedna, pro oddálení větším než jedna. Maximální přiblížení je limitováno pro zamezení pohledu skrz terén.
 
-Pohyb \texttt{CameraHolderu} je omezen na herní plochu, čímž omezujeme možnost pohledu kamery mimo herní plochu. Dále je kontrolována vlastní pozice kamery, které není dovoleno dostat se pod úroveň terénu.
+Pohyb \texttt{CameraHolderu} je omezen na herní plochu, čímž omezujeme možnost pohledu kamery mimo herní plochu. Dále je kontrolována vlastní pozice kamery, které není dovoleno dostat se pod úroveň terénu. Pokud by se v aktuální pozici kamera dostala pod úroveň terénu, je její pozice dočasně posunuta nad terén.
 
 \subsection{Kamera sledující jednotku}
-Sledování jednotky kamerou je z pohledu platformy pouhé sledování jiné \texttt{Node} než \texttt{CameraHolder}. Proto také jsou tyto dva stavy kamery potomkem jedné třídy, a to \texttt{PointFollowingCamera}. 
+Sledování jednotky kamerou je z pohledu platformy pouhé sledování jiné \texttt{Node} než \texttt{CameraHolder}. Proto jsou tyto dva stavy kamery potomkem jedné třídy, a to \texttt{PointFollowingCamera}. 
 
-Jedinou změnou oproti sledování \texttt{CameraHolderu} je odstínění kamery od otáčení jednotky. Oproti \texttt{CameraHolderu}, u kterého zachováváme po celou dobu neměníme rotaci a pouze s ním pohybujeme po herním světě, mohou jednotky měnit jak svoji pozici, tak rotaci. Dále může mít jednotka nastaven jiný \texttt{Scale} na své \texttt{Node} než je \texttt{Scale} u úchytu kamery. 
+Jedinou změnou oproti sledování \texttt{CameraHolderu} je odstínění kamery od otáčení jednotky. Oproti \texttt{CameraHolderu}, u kterého zachováváme po celou dobu počáteční rotaci a pouze s ním pohybujeme po herním světě, mohou jednotky měnit jak svoji pozici, tak rotaci. Dále může mít jednotka nastaven jiný \texttt{Scale} na své \texttt{Node} než je \texttt{Scale} u úchytu kamery. 
 
-Pro řešení nechtěných rotací kamery s jednotkou si ukládáme separátně chtěný směr pohledu. Následně při každém výpočtu stavu hry otočíme směr pohledu kamery tak, aby mířil tímto směre. Toto řešení nám umožní ignorovat rotace jednotky, kterou sledujeme, a udržovat konstantní směr pohledu. 
+Pro řešení nechtěných rotací kamery s jednotkou si ukládáme separátně požadovaný směr pohledu. Následně při každém výpočtu stavu hry otočíme kameru tak, aby mířila tímto směre. Toto řešení nám umožní ignorovat rotace jednotky, kterou sledujeme, a udržovat konstantní směr pohledu. 
 
 Problém s \texttt{Scale} nastává při změně přepnutí sledování mezi dvěma různými jednotkami či jednotkou a \texttt{CameraHolderem}, a dále při přibližování a oddalování kamery. Řešením změny mezi dvěma různými sledovanými \texttt{Node} je vynásobení poměrem jejich \texttt{Scale}. Při přibližování či oddalování stačí potom vydělit chtěnou změnu pozice \texttt{Scale} sledované \texttt{Node}, čímž následně změníme pozici kamery v herním světě nezávisle na \texttt{Scale} sledované \texttt{Node}.
 
-Při sledování jednotky neumožňujeme hráči ovládat pohyb kamery po herním světě. Při pokusu o pohyb dochází k přepnutí zpět na sledování \texttt{CameraHolderu}.
+Při sledování jednotky neumožňujeme hráči ovládat pohyb kamery po herním světě. Při pokusu o pohyb dochází k přepnutí zpět na sledování \texttt{CameraHolderu}, který je přemístěn na aktuální pozici jednotky.
 
 \subsection{Volně létající kamera}
 V tomto módu se stává \texttt{Node} obsahující kameru přímým potomkem \texttt{LevelNode} a je jí umožněn nezávislý pohyb po celé úrovni. Otáčení je v tomto módu prováděno okolo vlastní pozice kamery, jak v horizontálním, tak ve vertikálním směru. 
 
-Stejně jako při předchozích způsobech pohyb je i zde kamera omezena na herní plochu mapy. Není tedy možné mapu opustit, ani se dostat pod úroveň terénu.
+Stejně jako při předchozích způsobech pohybu je i zde kamera omezena na herní plochu mapy. Není tedy možné mapu opustit, ani se dostat pod úroveň terénu.
 
 \section{Vstup}
-\label{input}
-Vstup je implementován separátně pro ovládání menu a hry. Každá z těchto částí je dále rozdělena na definici přenositelného rozhraní a implementace pro dotykový display či myš a klávesnici. Toto rozdělení můžeme vidět na diagramu \ref{fig:inputhier}. Jak bylo psáno v části \ref{sec:system_dif}, cílem naší práce je implementace pro systém Windows a ovládání pomocí myši a klávesnice. Proto implementace tříd dotykového rozhraní je pouhá kostra pro budoucí implementaci. 
+\label{sec:input}
+Vstup je implementován separátně pro menu a pro hru. Každá z těchto částí je dále rozdělena na definici přenositelného rozhraní a implementace pro dotykový display či myš a klávesnici. Toto rozdělení můžeme vidět na diagramu \ref{fig:inputhier}. Jak bylo psáno v části \ref{sec:system_dif}, cílem naší práce je implementace pro systém Windows a ovládání pomocí myši a klávesnice. Proto je implementace tříd dotykového rozhraní pouhou kostrou pro budoucí rozšíření. 
 
-Vzhledem k úzkému provázání uživatelského rozhraní se vstupem, především v menu, jsou třídy ovládající uživatelské rozhraní vytvářeny, spravovány a uvolňovány třídami kontrolujícími vstup. Tuto hierarchii můžeme vidět na diagramu \ref{fig:inputhier}. Spolu s vlastnictvím uživatelského rozhraní slouží třídy vstupu také jako odstínění zbytku platformy od implementace grafického rozhraní poskytnutím metod ovládajících uživatelské rozhraní. 
+Vzhledem k úzkému provázání uživatelského rozhraní se vstupem, především v menu, jsou třídy ovládající uživatelské rozhraní vytvářeny, spravovány a uvolňovány třídami kontrolujícími vstup. Implementace uživatelského rozhraní je blíže popsána v části \ref{sec:ui}. Spolu s vlastnictvím uživatelského rozhraní slouží třídy vstupu také pro odstínění zbytku platformy od implementace grafického rozhraní. 
 
 \begin{figure}[h]
 	\centering
@@ -683,20 +688,21 @@ Vzhledem k úzkému provázání uživatelského rozhraní se vstupem, předevš
 \end{figure}
 
 
-V menu je vstup ovládán třídou \texttt{MenuController}. Vzhledem k tomu, že veškerý vstup uživatele je v menu získáván pomocí grafického rozhraní, slouží třída \texttt{MenuController} především jako fasáda z návrhového vzoru \texttt{Facade}, překrývající složitost grafického rozhraní z pohledu zbytku platformy. 
+V menu je vstup ovládán třídou \texttt{MenuController}. Vzhledem k tomu, že veškerý vstup uživatele je v menu získáván pomocí grafického rozhraní, slouží třída \texttt{MenuController} především jako fasáda navržená podle návrhového vzoru \texttt{Facade}, překrývající složitost grafického rozhraní z pohledu zbytku platformy. 
 
 Při hře je uživatelský vstup zprostředkováván třídou \texttt{GameController}. Účelem této třídy je, stejně jako u \texttt{MenuController}, sloužit jako fasáda, tentokrát jak nad grafický uživatelským rozhraním, tak nad systémem herního enginu pro zpracovávání uživatelského vstupu. 
 
-Vstup ve hře je přiřazen právě jednomu hráči, kterého je možné zjistit pomocí \texttt{Player} property třídy \texttt{GameController}. Ve zbytku platformy lze potom při zpracování vstupu změnit svoje chování podle aktuálního hráče, kterému patří vstup. Příkladem takovéto změny chování může být přiřazení aktuálního hráče se vstupem jako vlastníka právě postavené budovy či jednotky. Další změny chování jsou popsány v části \ref{sec:tools}.
+Vstup ve hře je přiřazen právě jednomu hráči. Tento hráč je určen hodnotou \texttt{Player} property třídy \texttt{GameController}. Ve zbytku platformy lze potom při zpracování vstupu změnit chování podle aktuálního hráče, kterému patří vstup. Příkladem takovéto změny chování může být přiřazení aktuálního hráče se vstupem jako vlastníka právě vytvořené budovy či jednotky. Další změny chování jsou popsány v části \ref{sec:tools}.
 
-Pro ovládání kamery je vytvořena separátní třída, využívající třídy \texttt{GameController} a grafického rozhraní pro přijímání vstupu od uživatele a v části \ref{sec:camera} popsanou třídu \texttt{CameraMover} pro vykonávání akcí podle přijatého vstupu. Třída implementuje mapování stisků klávesnice a pohybů myši na pohyb kamery.
+Pro ovládání kamery je vytvořena separátní třída, využívající třídy \texttt{GameController} a grafického rozhraní pro přijímání vstupu od uživatele a třídu \texttt{CameraMover},  popsanou v části \ref{sec:camera}, pro převedení tohoto vstupu na pohyb kamery.
 
-Pro zjednodušení přepínání mezi schématy ovládání implementuje každá ze tříd přenositelné rozhraní, což můžeme vidět na diagram \ref{fig:inputhier}. Implementace těchto rozhraní nám umožňuje vytváření instancí tříd implementovat pomocí návrhového vzoru \texttt{Factory}. Díky tomu existuje jediné místo, a to v metodě \texttt{Start} třídy \texttt{MHUrhoApp}, kde se platforma při inicializaci explicitně rozhoduje, jaké schéma ovládání použít. Po vytvoření \texttt{Factory} jsou pak využívány pouze metody přenositelného rozhraní, případně ve třídách specifických pro dané ovládací schéma dochází k přetypování zpět na konkrétní typy specifické pro dané schéma.
+Pro zjednodušení přepínání mezi schématy ovládání implementuje každá ze tříd přenositelné rozhraní, což můžeme vidět na diagram \ref{fig:inputhier}. Díky tomu lze vytváření instancí tříd implementovat pomocí návrhového vzoru \texttt{Factory}. Použitím této \texttt{Factory} vytváříme pouze jediné místo ve kterém se rozhodujeme, jaké schéma ovládání použít. Toto místo se nachází v metodě \texttt{Start} třídy \texttt{MHUrhoApp}, rozhodování je tedy provedeno pouze při inicializaci platformy. Po vytvoření \texttt{Factory} jsou pak využívány pouze metody přenositelného rozhraní, případně ve třídách specifických pro dané ovládací schéma dochází k přetypování zpět na konkrétní typy pro dané schéma ovládání.
 
 \section{Editace mapy a ovládání hry}
-Editování a ovládání úrovně je v platformě spojeno do systému, který nazýváme \uv{Tools}. Tools, neboli nástroje, umožňují jak platformě, tak tvůrci pluginu, definovat třídy, které přijímají vstup od uživatele a převádí jej do modifikací mapy, vytváření jednotek či budov, ovládání jednotek či jinou manipulaci s herním světem. Protože implementace jednotlivých nástrojů je závislá na použitém schématu ovládání, má systém nástrojů podobnou strukturu jako systém vstupu, ukázanou na diagramu \ref{fig:inputhier}. Struktura nástrojů také obsahuje přenositelnou část, zde definovanou ve jmenném prostoru \texttt{MHUrho.EditorTools.Base}, a následně odvozené implementace pro jednotlivá schémata ovládání ve jmenných prostorech \texttt{MHUrho.EditorTools.MandK} pro myš a klávesnici a \texttt{MHUrho.EditorTools.Touch} pro dotykový display. Stejně jako u vstupu je i zde aktuální implementace pro dotykový display pouhou kostrou pro budoucí implementaci.
+\label{sec:tools}
+Editování a ovládání úrovně je v platformě spojeno do systému, který nazýváme \uv{Tools}. Tools, neboli nástroje, umožňují platformě i tvůrci pluginu definovat třídy, které přijímají vstup od uživatele a převádí jej do modifikací mapy, vytváření jednotek či budov, ovládání jednotek či jinou manipulaci s herním světem. Protože implementace jednotlivých nástrojů je závislá na použitém schématu ovládání, má systém nástrojů podobnou strukturu jako systém vstupu, popsaný v části \ref{sec:input}. Struktura nástrojů obsahuje přenositelnou část, zde definovanou ve jmenném prostoru \texttt{MHUrho.EditorTools.Base}, a následně odvozené implementace pro jednotlivá schémata ovládání ve jmenných prostorech \texttt{MHUrho.EditorTools.MandK} pro myš a klávesnici a \texttt{MHUrho.EditorTools.Touch} pro dotykový display. Stejně jako u vstupu je i zde aktuální implementace pro dotykový display pouhou kostrou pro budoucí rozšíření.
 
-Platforma poskytuje několik základních nástrojů, především pro editaci terénu. Těmito nástroji jsou:
+Platforma poskytuje několik nástrojů umožňujících pro editaci terénu. Těmito nástroji jsou:
 \begin{itemize}
 	\item \texttt{TileTypeTool}, umožňující změnu typů dlaždic;
 	\item \texttt{TerrainManpulatorTool}, poskytující několik způsobů změny reliéfu.
@@ -709,24 +715,24 @@ Dále pak platforma poskytuje nástroje pro vytváření jednotek a budov v podo
 \end{itemize} 
 Tyto nástroje umožňují stavbu všech budov a tvorbu všech jednotek přítomných v balíčku. Předpokládáme ovšem, že při vlastní hře, případně i při editaci, bude hráči omezena množina dostupných jednotek a budov, případně bude při pokusu o vytvoření kontrolováno a měněno množství surovin vlastněné hráčem. Z tohoto důvodu předpokládáme, že tvůrci balíčků tyto nástroje nahradí svojí vlastní implementací.
 
-Posledním nástrojem je \texttt{UnitSelectorTool}, umožňující označení skupiny jednotek a vydávání rozkazů této skupině. Tento nástroj implementuje jednoduché schéma ovládání, které je dostačující pro jednodušší hry, ale stejně jako u předchozích nástrojů předpokládáme, že tvůrci balíčků tento nástroj vymění za svoji vlastní implementaci.
+Posledním nástrojem je \texttt{UnitSelectorTool}, umožňující označení skupiny jednotek a vydávání rozkazů této skupině. Tento nástroj implementuje jednoduché schéma ovládání postačující pro jednodušší hry, ale stejně jako u předchozích nástrojů předpokládáme, že tvůrci balíčků tento nástroj vymění za svoji vlastní implementaci.
 
-Pro výběr poskytovaných nástrojů používá platforma podobný systém jako u výběru algoritmu pro hledání nejkratší cesty. Po pluginu logiky úrovně je požadována definice metody \texttt{GetToolManager}, vracející tvůrcem pluginu definovaného potomka třídy \texttt{ToolManager}. Z této třídy je poté získán seznam potomků třídy \texttt{Tool}, tedy všech nástrojů, které budou dostupné hráči v aktuální úrovni.
+Pro výběr poskytovaných nástrojů používá platforma podobný systém jako u výběru algoritmu pro hledání nejkratší cesty, popsaný v části \ref{sec:pathfindselection}. Po pluginu logiky úrovně je požadována definice metody \texttt{GetToolManager}, vracející instanci tvůrcem pluginu definovaného potomka třídy \texttt{ToolManager}. Z této instance je poté získán seznam  všech nástrojů dostupných hráči v aktuální úrovni.
 
 \section{Základní komponenty}
 \label{sec:defaultcomponents}
 \texttt{DefaultComponents}, neboli základní komponenty, jsou komponenty poskytované platformou, implementující funkcionalitu společnou velké části podporovaných typů her. Tato funkcionalita zahrnuje:
 
 \begin{itemize}
-	\item pohyb po terénu (\texttt{WorldWalker}),
-	\item označování jednotek a vydávání rozkazů (\texttt{UnitSelector}),
-	\item střelba na statický a pohyblivý cíl (\texttt{Shooter}, \texttt{StaticRangeTarget}, \texttt{MovingRangeTarget}),
-	\item útok na blízko (\texttt{StaticMeeleAttacker}, \texttt{MovingMeeleAttacker}),
-	\item reakce na kliknutí (\texttt{Clicker}),
+	\item pohyb po terénu (\texttt{WorldWalker});
+	\item označování jednotek a vydávání rozkazů (\texttt{UnitSelector});
+	\item střelba na statický a pohyblivý cíl (\texttt{Shooter}, \texttt{StaticRangeTarget}, \texttt{MovingRangeTarget});
+	\item útok na blízko (\texttt{StaticMeeleAttacker}, \texttt{MovingMeeleAttacker});
+	\item reakce na kliknutí (\texttt{Clicker});
 	\item simulace balistického projektilu (\texttt{BallisticProjectile}).
 \end{itemize}
 
-Platforma sama základní komponenty jednotkám nepřiděluje. Schéma vztahů \texttt{DefaultComponent} k ostatním částem programu můžeme vidět na diagramu \ref{fig:defaultcomponentstructure}. Pro použití těchto komponent musí tvůrce pluginu při vytvoření instance entity, tedy jednotky, budovy či projektilu, vytvořit požadovanou základní komponentu a připojit ji k této instanci entity. Implementace základních komponent této skutečnosti využívá, a v metodách vytvářející instance základních komponent požaduje instanční plugin, který navíc musí implementovat rozhraní \texttt{IUser} specifikované danou komponentou. Tímto způsobem je umožněna implementace základních komponent, která není závislá na konkrétních implementacích ostatních částí platformy, nijak neomezuje chování entit používajících tuto komponentu a umožňuje tvůrci balíčku modifikovat chování této komponenty implementací požadovaných metod. 
+Schéma vztahů \texttt{DefaultComponent} k ostatním částem platformy a pluginů můžeme vidět na diagramu \ref{fig:defaultcomponentstructure}. Pro použití těchto komponent musí tvůrce pluginu při vytvoření instance entity, tedy jednotky, budovy či projektilu, vytvořit požadovanou základní komponentu a připojit ji k této instanci entity. Platforma sama základní komponenty entitám nikdy nepřiděluje. Implementace základních komponent této skutečnosti využívá, a v metodách vytvářející instance základních komponent požaduje referenci na instanční plugin, který navíc musí implementovat rozhraní \texttt{IUser} specifikované danou komponentou. Tímto způsobem je umožněna implementace základních komponent, která není závislá na konkrétních implementacích ostatních částí platformy, nijak neomezuje chování entit používajících tuto komponentu a umožňuje tvůrci balíčku modifikovat chování této komponenty implementací požadovaných metod. 
 
 \begin{figure}[h]
 	\centering
@@ -738,7 +744,7 @@ Platforma sama základní komponenty jednotkám nepřiděluje. Schéma vztahů \
 \end{figure}
 
 
-Příkladem může být třída \texttt{WorldWalker}, která po uživateli požaduje metodu vracející \texttt{INodeDistCalculator}, který je následně použit pro výpočet nejkratší cesty. Tímto způsobem je implementace \texttt{WorldWalker} oproštěna od závislosti na použitém algoritmu pro hledání nejkratší cesty. Druhým příkladem může být \texttt{MovingMeeleAttacker}, který po uživateli požaduje tři metody, a to \texttt{IsInRange}, \texttt{PickTarget}, \texttt{MoveTo}. Metody \texttt{IsInRange} a \texttt{PickTarget} slouží pro specifikaci chování komponenty tvůrcem balíčku, tedy umožňují mu vybrat cíl a rozhodovat, zda je cíl v dosahu, podle vlastních kritérií. Metoda \texttt{MoveTo} naopak slouží pro izolaci komponenty od implementace pohybu jednotky. Jednotka tedy není omezena na pohyb pomocí komponenty \texttt{WorldWalker}, ale umožňuje tvůrci vytvořit vlastní implementací pohybu jednotky po mapě.
+Příkladem může být třída \texttt{WorldWalker}, která po uživateli, tedy instančním pluginu, požaduje metodu vracející \texttt{INodeDistCalculator}, který je následně použit pro výpočet nejkratší cesty. Tímto způsobem je implementace \texttt{WorldWalker} oproštěna od závislosti na použitém algoritmu pro hledání nejkratší cesty. Druhým příkladem může být \texttt{MovingMeeleAttacker}, který po uživateli požaduje tři metody, a to \texttt{IsInRange}, \texttt{PickTarget}, \texttt{MoveTo}. Metody \texttt{IsInRange} a \texttt{PickTarget} slouží pro specifikaci chování komponenty tvůrcem balíčku, tedy umožňují mu vybrat cíl a rozhodovat, zda je cíl v dosahu, podle vlastních kritérií. Metoda \texttt{MoveTo} naopak slouží pro izolaci komponenty od implementace pohybu jednotky. Jednotka tedy není omezena na pohyb pomocí komponenty \texttt{WorldWalker}, ale umožňuje tvůrci vytvořit vlastní implementací pohybu jednotky po mapě.
 
 Další události, na které by mohl tvůrce pluginu chtít reagovat, jsou poskytovány jako \texttt{eventy}, jejichž obsluhu si může tvůrce pluginu zaregistrovat. Příkladem těchto událostí může být začátek pohybu, dokončení pohybu či zrušení pohybu u komponenty \texttt{WorldWalker}.
 
@@ -754,23 +760,23 @@ Načítání úrovní lze iniciovat třemi způsoby:
 	\item načtení uložené hrané úrovně.
 \end{enumerate}
 
-Prvním je vytvoření nové úrovně, která je načtena do základní podoby a je umožněna její editace. 
+Při prvním způsobu je nová úrovně načtena do základní podoby, ve které je celá mapa umístěna v rovině s výškou nula a všechny dlaždice mají základní typ definovaný v balíčku. Tento způsob vždy načítá úroveň v editačním módu.
 
-Druhým je vybráním již existující úrovně z balíčku. Tyto úrovně jsou ve stavu, do kterého byly uvedeny v editoru úrovní a ještě nebyli spuštěny pro hru. Takovéto úrovně označujeme jako \uv{Prototype} úrovně.
+Druhý způsob načítá úrovně do stavu, do kterého byli uvedeny při předchozí editaci. Takovéto úrovně označujeme jako \uv{Prototype} úrovně. Tyto úrovně lze načíst pro další editaci, nebo je možné je spustit pro hraní.
 
-Třetí možností je vybrání hry, která byla uložena již v průběhu hraní. Tyto již nelze nahrát pro editaci, což umožňuje zjednodušení logiky pluginů. 
+Třetí možností je vybrání hry, která byla uložena již v průběhu hraní. Tyto úrovně již nelze nahrát pro editaci, což umožňuje zjednodušení logiky pluginů. 
 
-Pro reprezentaci těchto různých stavů je podle návrhového vzoru \textit{State} implementována třída \texttt{LevelRep}. Všechny možné stavy a přechody mezi nimi můžeme vidět na diagramu \ref{fig:levelrepstates}. K
+Pro reprezentaci těchto různých stavů je podle návrhového vzoru \textit{State} implementována třída \texttt{LevelRep}. Všechny možné stavy a přechody mezi nimi můžeme vidět na diagramu \ref{fig:levelrepstates}. 
 
-aždá úroveň začíná ve stavu \texttt{NewlyCreated}. Z toho stavu je vygenerována podle uživatelem zadaných parametrů do editoru. Parametry vytvářené úrovně, jako velikost, ikona a plugin, jsou vybrány v obrazovce grafického rozhraní \texttt{LevelCreationScreen}. Dalším parametrem je počáteční typ dlaždice, specifikovaný v balíčku.  Editace úrovně je blíže popsána v části \ref{sec:tools}. 
+Každá úroveň začíná ve stavu \texttt{NewlyCreated}. V tomto stavu je úroveň při uživatelově manipulaci s obrazovkou \texttt{LevelCreationScreen}. Na této obrazovce uživatel nastavuje parametry vytvářené úrovně, kterými jsou jméno úrovně, velikost mapy, ikona, plugin a popis úrovně. Následně je úroveň vygenerována podle zadaných parametrů a převedena do stavu editace. Vlastní editace úrovně je blíže popsána v části \ref{sec:tools}. 
 
 Z editoru lze úroveň uložit jako \texttt{Prototyp}, čímž je zapsána do balíčku a je následně možné ji z grafického rozhraní spouštět v herním módu. Dále lze úroveň uložit pod novým jménem, implementující standardní akci \texttt{SaveAs}, čímž přechází do \texttt{ClonedEditing} stavu. 
 
-Ze stavu \texttt{Prototype} lze úroveň nahrát pro editace, čímž lze upravit aktuální prototyp nebo pomocí \texttt{SaveAs} vytvořit odvozený. Dále lze prototyp nahrát pro hru. Při tomto nahrání hráč specifikuje počáteční parametry hry, definované pluginem logiky úrovně, a pluginy, které mají být přiřazeny jednotlivým hráčům. Následně je úroveň nahrána a přechází do stavu \texttt{Playing}. Poslední možnou akcí je duplikace prototypu, umožňující nahrání prototypu pod novým jménem a vytvoření nového prototypu. Tato funkcionalita z jisté míry duplikuje \texttt{SaveAs}, ale přišlo nám vhodné umožnit hráči duplikaci úrovně již před načtením pro zamezení nechtěné změny prototypu.
+Ze stavu \texttt{Prototype} lze úroveň nahrát pro editace, čímž lze upravit aktuální prototyp nebo pomocí \texttt{SaveAs} vytvořit odvozený. Dále lze prototyp nahrát pro hru. Při tomto nahrání hráč specifikuje počáteční parametry hry, jako přiřazení pluginů hráčům a další definované pluginem logiky úrovně. Následně je úroveň nahrána a přechází do stavu \texttt{Playing}. Poslední možnou akcí ze stavu \texttt{Prototype} je duplikace prototypu, umožňující nahrání prototypu pod novým jménem a vytvoření nového prototypu. Tato funkcionalita do jisté míry duplikuje funkcionalitu \texttt{SaveAs}, přišlo nám ale vhodné umožnit hráči duplikaci úrovně již před načtením pro zamezení nechtěné změny prototypu.
 
-Při hraní lze aktuální stav úrovně uložit do tzv.~Save file, tedy vytvořit úložku. Tato úložka je uložena do adresáře specifikovaného platformou a může následně být nahrána pro pokračování z uloženého stavu hry. Stav hrané úrovně nelze uložit zpět do prototypu, při skončení hry je tedy aktuální stav ztracen a úroveň přechází zpět do stavu prototyp se stavem úrovně před spuštěním hry.
+Při hraní lze aktuální stav úrovně uložit do tzv.~Save file, tedy vytvořit úložku. Tato úložka je uložena do adresáře specifikovaného platformou a může následně být nahrána pro pokračování z uloženého stavu hry. Stav hrané úrovně nelze uložit zpět do prototypu, při skončení hry je tedy aktuální stav ztracen a úroveň přechází zpět do stavu \texttt{Prototype} se stavem úrovně před spuštěním hry.
 
-Uložené hry lze nahrát do stavu \texttt{LoadedSaved}, kdy je úložky načtena pouze potřebná část informace. Následně může být hra nahrána do plného stavu \texttt{Playing}, kde pokračuje z uloženého stavu.
+Uložené hry lze nahrát do stavu \texttt{LoadedSaved}, kdy je z úložky načtena část informace potřebná pro identifikaci balíčku, ze kterého úložka vznikla. Následně může být hra nahrána do plného stavu \texttt{Playing}, kde pokračuje z uloženého stavu.
 
 \begin{figure}[h]
 	\centering
@@ -786,7 +792,7 @@ Pro ukládání a načítání aktuálního stavu úrovně používá platforma 
 
 Systém \textit{protocol buffers} obsahuje interface definition language (IDL), tedy jazyk pro popis ukládaných struktur nezávislý na cílovém programovacím jazyce, a kompilátor souborů v IDL do cílových programovacích jazyků. 
 
-Platforma definuje čtyři \texttt{.proto} soubory, obsahující definici struktur a kompilovaných do \texttt{.cs} souborů, které jsou používány v platformě. Těmito čtyřmi \texttt{.proto} soubory jsou:
+Platforma definuje čtyři \texttt{.proto} soubory, obsahující definici struktur a kompilované do \texttt{.cs} souborů, které jsou používány zbytkem platformy. Těmito čtyřmi \texttt{.proto} soubory jsou:
 
 \begin{enumerate}
 	\item \texttt{UrhoTypes.proto}, definující serializaci typů enginu UrhoSharp;
@@ -795,22 +801,24 @@ Platforma definuje čtyři \texttt{.proto} soubory, obsahující definici strukt
 	\item \texttt{GameState.proto}, definující serializaci celkového stavu úrovně.
 \end{enumerate}
 
-Uvnitř těchto souborů je použit systém importování, kdy lze obsah jednoho \texttt{.proto} souboru importovat a použít v jiném souboru. 
+Uvnitř těchto souborů je použit systém importování, kterým lze obsah jednoho \texttt{.proto} souboru importovat a použít v jiném souboru. 
 
 Ze struktur definovaných v těchto souborech potom \texttt{protoc} kompilátor vygeneruje zdrojové soubory v jazyce C\#, které obsahují definici tříd odpovídajících těmto strukturám a umožňujícím serializaci.
+
+Serializované součásti platformy pak vyplní jim odpovídající třídu vygenerovanou z \texttt{.proto} souborů, kterou následně použijeme pro serializaci a zapsání do souboru.
 
 \subsection{Pluginy}
 Pro uložení stavu pluginů jsme vytvořili datovou strukturu umožňující ukládat libovolnou posloupnost podporovaných typů. Podporovanými typy jsou jak základní typy jazyka C\#, tak typy enginu UrhoSharp a pole těchto typů.
 
 Ukládaná data lze ukládat a načítat podle pořadí, indexovat čísly či pojmenovávat textovými jmény. Těmto třem způsobům odpovídají tyto třídy:
 \begin{enumerate}
-	\item \texttt{SequentialPluginData}
-	\item \texttt{IndexedPluginData}
-	\item \texttt{NamedPluginData}
+	\item \texttt{SequentialPluginData},
+	\item \texttt{IndexedPluginData},
+	\item \texttt{NamedPluginData}.
 \end{enumerate}
 
-Uložení pomocí \texttt{SequentialPluginData} produkuje nejmenší soubory, protože nemusí ukládat mimo vlastní data a identifikaci typu dat žádná data navíc. \texttt{IndexedPluginData} musí navíc ukládat číselný index, \texttt{NamedPluginData} potom celý text jména.
+Uložení pomocí \texttt{SequentialPluginData} produkuje nejmenší množství dat, protože nemusí ukládat mimo vlastní data a identifikaci typu dat žádnou identifikaci navíc. \texttt{IndexedPluginData} musí navíc k vlastnímu obsahu ukládat číselný index, \texttt{NamedPluginData} potom celý text jmen.
 
-Při ukládání je spolu s vlastní hodnotou dat ukládán také jejich typ. Toto je implementováno pomocí systému \texttt{oneof} protocol buffers, který umožňuje uložit jeden z vyjmenovaných typů a poté při načtení obsahuje identifikaci, který z typů v něm byl uložen. Tento uložený typ je pak při načítání dat používán pro kontrolu, zda se tvůrce pluginu opravdu snaží číst typ, který byl uložen. Pro specifikaci čteného typu je vytvořeno generické rozhraní, které umožňuje číst libovolný typ a provádí kontrolu vůči uloženému typu. Tím je zajištěna typová bezpečnost tohoto systému za cenu zvětšení ukládaných dat.
+Při ukládání je spolu s vlastní hodnotou dat ukládán také jejich typ. Toto je implementováno pomocí systému \texttt{oneof} protocol buffers, který umožňuje uložit jeden z vyjmenovaných typů a poté při načtení obsahuje hodnotu identifikující který z typů byl uložen. Tento uložený typ je pak při načítání dat používán pro kontrolu, zda se tvůrce pluginu opravdu snaží číst typ, který byl uložen. Pro specifikaci čteného typu je vytvořeno generické rozhraní, které umožňuje číst libovolný typ a provádí kontrolu typového parametru vůči uloženému typu. Tím je zajištěna typová bezpečnost tohoto systému za cenu zvětšení ukládaných dat.
 
 

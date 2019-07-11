@@ -1,9 +1,10 @@
 \chapter{Tvorba pluginů}
-Pluginy rozumíme .NET assembly nahrávané platformou MHUrho a implementující chování úrovní, hráčů, jednotek, budov a projektilů. Pluginy jsou v balíčku uloženy jako \texttt{.dll} knihovny, cílené pro .NET Framework 4.7.2. 
+\label{sec:pluginmaking}
+Pojmem \uv{plugin} v naší platformě rozumíme .NET assembly nahrávané platformou za běhu a implementující chování úrovní, hráčů, jednotek, budov a projektilů. Pluginy jsou v balíčku uloženy jako \texttt{.dll} knihovny, cílené pro .NET Framework 4.7.2. 
 
 V této části dokumentace popíšeme postup vytvoření takovéto knihovny. Její následné připojení do balíčku je popsáno v předchozí části \ref{sec:packagemaking}.
 
-Platforma nijak neomezuje rozdělení pluginů pro různé herní prvky do různých knihoven. Lze tedy všechny pluginy shromáždit v jedné, jak je to provedeno v ukázkové hře, nebo je možné vytvořit více různých knihoven s libovolným rozdělením pluginů.
+Platforma nijak neomezuje rozdělení pluginů pro různé herní prvky do různých knihoven. Lze tedy všechny pluginy shromáždit v jedné knihovně, jak je to provedeno v ukázkové hře, nebo je možné vytvořit více různých knihoven s libovolným rozdělením pluginů.
 
 Stejně jako v předchozí části i zde je velká část tvorby shodná pro různé druhy prvků. Celý proces proto popíšeme pouze v části tvorby pluginu jednotky a v následujících částech uvedeme pouze rozdíly oproti této části.
 
@@ -90,7 +91,7 @@ ProjectileType = package.GetProjectileType("EggProjectile");
 \texttt{Cost} a \texttt{ViableTileTypes} jsou pomocné třídy, které zpracují části XML a podle načtených dat získají reference na typy. Ukázku manuálního získání typu můžeme vidět při inicializaci \texttt{ProjectileType}, kde používáme balíček pro získání typu projektilu.
 
 
-Druhou metodou je metoda \texttt{CreateNewInstance}, která je volána při vytvoření nové instance jednotky tohoto typu. Jejím účelem je získání pluginu pro nově vytvářenou instanci jednotky. Tvorba pluginu instance bude popsána v následující část \ref{sec:instanceplugincreation}, zde pouze uveďme že plugin instance bude představován třídou \texttt{Chicken}.
+Druhou metodou je metoda \texttt{CreateNewInstance}, která je volána při vytvoření nové instance jednotky tohoto typu. Jejím účelem je získání pluginu pro nově vytvářenou instanci jednotky. Tvorba pluginu instance bude popsána v následující části \ref{sec:unitinstanceplugin}, zde pouze uveďme že plugin instance bude představován třídou \texttt{Chicken}.
 \begin{lstlisting}
 public override UnitInstancePlugin CreateNewInstance(ILevelManager level, IUnit unit){
 return Chicken.CreateNew(level, unit, this);
@@ -125,6 +126,7 @@ return PassableTileTypes.IsViable(tile) &&
 Tímto jsme vytvořili funkční plugin typu, který nám umožní vytvářet nové instance jednotek tohoto typu, kontrolovat místa v mapě, na kterých jsou vytvářeny a načítat uložené instance jednotky do hry.
 
 \section{Plugin instance}
+\label{sec:unitinstanceplugin}
 
 Každá instance jednotky má přiřazenu jednu instanci instančního pluginu. Tato instance pluginu je získávána voláním jedné z funkcí \texttt{CreateNewInstance} a \texttt{GetInstanceForLoading}, popsaných v předchozí části \ref{sec:unittypeplugin}. Metoda \texttt{CreateNewInstance} je volána při tvorbě nové instance jednotky v běžící úrovni, metoda \texttt{GetInstanceForLoading} je pak volána při načítání jednotky v průběhu načítání uložené úrovně.
 
@@ -641,10 +643,10 @@ Typové pluginy budov sdílí s typovými pluginy jednotek metody \texttt{Initia
 public abstract bool CanBuild(IntVector2 topLeftTileIndex, IPlayer owner, ILevelManager level);
 \end{lstlisting}
 
-Tato metoda, stejně jako metoda \texttt{CanSpawnAt} pro jednotky, je používána pro zjištění, zda je možné budovu vytvořit budovu na určené pozici v herním světě. Na rozdíl od jednotek ovšem budovy mohou zabírat více než jednu dlaždici, proto je zde udáván pouze levý horní roh, tedy roh s nejmenší souřadnicí X a Z, ze kterého lze pak podle velikosti budovy získat množinu dlaždic zabraných budovou na této pozici. 
+Tato metoda, stejně jako metoda \texttt{CanSpawnAt} pro jednotky, je používána pro zjištění, zda je možné vytvořit budovu na určené pozici v herním světě. Na rozdíl od jednotek ovšem budovy mohou zabírat více než jednu dlaždici, proto je zde udáván pouze levý horní roh, tedy roh s nejmenší souřadnicí X a Z, ze kterého lze pak podle velikosti budovy získat množinu dlaždic zabraných budovou na této pozici. 
 
 
-Z pohledu pluginů instancí jsou odlišnosti viditelnější. Platforma omezuje počet budov na dlaždici na nejvýše jednu budovu, neexistuje tedy obdoba metod pluginu instancí jednotek \texttt{BuildingBuilt} a \texttt{BuildingDestroyed} oznamujících vytvoření a zničení budovy. Metody \texttt{TeleHeightChanged} a \texttt{OnHit} zůstávají beze změny. Instanční plugin budov naopak přidává metody \texttt{CanChangeTileHeight}, \texttt{GetHeightAt} a \texttt{GetFormationController} s těmito signaturami:
+Z pohledu pluginů instancí jsou odlišnosti viditelnější. Platforma omezuje počet budov zabírajících dlaždici na nejvýše jednu budovu, neexistuje tedy obdoba metod pluginů instancí jednotek \texttt{BuildingBuilt} a \texttt{BuildingDestroyed} oznamujících vytvoření a zničení budovy. Metody \texttt{TileHeightChanged} a \texttt{OnHit} zůstávají beze změny. Instanční plugin budov naopak přidává metody \texttt{CanChangeTileHeight}, \texttt{GetHeightAt} a \texttt{GetFormationController} s těmito signaturami:
 
 \begin{lstlisting}
 public abstract bool CanChangeTileHeight(int x, int y);
@@ -660,10 +662,10 @@ public virtual IFormationController GetFormationController(Vector3 centerPositio
 }
 \end{lstlisting}
 
-Metoda \texttt{CanChangeTileHeight} je volána při pokusu o změnu výšky dlaždice, na které stojí daná budova. Podle návratové hodnoty je pak změna vykonána nebo zamítnuta. Metoda \texttt{GetHeightAt} slouží pro získání výšky pro chůzi jednotek po budově. Tato metoda je volána v rámci \texttt{Map.GetHeightAt}. Při návratu hodnoty \texttt{null} je pak brána výška terénu. Metoda \texttt{GetFormationController} určuje rozmístění jednotek po budově při rozkazu na přesun jednotek na tuto budovu. Jednotky by měli být rozmístěny okolo bodu v parametru. Při návratu hodnoty \texttt{null} je budova brána jako neschůdná.
+Metoda \texttt{CanChangeTileHeight} je volána při pokusu o změnu výšky dlaždice zabírané danou budovou. Podle návratové hodnoty je pak změna vykonána nebo zamítnuta. Metoda \texttt{GetHeightAt} slouží pro získání výšky pro chůzi jednotek po budově. Tato metoda je volána v rámci \texttt{Map.GetHeightAt}. Při návratu hodnoty \texttt{null} je pak výslednou výškou výška terénu. Metoda \texttt{GetFormationController} určuje rozmístění jednotek po budově při rozkazu pro přesun jednotek na tuto budovu. Jednotky by měli být rozmístěny okolo bodu předávaného v parametru. Při návratu hodnoty \texttt{null} je budova brána jako neschůdná.
 
 
-Dále jsou některé \texttt{DefaultComponent} omezeny na použití pouze pro jednotky či projektily. Na budovách lze tedy použít pouze tyto komponenty:
+Dále platforma omezuje použití některých \texttt{DefaultComponent} pouze pro jednotky či projektily. Na budovách lze tedy použít pouze tyto komponenty:
 \begin{enumerate}
 	\item \texttt{StaticRangeTarget},
 	\item \texttt{StaticMeeleAttacker},
@@ -672,7 +674,7 @@ Dále jsou některé \texttt{DefaultComponent} omezeny na použití pouze pro je
 \end{enumerate}
 
 \subsection{Pluginy projektilů}
-Typové pluginy projektilů sdílí, stejně jako typové pluginy budov, s typovými pluginy jednotek metody \texttt{Initialize}, \texttt{CreateNewInstance} a \texttt{GetInstanceForLoading} s odpovídající změnou návratového typu. Oproti budovám a jednotkám lze projektily vytvářet kdekoli v herním světě, neexistuje tedy obdoba metody \texttt{CanSpawnAt}. Oproti tomu definuje typový plugin projektilů metodu \texttt{IsInRange} s následující signaturou:
+Typové pluginy projektilů sdílí s typovými pluginy jednotek metody \texttt{Initialize}, \texttt{CreateNewInstance} a \texttt{GetInstanceForLoading} s odpovídající změnou návratového typu. Oproti budovám a jednotkám lze projektily vytvářet kdekoli v herním světě, neexistuje tedy obdoba metody \texttt{CanSpawnAt}. Oproti tomu definuje typový plugin projektilů metodu \texttt{IsInRange} s následující signaturou:
 
 \begin{lstlisting}
 public abstract bool IsInRange(Vector3 source, IRangeTarget target);
@@ -680,8 +682,73 @@ public abstract bool IsInRange(Vector3 source, IRangeTarget target);
 
 Návratová hodnota této metody značí, zda při výstřelu projektilu z pozice \texttt{source} v herním světě lze zasáhnout cíl \texttt{target}.
 
+Instanční plugin projektilu musí implementovat tyto metody:
+\begin{lstlisting}
+
+public abstract void ReInitialize(ILevelManager level);
+
+public abstract bool ShootProjectile(IRangeTarget target);
+
+public abstract bool ShootProjectile(Vector3 movement);
+
+public abstract void OnEntityHit(IEntity hitEntity);
+
+public abstract void OnTerrainHit();
+\end{lstlisting}
 
 
+Metoda \texttt{Reinitialize} slouží pro implementaci tzv.~\uv{poolingu} projektilů. Vzhledem k předpokládanému velkému počtu vznikajících a zanikajících projektilů v průběhu hry není projektil po odstranění z úrovně hned uvolněn, ale je držen v zásobě pro použití při dalším výstřelu. Metoda \texttt{Reinitialize} tedy převede plugin projektilu do stejného stavu jako byl po vytvoření.
 
-Umělá inteligence úrovně je určena pro kontrolu globálního stavu hry, jako například omezení na možnosti reliéfu mapy, omezení stavby budov v určitých částech mapy či změny vlastností některých jednotek. Rozdělení umělé inteligence mezi úroveň, hráče a entity je možné mnoha způsoby. Platforma žádný z těchto způsobů explicitně nepodporuje ani nezakazuje.
+Následující metody \texttt{ShootProjectile} jsou volány při výstřelu projektilu. Projektil sám neimplementuje žádný způsob pohybu, celé řízení chování projektilu je přenecháno pluginu. Tyto dvě metody tedy přikazují pluginu, aby se začal pohybovat tak, aby zasáhl předaný cíl, nebo podle předaného vektoru pohybu.
+
+Metoda \texttt{OnEntityHit} je volána při zásahu jednotky či budovy ovládaným projektilem. Tato metoda je volána jak při zásahu nepřátelských jednotek a budov, tak při zásahu přátelských. Je pouze na pluginu, jak se při této události zachová.
+
+Poslední metoda \texttt{OnTerrainHit} je volána v případě, že ovládaný projektil zasáhne terén.
+
+\subsection{Pluginy hráčů}
+Oproti jednotkám, budovám a projektilům vznikají hráči pouze při generování či načítání úrovně. Z tohoto důvodu jsou jedinými metodami typových pluginů \textit{Factory} metody pro tvorbu instančních pluginů.
+
+Instanční pluginy hráčů mají standardní metody instančních pluginů pro ukládání, načítání, uvolňování zdrojů a výpočet následujícího stavu.
+
+Oproti ostatním typům pluginů mohou ale hráči být v určitém stavu i při prvním načtení pluginu. To nastává z důvodu existence tzv.~\texttt{Placeholder} instančního pluginu, který je přidělen všem hráčů při editaci úrovně. Vlastní typy pluginů jednotlivých hráčů jsou vybírány až při spuštění úrovně pro hraní. Z tohoto důvodu je instančnímu pluginu hráče poskytnuta metoda \texttt{Init}, která inicializuje plugin po načtení všech jemu příslušících entit a surovin přidělených v editoru úrovně.
+
+Dále instanční plugin dostává notifikace o těchto událostech:
+
+\begin{itemize}
+	\item přidání budovy hráči,
+	\item odebrání budovy hráči,
+	\item přidání jednotky hráči,
+	\item odebrání jednotky hráči,
+	\item žádost o změnu počtu surovin hráče.
+\end{itemize}
+
+Z těchto událostí je zajímavá především ta poslední, kdy je hráčovi předáván aktuální množství suroviny jím vlastněné a  cílové nové množství suroviny, kde výsledné množství vlastněné hráčem je určené návratovou hodnotou této metody. Tímto způsobem umožňujeme pluginu reagovat na získání dostatku surovin pro chtěnou akci bez nutnosti periodického kontrolování množství surovin.
+
+\subsection{Pluginy úrovní}
+Typový plugin úrovní je vytvářen při načtení balíčku. Tento plugin slouží především pro získání stavu při nastavení hry na obrazovce \texttt{LevelSettingsScreen}. Na této obrazovce je typovému pluginu poskytnut přístup k části grafického rozhraní zvaného \texttt{CustomSettingsWindow}, tedy okno pro vlastní nastavení. Do tohoto okna může plugin umístit libovolné prvky grafického rozhraní, jejichž obsah poté může použít při tvorbě instančního pluginu pro spouštěnou úroveň.
+
+Typový plugin dále obsahuje čtyři metody, odrážející čtyři možné způsoby načtení hry. Těmito čtyřmi způsoby jsou:
+
+\begin{enumerate}
+	\item vygenerování nové úrovně v základním stavu,
+	\item načtení úrovně pro editaci,
+	\item spuštění hry na ještě nespuštěné úrovni,
+	\item nahrání stavu již spuštěné hry.
+\end{enumerate}
+
+Každému z těchto způsobů má odpovídající metodu:
+\begin{enumerate}
+	\item \texttt{CreateInstanceForNewLevel},
+	\item \texttt{CreateInstanceForEditorLoading},
+	\item \texttt{CreateInstanceForNewPlaying},
+	\item \texttt{CreateInstanceForLoadingToPlaying}.
+\end{enumerate}
+
+Po instančním pluginu úrovně požadujeme poskytnutí \texttt{IPathFindAlgFactory}, která určí používaný algoritmus pro hledání cesty, a \texttt{ToolManager} pro určení množiny dostupných nástrojů.
+
+Pro inicializaci instančního pluginu při načtení vygenerování nové úrovně je poskytnuta metody \texttt{Initialize}. Tato metoda je obdobou \texttt{LoadState} s tím, že v úrovni zatím neexistuje žádný uložený stav.
+
+Metoda \texttt{OnStart} je volána těsně před spuštěním úrovně, kdy je vše načteno a může tak zjistit a zkontrolovat celkový stav herního světa.
+
+
 
