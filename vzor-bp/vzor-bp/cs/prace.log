@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.2.13)  11 JUL 2019 23:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.2.13)  12 JUL 2019 01:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2940,12 +2940,7 @@ pdfTeX warning: pdflatex.exe (file ./img/TypePluginCreation.pdf): PDF inclusion
 
 pdfTeX warning: pdflatex.exe (file ./img/TypePluginCreation.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `fig:onupdate' on page 61 undefined on input line 472.
-
-
-(./img/PluginStructure.pdf_tex
+>] (./img/PluginStructure.pdf_tex
 <./img/PluginStructure.pdf, id=1519, page=1, 610.53094pt x 364.36125pt>
 File: ./img/PluginStructure.pdf Graphic file (type pdf)
 <use ./img/PluginStructure.pdf, page 1>
@@ -4045,10 +4040,6 @@ Overfull \hbox (161.71033pt too wide) in paragraph at lines 83--84
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  |
  []
 
-
-LaTeX Warning: Reference `sec:instanceplugincreation' on page 85 undefined on i
-nput line 94.
-
 [85]
 Overfull \hbox (33.2147pt too wide) in paragraph at lines 131--132
 \T1/lmtt/m/n/12 GetInstanceForLoading\T1/lmr/m/n/12 , po-psa-ných v p°ed-chozí 
@@ -4185,7 +4176,7 @@ Overfull \hbox (8.40973pt too wide) in paragraph at lines 18--19
  jako \T1/lmtt/m/n/12 Package picking\T1/lmr/m/n/12 ,|
  []
 
-<img/PackagePickingScreen.png, id=2381, 247.1634pt x 194.4063pt>
+<img/PackagePickingScreen.png, id=2382, 247.1634pt x 194.4063pt>
 File: img/PackagePickingScreen.png Graphic file (type png)
 <use img/PackagePickingScreen.png>
 Package pdftex.def Info: img/PackagePickingScreen.png  used on input line 22.
@@ -4198,7 +4189,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-<img/LevelPickingScreen.png, id=2389, 247.1634pt x 194.4063pt>
+<img/LevelPickingScreen.png, id=2390, 247.1634pt x 194.4063pt>
 File: img/LevelPickingScreen.png Graphic file (type png)
 <use img/LevelPickingScreen.png>
 Package pdftex.def Info: img/LevelPickingScreen.png  used on input line 45.
@@ -4208,7 +4199,7 @@ Package pdftex.def Info: img/LevelPickingScreen.png  used on input line 45.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [104 <./img/PackagePickingScreen.png>]
-<img/LevelCreationScreen.png, id=2402, 247.1634pt x 194.4063pt>
+<img/LevelCreationScreen.png, id=2403, 247.1634pt x 194.4063pt>
 File: img/LevelCreationScreen.png Graphic file (type png)
 <use img/LevelCreationScreen.png>
 Package pdftex.def Info: img/LevelCreationScreen.png  used on input line 68.
@@ -4220,12 +4211,12 @@ a-zovka \T1/lmtt/m/n/12 Level settings\T1/lmr/m/n/12 ,|
  []
 
 [105 <./img/LevelPickingScreen.png> <./img/LevelCreationScreen.png>]
-<img/LevelSettingsScreen.png, id=2417, 247.1634pt x 194.4063pt>
+<img/LevelSettingsScreen.png, id=2418, 247.1634pt x 194.4063pt>
 File: img/LevelSettingsScreen.png Graphic file (type png)
 <use img/LevelSettingsScreen.png>
 Package pdftex.def Info: img/LevelSettingsScreen.png  used on input line 89.
 (pdftex.def)             Requested size: 206.28247pt x 162.25302pt.
-<img/PauseMenuComparison.png, id=2419, 151.5261pt x 160.1985pt>
+<img/PauseMenuComparison.png, id=2420, 151.5261pt x 160.1985pt>
 File: img/PauseMenuComparison.png Graphic file (type png)
 <use img/PauseMenuComparison.png>
 Package pdftex.def Info: img/PauseMenuComparison.png  used on input line 103.
@@ -4235,25 +4226,25 @@ Package pdftex.def Info: img/PauseMenuComparison.png  used on input line 103.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [106 <./img/LevelSettingsScreen.png>]
-<img/FilePickingScreen.png, id=2433, 247.1634pt x 194.4063pt>
+<img/FilePickingScreen.png, id=2434, 247.1634pt x 194.4063pt>
 File: img/FilePickingScreen.png Graphic file (type png)
 <use img/FilePickingScreen.png>
 Package pdftex.def Info: img/FilePickingScreen.png  used on input line 116.
 (pdftex.def)             Requested size: 206.28247pt x 162.25302pt.
  [107 <./img/PauseMenuComparison.png> <./img/FilePickingScreen.png>]
-<img/GameUI.png, id=2441, 247.1634pt x 194.4063pt>
+<img/GameUI.png, id=2442, 247.1634pt x 194.4063pt>
 File: img/GameUI.png Graphic file (type png)
 <use img/GameUI.png>
 Package pdftex.def Info: img/GameUI.png  used on input line 140.
 (pdftex.def)             Requested size: 206.28247pt x 162.25302pt.
  [108 <./img/GameUI.png>] [109]
-<img/Buildings.png, id=2463, 578.16pt x 120.45pt>
+<img/Buildings.png, id=2464, 578.16pt x 120.45pt>
 File: img/Buildings.png Graphic file (type png)
 <use img/Buildings.png>
 Package pdftex.def Info: img/Buildings.png  used on input line 192.
 (pdftex.def)             Requested size: 412.56496pt x 85.95015pt.
  [110 <./img/Buildings.png>]
-<img/Units.png, id=2473, 192.72pt x 120.45pt>
+<img/Units.png, id=2474, 192.72pt x 120.45pt>
 File: img/Units.png Graphic file (type png)
 <use img/Units.png>
 Package pdftex.def Info: img/Units.png  used on input line 221.
@@ -4456,10 +4447,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 229.
  ) 
 Here is how much of TeX's memory you used:
- 21600 strings out of 492616
- 329177 string characters out of 6132768
- 550849 words of memory out of 5000000
- 24015 multiletter control sequences out of 15000+600000
+ 21598 strings out of 492616
+ 329135 string characters out of 6132768
+ 550817 words of memory out of 5000000
+ 24013 multiletter control sequences out of 15000+600000
  123755 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,14n,51p,2761b,3525s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4479,10 +4470,10 @@ lmr9.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texli
 ve/2018/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2018/texmf-dist
 /fonts/type1/public/lm/lmss10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publi
 c/lm/lmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on prace.pdf (122 pages, 22738189 bytes).
+Output written on prace.pdf (122 pages, 22738400 bytes).
 PDF statistics:
- 2899 PDF objects out of 2984 (max. 8388607)
- 2359 compressed objects within 24 object streams
+ 2900 PDF objects out of 2984 (max. 8388607)
+ 2360 compressed objects within 24 object streams
  1002 named destinations out of 1200 (max. 500000)
  2518 words of extra memory for PDF output out of 10000 (max. 10000000)
 
