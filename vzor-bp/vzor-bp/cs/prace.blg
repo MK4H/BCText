@@ -20,45 +20,45 @@ Warning--empty year in site:specialfolders
 Warning--empty year in site:urho3D
 Warning--empty year in site:urho3DPOD
 Warning--empty year in site:urho3deditor
-You've used 42 entries,
+You've used 43 entries,
             2828 wiz_defined-function locations,
-            795 strings with 10407 characters,
-and the built_in function-call counts, 13439 in all, are:
-= -- 1250
-> -- 513
+            802 strings with 10657 characters,
+and the built_in function-call counts, 13922 in all, are:
+= -- 1289
+> -- 552
 < -- 39
-+ -- 209
-- -- 156
-* -- 781
-:= -- 2135
-add.period$ -- 168
-call.type$ -- 42
-change.case$ -- 177
-chr.to.int$ -- 31
-cite$ -- 93
-duplicate$ -- 599
-empty$ -- 1307
-format.name$ -- 197
-if$ -- 2874
++ -- 222
+- -- 168
+* -- 827
+:= -- 2216
+add.period$ -- 173
+call.type$ -- 43
+change.case$ -- 183
+chr.to.int$ -- 32
+cite$ -- 95
+duplicate$ -- 619
+empty$ -- 1339
+format.name$ -- 210
+if$ -- 2971
 int.to.chr$ -- 12
 int.to.str$ -- 1
-missing$ -- 4
-newline$ -- 260
-num.names$ -- 164
-pop$ -- 535
+missing$ -- 6
+newline$ -- 267
+num.names$ -- 168
+pop$ -- 550
 preamble$ -- 1
-purify$ -- 136
+purify$ -- 142
 quote$ -- 0
-skip$ -- 399
+skip$ -- 412
 stack$ -- 0
-substring$ -- 85
-swap$ -- 99
+substring$ -- 87
+swap$ -- 101
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 452
+type$ -- 458
 warning$ -- 8
-while$ -- 123
+while$ -- 126
 width$ -- 0
-write$ -- 589
+write$ -- 605
 (There were 8 warnings)

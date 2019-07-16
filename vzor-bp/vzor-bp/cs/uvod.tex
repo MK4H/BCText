@@ -17,7 +17,7 @@ Cílem této práce je vytvořit platformu umožňující tvorbu Real-time strat
 \subsubsection{Real-time strategy}
  RTS, v~překladu strategické hry probíhající v~reálném čase, jsou poddruhem strategických her ve kterém se změny stavu odehrávají v~přímé závislosti na změně času v~reálném světě. Reakce v~reálném čase jsou náročnější jak pro hráče, který je často nucen použít suboptimální strategii, tak pro hru samotnou, která musí provádět výpočet dalšího stavu v~omezeném čase. Stejně tak umělá inteligence, jakožto součást hry, musí reagovat na aktivity zbylých hráčů s~omezeným časem, což limituje množství dat a~složitost výpočtu, které může umělá inteligence použít. Z~tohoto důvodu je vývoj RTS her složitým procesem, spojujícím mnoho oborů, který se pokusíme zjednodušit vytvořením naší platformy.
 
-Zbylé poddruhy strategických her neplánujeme v~naší platformě explicitně podporovat, ale nijak nevylučujeme, že bude možné do jisté míry využít naší platformu i pro tvorbu těchto poddruhů strategických her. Zároveň je pro tvorbu RTS her výhodné znát příbuzné žánry, z~kterých je možno se inspirovat a~přebírat některé z~jejich mechanik. Z~tohoto důvodu ve zkratce popíšeme i zbylé poddruhy.
+Zbylé poddruhy strategických her neplánujeme v~naší platformě explicitně podporovat, ale nijak nevylučujeme, že bude možné do jisté míry využít naší platformu i~pro tvorbu těchto poddruhů strategických her. Zároveň je pro tvorbu RTS her výhodné znát příbuzné žánry, z~kterých je možno se inspirovat a~přebírat některé z~jejich mechanik. Z~tohoto důvodu ve zkratce popíšeme i~zbylé poddruhy.
 
 \subsubsection{Real-time tactics}
 Prvním příbuzným žánrem jsou \emph{Real-time tactics} (RTT) hry, někdy také nazývány fixed-unit real-time hry \citep{site:stratg02}, neboli hry s~pevným počtem jednotek probíhající v~reálném čase. Hlavním rozdílem, odlišující RTT od RTS, je omezení  strategických rozhodnutí a~větším důrazem na taktická rozhodnutí a~micromanagement jednotlivých jednotek. RTT hry nedovolují hráči tvorbu nových jednotek, stavbu budov či produkci surovin, hráč je tedy nucen s~jednotkami, které má na začátku souboje, vyhrát celý souboj.  Jedním z~příkladů čistě RTT her je série Blitzkrieg \citep{site:blitzkrieg}. Hráč začíná každou misi s~jednotkami, které si vybral před misí. Tyto jednotky jsou jediné, které bude moci v~průběhu mise využít, což nutí hráče použít svých taktických schopností a~maximalizovat účinnost těchto jednotek. 
@@ -30,13 +30,13 @@ Turn-based tactics umožňují hráči přímé ovládání několika málo jedn
 
 \subsubsection{Shrnutí}
 
-Jak můžeme vidět, žánr strategických her zahrnuje hry s~velmi rozmanitými vlastnostmi a~požadavky. Z~tohoto důvodu se naše práce zaměří na podporu vývoje her jednoho konkrétního poddruhu, a~to RTS. Přestože naše platforma bude cílena na tvorbu tohoto poddruhu, nevylučujeme, že bude možné využít ji i pro tvorbu her spadajících do jednoho ze zbylých poddruhů strategických her.
+Jak můžeme vidět, žánr strategických her zahrnuje hry s~velmi rozmanitými vlastnostmi a~požadavky. Z~tohoto důvodu se naše práce zaměří na podporu vývoje her jednoho konkrétního poddruhu, a~to RTS. Přestože naše platforma bude cílena na tvorbu tohoto poddruhu, nevylučujeme, že bude možné využít ji i~pro tvorbu her spadajících do jednoho ze zbylých poddruhů strategických her.
 
 
 \section{RTS hry blíže}
 Jak bylo řečeno výše, naše platforma bude navržena pro podporu vývoje RTS her. RTS hry jsou ovšem stále příliš velká množina s~příliš rozmanitými mechanikami na to, aby jedna platforma dokázala podporovat všechny možné RTS hry. Proto zde dále omezíme námi podporovanou podmnožinu RTS her.
 
-Již od svého vzniku na konci osmdesátých let a~začátku devadesátých let minulého století obsahovaly RTS hry několik konceptů, které lze nalézt v~drtivé většině her tohoto žánru i dnes. 
+Již od svého vzniku na konci osmdesátých let a~začátku devadesátých let minulého století obsahovaly RTS hry několik konceptů, které lze nalézt v~drtivé většině her tohoto žánru i~dnes. 
 
 \noindent{Těmito koncepty jsou:}
 %tady pouzivam stredniky pro oddeleni, protoze uvnitr jsou pouzity carky
@@ -49,7 +49,7 @@ Již od svého vzniku na konci osmdesátých let a~začátku devadesátých let 
 
 Tyto koncepty, jako základní kámen RTS her, se bude naše platforma snažit podporovat a~zjednodušit tvůrcům her jejich implementaci.
 
-Hlavní inspirací pro tvorbu platformy, a~tím i pro typ her, které bude platforma nejjednodušeji podporovat, byla hra Stronghold Crusader. Na této a~dalších hrách ukážeme v~následujících částech blíže základní principy RTS her a~námi podporované implementace těchto principů.
+Hlavní inspirací pro tvorbu platformy, a~tím i~pro typ her, které bude platforma nejjednodušeji podporovat, byla hra Stronghold Crusader. Na této a~dalších hrách ukážeme v~následujících částech blíže základní principy RTS her a~námi podporované implementace těchto principů.
 
 \done
 \todo[Možná vynechat]{Možná vynechat}
@@ -58,7 +58,7 @@ Jedním z~hlavních problémů RTS her je pečlivé vyvážení kombinace strate
 
 Mezi strategická rozhodnutí v~RTS hrách patří kupříkladu které budovy hráč postaví, v~jakém pořadí dané budovy postaví, které suroviny bude produkovat, které suroviny vynechá, které jednotky bude rekrutovat a~které vynechá. Tato 3 rozhodnutí jsou úzce propojena, protože výběr surovin určuje budovy, které bude hráč schopen postavit a~typy jednotek, které bude moci zrekrutovat. Stejně tak výběr budov určuje suroviny, které hráč může produkovat a~typy jednotek, které může zrekrutovat. 
 
-Taktika/micromanagement je v~RTS hrách reprezentován ovládáním jednotek, jejich přesné pozice, pohybu, směru útoku, používání schopností atd. Micromanagement lze ale vidět i v~ekonomické stránce hry, kdy hráč 
+Taktika/micromanagement je v~RTS hrách reprezentován ovládáním jednotek, jejich přesné pozice, pohybu, směru útoku, používání schopností atd. Micromanagement lze ale vidět i~v~ekonomické stránce hry, kdy hráč 
 
 Nejlepším příkladem pro rozlišení pojmu strategie a~taktiky je série her Total War \citep{site:totalwar}, které kombinuje mód tahové strategie s~módem real-time tactics (RTT). V~jedné části hry hráč přebírá kontrolu nad celým svým národem, rozhoduje, které budovy budou ve kterých městech postaveny, které jednotky budou rekrutovány a~kde budou které armády umístěny. V~druhé části, při souboji nepřátelských armád, hráč přebírá kontrolu nad konkrétní armádou a~ovládá jednotlivé bataliony, jejich umístění, pohyb a~útoky v~reálném čase.
 
@@ -71,7 +71,7 @@ Tato funkce může zahrnovat neprostupné části mapy, několik různých druh�
 Při stavbě budov je pak často omezen typ terénu, na kterém je hráč schopen danou budovu postavit. 
 Vzhledem k~uzavřenosti většiny RTS her je složité zjistit, jak je v~každé z~nich herní svět reprezentován, z~pozorovatelného vnějšího chování lze ale odvodit několik základních druhů reprezentací. 
 
-Nejstarší a~nejjednodušší reprezentací je rozdělení mapy na stejně velké dlaždice. Tyto dlaždice mohou být různých tvarů, nejčastěji jsou však čtvercové či hexagonální. Příkladem takovéto reprezentace je právě hra Stronghold Crusader \citep{site:strongholdcrus}, podle které chceme naši platformu modelovat. Jak je vidět na obrázku  \ref{fig:tiletype}, herní mapa je viditelně rozdělena na stejně velké čtvercové dlaždice. Dále můžeme vidět, že je kamera orientována diagonálně vůči dlaždicím. Účelem této orientace je skrytí toho, že je mapa složena z~dlaždic. Každá dlaždice je nějakého typu, který určuje její vzhled, což můžeme vidět v~části zvýrazněné červenou barvou. Vidíme zde řady pěti dlaždic stejného typu, oddělené vždy jednou dlaždicí pouštního typu. Můžeme si všimnout, že i dlaždice stejného typu mohou mít několik různých vzhledů. Typ dlaždice je dále využíván jako omezení při stavbě budov, kde například kamenolom lze postavit pouze na dostatečném počtu dlaždic typu kámen. Toto můžeme vidět v~části označené modrou barvou, kde se hráč pokouší umístit budovu, která ovšem nemůže být postavena na dlaždicích typu mokřadu. Dlaždice tohoto typu jsou proto zvýrazněny červenou barvou v~rámci půdorysu budovy. Dále můžeme v~horní části ukázky vidět dlaždice s~rozdílnou výškou od okolního terénu, tvořící nedostupnou oblast mapy. Dále můžeme vidět pro jednotky neprostupný typ dlaždic obsahujících vodu. Uprostřed obrázku poté vidíme velkou oblast kamení a~železa, kde oblast kamení ukazuje texturu kvalitně skrývající složení mapy z~dlaždic, naopak na oblasti železa jasně vidíme hranice jednotlivých dlaždic, především ve směru z~levého dolního rohu do pravého horního rohu.
+Nejstarší a~nejjednodušší reprezentací je rozdělení mapy na stejně velké dlaždice. Tyto dlaždice mohou být různých tvarů, nejčastěji jsou však čtvercové či hexagonální. Příkladem takovéto reprezentace je právě hra Stronghold Crusader \citep{site:strongholdcrus}, podle které chceme naši platformu modelovat. Jak je vidět na obrázku  \ref{fig:tiletype}, herní mapa je viditelně rozdělena na stejně velké čtvercové dlaždice. Dále můžeme vidět, že je kamera orientována diagonálně vůči dlaždicím. Účelem této orientace je skrytí toho, že je mapa složena z~dlaždic. Každá dlaždice je nějakého typu, který určuje její vzhled, což můžeme vidět v~části zvýrazněné červenou barvou. Vidíme zde řady pěti dlaždic stejného typu, oddělené vždy jednou dlaždicí pouštního typu. Můžeme si všimnout, že i~dlaždice stejného typu mohou mít několik různých vzhledů. Typ dlaždice je dále využíván jako omezení při stavbě budov, kde například kamenolom lze postavit pouze na dostatečném počtu dlaždic typu kámen. Toto můžeme vidět v~části označené modrou barvou, kde se hráč pokouší umístit budovu, která ovšem nemůže být postavena na dlaždicích typu mokřadu. Dlaždice tohoto typu jsou proto zvýrazněny červenou barvou v~rámci půdorysu budovy. Dále můžeme v~horní části ukázky vidět dlaždice s~rozdílnou výškou od okolního terénu, tvořící nedostupnou oblast mapy. Dále můžeme vidět pro jednotky neprostupný typ dlaždic obsahujících vodu. Uprostřed obrázku poté vidíme velkou oblast kamení a~železa, kde oblast kamení ukazuje texturu kvalitně skrývající složení mapy z~dlaždic, naopak na oblasti železa jasně vidíme hranice jednotlivých dlaždic, především ve směru z~levého dolního rohu do pravého horního rohu.
 
 \begin{figure}[h]
 	\centering
@@ -124,7 +124,7 @@ Platforma bude umožňovat vykonat libovolný kód v~rámci každého výpočtu 
 
 \subsubsection{Produkce}
 
-Jednou z~vlastností definujících RTS hry je možnost produkce nových jednotek. Existuje několik systémů produkce jednotek, úzce svázaných se systémem surovin v~dané hře. (viz. \ref{sec:suroviny})  Od kontinuální produkce, kde hráč zvolí produkované jednotky a~suroviny jsou spotřebovávány v~průběhu produkce, po diskrétní produkci, kde hráč musí vlastnit všechny suroviny potřebné pro výrobu dané jednotky při začátku produkce a~všechny suroviny jsou odečteny v~jeden okamžik. Kontinuální systém umožňuje hráči naplánovat produkci armády v~předstihu, i když v~daném okamžiku nevlastní dostatečné suroviny. Naopak při diskrétní produkci je hráč nucen čekat do chvíle, kdy má všechny suroviny, a~až poté může začít s~produkcí. Naše platforma se pokusí podporovat oba systémy. Bude záležet pouze na tvůrci hry, jak se k~surovinám a~produkci jednotek zachová a~který z~těchto systémů bude implementovat.
+Jednou z~vlastností definujících RTS hry je možnost produkce nových jednotek. Existuje několik systémů produkce jednotek, úzce svázaných se systémem surovin v~dané hře. (viz. \ref{sec:suroviny})  Od kontinuální produkce, kde hráč zvolí produkované jednotky a~suroviny jsou spotřebovávány v~průběhu produkce, po diskrétní produkci, kde hráč musí vlastnit všechny suroviny potřebné pro výrobu dané jednotky při začátku produkce a~všechny suroviny jsou odečteny v~jeden okamžik. Kontinuální systém umožňuje hráči naplánovat produkci armády v~předstihu, i~když v~daném okamžiku nevlastní dostatečné suroviny. Naopak při diskrétní produkci je hráč nucen čekat do chvíle, kdy má všechny suroviny, a~až poté může začít s~produkcí. Naše platforma se pokusí podporovat oba systémy. Bude záležet pouze na tvůrci hry, jak se k~surovinám a~produkci jednotek zachová a~který z~těchto systémů bude implementovat.
 
 Počet jednotek je často limitován, jak pro účely vyvážení hry, tak pro omezení zátěže hardwaru. Z~hlediska vyvážení síly jednotek umožňuje limit na počet jednotek předejít tzv. \uv{Zergu}, kdy hráč vytvoří obrovské množství levných jednotek, které následně převálcují jakýkoli odpor. Z~hlediska hardwarové náročnosti je účel limitu vcelku zřejmý, protože každá jednotka zabírá určité množství paměti a~výpočetního výkonu. Stronghold Crusader omezuje počet jednotek na 1000 pro každého hráče. Toto omezení se jeví především jako limit na hardwarovou náročnost hry. Naše platforma žádné explicitní limity nestanovuje, avšak v~uživatelské dokumentaci pro vývojáře budeme silně doporučovat stanovení limitů na počet budov, jednotek a~projektilů. Za tímto účelem umožníme vývojáři při vytvoření každé jednotky, budovy či projektilu učinit rozhodnutí, zda je vytvoření možné a~případně toto vytváření zrušit. 
 
@@ -143,12 +143,12 @@ Jednotky mohou obdržet poškození z~mnoha zdrojů, nejčastěji však útokem 
 	\item[\textbf{J2:}] podpora pohybu po terénu,
 	\item[\textbf{J3:}] ovládání jednotek a~skupin jednotek,
 	\item[\textbf{J4:}] rozšiřitelnost o~složitější ovládání,
-	\item[\textbf{J5:}] podpora jednoduché i složité umělé inteligence v~podobě vykonání libovolného kódu,
-	\item[\textbf{J6:}] podpora diskrétní i kontinuální produkce jednotek,
+	\item[\textbf{J5:}] podpora jednoduché i~složité umělé inteligence v~podobě vykonání libovolného kódu,
+	\item[\textbf{J6:}] podpora diskrétní i~kontinuální produkce jednotek,
 	\item[\textbf{J7:}] přidávání jednotek při editaci mapy,
 	\item[\textbf{J8:}] přidávání jednotek při startu hry,
 	\item[\textbf{J9:}] podpora systému hit-pointů,
-	\item[\textbf{J10:}] útoky na blízko i na dálku,
+	\item[\textbf{J10:}] útoky na blízko i~na dálku,
 	\item[\textbf{J11:}] simulace projektilů.
 \end{itemize}
 
@@ -157,7 +157,7 @@ Jednotky mohou obdržet poškození z~mnoha zdrojů, nejčastěji však útokem 
 \subsection{Budovy}
 \label{sec:budovy}
 Stavba budov představuje jednu z~hlavních prezentací hráčovi strategie. Podle postavených budov lze často vcelku přesně odhadnout, jakou strategii hráč zvolil, čímž je umožněno nepřátelům reagovat a~adaptovat svou strategii odpovídajícím způsobem. 
-Při volbě strategie lze ale narazit na problém, kdy je hráč nucen zvolit svou strategii před tím, než nalezne protivníky a~tedy před tím, než může vidět jejich strategii. Tento problém je velmi výrazný při tzv.  \uv{rock-paper-scisors}  strategiích, popisovaných například v knize Fundamentals of Game Design \citep[str.~329]{book:gamefund}. Hlavní myšlenkou tohoto návrhu her je situace, kdy strategie 1 poráží strategii 2, strategie 2 poráží strategii 3 a~strategie 3 poráží strategii 1. Ve chvíli kdy naše hra umožňuje hráči zvolit pouze jednu z těchto strategií bez viditelnosti protivníkovy strategie, degeneruje hra v~loterii, zda hráč náhodně vybere správnou strategii porážející tu vybranou nepřítelem. Jedním z~řešení tohoto problému, navrhovaných v článku od studia Oxeye \citep{site:oxeye03}, je co nejmenší rozdíl v~síle prvních úrovní technologie, což umožní hráčům reagovat a~změnit svoji strategii před tím, než je rozdíl mezi jejich silami neúnosně velký. Dalším možným řešením, použitým ve Stronghold Crusader \citep{site:strongholdcrus}, je neskrývat před hráčem nepřítelovu strategii. Toto řešení lze použít v~různé míře, od odhalení nepřátelských budov po úplné odkrytí celé mapy, tedy pozice všech jednotek i budov, ať už přátelských, nepřátelských či neutrálních. Naše platforma použije toto poslední řešení, kdy budeme hráč vidět všechny jednotky a~budovy všech hráčů.
+Při volbě strategie lze ale narazit na problém, kdy je hráč nucen zvolit svou strategii před tím, než nalezne protivníky a~tedy před tím, než může vidět jejich strategii. Tento problém je velmi výrazný při tzv.  \uv{rock-paper-scisors}  strategiích, popisovaných například v knize Fundamentals of Game Design \citep[str.~329]{book:gamefund}. Hlavní myšlenkou tohoto návrhu her je situace, kdy strategie 1 poráží strategii 2, strategie 2 poráží strategii 3 a~strategie 3 poráží strategii 1. Ve chvíli kdy naše hra umožňuje hráči zvolit pouze jednu z těchto strategií bez viditelnosti protivníkovy strategie, degeneruje hra v~loterii, zda hráč náhodně vybere správnou strategii porážející tu vybranou nepřítelem. Jedním z~řešení tohoto problému, navrhovaných v článku od studia Oxeye \citep{site:oxeye03}, je co nejmenší rozdíl v~síle prvních úrovní technologie, což umožní hráčům reagovat a~změnit svoji strategii před tím, než je rozdíl mezi jejich silami neúnosně velký. Dalším možným řešením, použitým ve Stronghold Crusader \citep{site:strongholdcrus}, je neskrývat před hráčem nepřítelovu strategii. Toto řešení lze použít v~různé míře, od odhalení nepřátelských budov po úplné odkrytí celé mapy, tedy pozice všech jednotek i~budov, ať už přátelských, nepřátelských či neutrálních. Naše platforma použije toto poslední řešení, kdy budeme hráč vidět všechny jednotky a~budovy všech hráčů.
 
 \noindent{Budovy mají ve hrách mnoho funkcí, mezi které patří například:}
 \begin{itemize}
@@ -179,7 +179,7 @@ Jak již bylo řečeno v~sekci o~jednotkách \ref{sec:jednotky}, naše platforma
 
 Obrana bude podporována v~podobě komponent, které umožní budovám jak útok na blízko, jako v~případě pastí ve hře Stronghold Crusader \citep{site:strongholdcrus}, tak na dálku, jako například obranné věže ve hře Warcraft~3 \citep{site:warcraft3}. 
 
-Dále v~rámci funkce obrany umožňují v~některých hrách budovy jednotkám pohybovat se po nich. Jak můžeme vidět na obrázku \ref{fig:unitsonbuildings} ze hry Stronghold Crusader \citep{site:strongholdcrus}, jednotky mohou být umístěny na hradbách, věžích, bránách či na tvrzi. Na obrázku můžeme vidět různé typy jednotek, umístěné po obvodu hradu pro jeho obranu. Jak bylo řečeno v~části o~jednotkách, naše platforma bude umožňovat neomezený pohyb jednotkami, tedy i ve vzduchu, na budovách či skrz budovy. Protože se pohyb po budovách vyskytuje ve velkém množství RTS her, poskytne platforma možnost rozšíření terénu o~plochu budov a~komponentu umožňující chůzi po těchto plochách.
+Dále v~rámci funkce obrany umožňují v~některých hrách budovy jednotkám pohybovat se po nich. Jak můžeme vidět na obrázku \ref{fig:unitsonbuildings} ze hry Stronghold Crusader \citep{site:strongholdcrus}, jednotky mohou být umístěny na hradbách, věžích, bránách či na tvrzi. Na obrázku můžeme vidět různé typy jednotek, umístěné po obvodu hradu pro jeho obranu. Jak bylo řečeno v~části o~jednotkách, naše platforma bude umožňovat neomezený pohyb jednotkami, tedy i~ve vzduchu, na budovách či skrz budovy. Protože se pohyb po budovách vyskytuje ve velkém množství RTS her, poskytne platforma možnost rozšíření terénu o~plochu budov a~komponentu umožňující chůzi po těchto plochách.
 
 Umístění na budovách poskytuje jednotkám ochranu před nepřátelskými jednotkami útočícími na blízko, které se musí nejdříve dostat do blízkosti cíle, než zaútočí. 
 
@@ -214,7 +214,7 @@ Existující hry využívají několik možností, jak hráči poskytnout zpětn
 \noindent{Naše platforma bude podporovat tyto vlastnosti:}
 \begin{itemize}
 	\item[\textbf{B1:}] stavbu budov v~herním světě,
-	\item[\textbf{B2:}] komponenty pro útok budov na blízko i na dálku,
+	\item[\textbf{B2:}] komponenty pro útok budov na blízko i~na dálku,
 	\item[\textbf{B3:}] rozšiřitelnost dostupného terénu v~herní mapě o~prostor na budovách,
 	\item[\textbf{B4:}] podpora zvýšení dostřelu při umístění jednotky na vyvýšený terén, například budovu,
 	\item[\textbf{B5:}] stavba budov při editaci mapy,
@@ -245,7 +245,7 @@ Naše platforma bude podporovat jak pasivní, tak aktivní získávání surovin
 
 \noindent{Naše platforma bude podporovat tyto vlastnosti:}
 \begin{itemize}
-	\item[\textbf{S1:}] aktivní i pasivní získávání surovin,
+	\item[\textbf{S1:}] aktivní i~pasivní získávání surovin,
 	\item[\textbf{S2:}] rozhraní pro přidání a~odebrání surovin hráči.
 \end{itemize}
 
@@ -310,7 +310,7 @@ Naším hlavním cílem je umožnit tvůrcům umělé inteligence a~programátor
 
 Protože implementace vykreslování a~grafického rozhraní by byla nad rámec jedné bakalářské práce, využije naše platforma pro tyto účely existující herní engine UrhoSharp. Pro programátory následně  poskytneme přístup k~relevantním částem UrhoSharp enginu.
 
-Platforma bude poskytovat ovládání kamery v~několika módech. Tato funkcionalita bude potřebná již pro implementaci editoru, poskytneme ji tedy i tvůrcům her. Prvním módem bude klasická RTS top-down kamera, jakou můžete vidět na ukázce ze hry Company of Heroes \ref{fig:cohcamrts}. Kamera je umístěna v~dostatečné vzdálenosti pro zobrazení celých skupin jednotek, skloněna zhruba 45 stupňů od horizontální polohy.  Ve hře Company of Heroes je ovšem oproti jiným starším RTS hrám jako Warcraft 3 nebo Age of Empires 3 s~kamerou možné rotovat a~přibližovat, což nám přijde jako velice atraktivní. Příklad tohoto pohybu kamery můžete vidět na obrázku \ref{fig:cohcamcin}, kde můžeme vidět pohled z~Německé strany na vylodění na pláži Omaha. Toto bychom rádi podporovali i v~naší platformě. Druhým módem kamery bude tzv. \uv{free-float} , kdy kamera volně \uv{létá}  nad terénem. Třetím módem bude sledování jednotky, kdy se kamera bude chovat jako v~prvním módu, její pohyb bude ale řízen pohybem jednotky.
+Platforma bude poskytovat ovládání kamery v~několika módech. Tato funkcionalita bude potřebná již pro implementaci editoru, poskytneme ji tedy i~tvůrcům her. Prvním módem bude klasická RTS top-down kamera, jakou můžete vidět na ukázce ze hry Company of Heroes \ref{fig:cohcamrts}. Kamera je umístěna v~dostatečné vzdálenosti pro zobrazení celých skupin jednotek, skloněna zhruba 45 stupňů od horizontální polohy.  Ve hře Company of Heroes je ovšem oproti jiným starším RTS hrám jako Warcraft 3 nebo Age of Empires 3 s~kamerou možné rotovat a~přibližovat, což nám přijde jako velice atraktivní. Příklad tohoto pohybu kamery můžete vidět na obrázku \ref{fig:cohcamcin}, kde můžeme vidět pohled z~Německé strany na vylodění na pláži Omaha. Toto bychom rádi podporovali i~v~naší platformě. Druhým módem kamery bude tzv. \uv{free-float} , kdy kamera volně \uv{létá}  nad terénem. Třetím módem bude sledování jednotky, kdy se kamera bude chovat jako v~prvním módu, její pohyb bude ale řízen pohybem jednotky.
 
 \begin{figure}[h]	
 	\centering
@@ -402,7 +402,7 @@ Při tvorbě hry bude umožněno tvůrci použít jazyky frameworku .NET  pro vy
 			\item produkce jednotek (J6)
 			\item přidávání jednotek jako součást úrovně (J7, J8)
 			\item podpora systému hit-pointů (J9)
-			\item útoky na blízko i na dálku (J10, J11)
+			\item útoky na blízko i~na dálku (J10, J11)
 		\end{enumerate}
 	\item podporované vlastnosti budov:
 		\begin{enumerate}

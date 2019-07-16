@@ -1,18 +1,18 @@
 \chapter*{Závěr}
 \addcontentsline{toc}{chapter}{Závěr}
-Na závěr práce shrneme implementaci naší platformy a porovnáme ji s našimi cíli, uvedenými v části \ref{sec:cileprace}.
+Na závěr práce shrneme implementaci naší platformy a~porovnáme ji s~našimi cíli, uvedenými v~části \ref{sec:cileprace}.
 
-Výsledkem naší práce je platformu pro tvorbu 3D RTS her pro jednoho hráče, implementovaná pomocí jazyka C\# a enginu UrhoSharp. Tato platforma umožňuje tvorbu balíčků, které lze distribuovat separátně od platformy a přidávat i do nainstalované instance platformy. Tyto balíčky mohou obsahovat nové typy jednotek, budov, projektilů, nepřátelských hráčů, nástrojů pro editaci map a dalších herních prvků, které je možné využít pro tvorbu a hraní map. 
+Výsledkem naší práce je platformu pro tvorbu 3D RTS her pro jednoho hráče, implementovaná pomocí jazyka C\# a~enginu UrhoSharp. Tato platforma umožňuje tvorbu balíčků, které lze distribuovat separátně od platformy a~přidávat i~do nainstalované instance platformy. Tyto balíčky mohou obsahovat nové typy jednotek, budov, projektilů, nepřátelských hráčů, nástrojů pro editaci map a~dalších herních prvků, které je možné využít pro tvorbu a~hraní map. 
 
-Platforma umožňuje tvorbu jednotek schopných pohybu po herním světě, řízeného jak rozkazy hráče, tak umělou inteligencí jednotek. Jednotky je možné vytvářet během editace úrovně i v průběhu hry. Jednotky jsou schopné útočit na dálku, na blízko či oběma způsoby najednou na rozkaz hráče či z rozhodnutí umělé inteligence. Při zásahu je jednotka o této události informována, což umožňuje implementaci systému \textit{hit-pointů}.
+Platforma umožňuje tvorbu jednotek schopných pohybu po herním světě, řízeného jak rozkazy hráče, tak umělou inteligencí jednotek. Jednotky je možné vytvářet během editace úrovně i~v~průběhu hry. Jednotky jsou schopné útočit na dálku, na blízko či oběma způsoby najednou na rozkaz hráče či z~rozhodnutí umělé inteligence. Při zásahu je jednotka o~této události informována, což umožňuje implementaci systému \textit{hit-pointů}.
 
-Budovy lze v platformě umisťovat do herního světa jak při editaci mapy, tak v průběhu hry. Následně je možné v průběhu hry budovy poškozovat a při dostatečném poškození následně zničit. Dále dokáží budovy rozšiřovat prostor dostupný jednotkám mimo úroveň terénu. V neposlední řadě platforma umožňuje vytvářet budovy produkují suroviny, vytvářející jednotky či stavějící další budovy.
+Budovy lze v~platformě umisťovat do herního světa jak při editaci mapy, tak v~průběhu hry. Následně je možné v~průběhu hry budovy poškozovat a~při dostatečném poškození následně zničit. Dále dokáží budovy rozšiřovat prostor dostupný jednotkám mimo úroveň terénu. V~neposlední řadě platforma umožňuje vytvářet budovy produkují suroviny, vytvářející jednotky či stavějící další budovy.
 
-Z pohledu surovin platforma umožňuje přidávání a odebírání libovolného množství surovin způsobeného akcí hráče, jednotky, budovy či uplynutím času, čímž je umožněna implementace aktivního i pasivního získávání surovin.
+Z~pohledu surovin platforma umožňuje přidání a~odebrání libovolného množství surovin v reakci na akci hráče, jednotky, budovy či uplynutím času, čímž je umožněna implementace aktivního i~pasivního získávání surovin.
 
-Dostupnost jednotek a budov pro tvorbu hráčem je plně v rukou tvůrce pluginů, čímž platforma umožňuje implementaci systémů technologií a postupného odemykání typů jednotek a budov.
+Dostupnost jednotek a~budov pro tvorbu hráčem je plně v~rukou tvůrce pluginů, čímž platforma umožňuje implementaci systémů technologií a~postupného odemykání typů jednotek a~budov.
 
-Implementace mapy je v platformě rozdělena na čtvercové dlaždice, umožňující změnu výšek svých jednotlivých rohů. Každé dlaždici je přiřazen typ, který je spolu s přítomnými jednotkami a budovami na dlaždici možné využít pro rozhodování v implementaci pluginů.
+Implementace mapy je v~platformě rozdělena na čtvercové dlaždice, umožňující změnu výšek svých jednotlivých rohů. Každé dlaždici je přiřazen typ, který je spolu s~přítomnými jednotkami a~budovami na dlaždici možné využít pro rozhodování v~implementaci pluginů.
 
 Systém balíčků umožňuje vytvářet balíčky obsahující typy těchto herních prvků:
 \begin{enumerate}
@@ -24,26 +24,26 @@ Systém balíčků umožňuje vytvářet balíčky obsahující typy těchto her
 	\item hráčů,
 	\item úrovní.	
 \end{enumerate} 
-Pro typy s grafickou reprezentací v herním světě umožňuje balíček přidání modelů a textur. Pro typy, které umožňují autonomní chování, je umožněno přidat pluginy, které následně toto chování definují.
+Pro typy s~grafickou reprezentací v~herním světě umožňuje balíček přidání modelů a~textur. Pro typy, které umožňují autonomní chování, je umožněno přidat pluginy, které následně toto chování definují.
 
-Z pohledu koncového uživatele platforma poskytuje grafické rozhraní pro stolní počítače, umožňuje přidávání a výběr balíčků a následný výběr či tvorbu úrovní z těchto balíčků. Dále platforma poskytuje ukládání a načítání aktuálního stavu hry.
+Z~pohledu koncového uživatele platforma poskytuje grafické rozhraní pro stolní počítače, umožňuje přidávání a~výběr balíčků a~následný výběr či tvorbu úrovní z~těchto balíčků. Dále platforma poskytuje ukládání a~načítání aktuálního stavu hry.
 
-Ukázková hra následně demonstruje výše popsané vlastnosti pomocí několika typů jednotek, budov, surovin, projektilů, hráčů a úrovní.
+Ukázková hra následně demonstruje výše popsané vlastnosti pomocí několika typů jednotek, budov, surovin, projektilů, hráčů a~úrovní.
 
 
-Z popisu platformy tedy můžeme uznat cíle práce, uvedené v části \ref{sec:cileprace}, za splněné.
+Z~popisu platformy tedy můžeme uznat cíle práce, uvedené v~části \ref{sec:cileprace}, za splněné.
 
 \section{Možná rozšíření}
-Přestože je aktuální verze platformy plně funkční a splňuje všechny cíle naší práce, existuje několik oblastí, v kterých by mohla být platforma rozšířena:
+Přestože je aktuální verze platformy plně funkční a~splňuje všechny cíle naší práce, existuje několik oblastí, v~kterých by mohla být platforma rozšířena:
 
 \begin{itemize}
-	\item Implementace podpory pro systém Android, jejíž kostra je v aktuální verzi připravena.
-	\item Přidání dalších typů jednotek a budov, poskytujících větší strategické možnosti při hraní ukázkové hry. Aktuální budovy a jednotky v ukázkové hře slouží pouze pro demonstraci schopností platformy a nejsou navrženy s ohledem na jejich použití hráčem.
-	\item Množina umělých inteligencí hráčů je v aktuální verzi omezena pouze na dvě možnosti, a to hráče, který nedělá nic, a hráče, který je agresivní a útočí. V budoucnu by bylo výhodné přidat hráče, kteří i brání, či vytvářejí svoji strategii pomocí složitějších postupů.
-	\item Verze platformy distribuovaná s touto prací obsahuje pouze jeden balíček, obsahující ukázkovou hru. Pro budoucí verze platformy by bylo užitečné přidat další balíčky, poskytující jiné typy her.
-	\item Vylepšení návrhu a vzhledu uživatelského rozhraní platformy i hry. Aktuální uživatelské rozhraní je navrženo především pro demonstraci schopností platformy a nedbá příliš na estetiku či jednoduchost používání. 
-	\item Přidání tzv.~\uv{Fog of War} funkcionality, která zakrývá části mapy vzdálené od jednotek a budov hráče a jeho spojenců. Tato funkcionalita je přítomná ve velké části RTS her a její přítomnost by rozšířila množinu her implementovatelných v naší platformě.
-	\item I když cílem naší práce byla tvorba platformy pro hry jednoho hráče, použitý herní engine podporuje tvorbu her pro více hráčů. Využitím těchto služeb by mělo být možné přidat mód pro více hráčů.
-	\item Platforma umožňuje tvůrcům pluginů implementovat vlastní algoritmy pro hledání nejkratší cesty v herním světě. V aktuální verzi navíc platforma poskytuje jednu implementaci algoritmu A* pro tento účel. V budoucnu by mohlo být výhodné přidat další algoritmy přímo do platformy a poskytnout je tak tvůrcům pluginů.
+	\item Implementace podpory pro systém Android, jejíž kostra je v~aktuální verzi připravena.
+	\item Přidání dalších typů jednotek a~budov, poskytujících větší strategické možnosti při hraní ukázkové hry. Aktuální budovy a~jednotky v~ukázkové hře slouží pouze pro demonstraci schopností platformy a~nejsou navrženy s~ohledem na jejich použití hráčem.
+	\item Množina umělých inteligencí hráčů je v~aktuální verzi omezena pouze na dvě možnosti, a~to hráče, který nedělá nic, a~hráče, který je agresivní a~útočí. V~budoucnu by bylo výhodné přidat hráče, kteří i~brání, či vytvářejí svoji strategii pomocí složitějších postupů.
+	\item Verze platformy distribuovaná s~touto prací obsahuje pouze jeden balíček, obsahující ukázkovou hru. Pro budoucí verze platformy by bylo užitečné přidat další balíčky, poskytující jiné typy her.
+	\item Vylepšení návrhu a~vzhledu uživatelského rozhraní platformy i~hry. Aktuální uživatelské rozhraní je navrženo především pro demonstraci schopností platformy a~nedbá příliš na estetiku či jednoduchost používání. 
+	\item Přidání tzv.~\uv{Fog of War} funkcionality, která zakrývá části mapy vzdálené od jednotek a~budov hráče a~jeho spojenců. Tato funkcionalita je přítomná ve velké části RTS her a~její přítomnost by rozšířila množinu her implementovatelných v~naší platformě.
+	\item I~když cílem naší práce byla tvorba platformy pro hry jednoho hráče, použitý herní engine podporuje tvorbu her pro více hráčů. Využitím těchto služeb by mělo být možné přidat mód pro více hráčů.
+	\item Platforma umožňuje tvůrcům pluginů implementovat vlastní algoritmy pro hledání nejkratší cesty v~herním světě. V~aktuální verzi navíc platforma poskytuje jednu implementaci algoritmu A* pro tento účel. V~budoucnu by mohlo být výhodné přidat další algoritmy přímo do platformy a~poskytnout je tak tvůrcům pluginů.
 	
 \end{itemize}

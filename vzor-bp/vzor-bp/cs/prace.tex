@@ -75,18 +75,35 @@
 \definecolor{greencomments}{rgb}{0,0.5,0}
 \definecolor{redstrings}{rgb}{0.64,0.08,0.08}
 \definecolor{black}{rgb}{0,0,0}
-\definecolor{blueattributes}{rgb}{0.2,0.2,1}
+\definecolor{blueattributes}{rgb}{0.37,0.52,0.62}
+\definecolor{interfaceyellow}{rgb}{0.60,0.66,0.11}
 
-\lstdefinelanguage{XML}
-{
-	morestring=[b]",
-	morestring=[s]{>}{<},
-	morecomment=[s]{<?}{?>},
+%\lstdefinelanguage{XML}
+%{
+%	morestring=[b]",
+%	morestring=[s]{>}{<},
+%	morecomment=[s]{<?}{?>},
 %	morecomment=[s]{<!--}{-->}
-	stringstyle=\color{black},
-	identifierstyle=\color{bluekeywords},
-	keywordstyle=\color{blueattributes},
-	morekeywords={xmlns,version,type}% list your attributes here
+%	stringstyle=\color{black},
+%	identifierstyle=\color{bluekeywords},
+%	keywordstyle=\color{blueattributes},
+%	morekeywords={xmlns,version,type}% list your attributes here
+%}
+\lstdefinestyle{csharp} {
+	language=[Sharp]C,
+	commentstyle=\color{greencomments},
+	stringstyle=\color{redstrings}\ttfamily, 
+	keywordstyle=\color{bluekeywords},
+	morekeywords={ await, new, async, var },
+	emphstyle=[1]{\color{classgreen}},
+	emphstyle=[2]{\color{interfaceyellow}}
+}
+
+\lstdefinestyle{xml} {
+	language=XML,
+	stringstyle=\color{black}\ttfamily,
+	keywordstyle=\color{bluekeywords},
+	emphstyle=[1]{\color{blueattributes}},
 }
 
 \lstset{	
@@ -102,6 +119,7 @@
 	breakatwhitespace=true,
 	escapeinside={(*@}{@*)},
 	basicstyle=\ttfamily,
+	tabsize=2
 }
 
 %% Nastavení cesty k adresáři s obrázky pro balíček graphicx
@@ -154,18 +172,28 @@ Poděkování.
 
 % Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o zadání práce)
 \def\Abstrakt{%
-Abstrakt.
+Vývoj Realtimových strategických her (RTS) je složitým procesem spojujícím mnoho oborů. Cílem naší práce je vytvoření platformy zjednodušující proces tvorby 3D RTS her pro jednoho hráče a umožňující tvorbu logiky her jako pluginů v jazyce C\#. 
+
+Platforma umožňuje tvorbu her jako balíčků, definovaných pomocí XML souborů, obsahujících modely, textury, animace, definice grafického uživatelského rozhraní a pluginy. Pomocí těchto pluginů, vytvořených pomocí jazyka C\#, umožňuje platforma definici umělé inteligence hráčů, jednotek, budov či projektilů obsažených v balíčcích. Platforma dále poskytuje funkce použitelné při implementaci pluginů. 
+
+Součástí práce je ukázkový balíček, obsahující implementaci hry demonstrující schopnosti platformy.
 }
+
+
 \def\AbstraktEN{%
-Abstract.
+The development of Real-time strategy (RTS) games is a difficult process spanning many fields. The goal of this thesis is to create a platform to ease the development of 3D single player RTS games and to enable the use of C\# language for plugin creation. 
+
+Our platform enables users to create games as packages for the platform. Each package is defined by a single XML file, describing the contents of the package, which include 3D models, textures, animations, graphical user interface definitions and plugins. These plugins, created using the C\# language, enable the game creator to create artificial intelligence for players, units, buildings and projectiles defined in the package. The platform also provides functions that can be used for creation of plugins.
+
+As a part of this thesis, we will create a showcase package to demonstrate the abilities of our platform.
 }
 
 % 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
 \def\KlicovaSlova{%
-{klíčová} {slova}
+{RTS hra}
 }
 \def\KlicovaSlovaEN{%
-{key} {words}
+{RTS game}
 }
 
 %% Balíček hyperref, kterým jdou vyrábět klikací odkazy v PDF,
@@ -222,8 +250,25 @@ Abstract.
 %%% opatření rektora č. 72/2017.
 \appendix
 \chapter{Přílohy}
-
-\section{První příloha}
+\label{sec:appendix}
+Výsledný program této práce i jeho zdrojový kód jsou licencovány pod MIT licencí.
+Přílohy práce:
+\begin{itemize}
+	\item Adresář \texttt{/src} obsahující \texttt{MHUrho} solution, tvořící implementaci platformy spolu s implementací ukázkové hry. 
+	\item Adresář \texttt{/doc} obsahující dokumentaci vygenerovanou z dokumentačních komentářů kódu.
+	\item Adresář \texttt{/lib} obsahující knihovnu \texttt{MHUrho.dll} pro tvorbu pluginů.
+	\item Adresář \texttt{/install} obsahující instalátor platformy, umožňující koncovým uživatelům i tvůrcům balíčků její instalaci.
+	\item Adresář \texttt{/schemas} obsahující schémata pro validaci XML souborů.
+		\begin{itemize}
+			\item Soubor \texttt{GamePack.xsd} obsahující schéma pro validaci XML balíčků.
+		\end{itemize}
+	\item Adresář \texttt{/templates} obsahující šablony pro tvobu balíčku.
+		\begin{itemize}
+			\item Soubor \texttt{GamePackTemplate.xml} obsahující šablonu XML souboru balíčku.
+		\end{itemize}
+	\item Soubor \texttt{/prace.pdf} obsahující tento text práce.
+	\item Soubor \texttt{/LICENSE.txt} obsahující licenci platformy MHUrho.
+\end{itemize}
 
 \openright
 \end{document}

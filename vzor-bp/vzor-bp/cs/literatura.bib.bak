@@ -379,7 +379,7 @@
   note         = {[Online; accessed 2019-07-11]},
 }
 
-@Misc{,
+@Misc{site:urho3deditor,
   author       = {Urho3D},
   title        = {Editor instructions},
   howpublished = {\url{https://urho3d.github.io/documentation/1.7/_editor_instructions.html}},

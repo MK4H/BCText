@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -60,6 +60,14 @@
 \newblock {Stronghold Crusader}.
 \newblock \url{https://fireflyworlds.com/games/strongholdcrusader/}.
 \newblock [Online; accessed 2019-03-18].
+
+\bibitem[Gamma a~kol.(1995)Gamma, Helm, Johnson a Vlissides]{book:gangoffour}
+{\sc Gamma, E., Helm, R., Johnson, R.~E. {\rm a} Vlissides, J.} (1995).
+\newblock \emph{{Design Patterns}}.
+\newblock Prentice Hall.
+\newblock ISBN 0-201-63361-2.
+\newblock URL
+  \url{https://www.ebook.de/de/product/3236753/erich_gamma_richard_helm_ralph_e_johnson_john_vlissides_design_patterns.html}.
 
 \bibitem[Google(2018)]{site:protobufdevguide}
 {\sc Google} (2018).
