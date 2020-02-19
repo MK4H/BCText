@@ -2,7 +2,7 @@
 V~této části popíšeme instalaci aplikace, použití grafického rozhraní a~uvedeme návod pro hraní ukázkové hry. 
 
 \section{Instalace}
-Pro instalaci platformy spusťte soubor \texttt{setup.exe}, umístěný v~přílohách práce \ref{sec:appendix}. Po spuštění instalátoru budete vyzváni k~výběru umístění aplikace. Platforma vyžaduje instalaci do adresáře, ve kterém má každý uživatel spouštějící platformu možnost zápisu. Následně bude aplikace nainstalována spolu se všemi svými závislostmi. V~aktuální verzi je jedinou závislostí platformy Microsoft .NET Framework 4.7.2 (x86 and x64).
+Pro instalaci platformy spusťte soubor \texttt{setup.exe}, umístěný v~přílohách práce \ref{sec:appendix}. Po spuštění instalátoru budete vyzváni k~výběru umístění aplikace. Platforma vyžaduje instalaci do adresáře, ve kterém má každý uživatel spouštějící platformu práva pro  vytvoření souboru a zápisu do souborů. Následně bude aplikace nainstalována spolu se všemi svými závislostmi. V~aktuální verzi je jedinou závislostí platformy Microsoft .NET Framework 4.7.2 (x86 and x64).
 
 \section{Grafické rozhraní}
 Grafické uživatelské rozhraní platformy je tvořeno několika obrazovkami, které můžeme vidět na diagramu \ref{fig:screen_structure2}. Přechody mezi obrazovkami jsou iniciovány za použití grafických prvků těchto obrazovek, či jsou řízeny průběhem akce na pozadí. V~této části popíšeme použití složitějších obrazovek uživatelského rozhraní.
@@ -24,9 +24,9 @@ Obrazovka pro výběr balíčků, na diagramu \ref{fig:screen_structure2} označ
 	\label{fig:packagepicking}
 \end{figure}
 
-Pro přidání nového balíčků do nainstalované instance platformy přemístěte adresář obsahující soubory balíčku do adresáře \texttt{\%AppData\%/MHUrho/Packages}. Následně stiskněte tlačítko \texttt{Add}, neboli \uv{Přidat}, na obrazovce pro vybírání balíčků. Toto tlačítko vás přesune na obrazovku pro procházení souborového systému. Na této obrazovce poté vyberte XML soubor definující přidávaný balíček. Při návratu na obrazovku pro vybírání balíčků by měl být přidaný balíček viditelný v~seznamu dostupných balíčků. d
+Pro přidání nového balíčků do nainstalované instance platformy přemístěte adresář obsahující soubory balíčku do adresáře \texttt{\%AppData\%/MHUrho/Packages}. Následně stiskněte tlačítko \texttt{Add}, neboli \uv{Přidat}, na obrazovce pro vybírání balíčků. Toto tlačítko vás přesune na obrazovku pro procházení souborového systému. Na této obrazovce poté vyberte XML soubor definující přidávaný balíček. Při návratu na obrazovku pro vybírání balíčků by měl být přidaný balíček viditelný v~seznamu dostupných balíčků.
 
-Pro smazání balíčku označte položku balíčku v~seznamu a~stiskněte tlačítko \texttt{Remove}. Pro načtení balíčku  označte položku balíčku a~stisknute tlačítko \texttt{Select}. Pro návrat na obrazovku hlavního menu použijte tlačítko \texttt{Back}.
+Pro smazání balíčku označte položku balíčku v~seznamu a~stiskněte tlačítko \texttt{Remove}. Toto smazání pouze odstraní záznam o balíčku, nijak nemanipuluje s vlastními soubory balíčku. Pro načtení balíčku  označte položku balíčku a~stiskněte tlačítko \texttt{Select}. Pro návrat na obrazovku hlavního menu použijte tlačítko \texttt{Back}.
 
 \subsection{Výběr úrovně}
 Po vybrání balíčku budete přesunuti na obrazovku výběru úrovně, v~diagramu označenou jako \texttt{Level picking}. Tuto obrazovku můžete vidět na obrázku \ref{fig:levelpicking}. Tato obrazovka poskytuje následující funkce:
@@ -76,7 +76,7 @@ Pro návrat na obrazovku výběru úrovní použijte tlačítko \texttt{Back}.
 Pro nastavení vlastností úrovně před samotným spuštěním slouží obrazovka \texttt{Level settings}, zobrazená na obrázku \ref{fig:levelsettings}. Obrazovka je rozdělena do čtyř částí:
 
 \begin{enumerate}
-	\item výběr pluginu hráčů úrovně a~nastavení jejich příslušenství do týmu;
+	\item výběr pluginů hráčů úrovně a~nastavení jejich příslušenství do týmu;
 	\item zobrazení ikony úrovně;
 	\item zobrazení prvků grafického uživatelského rozhraní definovaných pluginem úrovně, používaných pro nastavení parametrů spouštěné úrovně;
 	\item zobrazení popisu úrovně.
@@ -129,9 +129,9 @@ Minimapa poskytuje hráči přehled o~stavu velké části mapy bez nutnosti poh
 
 Centrální lišta obsahuje tlačítka určená aktuálně zvoleným nástrojem. Při velkém počtu tlačítek je možno touto lištou posouvat za použití tlačítek označených šipkami na pravé a~levé straně lišty.
 
-Nad lištou vidíme vpravo tlačítko pro výběr aktuálního hráče a~vlevo tlačítko pro výběr nástroje. Výběr hráče je možný pouze při editaci úrovně. Při hraní je toto tlačítko neaktivní a~pouze zobrazuje ikonu hráče reprezentujícího uživatele. Tlačítko pro výběr budovy, stejně jako tlačítko pro výběr hráče při editaci, při kliknutí zobrazí vysouvací lištu, označenou fialově. Tato lišta obsahuje seznam dostupných nástrojů či seznam dostupných hráčů.
+Nad lištou vidíme vpravo tlačítko pro výběr aktuálního hráče a~vlevo tlačítko pro výběr nástroje. Výběr hráče je možný pouze při editaci úrovně. Při hraní je toto tlačítko neaktivní a~pouze zobrazuje ikonu hráče reprezentujícího uživatele. Tlačítko pro výběr nástroje, stejně jako tlačítko pro výběr hráče při editaci, při kliknutí zobrazí vysouvací lištu. Tato lišta obsahuje seznam dostupných nástrojů či seznam dostupných hráčů.
 
-Poslední součástí v~levém dolním rohu je \texttt{CustomWindow}. Obsah této části je určen aktuálním nástrojem. Nejčastěji je v~této části uváděn název nástroje či součásti nástroje, nastavní velikosti štětce, cena budov a~další.
+Poslední součástí v~levém dolním rohu je \texttt{CustomWindow}. Obsah této části je určen aktuálním nástrojem. Nejčastěji je v~této části uváděn název nástroje či součásti nástroje, nastavení velikosti štětce, cena budov a~další.
 
 Balíček může do uživatelského rozhraní dodat vlastní prvky, jak můžeme vidět ve vrchní části obrazovky, ve které balíček ukázkové hry umisťuje lištu pro zobrazení množství surovin vlastněných hráčem.
 
@@ -147,11 +147,11 @@ Každý z~balíčků, tedy i~ukázková hra, může použít nástroje poskytova
 
 \subsubsection{Nástroje}
 
-Výběr nástroje lze provést stisknutím tlačítka označeného na obrázku \ref{fig:UI} jako \textit{Výběr nástroje}. Stisknutím tohoto tlačítka je zobrazena lišta se seznamem všech dostupných nástrojů, kterou můžete vidět na obrázku \ref{fig:toolselection}. V této liště můžeme vidět označený aktuálně vybraný nástroj, jehož vzhled přebírá také tlačítko pro výběr nástroje. 
+Výběr nástroje lze provést stisknutím tlačítka označeného na obrázku \ref{fig:UI} jako \textit{Výběr nástroje}. Stisknutím tohoto tlačítka je zobrazena lišta se seznamem všech dostupných nástrojů, jejichž ikony můžeme vidět níže. V této liště můžeme vidět označený aktuálně vybraný nástroj, jehož vzhled přebírá také tlačítko pro výběr nástroje. 
 
 Stisknutím tlačítka jiného nástroje než aktuálně vybraného je tento nástroj aktivován a je schována lišta pro výběr nástrojů.
 
-Následuje seznam nástrojů dostupných v ukázkové hře. U každého z nástrojů je uvedeno, ve kterých módech je možné ho využít. Bližší popis jednotlivých nástrojů můžete najít následujících částech.
+Následuje seznam nástrojů dostupných v ukázkové hře. U každého z nástrojů je uvedeno, ve kterých módech je možné ho využít. Bližší popis jednotlivých nástrojů můžete najít v následujících částech.
 
 \medskip
 \noindent{
@@ -248,7 +248,7 @@ Tento nástroj umožňuje měnit reliéf terénu aktuální úrovně. Nástroj j
 \bigskip
 
 
-První dvě součásti jsou dohromady používány pro výběr jednotlivých rohů dlaždic v mapě a následnou úpravu jejich výšky. Výběr lze provést zvolením části pro výběr rohů a následným kliknutím na dlaždici obsahující daný roh. Je vybrán roh nejbližší pozici kliknutí. Zrušení výběru lze následně provést pokusem o výběr již vybraného rohu. Pro změnu výšky vybraných rohů zvolíme část pro změnu výšky vybraných rohů. Po jejím zvolení můžeme kliknutím a držením levého tlačítka a posouváním myši nahoru a dolu měnit výšku vybraných rohů.
+První dvě součásti jsou dohromady používány pro výběr jednotlivých rohů dlaždic v mapě a následnou úpravu jejich výšky. Výběr lze provést zvolením části pro výběr rohů a následným kliknutím na dlaždici obsahující daný roh. Při kliknutí je vybrán roh nejbližší pozici kliknutí. Zrušení výběru lze následně provést pokusem o výběr již vybraného rohu. Pro změnu výšky vybraných rohů zvolíme část pro změnu výšky vybraných rohů. Po jejím zvolení můžeme kliknutím a držením levého tlačítka a posouváním myši nahoru a dolu měnit výšku vybraných rohů.
 
 Součást pro změnu výšky dlaždic umožňuje pohybem kurzoru po herním světě vybrat čtverec dlaždic okolo pozice kurzoru, jejichž výšku měníme pomocí stisknutí a držení levého tlačítka a pohybem myši stejně jako u předchozí části.
 
@@ -273,7 +273,7 @@ Při zvolení tohoto nástroje je centrální lišta vyplněna všemi dostupným
 		\includegraphics[scale=0.3]{XamarinIcon}
 	\end{minipage} \hfill
 	\begin{minipage}{0.85\textwidth}
-		Ikona typu dlaždic \texttt{Xamarin}.
+		Ikona typu dlaždic \texttt{Xamarin}, používající logo společnosti Xamarin.
 	\end{minipage}
 }
 
@@ -309,14 +309,16 @@ Při zvolení tohoto nástroje je centrální lišta vyplněna všemi dostupným
 
 \bigskip
 
+Bližší popis typů dlaždic naleznete v části \ref{sec:tiletypes}.
+
 Vybráním typu dlaždic z tohoto seznamu, umístěním kurzoru do herního světa a stisknutím levého tlačítka změníme typ dlaždic zvýrazněného čtverce na zvolený typ.
 
-Pokud podržíme levé tlačítko a budeme pohybovat myší, budou změněny všechny dlaždice kterých se dotkně zvýrazněná část.
+Pokud podržíme levé tlačítko a budeme pohybovat myší, budou změněny všechny dlaždice kterých se dotkne zvýrazněná část.
 
 Velikost zvýrazněné části lze nastavit v okně nástrojů pomocí grafického prvku přidaného tímto nástrojem.
 
 \subsubsection{Nástroj pro výběr a ovládání jednotek}
-Tento nástroj umožňuje vybrat skupinu jednotek aktuálního hráče. Tento výběr uskutečníme stisknutím a držením levého tlačítka a následným tažením myši po herním světě. Mezi počáteční pozicí stisku a aktuální pozicí kurzoru se vytvoří obdélník označující oblast, ve které budou jednotky vybrány. Po uvolnění tlačítka myši budou všechny jednotky vlastněné aktuálním hráčem přidány do aktuálně vybrané skupiny jednotek. Jednotky lze označovat i jednotlivě kliknutím na jednotku vlastněnou aktuálním hráčem.
+Tento nástroj umožňuje vybrat skupinu jednotek aktuálního hráče. Tento výběr uskutečníme stisknutím a držením levého tlačítka a následným tažením myši po herním světě. Mezi počáteční pozicí stisku a aktuální pozicí kurzoru se vytvoří obdélník označující oblast, ve které budou jednotky vybrány. Po uvolnění tlačítka myši budou všechny jednotky v této oblasti vlastněné aktuálním hráčem přidány do aktuálně vybrané skupiny jednotek. Jednotky lze označovat i jednotlivě kliknutím na jednotku vlastněnou aktuálním hráčem.
 
 Následně lze vybraným jednotkám vydávat rozkazy. Kliknutím levým tlačítkem vydáme rozkaz k pohybu na aktuální pozici kurzoru. Kliknutím pravím tlačítkem na nepřátelskou jednotku či budovu pak vydáme rozkaz k útoku na tuto jednotku či budovu.
 
@@ -356,6 +358,7 @@ Tento nástroj umožňuje přidávat do aktuální úrovně nové jednotky či o
 
 \bigskip
 
+Bližší popis těchto jednotek naleznete v části \ref{sec:units}.
 
 Pro vytvoření nové jednotky vybereme jeden z poskytovaných typů a následným kliknutím do herního světa vytvoříme na pozici kurzoru novou jednotku vybraného typu.
 
@@ -440,6 +443,8 @@ Tento nástroj umožňuje v editačním i v herním módu přidávat do herního
 
 \bigskip
 
+Bližší popis těchto jednotek naleznete v části \ref{sec:buildings}.
+
 Následně vybráním jedné z těchto budov a kliknutím na dlaždici je do herního světa umístěna nová budova se středem na dané dlaždici. Tento nástroj dále umožňuje ovládání a mazání existujících budov. 
 
 Ovládání je umožněno při aktivaci nástroje bez vybrané budovy, což následně umožňuje kliknutím na budovu zobrazit rozhraní pro její ovládání.
@@ -522,6 +527,7 @@ Ukázkový balíček obsahuje šest typů budov. První čtyři typy označujeme
 }
 
 \subsection{Jednotky}
+\label{sec:units}
 Balíček ukázkové hry definuje tři typy jednotek, z toho dvě ovladatelné hráčem a jednu plně automatickou.
 
 \medskip
@@ -553,6 +559,62 @@ Balíček ukázkové hry definuje tři typy jednotek, z toho dvě ovladatelné h
 		\textbf{Dog}, neboli pes, je jednotka vytvářená budovou dřevorubce, která se pohybuje mezi budovou a nejbližším stromem a získává tak dřevo. Tuto jednotku nelze manuálně vytvářet ani ovládat, vše je plně automatizováno. 
 	\end{minipage}
 }
+
+\subsection{Dlaždice}
+\label{sec:tiletypes}
+Ukázková hra obsahuje následující typy dlaždic:
+
+\medskip
+\noindent{
+	\begin{minipage}{0.1\textwidth}
+		\includegraphics[scale=0.3]{SandIcon}
+	\end{minipage} \hfill
+	\begin{minipage}{0.85\textwidth}
+		Dlaždice typu \texttt{Sand}, neboli písek, jsou základním typem dlaždic kterým jsou vyplněny nově vygenerované úrovně. Tento typ dlaždice umožňuje stavbu všech budov, pohyb jednotek plnou rychlostí a také umožňuje růst stromů, i když mnohem pomaleji než typ \texttt{Grass}.
+	\end{minipage}
+}
+
+\medskip
+\noindent{
+	\begin{minipage}{0.1\textwidth}
+		\includegraphics[scale=0.3]{XamarinIcon}
+	\end{minipage} \hfill
+	\begin{minipage}{0.85\textwidth}
+		Dlaždice typu \texttt{Xamarin}, používající logo společnosti Xamarin, umožňují stavbu všech budov a průchod všech typů jednotek, ale zamezují růstu stromů.
+	\end{minipage}
+}
+
+\medskip
+\noindent{
+	\begin{minipage}{0.1\textwidth}
+		\includegraphics[scale=0.3]{GrassIcon}
+	\end{minipage} \hfill
+	\begin{minipage}{0.85\textwidth}
+		Dlaždice typu \texttt{Grass}, neboli tráva, umožňují průchod všech jednotek plnou rychlostí, stavbu všech budov a růst stromů. Stromy na tomto typu dlaždic rostou nejvyšší rychlostí.
+	\end{minipage}
+}
+
+\medskip
+\noindent{
+	\begin{minipage}{0.1\textwidth}
+		\includegraphics[scale=0.3]{WaterIcon}
+	\end{minipage} \hfill
+	\begin{minipage}{0.85\textwidth}
+		Dlaždice typu \texttt{Water}, neboli voda, zamezují stavbě budov a růstu stromů. Dále nedovolují průchod jednotek až na jednotky typu \texttt{Chicken}, které dokáží tento typ dlaždic přeplavat.
+	\end{minipage}
+}
+
+\medskip
+\noindent{
+	\begin{minipage}{0.1\textwidth}
+		\includegraphics[scale=0.3]{StoneIcon}
+	\end{minipage} \hfill
+	\begin{minipage}{0.85\textwidth}
+		Dlaždice typu \texttt{Stone}, neboli kámen, zamezují stavbě budov a růstu stromů, zároveň nedovolují průchod žádnému typu jednotek.
+	\end{minipage}
+}
+
+\bigskip
 
 \subsection{Projektily}
 Ukázková hra definuje pouze jeden projektilů, ze kterých je pouze jeden aktuálně využíván. Těmito typy jsou:

@@ -2,9 +2,9 @@
 %\addcontentsline{toc}{chapter}{Úvod}
 \label{sec:uvod}
 
-Strategické hry jsou žánrem, ve kterém hráči využívají svých mentálních schopností, především taktického a~strategického myšlení, pro porážku jednoho či více nepřátel. Ve většině případů se strategické hry zabývají tématem války. Takto popisuje strategické Ernest Adams ve své knize \textit{Fundamentals of Game Design} \citep[str.~419]{book:gamefund}
+Strategické hry jsou žánrem, ve kterém hráči využívají svých mentálních schopností, především taktického a~strategického myšlení, pro porážku jednoho či více nepřátel. Ve většině případů se strategické hry zabývají tématem války. Takto popisuje strategické hry Ernest Adams ve své knize \textit{Fundamentals of Game Design} \citep[str.~419]{book:gamefund}
 
-Žánr strategických her obsahuje mnoho poddruhů s~velice rozdílnými nároky jak na hráče, tak na vývojové prostředí a~na vývojáře samotného. Prvním kritériem pro rozdělení strategických her je, zda se hra odehrává jako posloupnost diskrétních tahů, nebo zda se hra odehrává v~přímé závislosti na ubíhajícím reálném čase. Druhým kritériem je relativní četnost a~důležitost strategických rozhodnutí vůči taktickým rozhodnutím. Tato dvě kritéria použil Mark H. Walker \citep{site:stratg05} pro jejich rozdělení na tyto poddruhy:
+Žánr strategických her obsahuje mnoho poddruhů s~velice rozdílnými nároky jak na hráče, tak na vývojové prostředí a~na vývojáře samotného. Prvním kritériem pro rozdělení strategických her je, zda se hra odehrává jako posloupnost diskrétních tahů, nebo zda se hra odehrává v~přímé závislosti na ubíhajícím reálném čase. Druhým kritériem je relativní četnost a~důležitost strategických rozhodnutí vůči taktickým rozhodnutím. Tato dvě kritéria použil Mark H. Walker \citep{site:stratg05} pro rozdělení strategických her na tyto poddruhy:
 \begin{itemize}
 	\item \emph{Real-time strategy} (RTS) - reálný čas, strategická rozhodnutí,
 	\item \emph{Real-time tactics} (RTT) - reálný čas, taktická rozhodnutí,
@@ -20,13 +20,13 @@ Cílem této práce je vytvořit platformu umožňující tvorbu Real-time strat
 Zbylé poddruhy strategických her neplánujeme v~naší platformě explicitně podporovat, ale nijak nevylučujeme, že bude možné do jisté míry využít naší platformu i~pro tvorbu těchto poddruhů strategických her. Zároveň je pro tvorbu RTS her výhodné znát příbuzné žánry, z~kterých je možno se inspirovat a~přebírat některé z~jejich mechanik. Z~tohoto důvodu ve zkratce popíšeme i~zbylé poddruhy.
 
 \subsubsection{Real-time tactics}
-Prvním příbuzným žánrem jsou \emph{Real-time tactics} (RTT) hry, někdy také nazývány fixed-unit real-time hry \citep{site:stratg02}, neboli hry s~pevným počtem jednotek probíhající v~reálném čase. Hlavním rozdílem, odlišující RTT od RTS, je omezení  strategických rozhodnutí a~větším důrazem na taktická rozhodnutí a~micromanagement jednotlivých jednotek. RTT hry nedovolují hráči tvorbu nových jednotek, stavbu budov či produkci surovin, hráč je tedy nucen s~jednotkami, které má na začátku souboje, vyhrát celý souboj.  Jedním z~příkladů čistě RTT her je série Blitzkrieg \citep{site:blitzkrieg}. Hráč začíná každou misi s~jednotkami, které si vybral před misí. Tyto jednotky jsou jediné, které bude moci v~průběhu mise využít, což nutí hráče použít svých taktických schopností a~maximalizovat účinnost těchto jednotek. 
+Prvním příbuzným žánrem jsou \emph{Real-time tactics} (RTT) hry, někdy také nazývány fixed-unit real-time hry \citep{site:stratg02}, neboli hry s~pevným počtem jednotek probíhající v~reálném čase. Hlavním rozdílem odlišujícím RTT od RTS je omezení strategických rozhodnutí a~větším důrazem na taktická rozhodnutí a~micromanagement jednotlivých jednotek. RTT hry nedovolují hráči tvorbu nových jednotek, stavbu budov či produkci surovin, hráč je tedy nucen s~jednotkami, které má na začátku hry, vyhrát celý souboj.  Jedním z~příkladů čistě RTT her je série Blitzkrieg \citep{site:blitzkrieg}. Hráč začíná každou misi s~jednotkami, které si vybral před misí. Tyto jednotky jsou jediné, které bude moci v~průběhu mise využít, což nutí hráče použít svých taktických schopností a~maximalizovat účinnost těchto jednotek. 
 
 \subsubsection{Turn-based strategy}
-\emph{Turn-based strategy} jsou strategické hry, ve kterých změny stavu probíhají v~diskrétních tazích. Doba mezi tahy často není nijak omezena, což hráči umožňuje vymyslet optimální strategii. Oproti RTS tyto hry často omezují taktickou část problémů a~umožňují hráči soustředit se výhradně na strategickou část hry, tedy plánování budov, produkci surovin, vývoj technologií a~celkovou strategii pro jeho ekonomiku a~armádu. Příkladem tohoto žánru je série her Civilisation \citep{site:civ5}. Naše platforma nebude explicitně podporovat tahy, myslíme si však, že bude možné toto rozdělení do tahů vytvořit použitím platformou poskytovaných prostředků.
+\emph{Turn-based strategy} jsou strategické hry, ve kterých změny stavu probíhají v~diskrétních tazích. Doba mezi tahy často není nijak omezena, což hráči umožňuje vymyslet optimální strategii. Oproti RTS tyto hry často omezují taktickou část problémů a~umožňují hráči soustředit se výhradně na strategickou část hry, tedy plánování stavby budov, produkci surovin, vývoj technologií a~celkovou strategii pro jeho ekonomiku a~armádu. Příkladem tohoto žánru je série her Civilisation \citep{site:civ5}. Naše platforma nebude explicitně podporovat rozdělení hry na tahy, myslíme si však, že bude možné toto rozdělení do tahů vytvořit použitím platformou poskytovaných prostředků.
 
 \subsubsection{Turn-based tactics}
-Turn-based tactics umožňují hráči přímé ovládání několika málo jednotek, které v~každém tahu mohou provést jeden či více úkonů. Těmito úkony mohou být střelba na nepřátelskou jednotku, vyléčení přátelské jednotky, pohyb po mapě či například zničení terénu. Ukázkovým příkladem je série her X-COM \citep{site:XCOM}. Ve hře X-COM~2 hráč vlastní až malé desítky jednotek, z~kterých vybírá malou skupinu a~vysílá ji na jednotlivé mise. Při misi má každá jednotka v~každém tahu možnost vykonat dvě akce. Akce může být přesun o~omezenou vzdálenost, použití schopnosti či útok na nepřítele. Pro normální jednotky útok ukončuje tah dané jednotky a~hráč může provést tah následující. 
+Turn-based tactics umožňují hráči přímé ovládání několika málo jednotek, které v~každém tahu mohou provést jeden či více úkonů. Těmito úkony mohou být střelba na nepřátelskou jednotku, vyléčení přátelské jednotky, pohyb po mapě či například zničení terénu. Ukázkovým příkladem je série her X-COM \citep{site:XCOM}. Ve hře X-COM~2 hráč vlastní až malé desítky jednotek, z~kterých vybírá malou skupinu a~vysílá ji na jednotlivé mise. Při misi má každá jednotka v~každém tahu možnost vykonat dvě akce. Akcí může být přesun o~omezenou vzdálenost, použití schopnosti či útok na nepřítele. Pro normální jednotky útok ukončuje tah dané jednotky a~hráč může provést tah následující jednotky. 
 
 \subsubsection{Shrnutí}
 
@@ -58,9 +58,9 @@ Jedním z~hlavních problémů RTS her je pečlivé vyvážení kombinace strate
 
 Mezi strategická rozhodnutí v~RTS hrách patří kupříkladu které budovy hráč postaví, v~jakém pořadí dané budovy postaví, které suroviny bude produkovat, které suroviny vynechá, které jednotky bude rekrutovat a~které vynechá. Tato 3 rozhodnutí jsou úzce propojena, protože výběr surovin určuje budovy, které bude hráč schopen postavit a~typy jednotek, které bude moci zrekrutovat. Stejně tak výběr budov určuje suroviny, které hráč může produkovat a~typy jednotek, které může zrekrutovat. 
 
-Taktika/micromanagement je v~RTS hrách reprezentován ovládáním jednotek, jejich přesné pozice, pohybu, směru útoku, používání schopností atd. Micromanagement lze ale vidět i~v~ekonomické stránce hry, kdy hráč 
+Taktika/micromanagement je v~RTS hrách reprezentován ovládáním jednotek, jejich přesné pozice, pohybu, směru útoku, používání schopností atd. Micromanagement lze ale vidět i~v~ekonomické stránce hry, kdy hráč manuálně řídí získávání surovin či jinak ovlivňuje chod ekonomiky.
 
-Nejlepším příkladem pro rozlišení pojmu strategie a~taktiky je série her Total War \citep{site:totalwar}, které kombinuje mód tahové strategie s~módem real-time tactics (RTT). V~jedné části hry hráč přebírá kontrolu nad celým svým národem, rozhoduje, které budovy budou ve kterých městech postaveny, které jednotky budou rekrutovány a~kde budou které armády umístěny. V~druhé části, při souboji nepřátelských armád, hráč přebírá kontrolu nad konkrétní armádou a~ovládá jednotlivé bataliony, jejich umístění, pohyb a~útoky v~reálném čase.
+Nejlepším příkladem pro rozlišení pojmu strategie a~taktiky je série her Total War \citep{site:totalwar}, která kombinuje mód tahové strategie s~módem real-time tactics (RTT). V~jedné části hry hráč přebírá kontrolu nad celým svým národem, rozhoduje, které budovy budou ve kterých městech postaveny, které jednotky budou rekrutovány a~kde budou které armády umístěny. V~druhé části, při souboji nepřátelských armád, hráč přebírá kontrolu nad konkrétní armádou a~ovládá jednotlivé bataliony, jejich umístění, pohyb a~útoky v~reálném čase.
 
 Naše platforma nemá za cíl nijak omezovat možnosti vytvářených her v~rámci jejich zaměření na taktiku či strategii. Toto rozhodnutí chceme nechat čistě na uživateli naší platformy.
 
@@ -82,7 +82,7 @@ Nejstarší a~nejjednodušší reprezentací je rozdělení mapy na stejně velk
 
 Na každé dlaždici může být postavena až na výjimky nejvýše jedna budova a~stát nejvýše jedna jednotka. Při pohybu jednotek není tato vlastnost dodržována, lze tedy jednotky přesouvat přes dlaždice na kterých již jiná jednotka stojí. 
 
-Naše platforma bude podporovat rozšířenější verzi tohoto druhu mapy, ve které nebudeme vynucovat limity na počty jednotek a~budov na jedné dlaždici. Tato omezení budou přenechána pro implementaci tvůrcem her využívajících naší platformu a~bude vytvořeno rozhraní pro co nejjednodušší implementaci těchto limitů. 
+Naše platforma bude podporovat rozšířenější verzi tohoto druhu mapy, ve které nebudeme vynucovat limity počtů jednotek na jedné dlaždici. Tato omezení budou přenechána pro implementaci tvůrcem her využívajících naší platformu a~bude vytvořeno rozhraní pro co nejjednodušší implementaci těchto limitů. 
 
 \noindent{Naše platforma bude podporovat mapu s~těmito vlastnostmi:}
 \begin{itemize}
@@ -99,19 +99,19 @@ Jednotky jsou základním nástrojem hráče pro boj s~nepřítelem. Pohybem po 
 \subsubsection{Pohyb}
 Hlavním odlišujícím prvkem jednotek od budov je jejich schopnost pohybu. Pohyb jednotky je určen jejím typem, kde každý typ jednotek může procházet jinými typy terénu, pohybovat se nad terénem, na vodě či pod vodou. Naše platforma bude podporovat pohyb jednotek kdekoli nad terénem, navíc bude tvůrcům poskytnuta komponenta umožňující chůzi po terénu, neboť je to nejčastější způsob pohybu. 
 
-Pohyb jednotek je nejčastěji řízen hráčem, ať už na úrovni příkazů jednotlivým jednotkám, tak na úrovni slučování jednotek do skupin a~ovládání těchto skupin. Naše platforma bude umožňovat jak ovládání jednotlivých jednotek, tak celých skupin. Dále umožníme vývojáři přidat složitější ovládání, například slučování do permanentních formací a~následné ovládání těchto formací. 
+Pohyb jednotek je nejčastěji řízen hráčem, ať už na úrovni příkazů jednotlivým jednotkám, tak na úrovni slučování jednotek do skupin a~ovládání těchto skupin. Naše platforma bude umožňovat jak ovládání jednotlivých jednotek, tak celých skupin. Dále umožníme vývojáři přidat složitější ovládání, umožňující například slučování jednotek do permanentních formací a~následné ovládání těchto formací. 
 
-V některých hrách existují také jednotky, které se mohou své schopnosti pohybu vzdát a~stát se budovu, buď dočasně, nebo trvale. Příkladem takovéto jednotky/budovy mohou být budovy Nočních elfů ze hry Warcraft 3 \citep{site:warcraft3}. Tyto entity jsou stavěny jako budovy, tedy jsou umístěny do světa a~postaveny jednotkou, stejně jako u~všech ostatních ras. Následně je ale hráči umožněno, pomocí speciální ability těchto budov, změnit je dočasně na jednotky a~pohybovat s~nimi či je dokonce použít pro boj. V~tomto módu ale ztrácí všechny funkce budov, tedy není možné je použít pro sběr surovin či produkci jednotek. Následně je možné znovu je zakořenit, čímž získávají zpět své funkce budovy.  Naše platforma by měla takovéto jednotky/budovy také podporovat. 
+V některých hrách existují také jednotky, které se mohou své schopnosti pohybu vzdát a~stát se budovu, buď dočasně, nebo trvale. Příkladem takovéto jednotky/budovy mohou být budovy Nočních elfů ze hry Warcraft 3 \citep{site:warcraft3}. Tyto entity jsou stavěny jako budovy, tedy jsou umístěny do světa a~postaveny jednotkou, stejně jako u~všech ostatních ras. Následně je ale hráči umožněno, pomocí speciální ability těchto budov, změnit je dočasně na jednotky a~pohybovat s~nimi či je dokonce použít pro boj. V~tomto módu ale ztrácí všechny funkce budov, tedy není možné je použít pro sběr surovin či produkci jednotek. Následně je možné znovu je zakořenit, čímž získávají zpět své funkce budovy.  Naše platforma by měla tvorbu takovéto jednotky/budovy také umožňovat. 
 
 \subsubsection{Umělá inteligence}
 
 Ve velké části RTS her jsou jednotky schopny do určité míry autonomního rozhodování bez zásahu hráče, od střelby na cíl, který se ocitne v~jejich dostřelu, po vyhledání krytu, pokud jsou pod palbou. 
 
-Jako příklad jednoduché umělé inteligence jednotek můžeme vzít hry Starcraft \citep{site:starcraft} a~Warcraft \citep{site:warcraft3} od společnosti Blizzard \citep{site:blizz}. Zde se jednotky chovají velice předvídatelně, splňují přesně hráčovi rozkazy a~nedělají nic navíc, což James Lantz \citep{site:gamasutra01} označuje jako jeden z faktorů, které umožnili hře Starcraft II vytvořit jednu z~prvních masivních e-sport scén na světě.
+Jako příklad jednoduché umělé inteligence jednotek můžeme vzít hry Starcraft \citep{site:starcraft} a~Warcraft \citep{site:warcraft3} od společnosti Blizzard \citep{site:blizz}. Zde se jednotky chovají velice předvídatelně, splňují přesně hráčovi rozkazy a~nedělají nic navíc, což James Lantz \citep{site:gamasutra01} označuje jako jeden z faktorů, který umožnil hře Starcraft II vytvořit jednu z~prvních masivních e-sport scén na světě.
 
 
 
-Dobrým příkladem jednotek s~vysokou autonomií je série Company of Heroes \citep{site:COH}, kde jednotky automaticky vyhledávají krytí, rozutečou se, pokud jsou pod palbou dělostřelectva, a~v~případě příliš velkých ztrát utečou z~boje. Příklad tohoto chování můžeme vidět na obrázku \ref{fig:cohai}. V~levé části vidíme skupinu jednotek, útočících na nepřátelskou jednotku mimo obraz ve směru červené šipky. Na prostřední části můžeme vidět, že po zničení nepřátel se jednotka začala přesouvat ve směru modré šipky, nejspíše pro získání lepšího krytí a~lepší palebné pozice vůči zbývajícím nepřátelským jednotkám. Tento přesun je vykonán bez zásahu hráče, jak můžeme vidět díky modré ikoně nad jednotkou, která značí, že jednotka není zvolena hráčem a~není jím tedy ovládána. Oproti tomu v~pravé části můžeme vidět, že jednotka hráčem označena je díky bílé barvě ikony nad jednotkou. Vidíme, že hráč vydal rozkaz pro přesun zpět, zvýrazněný zeleně. Tato reakce byla vynucena umělou inteligencí jednotky, která se sama od sebe rozeběhla ve směru nepřátelských linií a~donutila hráče reagovat. Jak vidíme, autonomie má svou cenu, a~to v~nepředvídatelnosti chování jednotek. Při jednoduché umělé inteligenci jednotek je hráč schopen předvídat jejich chování a~využít ho pro svůj prospěch. Naopak při složité umělé inteligenci, jako právě v~případě Company of Heroes, je hráč často nucen provést více pokusů při vydávání rozkazu, či vydávat rozkazy pro negaci automatického chování jednotky, protože není schopen toto chování jednoduše odhadnout. Tato skutečnost činí hry často realističtější, protože simuluje chování reálných vojáků, kteří rozkaz interpretují a~implementují podle svého, není ale vhodná pro souboje více hráčů, a~už vůbec né více hráčů na profesionální úrovni.
+Dobrým příkladem jednotek s~vysokou autonomií je série Company of Heroes \citep{site:COH}, kde jednotky automaticky vyhledávají krytí, rozutečou se, pokud jsou pod palbou dělostřelectva, a~v~případě příliš velkých ztrát utečou z~boje. Příklad tohoto chování můžeme vidět na obrázku \ref{fig:cohai}. V~levé části vidíme skupinu jednotek, útočících na nepřátelskou jednotku mimo obraz ve směru červené šipky. Na prostřední části můžeme vidět, že po zničení nepřátel se jednotka začala přesouvat ve směru modré šipky, nejspíše pro získání lepšího krytí a~lepší palebné pozice vůči zbývajícím nepřátelským jednotkám. Tento přesun je vykonán bez zásahu hráče, jak můžeme vidět díky modré ikoně nad jednotkou, která značí, že jednotka není zvolena hráčem a~není jím tedy ovládána. Oproti tomu v~pravé části můžeme vidět, že jednotka je hráčem označena díky bílé barvě ikony nad jednotkou. Vidíme, že hráč vydal rozkaz pro přesun zpět, zvýrazněný zeleně. Tato reakce byla vynucena umělou inteligencí jednotky, která se sama od sebe rozeběhla ve směru nepřátelských linií a~donutila hráče reagovat. Jak vidíme, autonomie má svou cenu, a~to v~nepředvídatelnosti chování jednotek. Při jednoduché umělé inteligenci jednotek je hráč schopen předvídat jejich chování a~využít ho pro svůj prospěch. Naopak při složité umělé inteligenci, jako právě v~případě Company of Heroes, je hráč často nucen provést více pokusů při vydávání rozkazu, či vydávat rozkazy pro negaci automatického chování jednotky, protože není schopen toto chování jednoduše odhadnout. Tato skutečnost činí hry často realističtější, protože simuluje chování reálných vojáků, kteří rozkaz interpretují a~implementují podle svého, není ale vhodná pro souboje více hráčů, a~už vůbec né více hráčů na profesionální úrovni.
 
 \begin{figure}[h]	
 	\centering
@@ -124,7 +124,7 @@ Platforma bude umožňovat vykonat libovolný kód v~rámci každého výpočtu 
 
 \subsubsection{Produkce}
 
-Jednou z~vlastností definujících RTS hry je možnost produkce nových jednotek. Existuje několik systémů produkce jednotek, úzce svázaných se systémem surovin v~dané hře. (viz. \ref{sec:suroviny})  Od kontinuální produkce, kde hráč zvolí produkované jednotky a~suroviny jsou spotřebovávány v~průběhu produkce, po diskrétní produkci, kde hráč musí vlastnit všechny suroviny potřebné pro výrobu dané jednotky při začátku produkce a~všechny suroviny jsou odečteny v~jeden okamžik. Kontinuální systém umožňuje hráči naplánovat produkci armády v~předstihu, i~když v~daném okamžiku nevlastní dostatečné suroviny. Naopak při diskrétní produkci je hráč nucen čekat do chvíle, kdy má všechny suroviny, a~až poté může začít s~produkcí. Naše platforma se pokusí podporovat oba systémy. Bude záležet pouze na tvůrci hry, jak se k~surovinám a~produkci jednotek zachová a~který z~těchto systémů bude implementovat.
+Jednou z~vlastností definujících RTS hry je možnost produkce nových jednotek. Existuje několik systémů produkce jednotek, úzce svázaných se systémem surovin v~dané hře. (viz. \ref{sec:suroviny})  Od kontinuální produkce, kde hráč zvolí produkované jednotky a~suroviny jsou spotřebovávány v~průběhu produkce, po diskrétní produkci, kde hráč musí vlastnit všechny suroviny potřebné pro výrobu dané jednotky při začátku produkce a~všechny suroviny jsou odečteny v~jeden okamžik. Kontinuální systém umožňuje hráči naplánovat produkci armády v~předstihu, i~když v~daném okamžiku nevlastní dostatečné množství surovin. Naopak při diskrétní produkci je hráč nucen čekat do chvíle, kdy má všechny suroviny, a~až poté může začít s~produkcí. Naše platforma se pokusí podporovat oba systémy. Bude záležet pouze na tvůrci hry, jak se k~surovinám a~produkci jednotek zachová a~který z~těchto systémů bude implementovat.
 
 Počet jednotek je často limitován, jak pro účely vyvážení hry, tak pro omezení zátěže hardwaru. Z~hlediska vyvážení síly jednotek umožňuje limit na počet jednotek předejít tzv. \uv{Zergu}, kdy hráč vytvoří obrovské množství levných jednotek, které následně převálcují jakýkoli odpor. Z~hlediska hardwarové náročnosti je účel limitu vcelku zřejmý, protože každá jednotka zabírá určité množství paměti a~výpočetního výkonu. Stronghold Crusader omezuje počet jednotek na 1000 pro každého hráče. Toto omezení se jeví především jako limit na hardwarovou náročnost hry. Naše platforma žádné explicitní limity nestanovuje, avšak v~uživatelské dokumentaci pro vývojáře budeme silně doporučovat stanovení limitů na počet budov, jednotek a~projektilů. Za tímto účelem umožníme vývojáři při vytvoření každé jednotky, budovy či projektilu učinit rozhodnutí, zda je vytvoření možné a~případně toto vytváření zrušit. 
 
@@ -132,9 +132,9 @@ Hráč často začíná s~malým počtem jednotek, jejichž účelem je zamezit 
 
 \subsubsection{Boj}
 
-V drtivé většině RTS her mají jednotky tzv. \uv{hit pointy} , zkráceně \textit{HP}, které určují počet zásahů, které může jednotka obdržet než bude zabita. S~každým zásahem jsou poté tyto \textit{HP} odečítány a~v~okamžiku, kdy je jednotka poškozena na 0 \textit{HP} je zabita. Naše platforma bude tento systém samozřejmě podporovat, ale nebude ho nijak explicitně vyžadovat, bude tedy tvůrci umožněno použít jakýkoli jím implementovaný systém. 
+V drtivé většině RTS her mají jednotky tzv.~\uv{hit pointy}, zkráceně \textit{HP}, které určují počet zásahů, které může jednotka obdržet než bude zabita. S~každým zásahem jsou poté tyto \textit{HP} odečítány a~v~okamžiku, kdy je jednotka poškozena na 0 \textit{HP}, je zabita. Naše platforma bude tento systém samozřejmě podporovat, ale nebude ho nijak explicitně vyžadovat, bude tedy tvůrci umožněno použít jakýkoli jím implementovaný systém. 
 
-Jednotky mohou obdržet poškození z~mnoha zdrojů, nejčastěji však útokem z~blízka (tzv. \textit{meele}) či z~dálky (tzv. \textit{ranged}). Útok na blízko je omezen dosahem, rychlostí útoků a~velikostí uděleného poškození. Naše platforma bude podporovat komponentu poskytující útoky na blízko právě s~těmito parametry. Útok na dálku lze rozdělit do dvou typů, tzv. \textit{hit-scan} a~\textit{projektily}. První typ je reprezentován například laserovými zbraněmi, které v~okamžiku výstřelu urazí celou vzdálenost, dokud nenarazí na terén či nějakou entitu (budovu či jednotku). Druhý typ v~okamžiku výstřelu vytvoří projektil, který se v~průběhu času pohybuje herním světem, dokud také nenarazí na terén či nějakou entitu. Naše platforma bude podle předlohy Strongholdu Crusader podporovat především projektilové útoky. Za tímto účelem bude vytvořena komponenta umožňující střelbu projektilů, dále projektily samotné, simulace jejich letu a~především možnost výpočtu pro střelbu na pohyblivý cíl. Hit-scan útoky nebudou přímo podporovány, mělo by však být umožněno tvůrci hry tento typ útoků implementovat manuálně.
+Jednotky mohou obdržet poškození z~mnoha zdrojů, nejčastěji však útokem z~blízka (tzv. \textit{meele}) či z~dálky (tzv. \textit{ranged}). Útok na blízko je omezen dosahem, rychlostí útoků a~velikostí uděleného poškození. Naše platforma bude podporovat komponentu poskytující útoky na blízko právě s~těmito parametry. Útok na dálku lze rozdělit do dvou typů, tzv. \textit{hit-scan} a~\textit{projektily}. První typ je reprezentován například laserovými zbraněmi, které v~okamžiku výstřelu urazí celou vzdálenost, dokud nenarazí na terén či nějakou entitu (budovu či jednotku). Druhý typ v~okamžiku výstřelu vytvoří projektil, který se v~průběhu času pohybuje herním světem, dokud také nenarazí na terén či nějakou entitu. Naše platforma bude podle předlohy Strongholdu Crusader podporovat především projektilové útoky. Za tímto účelem budou vytvořeny komponenty umožňující střelbu projektilů, simulace letu projektilů a~především možnost výpočtu pro střelbu na pohyblivý cíl. Hit-scan útoky nebudou přímo podporovány, mělo by však být umožněno tvůrci hry tento typ útoků implementovat manuálně.
 
 \subsubsection{Shrnutí požadavků}
 \noindent{Naše platforma bude podporovat jednotky s~těmito vlastnostmi:}
@@ -205,7 +205,7 @@ Budovy, podobně jako jednotky, mají ve většině her určitý počet tzv. \uv
 \todo{restrikce na umístění}
 Budovy mají často restrikce, které je hráč nucen splnit před stavbou budovy. Tyto restrikce mohou sahat od reliéfu a~typu terénu, přes existenci jiných budov ve stejném místě, po vlastnictví určitého množství surovin či typu jednotek. Naše platforma umožní tvůrci před stavbou budovy zjistit stav všech těchto typů restrikcí a~případně vetovat stavbu budovy. 
 
-Jednou z~restrikcí je výzkum určité technologie či stavba určité předcházející budovy. Tyto možné závislosti jsou blíže popsány v~sekci Vývoj technologií\ref{sec:vyzkum}. Tímto druhem restrikcí jsou budovy uspořádány do postupně se zlepšujících úrovní, které hráč v~průběhu času odemyká. Každá z~úrovní obsahuje řadu rozdílných budov, umožňujících zvolit různé strategie. Platforma bude umožňovat tvůrci postupné zpřístupňování budov a~jednotek, čímž bude tvůrce schopen implementovat postupné zkoumání nových technologií.
+Jednou z~restrikcí je výzkum určité technologie či stavba určité předcházející budovy. Tyto možné závislosti jsou blíže popsány v~sekci Vývoj technologií \ref{sec:vyzkum}. Tímto druhem restrikcí jsou budovy uspořádány do postupně se zlepšujících úrovní, které hráč v~průběhu času odemyká. Každá z~úrovní obsahuje řadu rozdílných budov, umožňujících zvolit různé strategie. Platforma bude umožňovat tvůrci postupné zpřístupňování budov a~jednotek, čímž bude tvůrce schopen implementovat postupné zkoumání nových technologií.
 
 Existující hry využívají několik možností, jak hráči poskytnout zpětnou vazbu o~splnění restrikcí při stavbě budovy. Jednoduší možností, použitou ve hře Stronghold Crusader \citep{site:strongholdcrus}, je zobrazení půdorysu v~různých barvách podle splnění restrikcí. Další, složitější možností je zobrazení průhledného či jinak upraveného modelu budovy na místech, kde ji nelze postavit.  Naše platforma bude podporovat jednoduší způsob, tedy zobrazení půdorysu budovy v~různých barvách podle požadavků tvůrce hry.
 
@@ -223,23 +223,23 @@ Existující hry využívají několik možností, jak hráči poskytnout zpětn
 	\item[\textbf{B8:}] tvůrcem definované reakce na obdržení zásahu budovou,
 	\item[\textbf{B9:}] zobrazení půdorysu v~různých barvách pro zpětnou vazbu splnění restrikcí,
 	\item[\textbf{B10:}] kontrolu požadavků při stavbě budovy,
-	\item[\textbf{B11:}] přístup ke grafickému rozhraní, možnost zobrazení elementů hráči.
+	\item[\textbf{B11:}] přístup ke grafickému rozhraní, zobrazení grafických elementů hráči.
 \end{itemize}
 
 
 \subsection{Suroviny}
 \label{sec:suroviny}
-\uv{Resource management} , tedy management surovin, je přítomný ve všech hrách žánru RTS již od jeho vzniku. Od koření v~Dune II, přes zlato a~dřevo ve Warcraft~3 \citep{site:warcraft3}, po všechny typy surovin ve hře Stronghold \citep{site:strongholdcrus}, získávání surovin je jednou z~hlavních motivací konfliktu v~RTS hrách. 
+\uv{Resource management}, tedy management surovin, je přítomný ve všech hrách žánru RTS již od jeho vzniku. Od koření v~Dune II, přes zlato a~dřevo ve Warcraft~3 \citep{site:warcraft3}, po všechny typy surovin ve hře Stronghold \citep{site:strongholdcrus}, získávání surovin je jednou z~hlavních motivací konfliktu v~RTS hrách. 
 
-Systémy surovin lze rozdělit podle způsobu získávání a~počtu typů surovin. Podle způsobu získávání můžeme systém surovin rozdělit na
+Systémy surovin lze rozdělit podle způsobu získávání a~počtu typů surovin. Podle způsobu získávání můžeme systém surovin rozdělit na:
 \begin{enumerate}
 	\item aktivní získávání surovin,
 	\item pasivní získávání surovin.
 \end{enumerate}
 
-Při aktivním získávání surovin existuje ovladatelná herní entita, která svým pohybem mezi pozicemi na mapě přináší suroviny. Tento pohyb může být ovládán hráčem, ale nejčastěji dokáže pracovat jednotka samostatně. Příkladem může být Warcraft~3 \citep{site:warcraft3}, kde speciální jednotky získávají dřevo a~zlato přenášením z~lesů/dolů do hráčovy hlavní budovy. Při pasivním získávání přibývají suroviny bez akcí entit, pouze díky vlastnictví určité části mapy nebo druhu budovy. Zdroj bývá nekonečný nebo skoro nekonečný, poskytující suroviny do obsazení nebo zničení zdroje. Každý z~těchto stylů podporuje jinou strategii kontroly mapy.
+Při aktivním získávání surovin existuje ovladatelná herní entita, která svým pohybem mezi pozicemi na mapě přináší suroviny. Tento pohyb může být ovládán hráčem, ale nejčastěji dokáže pracovat jednotka samostatně. Příkladem může být Warcraft~3 \citep{site:warcraft3}, kde speciální jednotky získávají dřevo a~zlato přenášením z~lesů/dolů do hráčovy hlavní budovy. Při pasivním získávání přibývají suroviny bez akcí entit, pouze díky vlastnictví určité části mapy nebo druhu budovy. Zdroj bývá nekonečný nebo skoro nekonečný, poskytující suroviny do obsazení jiným hráčem nebo zničení zdroje. Každý z~těchto stylů vynucuje jinou strategii kontroly mapy.
 
-Naše platforma bude podporovat jak pasivní, tak aktivní získávání surovin. Bude pouze na tvůrci, v~jakém okamžiku budou suroviny přičteny, ať už v~závislosti na čase nebo na pohybu určitých jednotek. 
+Naše platforma bude podporovat jak pasivní, tak aktivní získávání surovin. Bude pouze na tvůrci hry, v~jakém okamžiku budou suroviny přičteny, ať už v~závislosti na čase nebo na pohybu určitých jednotek. 
 
 \subsubsection{Shrnutí požadavků}
 
@@ -251,12 +251,12 @@ Naše platforma bude podporovat jak pasivní, tak aktivní získávání surovin
 
 \subsection{Vývoj technologií}
 \label{sec:vyzkum}
-Volba vyzkoumaných technologií důležitou součástí strategické části RTS her. Technologie jsou často uspořádány ve stromové struktuře či orientovaném acyklickém grafu (DAG), kde vyzkoumání technologie v~rodičovském uzlu odemyká technologie následujících uzlech. Příklad takového uspořádání můžeme vidět v~ukázce ze hry \emph{Civilisation~V} \citep{site:civ5}\ref{fig:civ5techtree}, kde vidíme počátek stromu technologií. V~této hře jsou technologie uspořádány do DAGu, začínajícího v~jednom kořeni. Můžeme vidět žluté vrcholy, značící vyzkoumané technologie, dále zelené vrcholy, značící technologie, které mají splněné všechny předky a~mohou být vyzkoumány, černé technologie, které bude možné začít zkoumat po odemčení všech předků, a~nakonec červené technologie, značící technologie v~dalším věku. Dále můžeme vidět hrany spojující závislé technologie. 
+Volba vyzkoumaných technologií je důležitou součástí strategické části RTS her. Technologie jsou často uspořádány ve stromové struktuře či orientovaném acyklickém grafu (DAG), kde vyzkoumání technologie v~rodičovském uzlu odemyká technologie v následujících uzlech. Příklad takového uspořádání můžeme vidět v~ukázce ze hry \emph{Civilisation~V} \citep{site:civ5} \ref{fig:civ5techtree}, kde vidíme počátek stromu technologií. V~této hře jsou technologie uspořádány do DAGu, začínajícího v~jednom kořeni. Můžeme vidět žluté vrcholy, značící vyzkoumané technologie, dále zelené vrcholy, značící technologie, které mají splněné všechny předky a~mohou být vyzkoumány, černé technologie, které bude možné začít zkoumat po odemčení všech předků, a~nakonec červené technologie, značící technologie v~dalším věku. Dále můžeme vidět hrany spojující závislé technologie. 
 
-Další možné uspořádání je několik disjunktních stromů technologií, kdy je hráč nucen zvolit jeden z~těchto stromů. 
+Další možné uspořádání je několik disjunktních stromů technologií, při kterém je hráč nucen zvolit jeden z~těchto stromů. 
 Toto uspořádání můžeme vidět ve hře Company of Heroes \citep{site:COH}, kde jsou hráči dostupné tři vzájemně výlučné cesty, každá zaměřená na jinou oblast boje. Každá z~těchto cest je dále rozdělena na dvě větve postupně se zlepšujících technologií.
 
-Každé větvení v~grafu technologií představuje možné rozhodnutí hráče, kterou z~větví se hráč vydá a~které technologie odemkne. Toto rozhodnutí jsou jedním z~hlavních projevů hráčovi strategie.
+Každé větvení v~grafu technologií představuje možné rozhodnutí hráče, kterou z~větví se hráč vydá a~které technologie odemkne. Tato rozhodnutí jsou jedním z~hlavních projevů hráčovi strategie.
 
 Vyzkoumání technologie může mít mnoho různých efektů. Nejčastějším efektem bývá odemknutí nového typu jednotek nebo budov. Další možností je změna vlastností již vlastněných jednotek nebo budov. V~neposlední řadě pak může vyzkoumání technologie odemknout nové schopnosti nebo kouzla, které hráč může následně použít při taktických soubojích. 
 
@@ -292,13 +292,13 @@ Jak bylo řečeno v~sekci o~budovách \ref{sec:budovy}, naše platforma bude umo
 V předešlé sekci jsme popsali druh her, který bude naše platforma podporovat. V~této sekci popíšeme požadavky na chování platformy z~pohledu všech druhů našich uživatelů.
 
 \subsection{Tvůrci her}
-Prvním druhem uživatele budou tvůrci her, používající naši platformu pro zjednodušení své práce a~vyřešení problémů opakujících se ve většině RTS her. Tvůrce samozřejmě nemusí být pouze jeden člověk, vzhledem ke složitosti RTS her existuje při jejich tvorbě mnoho rolí, které požadují velmi různorodé schopnosti a~mohou být plněny více lidmi. Příkladem rolí může být 3D umělec tvořící modely a~animace, producent hudby, tvůrce umělé inteligence, programátor herní logiky a~nakonec člověk, který toto vše integruje dohromady.
+Prvním druhem uživatelů budou tvůrci her, používající naši platformu pro zjednodušení své práce a~vyřešení problémů opakujících se ve většině RTS her. Tvůrce samozřejmě nemusí být pouze jeden člověk, vzhledem ke složitosti RTS her existuje při jejich tvorbě mnoho rolí, které požadují velmi různorodé schopnosti a~mohou být plněny více lidmi. Příkladem rolí může být 3D umělec tvořící modely a~animace, producent hudby, tvůrce umělé inteligence, programátor herní logiky a~nakonec člověk, který toto vše integruje dohromady.
 
 \subsubsection{Programátor}
-Naším hlavním cílem je umožnit tvůrcům umělé inteligence a~programátorům herní logiky použít všechny jazyky .NET Frameworku, především C\#, pro jejich práci. Z~programátorského pohledu bude naše platforma sloužit jako knihovna poskytující tyto funkce:
+Naším hlavním cílem je umožnit tvůrcům umělé inteligence a~programátorům herní logiky použít všechny jazyky .NET Frameworku, především pak jazyk C\#, pro jejich práci. Z~programátorského pohledu bude naše platforma sloužit jako knihovna poskytující tyto funkce:
 
 \begin{enumerate}
-	\item udržování aktuálního stavu hry a zjišťování tohoto stavu;
+	\item udržování aktuálního stavu hry a poskytnutí rozhraní pro zjišťování tohoto stavu;
 	\item vytváření nových jednotek, budov a~projektilů;
 	\item registrování metod, které budou zavolány při určitých událostech v~průběhu hry;
 	\item úpravu terénu jak v editoru, tak při běhu hry;
@@ -310,7 +310,7 @@ Naším hlavním cílem je umožnit tvůrcům umělé inteligence a~programátor
 
 Protože implementace vykreslování a~grafického rozhraní by byla nad rámec jedné bakalářské práce, využije naše platforma pro tyto účely existující herní engine UrhoSharp. Pro programátory následně  poskytneme přístup k~relevantním částem UrhoSharp enginu.
 
-Platforma bude poskytovat ovládání kamery v~několika módech. Tato funkcionalita bude potřebná již pro implementaci editoru, poskytneme ji tedy i~tvůrcům her. Prvním módem bude klasická RTS top-down kamera, jakou můžete vidět na ukázce ze hry Company of Heroes \ref{fig:cohcamrts}. Kamera je umístěna v~dostatečné vzdálenosti pro zobrazení celých skupin jednotek, skloněna zhruba 45 stupňů od horizontální polohy.  Ve hře Company of Heroes je ovšem oproti jiným starším RTS hrám jako Warcraft 3 nebo Age of Empires 3 s~kamerou možné rotovat a~přibližovat, což nám přijde jako velice atraktivní. Příklad tohoto pohybu kamery můžete vidět na obrázku \ref{fig:cohcamcin}, kde můžeme vidět pohled z~Německé strany na vylodění na pláži Omaha. Toto bychom rádi podporovali i~v~naší platformě. Druhým módem kamery bude tzv. \uv{free-float} , kdy kamera volně \uv{létá}  nad terénem. Třetím módem bude sledování jednotky, kdy se kamera bude chovat jako v~prvním módu, její pohyb bude ale řízen pohybem jednotky.
+Platforma bude poskytovat ovládání kamery v~několika módech. Prvním módem bude klasická RTS top-down kamera, jakou můžete vidět na ukázce ze hry Company of Heroes \ref{fig:cohcamrts}. Kamera je umístěna v~dostatečné vzdálenosti pro zobrazení celých skupin jednotek, skloněna zhruba 45 stupňů od horizontální polohy.  Ve hře Company of Heroes je ovšem oproti jiným starším RTS hrám jako Warcraft 3 nebo Age of Empires 3 s~kamerou možné rotovat a~přibližovat, což nám přijde jako velice atraktivní. Příklad tohoto pohybu kamery můžete vidět na obrázku \ref{fig:cohcamcin}, kde můžeme vidět pohled z~Německé strany na vylodění na pláži Omaha. Toto bychom rádi podporovali i~v~naší platformě. Druhým módem kamery bude tzv. \uv{free-float} , kdy kamera volně \uv{létá}  nad terénem. Třetím módem bude sledování jednotky, kdy se kamera bude chovat jako v~prvním módu, její pohyb bude ale řízen pohybem jednotky. Přístup k~tomuto ovládání bude poskytnut i~tvůrcům her z jimi tvořených pluginů.
 
 \begin{figure}[h]	
 	\centering
@@ -328,7 +328,7 @@ Platforma bude poskytovat ovládání kamery v~několika módech. Tato funkciona
 
 \subsubsection{Moddeři}
 
-Pro integraci vytvořených jednotek, budov, dlaždic a~jejich modelů, textur a~logiky umožní naše platforma vytvořit \emph{balíček}, obsahující vše vytvořené programátory a~umělci.  Tento balíček poté platforma umožní přidat a~načíst v~libovolné instalaci platformy.
+Pro integraci vytvořených jednotek, budov, dlaždic a~jejich modelů, textur a~logiky umožní naše platforma vytvořit \emph{balíček}, obsahující všechny součásti vytvořené programátory a~umělci.  Tento balíček poté platforma umožní přidat a~načíst v~libovolné instalaci platformy.
 
 Platforma bude také sloužit jako editor úrovní, které budou využívat logiku, jednotky, budovy a~typy terénu dodané pomocí balíčků. Vytvořené úrovně bude následně možné uložit zpět do balíčku a~distribuovat spolu s~balíčkem do dalších instancí naší platformy.
 
@@ -339,9 +339,9 @@ Formát ukládání úrovní bude definován otevřeně pomocí prostředků nez
 \subsection{Hráči her}
 Z pohledu hráče se bude platforma chovat jako instalovatelná aplikace, která hráči umožní za běhu přidávat balíčky a~následně využít jejich obsah.
 
-Při běhu platforma umožní plný přístup k~nastavení UrhoSharp enginu, tedy k~nastavení rozlišení, Vsync, triple buffer a~dalších. Dále umožní správu balíčků, tedy přidávání, odebírání a~spouštění. Při spuštění balíčku umožní platforma hráči výběr z~existujících map, jak pro hraní, tak pro editaci. Dále platforma umožní vytvoření a~editaci úplně nové mapy.
+Při běhu platforma umožní plný přístup k~nastavení UrhoSharp enginu, tedy k~nastavení rozlišení, Vsync, triple buffer a~dalších. Dále umožní správu balíčků, tedy přidávání, odebírání a~spouštění. Při spuštění balíčku umožní platforma hráči výběr z~existujících map, jak pro hraní, tak pro editaci. Dále platforma umožní vytvoření a~editaci úplně nových map.
 
-Při tvorbě nové mapy či editaci existující mapy mít bude hráč přístup ke všem jednotkám, budovám a~typům terénu, ke kterým mu dají editační nástroje specifikované tvůrcem balíčku přístup. Následně bude hráči umožněno mapu uložit, a~to přepsáním zdrojové mapy, kterou hráč načetl k~editaci, nebo vytvořením nové mapy pod novým jménem.
+Při tvorbě nové mapy či editaci existující mapy bude hráč mít přístup ke všem jednotkám, budovám a~typům terénu, ke kterým mu dají editační nástroje specifikované tvůrcem balíčku přístup. Následně bude hráči umožněno mapu uložit, a~to přepsáním zdrojové mapy, kterou hráč načetl k~editaci, nebo vytvořením nové mapy pod novým jménem.
 
 \section{Ukázková hra}
 \label{sec:showcasedef}
@@ -356,7 +356,6 @@ Pro ukázku bude vytvořen balíček s~jednoduchou hrou demonstrující možnost
 	\item jednotky útočící na blízko;
 	\item aktivní získávání surovin;
 	\item pohyb po terénu;
-	\item pohyb nad terénem (létání);
 	\item rozdílnou rychlost pohybu různých jednotek;
 	\item rozdílnou přístupnost částí mapy pro různé jednotky;
 	\item pohyb po budovách.
@@ -390,7 +389,7 @@ Pro ukázku bude vytvořen balíček s~jednoduchou hrou demonstrující možnost
 Cílem této práce je vytvořit platformu pro vývoj 3D RTS her pro jednoho hráče za použití herního enginu UrhoSharp, umožňující vývojářům vytvářet hry jako separátně 
 distribuované balíčky, které bude poté koncový uživatel schopen přidat do naší platformy nainstalované na uživatelově počítači a~použít je pro hraní dodaných úrovní či tvorbu svých vlastních.
 
-Při tvorbě hry bude umožněno tvůrci použít jazyky frameworku .NET  pro vytvoření Umělé inteligence jednotek, budov a~nepřátelských hráčů, pro vytvoření další logiky hry a~pro přidání nástrojů do editoru map. 
+Při tvorbě hry bude umožněno tvůrci použít jazyků frameworku .NET  pro vytvoření umělé inteligence jednotek, budov a~nepřátelských hráčů, pro vytvoření další logiky hry a~pro přidání nástrojů do editoru map. 
 
 \noindent{\textbf{Požadované vlastnosti platformy:}}
 \begin{enumerate}
@@ -409,7 +408,7 @@ Při tvorbě hry bude umožněno tvůrci použít jazyky frameworku .NET  pro vy
 			\item stavba budov v~herním světě (B1, B9, B10)
 			\item podpora obraných budov (B2, B4)
 			\item rozšiřitelnost dostupného terénu o~plochu budov (B3)
-			\item přidávání budov jako součásti mapy (B5, B6)
+			\item přidávání budov jako součástí mapy (B5, B6)
 			\item zničitelnost budov (B7, B8)
 			\item produkce jednotek, surovin, stavba budov pomocí budovy (B11)
 		\end{enumerate}

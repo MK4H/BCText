@@ -2,17 +2,17 @@
 \addcontentsline{toc}{chapter}{Závěr}
 Na závěr práce shrneme implementaci naší platformy a~porovnáme ji s~našimi cíli, uvedenými v~části \ref{sec:cileprace}.
 
-Výsledkem naší práce je platformu pro tvorbu 3D RTS her pro jednoho hráče, implementovaná pomocí jazyka C\# a~enginu UrhoSharp. Tato platforma umožňuje tvorbu balíčků, které lze distribuovat separátně od platformy a~přidávat i~do nainstalované instance platformy. Tyto balíčky mohou obsahovat nové typy jednotek, budov, projektilů, nepřátelských hráčů, nástrojů pro editaci map a~dalších herních prvků, které je možné využít pro tvorbu a~hraní map. 
+Výsledkem naší práce je platforma pro tvorbu 3D RTS her pro jednoho hráče, implementovaná pomocí jazyka C\# a~enginu UrhoSharp. Tato platforma umožňuje tvorbu balíčků, které lze distribuovat separátně od platformy a~přidávat i~do nainstalované instance platformy. Tyto balíčky mohou obsahovat nové typy jednotek, budov, projektilů, nepřátelských hráčů, nástrojů pro editaci map a~dalších herních prvků, které je možné využít pro tvorbu a~hraní map. 
 
 Platforma umožňuje tvorbu jednotek schopných pohybu po herním světě, řízeného jak rozkazy hráče, tak umělou inteligencí jednotek. Jednotky je možné vytvářet během editace úrovně i~v~průběhu hry. Jednotky jsou schopné útočit na dálku, na blízko či oběma způsoby najednou na rozkaz hráče či z~rozhodnutí umělé inteligence. Při zásahu je jednotka o~této události informována, což umožňuje implementaci systému \textit{hit-pointů}.
 
-Budovy lze v~platformě umisťovat do herního světa jak při editaci mapy, tak v~průběhu hry. Následně je možné v~průběhu hry budovy poškozovat a~při dostatečném poškození následně zničit. Dále dokáží budovy rozšiřovat prostor dostupný jednotkám mimo úroveň terénu. V~neposlední řadě platforma umožňuje vytvářet budovy produkují suroviny, vytvářející jednotky či stavějící další budovy.
+Budovy lze v~platformě umisťovat do herního světa jak při editaci mapy, tak v~průběhu hry. Následně je možné v~průběhu hry budovy poškozovat a~při dostatečném poškození následně zničit. Dále dokáží budovy rozšiřovat prostor dostupný jednotkám mimo úroveň terénu. V~neposlední řadě platforma umožňuje vytvářet budovy produkující suroviny, vytvářející jednotky či stavějící další budovy.
 
-Z~pohledu surovin platforma umožňuje přidání a~odebrání libovolného množství surovin v reakci na akci hráče, jednotky, budovy či uplynutím času, čímž je umožněna implementace aktivního i~pasivního získávání surovin.
+Z~pohledu surovin platforma umožňuje přidání a~odebrání libovolného množství surovin v reakci na akci hráče, jednotky, budovy či uplynutí času, čímž je umožněna implementace aktivního i~pasivního získávání surovin.
 
 Dostupnost jednotek a~budov pro tvorbu hráčem je plně v~rukou tvůrce pluginů, čímž platforma umožňuje implementaci systémů technologií a~postupného odemykání typů jednotek a~budov.
 
-Implementace mapy je v~platformě rozdělena na čtvercové dlaždice, umožňující změnu výšek svých jednotlivých rohů. Každé dlaždici je přiřazen typ, který je spolu s~přítomnými jednotkami a~budovami na dlaždici možné využít pro rozhodování v~implementaci pluginů.
+Implementace mapy je v~platformě rozdělena na čtvercové dlaždice, umožňující změnu výšek svých jednotlivých rohů dlaždic. Každé dlaždici je přiřazen typ, který je spolu s~přítomnými jednotkami a~budovami na dlaždici možné využít pro rozhodování v~implementaci pluginů.
 
 Systém balíčků umožňuje vytvářet balíčky obsahující typy těchto herních prvků:
 \begin{enumerate}
@@ -24,7 +24,7 @@ Systém balíčků umožňuje vytvářet balíčky obsahující typy těchto her
 	\item hráčů,
 	\item úrovní.	
 \end{enumerate} 
-Pro typy s~grafickou reprezentací v~herním světě umožňuje balíček přidání modelů a~textur. Pro typy, které umožňují autonomní chování, je umožněno přidat pluginy, které následně toto chování definují.
+Pro typy s~grafickou reprezentací v~herním světě umožňuje balíček přidání modelů,textur a~animací. Pro typy, které umožňují autonomní chování, je umožněno přidat pluginy, které následně toto chování definují.
 
 Z~pohledu koncového uživatele platforma poskytuje grafické rozhraní pro stolní počítače, umožňuje přidávání a~výběr balíčků a~následný výběr či tvorbu úrovní z~těchto balíčků. Dále platforma poskytuje ukládání a~načítání aktuálního stavu hry.
 

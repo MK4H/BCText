@@ -1,16 +1,17 @@
 \chapter{Tvorba balíčku}
 \label{sec:packagemaking}
-Každý balíček je tvořen jedním hlavním XML souborem spolu s~dalšími soubory, představujícími assety hry. Těmito assety mohou být 3D modely, textury, pluginy či definice uživatelského rozhraní. Tato část dokumentace popíše pouze tvorbu hlavního XML souboru. Tvorbu 3D modelů, textur a~definice uživatelského rozhraní není tématem této práce. Pro získání 3D modelů a~textur použitelných v~enginu UrhoSharp a~naší platformě je možné postupovat podle tohoto tutoriálu od tvůrců enginu Urho3D \citep{site:blendertourho3D}. Pro tvorbu definic uživatelského rozhraní a~prefabrikátů jednotek, budov a~projektilů je dále možné použít editor distribuovaný spolu s~enginem Urho3D \citep{site:urho3deditor}.
+Každý balíček je tvořen jedním hlavním XML souborem spolu s~dalšími soubory, představujícími assety hry. Těmito assety mohou být 3D modely, textury, pluginy či definice uživatelského rozhraní. Tato část dokumentace popíše pouze tvorbu hlavního XML souboru. Tvorba 3D modelů, textur a~definice uživatelského rozhraní není tématem této práce. Pro získání 3D modelů a~textur použitelných v~enginu UrhoSharp a~naší platformě je možné postupovat podle tohoto tutoriálu od tvůrců enginu Urho3D \citep{site:blendertourho3D}. Pro tvorbu definic uživatelského rozhraní a~prefabrikátů jednotek, budov a~projektilů je dále možné použít editor distribuovaný spolu s~enginem Urho3D \citep{site:urho3deditor}.
 
-Při tvorbě balíčku je prvním krokem umístění všech assetů, tedy 3D modelů, textur, definic uživatelského rozhraní, assembly pluginů a~dalších do adresářového podstromu kořenového adresáře balíčku. Konkrétní struktura není definována platformou, ale závisí čistě na tvůrci balíčku. Platforma pouze načítá relativní cesty z~XML souboru definujícího balíček a~používá adresář, ve kterém je tento XML soubor umístěn, jako kořen těchto relativních cest. 
+Při tvorbě balíčku je prvním krokem umístění všech assetů, tedy 3D modelů, textur, definic uživatelského rozhraní, assembly pluginů a~dalších do adresářového podstromu kořenového adresáře balíčku. Konkrétní struktura není definována platformou, ale závisí čistě na tvůrci balíčku. Platforma pouze načítá soubory podle relativních cest v~XML souboru definujícího balíček, pro které používá adresář, ve kterém je tento XML soubor umístěn, jako kořen. 
 
 V~následujících částech popíšeme tvorbu XML souboru a~význam jednotlivých elementů a~atributů tohoto souboru.
 
 
 \section{Struktura XML}
+\label{sec:xmlstructure}
 Struktura XML souboru balíčku je popsána schématem \texttt{GamePack.xsd}, dostupným v přílohách práce \ref{sec:appendix}. Spolu s~tímto schématem obsahuje distribuce platformy šablonu XML souboru balíčku, umístěnou v~adresáři instalace na cestě \texttt{Data/Templates/PackageDefinition.xml} a v přílohách této práce \ref{sec:appendix}. Příklad XML souboru funkčního balíčku můžeme vidět v~rámci ukázkového balíčku. 
 
-Kořenovým elementem XML souboru balíčku je element \texttt{gamePack}. Tento element, spolu s celým svým podstromem specifikovaným platformou, musí být ve jmenném prostoru, \texttt{http://www.MobileHold.cz/GamePack.xsd} pro možnost validace balíčku a~jeho nahrání do platformy. Dále zde  definujeme jméno balíčku, které bude zobrazováno uživateli při výběru balíčků. 
+Kořenovým elementem XML souboru balíčku je element \texttt{gamePack}. Tento element, spolu s celým svým podstromem specifikovaným schématem, musí být ve jmenném prostoru \texttt{http://www.MobileHold.cz/GamePack.xsd} pro možnost validace balíčku a~jeho nahrání do platformy. Dále pomocí atributu tohoto elementu definujeme jméno balíčku, které bude zobrazováno uživateli při výběru balíčků. 
 
 \begin{lstlisting}[
 	style=xml,
@@ -20,7 +21,7 @@ Kořenovým elementem XML souboru balíčku je element \texttt{gamePack}. Tento 
 <gamePack xmlns="http://www.MobileHold.cz/GamePack.xsd" name="[Package name]">
 \end{lstlisting}
 
-Prvním elementem uvnitř elementu \texttt{gamePack} je element \texttt{description}. Tento element může podle schématu mít pouze textový obsah, který se následně zobrazí uživateli při označení balíčku na obrazovce pro výběr balíčků.
+Prvním elementem uvnitř elementu \texttt{gamePack} je element \texttt{description}. Tento element může podle schématu mít pouze textový obsah, který je následně zobrazen uživateli při označení balíčku na obrazovce pro výběr balíčků.
 
 \begin{lstlisting}[
 	style=xml,
@@ -93,7 +94,7 @@ Přidání typu jednotky do balíčku znamená přidání elementu \texttt{unitT
 <unitType name="[Name]" ID="[Number]">
 	<assets type="[xmlprefab|binaryprefab|items]">[content dependent on type]</assets>
 	<assemblyPath>[Path to assembly of the plugin]</assemblyPath>
-	<extension>[User defined part of XML]</extension>
+	<extension>[Package creator defined part of XML]</extension>
 	<iconTextureRectangle left="[Number]" top="[Number]" right="[Number]" bottom="[Number]"/>
 </unitType>
 \end{lstlisting}
@@ -121,7 +122,7 @@ Pro způsob \textit{items} obsahuje element \texttt{assets} několik potomků, k
 
 \begin{lstlisting}[
 	style=xml,
-	morekeywords={scale, model, modelPath, material},
+	morekeywords={scale, model, modelPath, material, simpleMaterialPath},
 	emph={[1]x,y,z,type}
 ]
 <scale x="0.2" y="0.2" z="0.8"/>
@@ -134,9 +135,9 @@ Pro způsob \textit{items} obsahuje element \texttt{assets} několik potomků, k
 	</material>
 </model>
 \end{lstlisting}
-Element \texttt{scale}, neboli škálování, určuje nastavení hodnoty \texttt{Scale} vytvořené instance \texttt{Node} reprezentující jednotku. Tato hodnota škáluje pozice a~rozměry potomků a~komponent této \texttt{Node}, tedy například rozměr 3D modelu. 
+Element \texttt{scale}, neboli škálování, určuje nastavení hodnoty \texttt{Scale} vytvořené instance \texttt{Node} reprezentující jednotku. Tato hodnota škáluje pozice a~rozměry potomků a~komponent této \texttt{Node}, tedy například rozměry 3D modelu. 
 
-Element \texttt{model} určuje 3D model použitý pro zobrazení této jednotky. Tento model je přidán jako komponenta na vytvořenou \texttt{Node}, čímž je střed modelu udržován na pozici \texttt{Node}. Atribute \texttt{type} určuje, zda je model statický (hodnota \textit{static}), či animovaný (hodnota \textit{animated}). Statický model je úspornější z~pohledu výkonu, ale jak už název napovídá, nelze na něj použít animace. Oproti tomu animovaný model použití animací podporuje. Animace jsou ovládány v~pluginech, proto popis využití animací naleznete v~části \ref{sec:unitinstanceplugin}.
+Element \texttt{model} určuje 3D model použitý pro zobrazení této jednotky. Tento model je přidán jako komponenta vytvořené \texttt{Node}, čímž je střed modelu udržován na pozici \texttt{Node}. Atribute \texttt{type} určuje, zda je model statický (hodnota \textit{static}), či animovaný (hodnota \textit{animated}). Statický model je úspornější z~pohledu výkonu, ale jak už název napovídá, nelze na něj použít animace. Oproti tomu animovaný model použití animací podporuje. Animace jsou ovládány v~pluginech, proto popis využití animací naleznete v~části \ref{sec:unitinstanceplugin}.
 
 Součástí definice modelu je definice jeho materiálů. Materiály enginu UrhoSharp umožňují definici použitých textur, \texttt{shaderů} a~jejich parametrů. Systém materiálů je popsán v~dokumentaci enginu UrhoSharp a~Urho3D, nebudeme proto v~této práci tento systém rozebírat. Model může být složen z~více geometrií, kde ke každé z~nich je přiřazen separátní materiál. Přiřazení materiálů lze provést dvěma způsoby:
 
@@ -145,15 +146,15 @@ Součástí definice modelu je definice jeho materiálů. Materiály enginu Urho
 	\item explicitním vyjmenováním materiálů.
 \end{enumerate}
 
-Následuje element \texttt{assemblyPath}, který obsahuje cestu k~assembly obsahující plugin tohoto typu jednotek. Cesta je, jako všechny cesty v~balíčku, relativní vůči adresáři obsahující XML soubor. Tento plugin je následně využit pro tvorbu instančních pluginů a~definici chování jednotek ve hře. Blíže je význam a~funkce pluginů popsán v~části \ref{sec:pluginmaking}. Plugin typu je identifikován podle hodnoty \texttt{name} a \texttt{ID}, jejichž hodnoty se musí shodovat s~hodnotami uvedenými zde v~XML. 
+Následuje element \texttt{assemblyPath}, který obsahuje cestu k~assembly obsahující plugin tohoto typu jednotek. Cesta je, jako všechny cesty v~balíčku, relativní vůči adresáři obsahujícímu XML soubor. Tento plugin je následně využit pro tvorbu instančních pluginů a~definici chování jednotek ve hře. Blíže jsou význam a~funkce pluginů popsány v~části \ref{sec:pluginmaking}. Plugin typu je identifikován podle hodnoty \texttt{name} a \texttt{ID}, jejichž hodnoty se musí shodovat s~hodnotami uvedenými zde v~XML. 
 
 Element \texttt{extension} slouží tvůrci pluginů pro uložení vlastních dat. Obsah tohoto elementu není platformou nijak omezen či validován, a~je předáván pluginu typu při jeho načítání do platformy. V~ukázkovém balíčku se tento element používá například pro specifikaci ceny jednotky, vymezení druhů dlaždic, kterými může jednotka procházet či specifikaci používaného projektilu.
 
-Poslední element, \texttt{iconTextureRectangle}, vymezuje část textury specifikované elementem \texttt{unitIconTexture}, popsaným v~předchozí části. Obdélník, vymezený hodnotou atributů tohoto elementu definuje pozici textury první situace, tedy případu, kdy je \texttt{Checkbox} nezmáčknutý a~myš není umístěna nad ním. Pozice dalších stavů jsou potom předpokládány postupně s~posunem o~šířku obdélníku vpravo, jak můžeme vidět na obrázku \ref{fig:icontexture}.
+Poslední element, \texttt{iconTextureRectangle}, vymezuje část textury specifikované elementem \texttt{unitIconTexture}, popsaným v~předchozí části. Obdélník, vymezený hodnotou atributů tohoto elementu, definuje pozici textury první situace, tedy případu, kdy je \texttt{Checkbox} nezmáčknutý a~myš není umístěna nad ním, jak bylo popsáno v části \ref{sec:xmlstructure}. Pozice dalších stavů jsou potom předpokládány postupně s~posunem o~šířku obdélníku vpravo, jak můžeme vidět na obrázku \ref{fig:icontexture}.
 
 
 \section{Přidání budov}
-Přidání typu budov do balíčku je z~velké části identické přidání typu jednotky, popsaném v~předchozí části \ref{sec:addunit}. Z~tohoto důvodu zde nebudeme rozebírat identické části a~blíže popíšeme pouze části rozdílné.
+Přidání typu budov do balíčku je z~velké části identické přidání typu jednotky, popsanému v~předchozí části \ref{sec:addunit}. Z~tohoto důvodu zde nebudeme rozebírat identické části a~blíže popíšeme pouze části rozdílné.
 
 Pro přidání typu budov přidáme element \texttt{buildingType} jako potomka elementu \texttt{buildingTypes}. Základní struktura obsahu elementu \texttt{buildingType} je následující:
 
@@ -167,7 +168,7 @@ Pro přidání typu budov přidáme element \texttt{buildingType} jako potomka e
 		[content dependent on type]
 	</assets>
 	<assemblyPath>[Path to assembly of the plugin]</assemblyPath>
-	<extension>[User defined part of XML]</extension>
+	<extension>[Package creator defined part of XML]</extension>
 	<iconTextureRectangle left="[Number]" top="[Number]" right="[Number]" bottom="[Number]"/>
 	<size x="[Number of tiles]" y="[Number of tiles]"/>
 </buildingType>
@@ -179,7 +180,7 @@ Stejně jako u~jednotek i~zde musí být hodnoty atributů \texttt{name} a \text
 
 
 \section{Přidání projektilů}
-Přidání projektilů je, stejně jako přidání budov, také z~velké části identické přidání jednotek, popsaném v~částí \ref{sec:addunit}. Přidání typu projektilů je provedeno přidáním elementu \texttt{projectileType} jako potomka elementu \texttt{projectileTypes}. Struktura obsahu elementu \texttt{projectileType} je následující:
+Přidání projektilů je, stejně jako přidání budov, také z~velké části identické přidání jednotek, popsanému v~částí \ref{sec:addunit}. Přidání typu projektilů je provedeno přidáním elementu \texttt{projectileType} jako potomka elementu \texttt{projectileTypes}. Struktura obsahu elementu \texttt{projectileType} je následující:
 
 \begin{lstlisting}[
 	style=xml,
@@ -191,7 +192,7 @@ Přidání projektilů je, stejně jako přidání budov, také z~velké části
 		[content dependent on type]
 	</assets>
 	<assemblyPath>[Path to assembly of the plugin]</assemblyPath>
-	<extension>[User defined part of XML]</extension>
+	<extension>[Package creator defined part of XML]</extension>
 </projectileType>
 \end{lstlisting}
 
@@ -199,9 +200,9 @@ Jak můžeme vidět, obsahuje element \texttt{projectileType} elementy identick�
 
 
 \section{Přidání dlaždic}
-Typy dlaždic mají oproti jednotkám, budovám a~projektilům jiný účel. Kde jednotky, budovy a~projektily jsou přidávány jako nové herní prvky do herního světa, slouží typy dlaždic pouze pro dodání vzhledu prvkům již existujícím v~úrovni, tedy dlaždicím mapy. Dále mohou být typy dlaždic využity při implementaci logiky pluginů pro rozlišení chování na různých typech dlaždic.
+Typy dlaždic mají oproti jednotkám, budovám a~projektilům jiný účel. Kde jednotky, budovy a~projektily jsou přidávány jako nové herní prvky do herního světa, slouží typy dlaždic pouze pro dodání vzhledu prvkům již existujícím v~úrovni, tedy dlaždicím mapy. Dále mohou být typy dlaždic využity při implementaci logiky pluginů pro změnu chování na různých typech dlaždic.
 
-Typ dlaždice je reprezentován elementem \texttt{tileType}, který musí podle schématu XML být potomkem \texttt{tileTypes}. Obsah elementu \texttt{tileType} je následující:
+Typ dlaždice je reprezentován elementem \texttt{tileType}, který musí podle schématu XML být potomkem elementu \texttt{tileTypes}. Obsah elementu \texttt{tileType} je následující:
 
 \begin{lstlisting}[
 	style=xml,
@@ -215,16 +216,16 @@ Typ dlaždice je reprezentován elementem \texttt{tileType}, který musí podle 
 </tileType>
 \end{lstlisting}
 
-Atributy \texttt{name} a \texttt{id} mají stejnou sémantiku jako v~předchozích částech, musí tedy být unikátní mezi všemi druhy dlaždic. Stejně tak \texttt{iconTextureRectangle} má stejný význam jako v~předcházejících částech s~tím rozdílem, že je textura specifikována elementem \texttt{tileIconTexturePath}.
+Atributy \texttt{name} a \texttt{id} mají stejnou sémantiku jako v~předchozích částech, musí tedy být unikátní mezi všemi druhy dlaždic. Stejně tak \texttt{iconTextureRectangle} má stejný význam jako v~předcházejících částech s~tím rozdílem, že vyjadřuje část textury specifikované elementem \texttt{tileIconTexturePath}.
 
 Element \texttt{minimapColor} určuje barvu dlaždice při zobrazení na minimapě. Jak vidíme z~ukázky XML, barva je specifikována pomocí červené, zelené a~modré složky s~hodnotami od 0 do 255.
 
-Specifikem typů dlaždic je povinnost definice základního typu dlaždic, který je při generování nové úrovně určen jako počáteční typ všech dlaždic. Tento typ je specifikován elementem \texttt{defaultTileType}. Obsah tohoto elementu je identický s~obsahem elementu \texttt{tileType}, jediným rozdílem je tedy jméno tohoto elementu, které platforma využívá pro jeho odlišení. Element \texttt{defaultTileType} musí být první definovaný typ dlaždice, a~stejně jako ostatní \texttt{tileType} musí i~jeho jméno a~identifikátor být unikátní mezi všemi typy dlaždic.
+Specifikem typů dlaždic je povinnost definice základního typu dlaždic, který je při generování nové úrovně určen jako počáteční typ všech dlaždic. Tento typ je specifikován elementem \texttt{defaultTileType}. Obsah tohoto elementu je identický s~obsahem elementu \texttt{tileType}, jediným rozdílem je tedy jméno tohoto elementu, které platforma využívá pro jeho odlišení. Element \texttt{defaultTileType} musí být prvním definovaným typem dlaždic, a~stejně jako ostatní \texttt{tileType} musí i~jeho jméno a~identifikátor být unikátní mezi všemi typy dlaždic.
 
 \section{Přidání surovin}
 Suroviny jsou v~platformě používány pouze pro označení čísla, které určuje jejich množství. Z~tohoto důvodu není potřeba u~tohoto druhu herního prvku specifikovat velké množství informací.
 
-Každý typ surovin je specifikován elementem \texttt{resourceType}, který je musí být potomkem elementu \texttt{resourceTypes}. Obsah elementu \texttt{resourceType} je následující:
+Každý typ surovin je specifikován elementem \texttt{resourceType}, který musí být potomkem elementu \texttt{resourceTypes}. Obsah elementu \texttt{resourceType} je následující:
 
 \begin{lstlisting}[
 	style=xml,
@@ -239,7 +240,7 @@ Každý typ surovin je specifikován elementem \texttt{resourceType}, který je 
 Stejně jako u~všech předchozích i~zde musí jméno a~identifikátor být unikátní mezi typy surovin. Element \texttt{iconTextureRectangle} potom určuje část textury určené elementem \texttt{resourceIconTexturePath}, která reprezentuje ikonu suroviny. Tato ikona není v~tuto chvíli žádnou částí platformy využívána, nejsou tedy na její vzhled kladeny žádná omezení.
 
 \section{Přidání AI hráče}
-Hlavní součástí umělé inteligence hráče je plugin, jehož vytváření popíšeme v~následující části \ref{sec:pluginmaking}. Z~pohledu balíčku je každý typ umělé inteligence hráče reprezentována elementem \texttt{playerAIType} v~podstromu elementu \texttt{playerAITypes}. Element \texttt{playerAIType} má tuto strukturu:
+Hlavní součástí umělé inteligence hráče je plugin, jehož vytváření popíšeme v~následující části \ref{sec:pluginmaking}. Z~pohledu balíčku je každý typ umělé inteligence hráče reprezentována elementem \texttt{playerAIType}, potomkem elementu \texttt{playerAITypes}. Element \texttt{playerAIType} má tuto strukturu:
 
 \begin{lstlisting}[
 	style=xml,
@@ -249,7 +250,7 @@ Hlavní součástí umělé inteligence hráče je plugin, jehož vytváření p
 <playerAIType name="[Name]" ID="[Number]" category="[ai|human|neutral]">
 	<iconTextureRectangle left="[Number]" top="[Number]" right="[Number]" bottom="[Number]"/>
 	<assemblyPath>[Path to assembly of the plugin]</assemblyPath>
-	<extension>[User defined part of XML]</extension>
+	<extension>[Package creator defined part of XML]</extension>
 </playerAIType>
 \end{lstlisting}
 
@@ -260,7 +261,7 @@ Umělé inteligence hráčů se dělí do tří skupin:
 	\item umělá inteligence neutrálního hráče (neutral).
 \end{enumerate}
 
-Umělé inteligence oponentů řídí akce hráčů, kteří jsou součástí některého z~týmů ale nejsou ovládání uživatelem. Umělá inteligence pomáhající hráčovy řídí stejného hráče, jakého řídí uživatel svým vstupem. Tato umělá inteligence může být použita pro implementaci herních událostí či automatizaci některých součástí hry. Neutrální hráč potom ovládá prvky mapy, které jsou součástí scenérie a~neúčastní se přímo souboje hráčů. Těmito prvky mohou být zvířata pohybující se v~úrovni, stromy či součásti terénu. 
+Umělé inteligence oponentů řídí akce hráčů, kteří jsou součástí některého z~týmů, ale nejsou ovládání uživatelem. Umělá inteligence pomáhající hráčovy řídí stejného hráče, jakého řídí uživatel svým vstupem. Tato umělá inteligence může být použita pro implementaci herních událostí či automatizaci některých součástí hry. Neutrální hráč potom ovládá prvky mapy, které jsou součástí scenérie a~neúčastní se přímo souboje hráčů. Těmito prvky mohou být zvířata pohybující se v~úrovni, stromy či součásti terénu. 
 
 \section{Přidání AI úrovně}
 Každý typ umělé inteligence úrovně je tvořen elementem \texttt{levelLogicType}, který je potomkem \texttt{levelLogicTypes}. Obsah elementu \texttt{levelLogicType} je následující:
@@ -272,7 +273,7 @@ Každý typ umělé inteligence úrovně je tvořen elementem \texttt{levelLogic
 ]
 <levelLogicType name="[Name]" ID="[Number]">
 	<assemblyPath>[Path to assembly of the plugin]</assemblyPath>
-	<extension>[User defined part of XML]</extension>
+	<extension>[Package creator defined part of XML]</extension>
 </levelLogicType>
 \end{lstlisting}
 Jak můžeme vidět, obsahuje definice typu umělé inteligence úrovně elementy popsané v~předcházejících částech se stejnou sémantikou.

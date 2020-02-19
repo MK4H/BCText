@@ -132,7 +132,7 @@
 @Misc{site:serializationspeed,
   author       = {Maxim Novak},
   title        = {{Serialization Performance comparison (C\#/.NET) – Formats \& Frameworks (XML–DataContractSerializer \& XmlSerializer, BinaryFormatter, JSON– Newtonsoft \& ServiceStack.Text, Protobuf, MsgPack)}},
-  howpublished = {\url{https://maxondev.com/serialization-performance-comparison-c-net-formats-frameworks-xmldatacontractserializer-xmlserializer-binaryformatter-json-newtonsoft-servicestack-text/}},
+  howpublished = {\url{https://maxondev.com/}},
   month        = apr,
   year         = {2014},
   note         = {[Online; accessed 2019-05-15]},
@@ -384,6 +384,17 @@
   title        = {Editor instructions},
   howpublished = {\url{https://urho3d.github.io/documentation/1.7/_editor_instructions.html}},
   note         = {[Online; accessed 2019-07-11]},
+}
+
+@Book{book:gangoffour,
+  title     = {{Design Patterns}},
+  publisher = {Prentice Hall},
+  year      = {1995},
+  author    = {Gamma, Erich and Helm, Richard and Johnson, Ralph E. and Vlissides, John},
+  isbn      = {0-201-63361-2},
+  date      = {1995-12-01},
+  ean       = {9780201633610},
+  url       = {https://www.ebook.de/de/product/3236753/erich_gamma_richard_helm_ralph_e_johnson_john_vlissides_design_patterns.html},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

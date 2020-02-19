@@ -15,15 +15,15 @@
 \let\openright=\clearpage
 
 %% Pokud tiskneme oboustranně:
-% \documentclass[12pt,a4paper,twoside,openright,usenames]{report}
-% \setlength\textwidth{145mm}
-% \setlength\textheight{247mm}
-% \setlength\oddsidemargin{14.2mm}
-% \setlength\evensidemargin{0mm}
-% \setlength\topmargin{0mm}
-% \setlength\headsep{0mm}
-% \setlength\headheight{0mm}
-% \let\openright=\cleardoublepage
+%\documentclass[12pt,a4paper,twoside,openright,usenames]{report}
+%\setlength\textwidth{145mm}
+%\setlength\textheight{247mm}
+%\setlength\oddsidemargin{14.2mm}
+%\setlength\evensidemargin{0mm}
+%\setlength\topmargin{0mm}
+%\setlength\headsep{0mm}
+%\setlength\headheight{0mm}
+%\let\openright=\cleardoublepage
 
 %% Vytváříme PDF/A-2u
 \usepackage[a-2u]{pdfx}
@@ -64,6 +64,7 @@
 \usepackage{enumitem}
 \usepackage{listings}
 
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
 
 
@@ -162,12 +163,12 @@
 
 % Studijní program a obor
 \def\StudijniProgram{Informatika (B1801)}
-\def\StudijniObor{IPSS (1801R048)}
+\def\StudijniObor{Programování a softwarové systémy (IPSS)}
 
 % Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
 % zapůjčil software, literaturu apod.)
 \def\Podekovani{%
-Poděkování.
+Chtěl bych poděkovat především vedoucímu práce, Mgr. Pavlu Ježkovi, Ph.D., za jeho trpělivost a nedocenitelné rady a postřehy při tvorbě této práce. Dále bych chtěl poděkovat svým rodičům, jejichž podpora byla nedílnou součástí tvorby tohoto díla.
 }
 
 % Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o zadání práce)
@@ -190,10 +191,10 @@ As a part of this thesis, we will create a showcase package to demonstrate the a
 
 % 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
 \def\KlicovaSlova{%
-{RTS hra}
+{RTS hra} {tvorba RTS her} {editace úrovní} {MHUrho}
 }
 \def\KlicovaSlovaEN{%
-{RTS game}
+{RTS game} {RTS game creation} {level editing} {MHUrho}
 }
 
 %% Balíček hyperref, kterým jdou vyrábět klikací odkazy v PDF,
